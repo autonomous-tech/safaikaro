@@ -290,7 +290,7 @@ Notes:
 #### SEO Meta
 
 - **Title:** `Pest Control DHA & Clifton Karachi | SafaiKaro — Transparent Pricing`
-- **Meta Description:** `Professional pest control in DHA & Clifton Karachi. Upfront prices from Rs 8,500. Eco-friendly treatments, written warranty, same-day WhatsApp booking. PPMA registered.`
+- **Meta Description:** `Professional pest control in DHA & Clifton Karachi. Upfront prices from Rs 8,000. Eco-friendly treatments, written warranty, same-day WhatsApp booking. PPMA registered.`
 - **H1:** `Pest Control in DHA & Clifton Karachi — Prices You Can See Before You Book`
 
 #### LSI Keywords (Use 5-8 naturally)
@@ -316,11 +316,11 @@ H2: Why SafaiKaro? Pest Control with No Surprises
   H3: Written Warranty on Every Service
 
 H2: Our Pest Control Services
-  H3: General Fumigation — from Rs 8,500
+  H3: General Fumigation — from Rs 8,000
   H3: Termite Treatment — Rs 1,100/sq yd
   H3: Bed Bug Removal — from Rs 7,000/room
   H3: Mosquito & Dengue Control — Rs 8,000
-  H3: Rodent Control — from Rs 9,000
+  H3: Rodent Control — Rs 8,500 (flat rate)
   H3: Annual Shield Plan — from Rs 26,000/yr
 
 H2: Areas We Serve in Karachi
@@ -380,7 +380,7 @@ H2: Book Your Pest Control Today
 #### SEO Meta
 
 - **Title:** `Pest Control Clifton Karachi | Same-Day Service, Fixed Prices | SafaiKaro`
-- **Meta Description:** `Pest control in Clifton Karachi — Block 1 to Block 9 & Bath Island. General fumigation from Rs 8,500. WhatsApp to book same-day service. Written warranty included.`
+- **Meta Description:** `Pest control in Clifton Karachi — Block 1 to Block 9 & Bath Island. General fumigation from Rs 8,000. WhatsApp to book same-day service. Written warranty included.`
 - **H1:** `Pest Control in Clifton Karachi — Same-Day Service, Block 1 to Block 9`
 
 #### LSI Keywords
@@ -715,7 +715,7 @@ H2: Get Rid of Bed Bugs Today — WhatsApp SafaiKaro
 #### SEO Meta
 
 - **Title:** `Pest Control Price List Karachi 2026 | All Services | SafaiKaro`
-- **Meta Description:** `Complete pest control price list for Karachi. General fumigation from Rs 8,500, termite treatment Rs 1,100/sq yd, bed bugs Rs 7,000/room. No hidden charges. SafaiKaro.`
+- **Meta Description:** `Complete pest control price list for Karachi. General fumigation from Rs 8,000, termite treatment Rs 1,100/sq yd, bed bugs Rs 7,000/room. No hidden charges. SafaiKaro.`
 - **H1:** `Pest Control Prices in Karachi — Clear, Fixed, No Surprises`
 
 #### LSI Keywords
@@ -738,9 +738,9 @@ H2: Our Complete Price List
   (Full pricing table with all services)
 
 H2: General Fumigation Pricing
-  H3: Up to 150 sq yds — Rs 8,500
-  H3: 150 to 300 sq yds — Rs 14,000
-  H3: Full Home Package up to 300 sq yds — Rs 18,000
+  H3: Up to 100 sq yds — Rs 8,000
+  H3: 101–200 sq yds — Rs 12,000
+  H3: 201–500 sq yds — Rs 18,000
 
 H2: Specialized Treatment Pricing
   H3: Bed Bug Treatment — Rs 7,000/room or Rs 22,000/full home
@@ -896,7 +896,7 @@ H2: Protect Your Home All Year — Enroll Today
 
 #### SEO Meta
 
-- **Title:** `Fumigation Service Karachi | From Rs 8,500 | Eco-Friendly | SafaiKaro`
+- **Title:** `Fumigation Service Karachi | From Rs 8,000 | Eco-Friendly | SafaiKaro`
 - **Meta Description:** `Professional fumigation services in Karachi — cockroaches, ants, spiders, mosquitoes. From Rs 8,000 for homes up to 100 sq yds. Same-day service in DHA & Clifton.`
 - **H1:** `Fumigation Services in Karachi — Professional, Eco-Friendly, Affordable`
 
@@ -934,9 +934,9 @@ H2: How SafaiKaro Fumigation Works
   H3: Step 4 — Follow-Up Check Within 7 Days
 
 H2: Fumigation Pricing
-  H3: Up to 150 sq yds — Rs 8,500
-  H3: 150 to 300 sq yds — Rs 14,000
-  H3: Full Home Package — Rs 18,000
+  H3: Up to 100 sq yds — Rs 8,000
+  H3: 101–200 sq yds — Rs 12,000
+  H3: 201–500 sq yds — Rs 18,000
 
 H2: Chemicals We Use
   H3: DPP-Registered Pesticides Only
@@ -1112,7 +1112,7 @@ H2: Book Fumigation Today via WhatsApp
 1. PPMA registered badge
 2. "X+ homes treated" counter
 3. Google rating stars (when available)
-4. "Prices start at Rs 8,500" — price anchor
+4. "Prices start at Rs 8,000" — price anchor
 
 ### 11.3 WhatsApp Pre-filled Messages
 
