@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI search crawlers — allow for citation
+# AI search crawlers — allow for citation in AI-generated answers
 User-agent: GPTBot
 Allow: /
 
@@ -21,6 +21,12 @@ User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://safaikaro.pk/sitemap.xml
