@@ -173,10 +173,10 @@
             <div class="form-group">
               <label>Property Size</label>
               <div class="option-group" id="propertySize">
-                <div class="option-pill" data-value="Under 100 sq yds" onclick="selectPill(this, 'propertySize')">Under 100 sq yds</div>
-                <div class="option-pill" data-value="100-200 sq yds" onclick="selectPill(this, 'propertySize')">100-200 sq yds</div>
-                <div class="option-pill" data-value="200-400 sq yds" onclick="selectPill(this, 'propertySize')">200-400 sq yds</div>
-                <div class="option-pill" data-value="400+ sq yds" onclick="selectPill(this, 'propertySize')">400+ sq yds</div>
+                <div class="option-pill" data-value="Up to 100 sq yds" onclick="selectPill(this, 'propertySize')">Up to 100 sq yds <span style="font-size:0.8em;color:#6B7280;">(small flat / apartment)</span></div>
+                <div class="option-pill" data-value="101-200 sq yds" onclick="selectPill(this, 'propertySize')">101&ndash;200 sq yds <span style="font-size:0.8em;color:#6B7280;">(standard house)</span></div>
+                <div class="option-pill" data-value="201-500 sq yds" onclick="selectPill(this, 'propertySize')">201&ndash;500 sq yds <span style="font-size:0.8em;color:#6B7280;">(large house / bungalow)</span></div>
+                <div class="option-pill" data-value="501-1000 sq yds" onclick="selectPill(this, 'propertySize')">501&ndash;1,000 sq yds <span style="font-size:0.8em;color:#6B7280;">(villa / 1 kanal)</span></div>
               </div>
             </div>
 
@@ -446,13 +446,11 @@
 
     // --- Price Mapping ---
     const prices = {
-      'General Fumigation': { 'Under 100 sq yds': 8500, '100-200 sq yds': 10000, '200-400 sq yds': 14000, '400+ sq yds': 18000 },
-      'Full Home Package': { 'Under 100 sq yds': 14000, '100-200 sq yds': 16000, '200-400 sq yds': 18000, '400+ sq yds': 24000 },
-      'Termite Treatment': { 'Under 100 sq yds': 20000, '100-200 sq yds': 22000, '200-400 sq yds': 35000, '400+ sq yds': 50000 },
-      'Bed Bug Treatment': { 'Under 100 sq yds': 7000, '100-200 sq yds': 12000, '200-400 sq yds': 22000, '400+ sq yds': 30000 },
-      'Rodent Control': { 'Under 100 sq yds': 9000, '100-200 sq yds': 12000, '200-400 sq yds': 15000, '400+ sq yds': 20000 },
-      'Mosquito Control': { 'Under 100 sq yds': 8000, '100-200 sq yds': 8000, '200-400 sq yds': 12000, '400+ sq yds': 15000 },
-      'Annual Shield Plan': { 'Under 100 sq yds': 35000, '100-200 sq yds': 35000, '200-400 sq yds': 45000, '400+ sq yds': 55000 }
+      'General Fumigation': { 'Up to 100 sq yds': 8500, '101-200 sq yds': 11000, '201-500 sq yds': 16000, '501-1000 sq yds': 24000 },
+      'Termite Treatment': { 'Up to 100 sq yds': 22000, '101-200 sq yds': 33000, '201-500 sq yds': 55000, '501-1000 sq yds': 95000 },
+      'Bed Bug Treatment': { 'Up to 100 sq yds': 9000, '101-200 sq yds': 12000, '201-500 sq yds': 17000, '501-1000 sq yds': 28000 },
+      'Rodent Control': { 'Up to 100 sq yds': 9500, '101-200 sq yds': 9500, '201-500 sq yds': 9500, '501-1000 sq yds': 9500 },
+      'Annual Shield Plan': { 'Up to 100 sq yds': 28000, '101-200 sq yds': 35000, '201-500 sq yds': 52000, '501-1000 sq yds': 85000 }
     };
 
     // --- Step Navigation ---

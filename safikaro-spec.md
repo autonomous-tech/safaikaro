@@ -97,17 +97,21 @@ SafaiKaro (Urdu: "Get it cleaned") is a residential pest control brand serving D
 
 All pages that mention pricing must use these exact figures:
 
-| Service | Price | Notes |
-|---|---|---|
-| General fumigation ≤150 sq yds | Rs 8,500 | Cockroaches, ants, spiders |
-| General fumigation 150–300 sq yds | Rs 14,000 | Cockroaches, ants, spiders |
-| Full home package ≤300 sq yds | Rs 18,000 | All common pests |
-| Bed bug treatment (per room) | Rs 7,000 | Chemical + follow-up |
-| Bed bug treatment (full home) | Rs 22,000 | All rooms + furniture |
-| Termite treatment | Rs 1,100/sq yd (min Rs 20,000) | Drilling + chemical barrier |
-| Rodent control | Rs 9,000–15,000 | Baiting + sealing |
-| Mosquito control | Rs 8,000 | Fogging + larvicide |
-| Annual Shield (4 visits + 1 emergency) | Rs 35,000/yr | Branded annual plan |
+Prices are tiered by property size in square yards (NEVER sqft). 4-tier system:
+
+| Property Size | Fumigation | Termite | Bed Bugs | Rodent | Annual Shield |
+|---|---|---|---|---|---|
+| Up to 100 sq yds | Rs 8,500 | Rs 22,000 | Rs 9,000 | Rs 9,500 | Rs 28,000/yr |
+| 101–200 sq yds | Rs 11,000 | Rs 33,000 | Rs 12,000 | Rs 9,500 | Rs 35,000/yr |
+| 201–500 sq yds | Rs 16,000 | Rs 55,000 | Rs 17,000 | Rs 9,500 | Rs 52,000/yr |
+| 501–1,000 sq yds | Rs 24,000 | Rs 95,000 | Rs 28,000 | Rs 9,500 | Rs 85,000/yr |
+
+Notes:
+- Rodent control is a flat rate (Rs 9,500) regardless of property size
+- Annual Shield includes 4 quarterly visits + 1 emergency callout
+- Annual Shield savings example (200 sq yd): 4 × Rs 11,000 = Rs 44,000 vs Rs 35,000 = Save Rs 9,000
+- Mosquito control: Rs 8,000 (unchanged, separate service)
+- Full home package: Rs 14,000–36,000 (unchanged, separate service)
 
 **Market context:** Competitor general fumigation ranges from Rs 3,000–18,000. SafaiKaro's pricing is mid-to-premium, justified by warranty, transparency, and branded service.
 
@@ -183,7 +187,7 @@ All pages that mention pricing must use these exact figures:
     "opens": "09:00",
     "closes": "19:00"
   },
-  "priceRange": "Rs 8,500 - Rs 35,000",
+  "priceRange": "Rs 8,500 - Rs 95,000",
   "paymentAccepted": "Cash, Bank Transfer, JazzCash, Easypaisa",
   "currenciesAccepted": "PKR",
   "sameAs": [
@@ -199,7 +203,7 @@ All pages that mention pricing must use these exact figures:
         "itemOffered": {
           "@type": "Service",
           "name": "General Fumigation",
-          "description": "Cockroach, ant, and spider treatment for homes up to 150 sq yds"
+          "description": "Cockroach, ant, and spider treatment — tiered by property size"
         },
         "price": "8500",
         "priceCurrency": "PKR"
@@ -211,14 +215,8 @@ All pages that mention pricing must use these exact figures:
           "name": "Termite Treatment",
           "description": "Chemical barrier termite treatment with drilling and injection"
         },
-        "price": "20000",
-        "priceCurrency": "PKR",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "1100",
-          "priceCurrency": "PKR",
-          "unitText": "per sq yd"
-        }
+        "price": "22000",
+        "priceCurrency": "PKR"
       },
       {
         "@type": "Offer",
@@ -227,7 +225,7 @@ All pages that mention pricing must use these exact figures:
           "name": "Annual Shield Plan",
           "description": "4 scheduled visits + 1 emergency visit per year"
         },
-        "price": "35000",
+        "price": "28000",
         "priceCurrency": "PKR"
       }
     ]
@@ -247,7 +245,7 @@ All pages that mention pricing must use these exact figures:
       "name": "How much does pest control cost in DHA Karachi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "General fumigation starts at Rs 8,500 for homes up to 150 sq yds. Full home packages up to 300 sq yds cost Rs 18,000. All SafaiKaro prices include warranty and follow-up."
+        "text": "General fumigation starts at Rs 8,500 for homes up to 100 sq yds. 101–200 sq yds costs Rs 11,000. All SafaiKaro prices include warranty and follow-up."
       }
     }
   ]
@@ -271,11 +269,10 @@ All pages that mention pricing must use these exact figures:
   },
   "offers": {
     "@type": "Offer",
-    "price": "1100",
-    "priceCurrency": "PKR",
-    "unitText": "per sq yd"
+    "price": "22000",
+    "priceCurrency": "PKR"
   },
-  "description": "Professional termite treatment in Karachi using chemical barrier injection. Includes inspection, drilling, treatment, and written warranty."
+  "description": "Professional termite treatment in Karachi using chemical barrier injection. Includes inspection, drilling, treatment, and written warranty. Tiered pricing from Rs 22,000."
 }
 ```
 
