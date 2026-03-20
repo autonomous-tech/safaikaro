@@ -745,10 +745,10 @@ H2: General Fumigation Pricing
 H2: Specialized Treatment Pricing
   H3: Bed Bug Treatment — Rs 7,000/room or Rs 22,000/full home
   H3: Termite Treatment — Rs 1,100/sq yd (minimum Rs 20,000)
-  H3: Rodent Control — Rs 9,000 to Rs 15,000
+  H3: Rodent Control — Rs 8,500 (flat rate)
   H3: Mosquito & Dengue Control — Rs 8,000
 
-H2: Annual Shield Plan — Rs 35,000/year
+H2: Annual Shield Plan — Rs 26,000/year
   H3: What's Included: 4 Visits + 1 Emergency
   H3: Why Annual Plans Save You Money
 
@@ -806,7 +806,7 @@ H2: Get an Exact Quote via WhatsApp
 #### SEO Meta
 
 - **Title:** `Annual Pest Control Plan Karachi | 4 Visits + Emergency | SafaiKaro Annual Shield`
-- **Meta Description:** `SafaiKaro Annual Shield — Rs 35,000/year for 4 scheduled pest control visits + 1 emergency call. Year-round protection for DHA & Clifton homes. Save vs one-time bookings.`
+- **Meta Description:** `SafaiKaro Annual Shield — Rs 26,000/year for 4 scheduled pest control visits + 1 emergency call. Year-round protection for DHA & Clifton homes. Save vs one-time bookings.`
 - **H1:** `Annual Shield — Year-Round Pest Protection for Your Karachi Home`
 
 #### LSI Keywords
@@ -844,7 +844,7 @@ H2: What Each Visit Covers
   H3: Emergency Visit — Within 48 Hours of Your Call
 
 H2: Annual Shield Pricing
-  H3: Rs 35,000 per year (Save vs 4 individual bookings)
+  H3: Rs 26,000 per year (Save vs 4 individual bookings)
   H3: Savings Breakdown: Individual vs Annual Shield
 
 H2: Who Should Get the Annual Shield?
