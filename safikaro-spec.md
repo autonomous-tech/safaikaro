@@ -321,7 +321,7 @@ H2: Our Pest Control Services
   H3: Bed Bug Removal — from Rs 7,000/room
   H3: Mosquito & Dengue Control — Rs 8,000
   H3: Rodent Control — from Rs 9,000
-  H3: Annual Shield Plan — Rs 35,000/yr
+  H3: Annual Shield Plan — from Rs 26,000/yr
 
 H2: Areas We Serve in Karachi
   H3: DHA Phase 1 to Phase 8
