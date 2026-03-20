@@ -101,15 +101,15 @@ Prices are tiered by property size in square yards (NEVER sqft). 4-tier system:
 
 | Property Size | Fumigation | Termite | Bed Bugs | Rodent | Annual Shield |
 |---|---|---|---|---|---|
-| Up to 100 sq yds | Rs 8,500 | Rs 22,000 | Rs 9,000 | Rs 9,500 | Rs 28,000/yr |
-| 101–200 sq yds | Rs 11,000 | Rs 33,000 | Rs 12,000 | Rs 9,500 | Rs 35,000/yr |
-| 201–500 sq yds | Rs 16,000 | Rs 55,000 | Rs 17,000 | Rs 9,500 | Rs 52,000/yr |
-| 501–1,000 sq yds | Rs 24,000 | Rs 95,000 | Rs 28,000 | Rs 9,500 | Rs 85,000/yr |
+| Up to 100 sq yds | Rs 8,000 | Rs 22,000 | Rs 7,500 | Rs 8,500 | Rs 26,000/yr |
+| 101–200 sq yds | Rs 12,000 | Rs 40,000 | Rs 11,000 | Rs 8,500 | Rs 38,000/yr |
+| 201–500 sq yds | Rs 18,000 | Rs 60,000 | Rs 16,000 | Rs 8,500 | Rs 58,000/yr |
+| 501–1,000 sq yds | Rs 28,000 | Rs 95,000 | Rs 25,000 | Rs 8,500 | Rs 90,000/yr |
 
 Notes:
-- Rodent control is a flat rate (Rs 9,500) regardless of property size
+- Rodent control is a flat rate (Rs 8,500) regardless of property size
 - Annual Shield includes 4 quarterly visits + 1 emergency callout
-- Annual Shield savings example (200 sq yd): 4 × Rs 11,000 = Rs 44,000 vs Rs 35,000 = Save Rs 9,000
+- Annual Shield savings example (200 sq yd): Annual Shield savings: Rs 6,000 / Rs 10,000 / Rs 14,000 / Rs 22,000 per tier
 - Mosquito control: Rs 8,000 (unchanged, separate service)
 - Full home package: Rs 14,000–36,000 (unchanged, separate service)
 
@@ -187,7 +187,7 @@ Notes:
     "opens": "09:00",
     "closes": "19:00"
   },
-  "priceRange": "Rs 8,500 - Rs 95,000",
+  "priceRange": "Rs 8,000 - Rs 95,000",
   "paymentAccepted": "Cash, Bank Transfer, JazzCash, Easypaisa",
   "currenciesAccepted": "PKR",
   "sameAs": [
@@ -205,7 +205,7 @@ Notes:
           "name": "General Fumigation",
           "description": "Cockroach, ant, and spider treatment — tiered by property size"
         },
-        "price": "8500",
+        "price": "8000",
         "priceCurrency": "PKR"
       },
       {
@@ -225,7 +225,7 @@ Notes:
           "name": "Annual Shield Plan",
           "description": "4 scheduled visits + 1 emergency visit per year"
         },
-        "price": "28000",
+        "price": "26000",
         "priceCurrency": "PKR"
       }
     ]
@@ -245,7 +245,7 @@ Notes:
       "name": "How much does pest control cost in DHA Karachi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "General fumigation starts at Rs 8,500 for homes up to 100 sq yds. 101–200 sq yds costs Rs 11,000. All SafaiKaro prices include warranty and follow-up."
+        "text": "General fumigation starts at Rs 8,000 for homes up to 100 sq yds. 101–200 sq yds costs Rs 12,000. All SafaiKaro prices include warranty and follow-up."
       }
     }
   ]
@@ -897,7 +897,7 @@ H2: Protect Your Home All Year — Enroll Today
 #### SEO Meta
 
 - **Title:** `Fumigation Service Karachi | From Rs 8,500 | Eco-Friendly | SafaiKaro`
-- **Meta Description:** `Professional fumigation services in Karachi — cockroaches, ants, spiders, mosquitoes. From Rs 8,500 for homes up to 150 sq yds. Same-day service in DHA & Clifton.`
+- **Meta Description:** `Professional fumigation services in Karachi — cockroaches, ants, spiders, mosquitoes. From Rs 8,000 for homes up to 100 sq yds. Same-day service in DHA & Clifton.`
 - **H1:** `Fumigation Services in Karachi — Professional, Eco-Friendly, Affordable`
 
 #### LSI Keywords
