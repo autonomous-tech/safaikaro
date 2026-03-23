@@ -16,7 +16,7 @@
   <meta property="og:site_name" content="SafaiKaro">
   <meta property="og:title" content="Pest Control DHA Phase 7 Karachi | Pre-Construction Termite Treatment | SafaiKaro">
   <meta property="og:description" content="Professional pest control in Karachi by SafaiKaro. Transparent pricing, certified technicians, 90-day guarantee. DHA & Clifton, from Rs 8,500.">
-  <meta property="og:image" content="https://safaikaro.pk/images/og-default.png">
+  <meta property="og:image" content="https://safaikaro.pk/images/og-default.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Pest Control DHA Phase 7 Karachi | Pre-Construction Termite Treatment | SafaiKaro">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pest Control DHA Phase 7 Karachi | Pre-Construction Termite Treatment | SafaiKaro">
   <meta name="twitter:description" content="Professional pest control in Karachi by SafaiKaro. Transparent pricing, certified technicians, 90-day guarantee. DHA & Clifton, from Rs 8,500.">
-  <meta name="twitter:image" content="https://safaikaro.pk/images/og-default.png">
+  <meta name="twitter:image" content="https://safaikaro.pk/images/og-default.jpg">
   <meta name="twitter:image:alt" content="Pest Control DHA Phase 7 Karachi | Pre-Construction Termite Treatment | SafaiKaro">
 </head>
 <body>
@@ -202,5 +202,165 @@
     });
   })();
   </script>
+<!-- 
+  SHARE Button Component for Autonomous Proposals
+  
+  This component creates a shareable link for the current document.
+  Only visible to authenticated users with Cloudflare Access.
+  
+  USAGE: Copy this entire block and paste it before </body> in your HTML.
+-->
+<div id="share-button-container"></div>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Check if user is authenticated (CF Access cookie present)
+  function isAuthenticated() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('CF_Authorization='));
+  }
+  
+  // Only render button if authenticated
+  if (!isAuthenticated()) {
+    return;
+  }
+  
+  // Create button HTML
+  const container = document.getElementById('share-button-container');
+  if (!container) return;
+  
+  container.innerHTML = `
+    <style>
+      #share-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00d5ff 0%, #b42aff 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(180, 42, 255, 0.3);
+        transition: all 0.2s;
+        z-index: 9999;
+        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      }
+      
+      #share-btn:hover {
+        box-shadow: 0 4px 12px rgba(180, 42, 255, 0.5);
+        transform: translateY(-1px);
+      }
+      
+      #share-btn:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+        transform: none;
+      }
+      
+      .share-toast {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        padding: 12px 20px;
+        background: #10b981;
+        color: white;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        z-index: 10000;
+        animation: slideIn 0.3s ease-out;
+        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      }
+      
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      .share-error {
+        background: #ef4444;
+      }
+    </style>
+    
+    <button id="share-btn">
+      📤 SHARE
+    </button>
+  `;
+  
+  const btn = document.getElementById('share-btn');
+  
+  // Handle click
+  btn.addEventListener('click', async function() {
+    btn.disabled = true;
+    btn.textContent = '⏳ Generating...';
+    
+    try {
+      // Get current page path
+      const path = window.location.pathname;
+      
+      // Get CF Access token from cookie
+      const cfToken = document.cookie.split(';')
+        .find(c => c.trim().startsWith('CF_Authorization='))
+        ?.split('=')[1];
+      
+      if (!cfToken) {
+        throw new Error('Not authenticated');
+      }
+      
+      // Call share API with token in header
+      const response = await fetch('https://share.autonomoustech.ca/api/share', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CF-Authorization': cfToken,
+        },
+        body: JSON.stringify({ path })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to generate share link');
+      }
+      
+      const data = await response.json();
+      
+      // Copy to clipboard
+      await navigator.clipboard.writeText(data.url);
+      
+      // Show success toast
+      showToast('✅ Link copied to clipboard!');
+      
+    } catch (error) {
+      console.error('Share error:', error);
+      showToast('❌ Failed to generate link', true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '📤 SHARE';
+    }
+  });
+  
+  function showToast(message, isError = false) {
+    const toast = document.createElement('div');
+    toast.className = 'share-toast' + (isError ? ' share-error' : '');
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }
+})();
+</script>
+
 </body>
 </html>
