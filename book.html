@@ -834,21 +834,24 @@ function selectTime(el) {
 function buildPreview() {
   var priceStr = B.price > 0 ? 'Rs ' + B.price.toLocaleString() : 'Quote on inspection';
   var notesStr = B.notes ? B.notes : '—';
-  var msg = 'Hi SafaiKaro 👋\n\n'
+  // Clean phone — strip any leading +92, 0, spaces
+  var cleanPhone = B.phone.replace(/^(\+92|92|0)/, '').replace(/\s/g,'');
+
+  var msg = 'Hi SafaiKaro!\n\n'
     + '*New Booking Request*\n'
-    + '━━━━━━━━━━━━━━━━\n'
-    + '📋 *Service:* ' + B.service + '\n'
-    + '📍 *Area:* ' + B.area + '\n'
-    + '🏠 *Property:* ' + B.propType + ', ' + B.propSize + '\n'
-    + '📅 *Date:* ' + B.dateDisplay + '\n'
-    + '⏰ *Time:* ' + B.time + '\n'
-    + '━━━━━━━━━━━━━━━━\n'
-    + '👤 *Name:* ' + B.name + '\n'
-    + '📱 *Phone:* +92 ' + B.phone + '\n'
-    + '🏡 *Address:* ' + B.address + '\n'
-    + '💬 *Notes:* ' + notesStr + '\n'
-    + '━━━━━━━━━━━━━━━━\n'
-    + '💰 *Estimated Price:* ' + priceStr + '\n\n'
+    + '---\n'
+    + '*Service:* ' + B.service + '\n'
+    + '*Area:* ' + B.area + '\n'
+    + '*Property:* ' + B.propType + ', ' + B.propSize + '\n'
+    + '*Date:* ' + B.dateDisplay + '\n'
+    + '*Time:* ' + B.time + '\n'
+    + '---\n'
+    + '*Name:* ' + B.name + '\n'
+    + '*Phone:* +92 ' + cleanPhone + '\n'
+    + '*Address:* ' + B.address + '\n'
+    + (B.notes ? '*Notes:* ' + B.notes + '\n' : '')
+    + '---\n'
+    + '*Estimated Price:* ' + priceStr + '\n\n'
     + 'Please confirm my slot. Thank you!';
 
   document.getElementById('waPreview').textContent = msg;
