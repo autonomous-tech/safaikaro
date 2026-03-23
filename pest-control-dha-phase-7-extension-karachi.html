@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://safaikaro.pk/pest-control-dha-phase-7-extension-karachi">
   <meta name="description" content="Professional pest control in DHA Phase 7 Extension Karachi. New construction termite treatment from Rs 22,000. 5-year warranty. SafaiKaro.">
   <title>Pest Control DHA Phase 7 Extension Karachi | SafaiKaro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,6 +103,48 @@
           </tbody>
         </table>
       </div>
+    <!-- Mobile: tab switcher -->
+    <div class="pricing-mobile" aria-label="Pricing by service">
+      <div class="price-tabs" role="tablist">
+        <button class="price-tab active" role="tab" aria-selected="true" data-tab="fumigation">Fumigation</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="termite">Termite</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="bedbug">Bed Bugs</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="rodent">Rodent</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="annual">Annual</button>
+      </div>
+      <div class="price-panels">
+        <div class="price-panel active" id="panel-fumigation" role="tabpanel">
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 8,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 11,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 16,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 24,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-termite" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 22,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 33,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 55,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 95,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-bedbug" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 12,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 17,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 28,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-rodent" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 9,500</span></div>
+        </div>
+        <div class="price-panel" id="panel-annual" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 28,000/yr</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 35,000/yr</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 52,000/yr</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 85,000/yr</span></div>
+        </div>
+      </div>
+    </div>
       <p class="pricing-note">Price confirmed before we start. Zero hidden charges. Balance paid to technician on the day.</p>
       <div style="margin-top:24px;"><a href="book.html" class="btn-lime">Book at These Prices &rarr;</a></div>
     </div>
@@ -178,13 +224,18 @@
     <a href="book.html" class="btn-lime">Book Now</a>
   </div>
   <script>(function(){var nav=document.getElementById('navbar');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>10);});})();</script>
+// Pricing tab switcher (mobile)
+document.querySelectorAll('.price-tab').forEach(function(btn){btn.addEventListener('click',function(){var tab=this.dataset.tab;document.querySelectorAll('.price-tab').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.price-panel').forEach(function(p){p.classList.remove('active');p.hidden=true});this.classList.add('active');this.setAttribute('aria-selected','true');var panel=document.getElementById('panel-'+tab);if(panel){panel.classList.add('active');panel.hidden=false}})});
 <!-- 
   SHARE Button Component for Autonomous Proposals
   
   This component creates a shareable link for the current document.
   Only visible to authenticated users with Cloudflare Access.
   
-  USAGE: Copy this entire block and paste it before </body> in your HTML.
+  USAGE: Copy this entire block and paste it before <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"SafaiKaro","url":"https://safaikaro.pk","telephone":"+923321305389","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressRegion":"Sindh","addressCountry":"PK"},"areaServed":["DHA Karachi","Clifton Karachi"],"priceRange":"Rs 8,500 - Rs 95,000"}
+</script>
+</body> in your HTML.
 -->
 <div id="share-button-container"></div>
 
@@ -338,5 +389,8 @@
 })();
 </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"SafaiKaro","url":"https://safaikaro.pk","telephone":"+923321305389","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressRegion":"Sindh","addressCountry":"PK"},"areaServed":["DHA Karachi","Clifton Karachi"],"priceRange":"Rs 8,500 - Rs 95,000"}
+</script>
 </body>
 </html>

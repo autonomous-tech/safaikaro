@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pest control in Clifton Block 5 Karachi. Professional fumigation for apartments and homes. Cockroach, rodent, bed bug treatment. Rs 8,000 for standard apartment. 90-day guarantee. Book SafaiKaro.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://safaikaro.pk/pest-control-clifton-block-5-karachi">
+  <meta name="description" content="Pest control Clifton Block 5 Karachi. Fumigation for apartments and homes. Cockroach, rodent, bed bug treatment from Rs 8,000. 90-day guarantee. SafaiKaro.">
   <meta name="keywords" content="pest control Clifton Block 5, fumigation Clifton Block 5 Karachi, cockroach control Clifton apartments, rodent control Clifton, bed bug treatment Block 5, SafaiKaro Clifton">
   <title>Pest Control Clifton Block 5 Karachi | SafaiKaro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +141,48 @@
   </tbody>
 </table>
         </div>
+    <!-- Mobile: tab switcher -->
+    <div class="pricing-mobile" aria-label="Pricing by service">
+      <div class="price-tabs" role="tablist">
+        <button class="price-tab active" role="tab" aria-selected="true" data-tab="fumigation">Fumigation</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="termite">Termite</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="bedbug">Bed Bugs</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="rodent">Rodent</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="annual">Annual</button>
+      </div>
+      <div class="price-panels">
+        <div class="price-panel active" id="panel-fumigation" role="tabpanel">
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 8,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 11,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 16,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 24,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-termite" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 22,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 33,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 55,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 95,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-bedbug" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 12,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 17,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 28,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-rodent" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 9,500</span></div>
+        </div>
+        <div class="price-panel" id="panel-annual" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 28,000/yr</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 35,000/yr</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 52,000/yr</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 85,000/yr</span></div>
+        </div>
+      </div>
+    </div>
         <p class="pricing-note">Price confirmed before we start. Zero hidden charges. Balance paid to technician on the day.</p>
         <div style="text-align:center;margin-top:1.5rem;">
           <a href="pest-control-price-list-karachi.html" class="btn-lime btn--lg">View Full Price List &rarr;</a>
@@ -253,6 +299,8 @@
   <!-- ======================== SCRIPTS ======================== -->
   <script>
   window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10)});
+// Pricing tab switcher (mobile)
+document.querySelectorAll('.price-tab').forEach(function(btn){btn.addEventListener('click',function(){var tab=this.dataset.tab;document.querySelectorAll('.price-tab').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.price-panel').forEach(function(p){p.classList.remove('active');p.hidden=true});this.classList.add('active');this.setAttribute('aria-selected','true');var panel=document.getElementById('panel-'+tab);if(panel){panel.classList.add('active');panel.hidden=false}})});
   </script>
 
   <!-- BreadcrumbList Schema JSON-LD -->

@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SafaiKaro — Karachi ka trusted pest control. Transparent prices for DHA & Clifton. General fumigation from Rs 8,500. Same-day service, 90-day guarantee. Book online in 60 seconds.">
-  <title>SafaiKaro — Pest Control DHA &amp; Clifton Karachi | Transparent Prices, Same-Day Service</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://safaikaro.pk/">
+  <meta name="description" content="SafaiKaro — trusted pest control in DHA & Clifton Karachi. Fumigation from Rs 8,500. Same-day service, 90-day guarantee. Book online in 60 seconds.">
+  <title>SafaiKaro — Pest Control DHA & Clifton Karachi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -204,7 +208,8 @@
     <p class="section-label">Transparent Pricing</p>
     <h2 class="section-title" style="color:#6EE086">Transparent Pricing — Hamesha</h2>
     <p class="section-sub" style="color:rgba(249,248,244,0.7)">No hidden charges. Price confirmed before we start.</p>
-    <div class="table-scroll">
+    <!-- Desktop: full table -->
+    <div class="table-scroll pricing-desktop">
       <table class="pricing-table">
         <thead>
           <tr><th></th><th>Fumigation</th><th>Termite</th><th>Bed Bugs</th><th>Rodent</th><th>Annual Shield</th></tr>
@@ -216,6 +221,48 @@
           <tr><td>501&ndash;1,000 sq yds</td><td>Rs 24,000</td><td>Rs 95,000</td><td>Rs 28,000</td><td>Rs 9,500</td><td>Rs 85,000/yr</td></tr>
         </tbody>
       </table>
+    </div>
+    <!-- Mobile: tab switcher -->
+    <div class="pricing-mobile" aria-label="Pricing by service">
+      <div class="price-tabs" role="tablist">
+        <button class="price-tab active" role="tab" aria-selected="true" data-tab="fumigation">Fumigation</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="termite">Termite</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="bedbug">Bed Bugs</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="rodent">Rodent</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-tab="annual">Annual</button>
+      </div>
+      <div class="price-panels">
+        <div class="price-panel active" id="panel-fumigation" role="tabpanel">
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 8,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 11,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 16,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 24,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-termite" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 22,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 33,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 55,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 95,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-bedbug" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,000</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 12,000</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 17,000</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 28,000</span></div>
+        </div>
+        <div class="price-panel" id="panel-rodent" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 9,500</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 9,500</span></div>
+        </div>
+        <div class="price-panel" id="panel-annual" role="tabpanel" hidden>
+          <div class="price-row"><span class="price-size">Up to 100 sq yds</span><span class="price-val">Rs 28,000/yr</span></div>
+          <div class="price-row"><span class="price-size">101–200 sq yds</span><span class="price-val">Rs 35,000/yr</span></div>
+          <div class="price-row"><span class="price-size">201–500 sq yds</span><span class="price-val">Rs 52,000/yr</span></div>
+          <div class="price-row"><span class="price-size">501–1,000 sq yds</span><span class="price-val">Rs 85,000/yr</span></div>
+        </div>
+      </div>
     </div>
     <p class="pricing-note">Price confirmed before we start. Zero hidden charges. Balance paid to technician on the day.</p>
     <p class="pricing-note" style="margin-top:8px;">Not sure of your property size? <a href="https://wa.me/923321305389?text=Hi%20SafaiKaro%2C%20I%20need%20help%20with%20my%20property%20size" style="color:#6EE086;font-weight:600;">WhatsApp us</a> &mdash; we will confirm during booking.</p>
@@ -323,6 +370,8 @@
 <!-- SCRIPTS -->
 <script>
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10)},{passive:true});
+// Pricing tab switcher (mobile)
+document.querySelectorAll('.price-tab').forEach(function(btn){btn.addEventListener('click',function(){var tab=this.dataset.tab;document.querySelectorAll('.price-tab').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.price-panel').forEach(function(p){p.classList.remove('active');p.hidden=true});this.classList.add('active');this.setAttribute('aria-selected','true');var panel=document.getElementById('panel-'+tab);if(panel){panel.classList.add('active');panel.hidden=false}})});
 document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var item=this.closest('.faq-item'),wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!wasOpen){item.classList.add('open');this.setAttribute('aria-expanded','true')}})});
 </script>
 

@@ -507,6 +507,75 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
 }
 
+/* --- Pricing: Desktop/Mobile toggle --- */
+.pricing-desktop { display: block; }
+.pricing-mobile  { display: none; }
+
+@media (max-width: 767px) {
+  .pricing-desktop { display: none; }
+  .pricing-mobile  { display: block; margin-top: 28px; }
+}
+
+/* Mobile price tabs */
+.price-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.price-tab {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(110,224,134,0.4);
+  color: rgba(249,248,244,0.75);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.price-tab.active,
+.price-tab:hover {
+  background: #6EE086;
+  border-color: #6EE086;
+  color: #0D4A2F;
+}
+
+/* Mobile price panel */
+.price-panel {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #6EE086;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(13,74,47,0.08);
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-size {
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.price-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0D4A2F;
+}
+
 /* --- How It Works (Steps) --- */
 .steps {
   padding: 80px 0;
