@@ -55,6 +55,13 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 - [Price List](https://safaikaro.pk/pest-control-price-list-karachi) — Complete price list with size calculator
 - [Termite Treatment](https://safaikaro.pk/termite-treatment-new-construction-karachi) — Pre & post construction, 5-year warranty
 - [Annual Plan](https://safaikaro.pk/annual-pest-control-karachi) — Rs 35,000/yr, 4 visits + emergency
-- [DHA Karachi](https://safaikaro.pk/pest-control-dha-karachi) — All DHA phases covered
-- [Clifton Karachi](https://safaikaro.pk/pest-control-clifton-karachi) — All Clifton blocks covered
+- [DHA Karachi Hub](https://safaikaro.pk/pest-control-dha-karachi) — All DHA phases covered (Phase 1–8); individual phase URLs redirect here
+- [Clifton Karachi Hub](https://safaikaro.pk/pest-control-clifton-karachi) — All Clifton blocks covered (Block 1–9); individual block URLs redirect here
 - [Commercial](https://safaikaro.pk/commercial) — Business pest control, monthly contracts from Rs 20,000/month
+- [Blog](https://safaikaro.pk/blog/) — Pest control tips, fumigation guides, termite treatment advice
+
+## Blog Posts
+
+- [Fumigation Kya Hoti Hai?](https://safaikaro.pk/blog/fumigation-kya-hoti-hai) — Urdu guide explaining what fumigation is, how it works, when it's needed, and what to expect in a Karachi home
+- [Deemak Ka Ilaj Karachi](https://safaikaro.pk/blog/deemak-ka-ilaj-karachi) — Professional termite treatment options for Karachi homes: pre-construction vs post-construction, costs, warranty coverage
+- [Termite Proofing New Construction Karachi](https://safaikaro.pk/blog/termite-proofing-new-construction-karachi) — Builder's guide: when to apply pre-construction anti-termite treatment, cost per sq yd, and warranty terms
