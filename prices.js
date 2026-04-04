@@ -40,11 +40,11 @@ var SAFAIKARO_PRICES = {
   'mosquito-l':  12000,
   'mosquito-xl': 18000,
 
-  // Annual Shield (loss leader — locks in recurring customers)
-  'annual-s':  15000,
-  'annual-m':  20000,
-  'annual-l':  35000,
-  'annual-xl': 55000,
+  // Annual Shield (competitive but profitable)
+  'annual-s':  18000,
+  'annual-m':  24000,
+  'annual-l':  40000,
+  'annual-xl': 65000,
 
   // Deposit
   'deposit': 500
