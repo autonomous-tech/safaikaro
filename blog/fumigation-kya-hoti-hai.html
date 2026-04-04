@@ -269,7 +269,7 @@
         "name": "Pakistan mein fumigation ki cost kitni hai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Karachi mein general fumigation Rs 8,500 se shuru hoti hai (1 bedroom flat). Termite treatment Rs 22,000 se, bed bug treatment Rs 9,000 se. Exact pricing property size pe depend karti hai. SafaiKaro ki transparent pricing list /pest-control-price-list-karachi pe available hai."
+          "text": "Karachi mein general fumigation Rs 7,500 se shuru hoti hai (1 bedroom flat). Termite treatment Rs 20,000 se, bed bug treatment Rs 9,500 se. Exact pricing property size pe depend karti hai. SafaiKaro ki transparent pricing list /pest-control-price-list-karachi pe available hai."
         }
       },
       {
@@ -453,12 +453,12 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <tr>
         <td>General Fumigation</td>
         <td>Small home (up to 100 sq yd)</td>
-        <td>Rs 8,500 se</td>
+        <td><span data-price="fumigation-s">Rs 7,500</span> se</td>
       </tr>
       <tr>
         <td>General Fumigation</td>
         <td>Medium (101–200 sq yd)</td>
-        <td>Rs 11,000 se</td>
+        <td><span data-price="fumigation-m">Rs 9,500</span> se</td>
       </tr>
       <tr>
         <td>General Fumigation</td>
@@ -468,12 +468,12 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <tr>
         <td>Termite Treatment</td>
         <td>Up to 100 sq yds</td>
-        <td>Rs 22,000 se</td>
+        <td><span data-price="termite-s">Rs 20,000</span> se</td>
       </tr>
       <tr>
         <td>Bed Bug Treatment</td>
         <td>Per Bedroom</td>
-        <td>Rs 9,000 se</td>
+        <td><span data-price="bedbug-s">Rs 9,500</span> se</td>
       </tr>
     </tbody>
   </table>
@@ -558,7 +558,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Pakistan mein fumigation ki cost kitni hai? <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7l5 5 5-5"/></svg></button>
-        <div class="faq-a">Karachi mein general fumigation Rs 8,500 se shuru hoti hai (1 bedroom flat). Termite treatment Rs 22,000 se, bed bug treatment Rs 9,000 se per bedroom. Exact pricing property size pe depend karti hai. Full list ke liye <a href="/pest-control-price-list-karachi">pricing page dekhein</a>.</div>
+        <div class="faq-a">Karachi mein general fumigation <span data-price="fumigation-s">Rs 7,500</span> se shuru hoti hai (1 bedroom flat). Termite treatment <span data-price="termite-s">Rs 20,000</span> se, bed bug treatment <span data-price="bedbug-s">Rs 9,500</span> se per bedroom. Exact pricing property size pe depend karti hai. Full list ke liye <a href="/pest-control-price-list-karachi">pricing page dekhein</a>.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Kya fumigation bachchon ke liye safe hai? <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7l5 5 5-5"/></svg></button>
@@ -607,7 +607,6 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <p>PPCP Certified</p>
       <p>EPA Pakistan Registered</p>
       <p>Sindh EPA Certified</p>
-      <p>FBR Registered</p>
     </div>
   </div>
   <div class="footer-bottom">&copy; SafaiKaro 2025. All rights reserved.</div>
@@ -631,6 +630,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
 </script>
 
 <style>.nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}.nav-links.open a{font-size:1rem;padding:8px 0}</style>
+<script src="/prices.js"></script>
 
 </body>
 </html>

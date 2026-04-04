@@ -354,7 +354,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       "name": "What is pre-construction vs post-construction termite treatment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pre-construction termite treatment applies a chemical barrier to the soil before the foundation slab is poured, preventing termites from ever entering through the ground. Post-construction treatment is done after the building is complete — it involves drilling holes into floors and walls to inject termiticide. Pre-construction is more effective, cheaper (Rs 20-30 per sq ft), and involves zero disruption to residents. Post-construction costs more (starting from Rs 22,000) and requires drilling."
+        "text": "Pre-construction termite treatment applies a chemical barrier to the soil before the foundation slab is poured, preventing termites from ever entering through the ground. Post-construction treatment is done after the building is complete — it involves drilling holes into floors and walls to inject termiticide. Pre-construction is more effective, cheaper (Rs 20-30 per sq ft), and involves zero disruption to residents. Post-construction costs more (starting from Rs 20,000) and requires drilling."
       }
     },
     {
@@ -517,7 +517,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           <tr>
             <td>Cost</td>
             <td class="highlight">Rs&nbsp;20&ndash;30 per sq ft</td>
-            <td>Rs&nbsp;22,000+ (by property size)</td>
+            <td><span data-price="termite-s">Rs&nbsp;20,000</span>+ (by property size)</td>
           </tr>
           <tr>
             <td>Effectiveness</td>
@@ -724,7 +724,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What is pre-construction vs post-construction termite treatment? <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7l5 5 5-5"/></svg></button>
-          <div class="faq-a">Pre-construction treatment applies a chemical soil barrier before the foundation slab is poured &mdash; it protects from below. Post-construction treatment is done after the building is complete, requiring drilling into finished floors and walls to inject termiticide. Pre-construction is cheaper (Rs&nbsp;20&ndash;30/sq ft), more effective (95%+ coverage), and involves zero disruption. Post-construction starts from Rs&nbsp;22,000 and requires drilling.</div>
+          <div class="faq-a">Pre-construction treatment applies a chemical soil barrier before the foundation slab is poured &mdash; it protects from below. Post-construction treatment is done after the building is complete, requiring drilling into finished floors and walls to inject termiticide. Pre-construction is cheaper (Rs&nbsp;20&ndash;30/sq ft), more effective (95%+ coverage), and involves zero disruption. Post-construction starts from <span data-price="termite-s">Rs&nbsp;20,000</span> and requires drilling.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How much does termite proofing cost per square foot in Pakistan? <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7l5 5 5-5"/></svg></button>
@@ -778,7 +778,6 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <p>PPCP Certified</p>
       <p>EPA Pakistan Registered</p>
       <p>Sindh EPA Certified</p>
-      <p>FBR Registered</p>
     </div>
   </div>
   <div class="footer-bottom">&copy; SafaiKaro 2025. All rights reserved.</div>
@@ -848,6 +847,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
   });
 })();
 </script>
+<script src="/prices.js"></script>
 
 </body>
 </html>

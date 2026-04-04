@@ -469,32 +469,32 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <div class="service-card" data-service="General Fumigation" data-icon="🏠" onclick="selectService(this)">
         <span class="service-card__icon">🏠</span>
         <span class="service-card__name">General Fumigation</span>
-        <span class="service-card__price">from Rs 8,500</span>
+        <span class="service-card__price">from <span data-price="fumigation-s">Rs 7,500</span></span>
       </div>
       <div class="service-card" data-service="Termite Treatment" data-icon="🐛" onclick="selectService(this)">
         <span class="service-card__icon">🐛</span>
         <span class="service-card__name">Termite Treatment</span>
-        <span class="service-card__price">from Rs 22,000</span>
+        <span class="service-card__price">from <span data-price="termite-s">Rs 20,000</span></span>
       </div>
       <div class="service-card" data-service="Bed Bug Treatment" data-icon="🛏️" onclick="selectService(this)">
         <span class="service-card__icon">🛏️</span>
         <span class="service-card__name">Bed Bug Treatment</span>
-        <span class="service-card__price">from Rs 9,000</span>
+        <span class="service-card__price">from <span data-price="bedbug-s">Rs 9,500</span></span>
       </div>
       <div class="service-card" data-service="Rodent Control" data-icon="🐀" onclick="selectService(this)">
         <span class="service-card__icon">🐀</span>
         <span class="service-card__name">Rodent Control</span>
-        <span class="service-card__price">Rs 9,500</span>
+        <span class="service-card__price"><span data-price="rodent">Rs 8,500</span></span>
       </div>
       <div class="service-card" data-service="Mosquito Control" data-icon="🦟" onclick="selectService(this)">
         <span class="service-card__icon">🦟</span>
         <span class="service-card__name">Mosquito Control</span>
-        <span class="service-card__price">from Rs 8,500</span>
+        <span class="service-card__price">from <span data-price="fumigation-s">Rs 7,500</span></span>
       </div>
       <div class="service-card" data-service="Annual Shield Plan" data-icon="🛡️" onclick="selectService(this)">
         <span class="service-card__icon">🛡️</span>
         <span class="service-card__name">Annual Shield Plan</span>
-        <span class="service-card__price">from Rs 28,000/yr</span>
+        <span class="service-card__price">from <span data-price="annual-s">Rs 15,000</span>/yr</span>
       </div>
     </div>
     <p class="field-error" id="err1">Please select a service to continue.</p>
@@ -710,11 +710,11 @@ var B = {
 
 // ── Price table ──
 var PRICES = {
-  'General Fumigation':  {'Up to 100 sq yds':8500,'101–200 sq yds':11000,'201–500 sq yds':16000,'501–1,000 sq yds':24000},
-  'Termite Treatment':   {'Up to 100 sq yds':22000,'101–200 sq yds':33000,'201–500 sq yds':55000,'501–1,000 sq yds':95000},
-  'Bed Bug Treatment':   {'Up to 100 sq yds':9000,'101–200 sq yds':12000,'201–500 sq yds':17000,'501–1,000 sq yds':28000},
-  'Rodent Control':      {'Up to 100 sq yds':9500,'101–200 sq yds':9500,'201–500 sq yds':9500,'501–1,000 sq yds':9500},
-  'Annual Shield Plan':  {'Up to 100 sq yds':28000,'101–200 sq yds':35000,'201–500 sq yds':52000,'501–1,000 sq yds':85000}
+  'General Fumigation':  {'Up to 100 sq yds':7500,'101–200 sq yds':9500,'201–500 sq yds':14000,'501–1,000 sq yds':20000},
+  'Termite Treatment':   {'Up to 100 sq yds':20000,'101–200 sq yds':30000,'201–500 sq yds':50000,'501–1,000 sq yds':85000},
+  'Bed Bug Treatment':   {'Up to 100 sq yds':9500,'101–200 sq yds':12000,'201–500 sq yds':17000,'501–1,000 sq yds':25000},
+  'Rodent Control':      {'Up to 100 sq yds':8500,'101–200 sq yds':8500,'201–500 sq yds':8500,'501–1,000 sq yds':8500},
+  'Annual Shield Plan':  {'Up to 100 sq yds':22000,'101–200 sq yds':28000,'201–500 sq yds':45000,'501–1,000 sq yds':75000}
 };
 
 var currentStep = 1;
@@ -880,10 +880,11 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"SafaiKaro","url":"https://safaikaro.pk","telephone":"+923321305389","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressRegion":"Sindh","addressCountry":"PK"},"areaServed":["DHA Karachi","Clifton Karachi"],"priceRange":"Rs 8,500 - Rs 95,000"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"SafaiKaro","url":"https://safaikaro.pk","telephone":"+923321305389","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressRegion":"Sindh","addressCountry":"PK"},"areaServed":["DHA Karachi","Clifton Karachi"],"priceRange":"Rs 7,500 - Rs 85,000"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://safaikaro.pk/"},{"@type":"ListItem","position":2,"name":"Book Pest Control","item":"https://safaikaro.pk/book"}]}
 </script>
+<script src="/prices.js"></script>
 </body>
 </html>
