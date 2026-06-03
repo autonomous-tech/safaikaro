@@ -1,0 +1,77 @@
+name: IndexNow auto-submit
+
+# Notifies IndexNow (Bing, Yandex, Seznam, Naver) whenever published HTML changes.
+# The key is public by design (it's served at https://safaikaro.pk/<key>.txt), so it
+# lives here in the clear — no secret needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Submit changed URLs to IndexNow
+        env:
+          KEY: 3471ccdf2f32405cadb79d5f584c51d1b640e14fa1754651b30a63fad3ea5318
+          HOST: safaikaro.pk
+          # GitHub context passed through env (never interpolated in run:) to avoid injection
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          # Which HTML files changed in this push? (added/copied/modified/renamed)
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            CHANGED=$(git ls-files '*.html')
+          else
+            CHANGED=$(git diff --name-only --diff-filter=ACMR "$BEFORE_SHA" "$AFTER_SHA" -- '*.html' 2>/dev/null || git ls-files '*.html')
+          fi
+          if [ -z "$CHANGED" ]; then echo "No HTML changes — nothing to submit."; exit 0; fi
+
+          # Map each file path to its canonical clean URL
+          URLS=()
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            p="${f%.html}"
+            if [ "$p" = "index" ]; then
+              u="https://$HOST/"
+            elif [ "${p##*/}" = "index" ]; then
+              u="https://$HOST/${p%index}"
+            else
+              u="https://$HOST/$p"
+            fi
+            URLS+=("$u")
+          done <<< "$CHANGED"
+
+          echo "Submitting ${#URLS[@]} URL(s):"
+          printf '  %s\n' "${URLS[@]}"
+
+          # Give GitHub Pages a moment to publish the new content before engines crawl
+          sleep 60
+
+          LIST=$(printf '%s\n' "${URLS[@]}" | jq -R . | jq -s .)
+          BODY=$(jq -n --arg host "$HOST" --arg key "$KEY" \
+                       --arg loc "https://$HOST/$KEY.txt" --argjson urlList "$LIST" \
+                       '{host:$host, key:$key, keyLocation:$loc, urlList:$urlList}')
+
+          code=$(curl -s -o /tmp/indexnow_resp -w '%{http_code}' \
+                 -X POST 'https://api.indexnow.org/indexnow' \
+                 -H 'Content-Type: application/json; charset=utf-8' \
+                 -d "$BODY")
+          echo "IndexNow response: HTTP $code"
+          cat /tmp/indexnow_resp 2>/dev/null || true
+          case "$code" in
+            200|202) echo "Accepted." ;;
+            *) echo "::warning::IndexNow returned $code (non-fatal)" ;;
+          esac
