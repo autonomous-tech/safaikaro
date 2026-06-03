@@ -15,6 +15,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Service + Offer (Annual Plan) Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Annual Pest Control Plan (Annual Shield) — Karachi",
+    "serviceType": "Annual pest control / preventive maintenance plan",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "SafaiKaro",
+      "url": "https://safaikaro.pk",
+      "telephone": "+92 332 1305389",
+      "priceRange": "Rs 18,000 - Rs 65,000"
+    },
+    "areaServed": { "@type": "City", "name": "Karachi" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "PKR",
+      "lowPrice": "18000",
+      "highPrice": "65000",
+      "offerCount": "4"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SafaiKaro Annual Shield Plans",
+      "itemListElement": [
+        { "@type": "Offer", "priceCurrency": "PKR", "price": "18000", "itemOffered": { "@type": "Service", "name": "Annual Shield — up to 100 sq yd (4 visits + 1 emergency callout)" } },
+        { "@type": "Offer", "priceCurrency": "PKR", "price": "24000", "itemOffered": { "@type": "Service", "name": "Annual Shield — 101–200 sq yd" } },
+        { "@type": "Offer", "priceCurrency": "PKR", "price": "40000", "itemOffered": { "@type": "Service", "name": "Annual Shield — 201–500 sq yd" } },
+        { "@type": "Offer", "priceCurrency": "PKR", "price": "65000", "itemOffered": { "@type": "Service", "name": "Annual Shield — 501–1,000 sq yd" } }
+      ]
+    }
+  }
+  </script>
+
   <!-- FAQPage Schema -->
   <script type="application/ld+json">
   {
