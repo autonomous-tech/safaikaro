@@ -1497,3 +1497,8 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(110,224,134,0.15);
   color: #0D4A2F;
 }
+
+/* Brand emblem in nav (added with logo refresh) */
+.logo{display:inline-flex;align-items:center;gap:8px}
+.logo img{height:32px;width:32px;border-radius:7px;display:block}
+.footer-brand .logo img{display:none}
