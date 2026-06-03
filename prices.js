@@ -97,3 +97,26 @@ var SAFAIKARO_PRICES = {
     populatePrices();
   }
 })();
+
+/**
+ * Conversion tracking via PostHog (already initialised on every page).
+ * One delegated click listener captures WhatsApp / Book / Call intent
+ * across the whole site — no per-link wiring needed.
+ * Events: whatsapp_click, book_click, call_click  { path, text }
+ */
+(function () {
+  if (typeof document === 'undefined') return;
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a || !window.posthog || typeof posthog.capture !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    var props = { path: location.pathname, text: (a.textContent || '').trim().slice(0, 60) };
+    if (href.indexOf('wa.me') !== -1 || href.toLowerCase().indexOf('whatsapp') !== -1) {
+      posthog.capture('whatsapp_click', props);
+    } else if (href === '/book' || href.indexOf('/book') === 0) {
+      posthog.capture('book_click', props);
+    } else if (href.indexOf('tel:') === 0) {
+      posthog.capture('call_click', props);
+    }
+  }, true);
+})();
