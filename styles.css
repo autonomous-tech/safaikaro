@@ -1502,3 +1502,11 @@ h1, h2, h3, h4, h5, h6 {
 .logo{display:inline-flex;align-items:center;gap:8px}
 .logo img{height:32px;width:32px;border-radius:7px;display:block}
 .footer-brand .logo img{display:none}
+
+/* E-E-A-T author / about-founder box (blog posts) */
+.author-box{display:flex;gap:16px;align-items:flex-start;background:#F9F8F4;border:3px solid #0D4A2F;border-radius:8px;padding:20px 22px;margin:40px auto;max-width:760px}
+.author-box__photo{border-radius:50%;display:block;flex-shrink:0;object-fit:cover}
+.author-box__by{font-family:'Sora',sans-serif;font-weight:700;color:#0D4A2F;margin:0 0 6px}
+.author-box__bio{font-size:.9rem;color:#374151;line-height:1.6;margin:0}
+.author-box__bio a{color:#0D4A2F;font-weight:600}
+@media (max-width:479px){.author-box{flex-direction:column;gap:12px}}
