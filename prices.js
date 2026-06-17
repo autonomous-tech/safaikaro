@@ -99,10 +99,19 @@ var SAFAIKARO_PRICES = {
 })();
 
 /**
- * Conversion tracking via PostHog (already initialised on every page).
- * One delegated click listener captures WhatsApp / Book / Call intent
- * across the whole site — no per-link wiring needed.
- * Events: whatsapp_click, book_click, call_click  { path, text }
+ * Conversion tracking via PostHog (initialised on every page).
+ * One delegated, capture-phase click listener records WhatsApp / Book / Call
+ * intent across the whole site — no per-link wiring needed.
+ *
+ * WHY sendBeacon: these CTAs navigate the SAME tab (wa.me, /book). A normal
+ * async capture() is cancelled when the browser unloads to WhatsApp / /book
+ * before the request is sent, so the event is lost (this is why only the
+ * target="_blank" float used to register). transport:'sendBeacon' +
+ * send_instantly hands the event to the browser's beacon queue, which is
+ * delivered even as the page unloads. No preventDefault — the link is never
+ * blocked, so a tracking failure can never break a CTA.
+ *
+ * Events: whatsapp_click, book_click, call_click  { path, text, href }
  */
 (function () {
   if (typeof document === 'undefined') return;
@@ -110,13 +119,22 @@ var SAFAIKARO_PRICES = {
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
     if (!a || !window.posthog || typeof posthog.capture !== 'function') return;
     var href = a.getAttribute('href') || '';
-    var props = { path: location.pathname, text: (a.textContent || '').trim().slice(0, 60) };
-    if (href.indexOf('wa.me') !== -1 || href.toLowerCase().indexOf('whatsapp') !== -1) {
-      posthog.capture('whatsapp_click', props);
-    } else if (href === '/book' || href.indexOf('/book') === 0) {
-      posthog.capture('book_click', props);
-    } else if (href.indexOf('tel:') === 0) {
-      posthog.capture('call_click', props);
+    var lower = href.toLowerCase();
+    var event = null;
+    if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
+      event = 'whatsapp_click';
+    } else if (lower.indexOf('tel:') === 0) {
+      event = 'call_click';
+    } else if (href === '/book' || href.indexOf('/book') === 0 || /\/book(\/|\?|#|$)/.test(href)) {
+      // matches /book, /book/, /book?..., and absolute https://safaikaro.pk/book
+      event = 'book_click';
+    }
+    if (!event) return;
+    var props = { path: location.pathname, text: (a.textContent || '').trim().slice(0, 60), href: href };
+    try {
+      posthog.capture(event, props, { transport: 'sendBeacon', send_instantly: true });
+    } catch (_) {
+      posthog.capture(event, props); // fallback: never let tracking throw into the click path
     }
   }, true);
 })();
