@@ -4,167 +4,177 @@
   <!-- Core pages -->
   <url>
     <loc>https://safaikaro.pk/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/book</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/pest-control-price-list-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/termite-treatment-new-construction-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://safaikaro.pk/annual-pest-control-karachi</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://safaikaro.pk/fumigation-services-karachi</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://safaikaro.pk/commercial</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/fumigation-certificate-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://safaikaro.pk/annual-pest-control-karachi</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/mosquito-dengue-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/cockroach-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/rodent-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/bed-bug-treatment-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/bee-wasp-removal-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/ant-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/lizard-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://safaikaro.pk/fumigation-certificate-karachi</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://safaikaro.pk/school-fumigation-service-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/restaurant-pest-control-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Area hub pages -->
   <url>
     <loc>https://safaikaro.pk/pest-control-dha-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/pest-control-clifton-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/commercial</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Blog posts -->
   <url>
-    <loc>https://safaikaro.pk/blog/fumigation-kya-hoti-hai</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://safaikaro.pk/blog/khatmal-ka-ilaj-karachi</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/blog/deemak-ka-ilaj-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://safaikaro.pk/blog/khatmal-ka-ilaj-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/blog/fumigation-machine-price-pakistan</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/blog/dengue-se-bachao-karachi</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/blog/ghar-ko-fumigation-ke-liye-tayar-karna</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/blog/fumigation-bachon-pets-ke-liye-safe</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://safaikaro.pk/blog/fumigation-vs-pest-control-farq</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://safaikaro.pk/blog/fumigation-kya-hoti-hai</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safaikaro.pk/blog/termite-proofing-new-construction-karachi</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/dengue-se-bachao-karachi</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/fumigation-machine-price-pakistan</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/fumigation-vs-pest-control-farq</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/fumigation-bachon-pets-ke-liye-safe</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safaikaro.pk/blog/ghar-ko-fumigation-ke-liye-tayar-karna</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

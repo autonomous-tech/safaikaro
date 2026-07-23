@@ -1,0 +1,91 @@
+name: Regenerate SEO files
+
+# Keeps sitemap.xml / llms.txt / llms-full.txt derived from the live site
+# instead of hand-maintained (see tools/generate-seo-files.py). Runs the
+# generator on every push to main and auto-commits the result if it changed.
+#
+# Loop guard (two checks, both evaluated in shell via env: vars, never
+# interpolated directly into an expression or command — the head commit
+# message is untrusted input):
+#   1. Skip if the head commit message contains "[skip-regen]" (the marker
+#      this workflow's own commits carry).
+#   2. Skip if the push only touched the three generated files (i.e. it was
+#      this workflow's own commit, or a manual regen commit with nothing
+#      else to react to).
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Loop guard — head commit message
+        id: msg_guard
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+          case "$COMMIT_MESSAGE" in
+            *"[skip-regen]"*)
+              echo "Head commit message contains [skip-regen] — skipping."
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "skip=false" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - uses: actions/checkout@v4
+        if: steps.msg_guard.outputs.skip != 'true'
+        with:
+          fetch-depth: 0
+
+      - name: Loop guard — only generated files changed
+        id: diff_guard
+        if: steps.msg_guard.outputs.skip != 'true'
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          CHANGED=$(git diff --name-only "$BEFORE_SHA" "$AFTER_SHA" || true)
+          OTHER=$(echo "$CHANGED" | grep -v -E '^(sitemap\.xml|llms\.txt|llms-full\.txt)$' || true)
+          if [ -z "$OTHER" ]; then
+            echo "Push only touched generated files — skipping to avoid a regen loop."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        if: steps.msg_guard.outputs.skip != 'true' && steps.diff_guard.outputs.skip != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate sitemap.xml / llms.txt / llms-full.txt
+        if: steps.msg_guard.outputs.skip != 'true' && steps.diff_guard.outputs.skip != 'true'
+        run: python3 tools/generate-seo-files.py
+
+      - name: Commit regenerated files if changed
+        if: steps.msg_guard.outputs.skip != 'true' && steps.diff_guard.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sitemap.xml llms.txt llms-full.txt; then
+            echo "No changes to generated files — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml llms.txt llms-full.txt
+          git commit -m "chore: regenerate sitemap/llms [skip-regen]"
+          git push
