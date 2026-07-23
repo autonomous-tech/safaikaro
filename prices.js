@@ -5,34 +5,47 @@
  * All pages auto-populate from this file via [data-price] attributes.
  *
  * Usage in HTML:
- *   <span data-price="fumigation-s">Rs 7,500</span>
- *   <span data-price="termite-l">Rs 50,000</span>
+ *   <span data-price="fumigation-s">Rs 7,000</span>
+ *   <span data-price="termite-ml">Rs 20,000</span>
  *   <span data-price="annual-s-monthly">Rs 1,833</span>
  *
  * The inner text is a fallback if JS doesn't load.
  */
 
+// Five size tiers per service (all at 50% markup over cost):
+//   -s  = up to 100 sq yd     -m  = 101–200 sq yd     -ml = 201–300 sq yd
+//   -l  = 301–500 sq yd       -xl = 501–1,000 sq yd
 var SAFAIKARO_PRICES = {
   // General Fumigation
-  'fumigation-s':  7500,   // ≤100 sq yd
-  'fumigation-m':  9500,   // 101–200 sq yd
-  'fumigation-l':  14000,  // 201–500 sq yd
-  'fumigation-xl': 20000,  // 501–1,000 sq yd
+  'fumigation-s':  7000,   // ≤100 sq yd — cost 3000
+  'fumigation-m':  11000,  // 101–200 sq yd — cost 5000
+  'fumigation-ml': 13000,  // 201–300 sq yd — cost 6000
+  'fumigation-l':  16000,  // 301–500 sq yd — cost 7500
+  'fumigation-xl': 20000,  // 501–1,000 sq yd — cost 9500
 
   // Termite Treatment
-  'termite-s':  20000,
-  'termite-m':  30000,
-  'termite-l':  50000,
-  'termite-xl': 85000,
+  'termite-s':  13000,  // ≤100 sq yd — cost 6000
+  'termite-m':  17000,  // 101–200 sq yd — cost 8000
+  'termite-ml': 20000,  // 201–300 sq yd — cost 9500
+  'termite-l':  27000,  // 301–500 sq yd — cost 13000
+  'termite-xl': 37000,  // 501–1,000 sq yd — cost 18000
 
   // Bed Bug Treatment
-  'bedbug-s':  9500,
-  'bedbug-m':  12000,
-  'bedbug-l':  17000,
-  'bedbug-xl': 25000,
+  'bedbug-s':  11000,  // ≤100 sq yd — cost 5000
+  'bedbug-m':  14000,  // 101–200 sq yd — cost 6500
+  'bedbug-ml': 17000,  // 201–300 sq yd — cost 8000
+  'bedbug-l':  23000,  // 301–500 sq yd — cost 11000
+  'bedbug-xl': 29000,  // 501–1,000 sq yd — cost 14000
 
-  // Rodent Control (flat rate)
-  'rodent': 8500,
+  // Rodent Control (tiered by property size, 2 visits included)
+  'rodent-s':  13000,  // ≤100 sq yd — cost 6000
+  'rodent-m':  16000,  // 101–200 sq yd — cost 7500
+  'rodent-ml': 18000,  // 201–300 sq yd — cost 8500
+  'rodent-l':  21000,  // 301–500 sq yd — cost 10000
+  'rodent-xl': 29000,  // 501–1,000 sq yd — cost 14000
+  // Legacy alias — resolves to base tier so any missed old
+  // data-price="rodent" reference still renders a valid price.
+  'rodent': 13000,
 
   // Mosquito Control
   'mosquito-s':  6000,
