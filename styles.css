@@ -196,6 +196,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
 }
 
+/* Desktop-only phone link — wa.me is high-friction on desktop (WhatsApp Web login) */
+.nav-phone {
+  display: none;
+  color: #0D4A2F;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: auto;
+  padding: 8px 12px;
+}
+.nav-phone:hover { color: #0A3A25; text-decoration: underline; }
+@media (min-width: 768px) {
+  .nav-phone { display: inline-block; }
+  .nav-phone + .nav-cta { margin-left: 0; }
+}
+
 .hamburger {
   display: none;
   background: none;
@@ -874,7 +891,9 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.8;
 }
 
-/* --- WhatsApp Float --- */
+/* --- WhatsApp Float ---
+   White halo + label pill: the green circle alone camouflages against the
+   dark-green hero + technician uniform imagery, killing desktop clicks. */
 .wa-float {
   position: fixed;
   bottom: 90px;
@@ -886,14 +905,39 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 6px 20px rgba(0,0,0,0.35);
   z-index: 200;
-  border: 3px solid white;
+  border: none;
   transition: transform 0.2s;
+  animation: wa-pulse 2.2s ease-out 1.5s 3;
 }
 
 .wa-float:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
+}
+
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 6px 20px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0.55); }
+  70%  { box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 6px 20px rgba(0,0,0,0.35), 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 6px 20px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* Desktop: label the button — text reads where an icon disappears */
+@media (min-width: 768px) {
+  .wa-float {
+    width: auto;
+    padding: 0 22px 0 16px;
+    gap: 10px;
+    border-radius: 32px;
+  }
+  .wa-float::after {
+    content: "WhatsApp Us";
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
 }
 
 /* --- Mobile Bottom Bar --- */
