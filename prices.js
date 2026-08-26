@@ -94,8 +94,11 @@ var SAFAIKARO_PRICES = {
   function updateSchemaPrice(obj) {
     var changed = false;
     // Update offers.price or priceRange
-    if (obj && obj['@type'] === 'LocalBusiness' || obj && obj['@type'] === 'PestControlService') {
-      if (obj.priceRange) {
+    if (obj && (obj['@type'] === 'LocalBusiness' || obj['@type'] === 'PestControlService')) {
+      // Only re-sync the generic sitewide range (fumigation-s .. termite-xl).
+      // Pages with a service-specific priceRange (e.g. bed bugs 11,000-29,000)
+      // keep their own — overwriting them broke rich-result pricing on 9 pages.
+      if (obj.priceRange && /7,?000/.test(obj.priceRange) && /37,?000/.test(obj.priceRange)) {
         obj.priceRange = 'Rs ' + SAFAIKARO_PRICES['fumigation-s'].toLocaleString('en-PK') + ' – Rs ' + SAFAIKARO_PRICES['termite-xl'].toLocaleString('en-PK');
         changed = true;
       }
