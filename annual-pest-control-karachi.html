@@ -8,7 +8,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://safaikaro.pk/annual-pest-control-karachi">
-  <title>Annual Pest Control Karachi (AMC): From Rs 18,000/yr | SafaiKaro</title>
+  <title>Monthly Pest Control Contract &amp; Annual Plan (AMC) Karachi | SafaiKaro</title>
   <meta name="description" content="SafaiKaro Annual Shield: annual maintenance contract (AMC), 4 quarterly visits + 1 emergency callout from Rs 18,000/yr. Monthly pest control contract also available for businesses. Save up to Rs 24,000.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +155,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SafaiKaro">
-  <meta property="og:title" content="Annual Pest Control Karachi (AMC): From Rs 18,000/yr | SafaiKaro">
+  <meta property="og:title" content="Monthly Pest Control Contract &amp; Annual Plan (AMC) Karachi | SafaiKaro">
   <meta property="og:description" content="SafaiKaro Annual Shield: annual maintenance contract (AMC), 4 quarterly visits + 1 emergency callout from Rs 18,000/year. Monthly pest control contract also available for businesses.">
   <meta property="og:image" content="https://safaikaro.pk/images/og-annual.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -166,7 +166,7 @@
   <meta property="og:locale" content="en_PK">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Annual Pest Control Karachi (AMC): From Rs 18,000/yr | SafaiKaro">
+  <meta name="twitter:title" content="Monthly Pest Control Contract &amp; Annual Plan (AMC) Karachi | SafaiKaro">
   <meta name="twitter:description" content="SafaiKaro Annual Shield: annual maintenance contract (AMC), 4 quarterly visits + 1 emergency callout from Rs 18,000/year. Monthly pest control contract also available for businesses.">
   <meta name="twitter:image" content="https://safaikaro.pk/images/og-annual.jpg">
   <meta name="twitter:image:alt" content="Annual Pest Control Plan Karachi — From Rs 18,000/yr | SafaiKaro">
@@ -304,13 +304,13 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </section>
 
     <!-- 3b. Monthly Contract / AMC for Businesses -->
-    <section class="section-block section-alt">
+    <section class="section-block section-alt" id="business-amc">
       <div class="container">
         <div class="section-header">
           <h2>Monthly Pest Control Contract &amp; AMC for Businesses</h2>
           <p>Annual Shield above is our home plan, priced by property size. Businesses that need a monthly pest control contract or an annual maintenance contract (AMC) with an itemized scope of work across a shop, office, or full building are quoted after a site assessment.</p>
         </div>
-        <p style="max-width:700px; margin:0 auto; text-align:center; color:#374151; line-height:1.8;">A commercial monthly contract or AMC includes scheduled visits, a fresh treatment record each visit, and priority response on one invoice. For pricing and scope on a shop, restaurant, school, or multi-floor building, see <a href="/commercial" style="color:#0D4A2F; text-decoration:underline;">commercial pest control in Karachi</a>.</p>
+        <p style="max-width:700px; margin:0 auto; text-align:center; color:#374151; line-height:1.8;">A commercial monthly contract or AMC includes scheduled visits, a fresh treatment record each visit, and priority response on one invoice. For pricing and scope on a shop, school, or multi-floor building, see <a href="/commercial" style="color:#0D4A2F; text-decoration:underline;">commercial pest control in Karachi</a>.</p>
       </div>
     </section>
 
@@ -522,20 +522,6 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     });
   </script>
 
-<!-- 
-  SHARE Button Component for Autonomous Proposals
-  
-  This component creates a shareable link for the current document.
-  Only visible to authenticated users with Cloudflare Access.
-  
-  USAGE: Copy this entire block and paste it before <script>
-(function(){
-  var nav=document.getElementById('navbar');
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',window.scrollY>10);
-  });
-})();
-</script>
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -556,168 +542,9 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     ]
   }
   </script>
-</body> in your HTML.
--->
+
 <div id="share-button-container"></div>
-
-<script>
-(function() {
-  'use strict';
-  
-  // Check if user is authenticated (CF Access cookie present)
-  function isAuthenticated() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('CF_Authorization='));
-  }
-  
-  // Only render button if authenticated
-  if (!isAuthenticated()) {
-    return;
-  }
-  
-  // Create button HTML
-  const container = document.getElementById('share-button-container');
-  if (!container) return;
-  
-  container.innerHTML = `
-    <style>
-      #share-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        background: linear-gradient(135deg, #00d5ff 0%, #b42aff 100%);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(180, 42, 255, 0.3);
-        transition: all 0.2s;
-        z-index: 9999;
-        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-      }
-      
-      #share-btn:hover {
-        box-shadow: 0 4px 12px rgba(180, 42, 255, 0.5);
-        transform: translateY(-1px);
-      }
-      
-      #share-btn:disabled {
-        background: #94a3b8;
-        cursor: not-allowed;
-        transform: none;
-      }
-      
-      .share-toast {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        padding: 12px 20px;
-        background: #10b981;
-        color: white;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        z-index: 10000;
-        animation: slideIn 0.3s ease-out;
-        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-      }
-      
-      @keyframes slideIn {
-        from {
-          transform: translateX(400px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      
-      .share-error {
-        background: #ef4444;
-      }
-    </style>
-    
-    <button id="share-btn">
-      📤 SHARE
-    </button>
-  `;
-  
-  const btn = document.getElementById('share-btn');
-  
-  // Handle click
-  btn.addEventListener('click', async function() {
-    btn.disabled = true;
-    btn.textContent = '⏳ Generating...';
-    
-    try {
-      // Get current page path
-      const path = window.location.pathname;
-      
-      // Get CF Access token from cookie
-      const cfToken = document.cookie.split(';')
-        .find(c => c.trim().startsWith('CF_Authorization='))
-        ?.split('=')[1];
-      
-      if (!cfToken) {
-        throw new Error('Not authenticated');
-      }
-      
-      // Call share API with token in header
-      const response = await fetch('https://share.autonomoustech.ca/api/share', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CF-Authorization': cfToken,
-        },
-        body: JSON.stringify({ path })
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to generate share link');
-      }
-      
-      const data = await response.json();
-      
-      // Copy to clipboard
-      await navigator.clipboard.writeText(data.url);
-      
-      // Show success toast
-      showToast('✅ Link copied to clipboard!');
-      
-    } catch (error) {
-      console.error('Share error:', error);
-      showToast('❌ Failed to generate link', true);
-    } finally {
-      btn.disabled = false;
-      btn.textContent = '📤 SHARE';
-    }
-  });
-  
-  function showToast(message, isError = false) {
-    const toast = document.createElement('div');
-    toast.className = 'share-toast' + (isError ? ' share-error' : '');
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    
-    setTimeout(() => {
-      toast.remove();
-    }, 3000);
-  }
-})();
-</script>
-
-<script>
-(function(){
-  var nav=document.getElementById('navbar');
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',window.scrollY>10);
-  });
-})();
-</script>
+<script src="/share-button.js"></script>
 <script src="/prices.js"></script><script src="/wa-desktop.js" defer></script>
 </body>
 </html>
