@@ -788,6 +788,8 @@ function goNext(fromStep) {
   } else if (fromStep === 2) {
     B.area = document.getElementById('areaSelect').value;
     if (!B.area || !B.propType || !B.propSize) { showErr('err2'); return; }
+    // autocapture can't read <select> option values, so name the area explicitly
+    if (window.posthog) posthog.capture('booking_area_selected', { area: B.area });
     showStep(3);
   } else if (fromStep === 3) {
     if (!B.date || !B.time) { showErr('err3'); return; }
