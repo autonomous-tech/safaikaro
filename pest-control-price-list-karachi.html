@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="msvalidate.01" content="8B2D7A2455F1C12BFF8BC896B82C3811" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -12,7 +12,8 @@
   <meta name="description" content="SafaiKaro's full 2026 pest control & fumigation price list for Karachi — fumigation from Rs 7,000, termite Rs 13,000, bed bugs Rs 11,000. See exact rates, no hidden charges.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;600&amp;display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;600&amp;display=optional" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css">
 
   <!-- FAQPage Schema -->
@@ -198,7 +199,151 @@
     ]
   }
   </script>
-<style>.nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}.nav-links.open a{font-size:1rem;padding:8px 0}</style>
+<style>
+  .nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .nav-links.open a{font-size:1rem;padding:8px 0}
+
+  .mobile-price-finder{display:none}
+  .full-price-summary{display:none}
+  .price-page-note{color:#0D4A2F;font-style:normal}
+  .hero__badge{color:#C8F6D2;font-weight:700}
+  .price-list-page .wa-float{display:none!important}
+  .price-hero-cta{display:inline-flex;margin-top:24px}
+
+  @media (min-width:768px){
+    .price-list-page.show-desktop-price-float .wa-float{display:flex!important}
+  }
+
+  @media (max-width:767px){
+    body{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))}
+    #prices .section-header{margin-bottom:20px}
+    #prices .section-header h2{font-size:clamp(1.55rem,7vw,2rem)}
+    #prices .section-header p{font-size:.98rem}
+
+    .mobile-price-finder{
+      display:block;
+      margin:0 auto 24px;
+      padding:20px;
+      background:#fff;
+      border:3px solid #0D4A2F;
+      border-radius:12px;
+    }
+    .price-finder__title{font-size:1.2rem;color:#0D4A2F;margin-bottom:4px}
+    .price-hero-cta{display:none}
+    .price-finder__intro{color:#374151;font-size:.94rem;margin-bottom:18px}
+    .price-finder__fields{display:flex;flex-direction:column;gap:14px}
+    .price-finder__field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:7px}
+    .price-finder__field select{
+      width:100%;
+      min-height:50px;
+      padding:12px 42px 12px 13px;
+      border:2px solid #0D4A2F;
+      border-radius:8px;
+      background:#fff;
+      color:#1A1A1A;
+      font:600 1rem 'DM Sans',sans-serif;
+    }
+    .price-finder__field select:focus-visible,
+    .price-finder__cta:focus-visible,
+    .full-price-summary:focus-visible,
+    .mobile-price-sticky:focus-visible{
+      outline:3px solid #0D4A2F;
+      outline-offset:3px;
+    }
+    .price-finder__result{
+      margin-top:18px;
+      padding:18px;
+      background:#0D4A2F;
+      color:#F9F8F4;
+      border-radius:8px;
+    }
+    .price-finder__result-label{font-size:.82rem;font-weight:700;color:#C8F6D2;margin-bottom:2px}
+    .price-finder__amount{display:block;font-family:'Sora',sans-serif;font-size:clamp(1.8rem,9vw,2.35rem);font-weight:800;line-height:1.15;color:#6EE086}
+    .price-finder__selection{font-weight:700;margin-top:6px;text-wrap:pretty}
+    .price-finder__detail{margin-top:5px;color:#F9F8F4;font-size:.92rem;line-height:1.5;text-wrap:pretty}
+    .price-finder__included{margin-top:12px;padding-top:12px;border-top:1px solid rgba(249,248,244,.28);font-size:.84rem;color:#DDEBE3}
+    .price-finder__cta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      margin-top:16px;
+      padding:12px 16px;
+      border:3px solid #0D4A2F;
+      border-radius:8px;
+      background:#6EE086;
+      color:#0D4A2F;
+      font-family:'Sora',sans-serif;
+      font-weight:800;
+      text-align:center;
+    }
+    .price-finder__cta:active{transform:scale(.98)}
+    .price-noscript{margin-top:12px;color:#374151;font-size:.85rem;line-height:1.5}
+
+    .full-price-table{margin-top:20px;border-top:2px solid #0D4A2F}
+    .full-price-summary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:52px;
+      padding:12px 2px;
+      color:#0D4A2F;
+      font-family:'Sora',sans-serif;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .full-price-summary::after{content:'+';font-size:1.35rem;line-height:1}
+    .full-price-table[open] .full-price-summary::after{content:'−'}
+    .full-price-summary::-webkit-details-marker{display:none}
+    .full-price-table .table-wrap{overflow:visible!important;margin-top:8px}
+    .full-price-table .pricing-table{display:block;min-width:0;border:0;background:transparent;overflow:visible}
+    .full-price-table .pricing-table thead{display:none}
+    .full-price-table .pricing-table tbody{display:flex;flex-direction:column;gap:12px}
+    .full-price-table .pricing-table tr{display:block;background:#fff;border:2px solid #0D4A2F;border-radius:8px;overflow:hidden}
+    .full-price-table .pricing-table td{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:10px 12px;border-bottom:1px solid #D8E0DB;text-align:right;font-size:.9rem}
+    .full-price-table .pricing-table td::before{content:attr(data-label);font-weight:600;color:#374151;text-align:left}
+    .full-price-table .pricing-table td:first-child{display:block;background:#0D4A2F;color:#F9F8F4;text-align:left;font-family:'Sora',sans-serif}
+    .full-price-table .pricing-table td:first-child::before{display:none}
+    .full-price-table .pricing-table td:last-child{border-bottom:0}
+    .desktop-calculator{display:none}
+
+    .wa-float{display:none!important}
+    .mobile-bar{
+      padding:10px 16px max(10px, env(safe-area-inset-bottom, 0px));
+      min-height:64px;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transform:translateY(100%);
+      transition:opacity .16s ease,transform .16s ease,visibility .16s ease;
+    }
+    .price-list-page.show-mobile-price-sticky .mobile-bar{
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    .mobile-price-sticky{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      min-height:46px;
+      padding:10px 14px;
+      border-radius:8px;
+      background:#6EE086;
+      color:#0D4A2F;
+      font-family:'Sora',sans-serif;
+      font-size:.9rem;
+      font-weight:800;
+      text-align:center;
+    }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .price-finder__cta,.mobile-price-sticky{transition:none!important}
+  }
+</style>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SafaiKaro">
@@ -222,12 +367,12 @@
 posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https://us.i.posthog.com',defaults:'2026-01-30'});
 </script>
 </head>
-<body>
+<body class="price-list-page">
 
   <!-- Nav -->
   <nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/images/logo.png" alt="" width="32" height="32">SafaiKaro</a>
+    <a href="/" class="logo"><img src="/favicon.svg" alt="" width="32" height="32">SafaiKaro</a>
     <div class="nav-links" id="navLinks">
       <a href="/">Home</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
@@ -236,7 +381,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </div>
     <a href="tel:+923308652035" class="nav-phone">&#128222; 0330 8652035</a>
       <a href="/book" class="btn-lime nav-cta">Book Now</a>
-    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+    <button class="hamburger" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" onclick="var m=document.getElementById('navLinks'),o=m.classList.toggle('open');this.setAttribute('aria-expanded',String(o));this.setAttribute('aria-label',o?'Close menu':'Open menu')">&#9776;</button>
   </div>
 </nav>
 
@@ -247,7 +392,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       <div class="container">
         <div class="hero-inner" style="grid-template-columns:1fr;">
           <div style="text-align:center; max-width:700px; margin:0 auto;">
-            <span class="hero__badge">💰 Transparent Pricing — Always</span>
+            <span class="hero__badge">Transparent pricing. Always.</span>
             <h1>Pest Control Prices in Karachi — Complete Price List 2026</h1>
             <p class="hero-sub" style="margin:16px auto 32px; max-width:560px;">Karachi mein hum akele hain jo price pehle batate hain. Koi hidden charges nahi — ever.</p>
             <div class="trust-row" style="justify-content:center;">
@@ -255,6 +400,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
               <span><span class="check">✓</span> No Hidden Charges</span>
               <span><span class="check">✓</span> Chemicals Included</span>
             </div>
+            <a class="btn-lime price-hero-cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20saw%20your%20price%20list%20and%20need%20a%20quote." target="_blank" rel="noopener">Get WhatsApp Quote</a>
           </div>
         </div>
       </div>
@@ -267,7 +413,52 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           <h2>Complete Price List — All Services</h2>
           <p>All prices include labor, equipment, and WHO-approved chemicals.</p>
         </div>
-        <div class="table-wrap" style="overflow-x:auto;">
+
+        <form class="mobile-price-finder" id="mobilePriceFinder" aria-labelledby="priceFinderTitle">
+          <h3 class="price-finder__title" id="priceFinderTitle">Find your listed price</h3>
+          <p class="price-finder__intro">Choose the problem and property size. Your price updates instantly.</p>
+          <div class="price-finder__fields">
+            <div class="price-finder__field">
+              <label for="mobilePriceService">1. What do you need treated?</label>
+              <select id="mobilePriceService" name="service">
+                <option value="fumigation">General fumigation</option>
+                <option value="termite">Termite treatment</option>
+                <option value="bedbug">Bed bug treatment</option>
+                <option value="rodent">Rodent control</option>
+                <option value="mosquito">Mosquito / dengue treatment</option>
+                <option value="annual">Annual Shield plan</option>
+              </select>
+            </div>
+            <div class="price-finder__field">
+              <label for="mobilePriceSize">2. What is your property size?</label>
+              <select id="mobilePriceSize" name="size">
+                <option value="s">Up to 100 sq yds</option>
+                <option value="m">101–200 sq yds</option>
+                <option value="ml">201–300 sq yds</option>
+                <option value="l">301–500 sq yds</option>
+                <option value="xl">501–1,000 sq yds</option>
+              </select>
+            </div>
+          </div>
+          <div class="price-finder__result" id="mobilePriceResult" role="status" aria-live="polite" aria-atomic="true">
+            <span class="price-finder__result-label">Your listed price</span>
+            <span class="price-finder__amount" id="mobilePriceAmount">Rs 7,000</span>
+            <p class="price-finder__selection" id="mobilePriceSelection">General fumigation · Up to 100 sq yds</p>
+            <p class="price-finder__detail" id="mobilePriceDetail">1 visit, 90-day guarantee.</p>
+            <p class="price-finder__included">Includes labor, equipment and chemicals. Final price is confirmed before treatment starts.</p>
+          </div>
+          <a class="price-finder__cta" id="mobilePriceWhatsApp" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20general%20fumigation%20for%20a%20property%20up%20to%20100%20sq%20yds.%20The%20listed%20price%20is%20Rs%207%2C000.%20Please%20confirm%20availability%20in%20Karachi.">WhatsApp at Rs 7,000</a>
+          <noscript><p class="price-noscript">Price selection needs JavaScript. The complete list remains available below.</p></noscript>
+        </form>
+
+        <details class="full-price-table" id="fullPriceTable" open>
+          <summary class="full-price-summary">See all services and property sizes</summary>
+          <script>
+            if (window.matchMedia('(max-width: 767px)').matches) {
+              document.getElementById('fullPriceTable').removeAttribute('open');
+            }
+          </script>
+          <div class="table-wrap" style="overflow-x:auto;">
           <table class="pricing-table">
             <thead>
               <tr>
@@ -282,54 +473,55 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
             </thead>
             <tbody>
               <tr>
-                <td><strong>Up to 100 sq yds</strong></td>
-                <td><span data-price="fumigation-s">Rs 7,000</span></td>
-                <td><span data-price="termite-s">Rs 13,000</span></td>
-                <td><span data-price="bedbug-s">Rs 11,000</span></td>
-                <td><span data-price="rodent-s">Rs 13,000</span></td>
-                <td><span data-price="mosquito-s">Rs 6,000</span></td>
-                <td><span data-price="annual-s">Rs 18,000</span>/yr</td>
+                <td data-label="Property size"><strong>Up to 100 sq yds</strong></td>
+                <td data-label="Fumigation"><span data-price="fumigation-s">Rs 7,000</span></td>
+                <td data-label="Termite"><span data-price="termite-s">Rs 13,000</span></td>
+                <td data-label="Bed bugs"><span data-price="bedbug-s">Rs 11,000</span></td>
+                <td data-label="Rodent"><span data-price="rodent-s">Rs 13,000</span></td>
+                <td data-label="Mosquito / dengue"><span data-price="mosquito-s">Rs 6,000</span></td>
+                <td data-label="Annual Shield"><span data-price="annual-s">Rs 18,000</span>/yr</td>
               </tr>
               <tr>
-                <td><strong>101&ndash;200 sq yds</strong></td>
-                <td><span data-price="fumigation-m">Rs 11,000</span></td>
-                <td><span data-price="termite-m">Rs 17,000</span></td>
-                <td><span data-price="bedbug-m">Rs 14,000</span></td>
-                <td><span data-price="rodent-m">Rs 16,000</span></td>
-                <td><span data-price="mosquito-m">Rs 8,000</span></td>
-                <td><span data-price="annual-m">Rs 24,000</span>/yr</td>
+                <td data-label="Property size"><strong>101&ndash;200 sq yds</strong></td>
+                <td data-label="Fumigation"><span data-price="fumigation-m">Rs 11,000</span></td>
+                <td data-label="Termite"><span data-price="termite-m">Rs 17,000</span></td>
+                <td data-label="Bed bugs"><span data-price="bedbug-m">Rs 14,000</span></td>
+                <td data-label="Rodent"><span data-price="rodent-m">Rs 16,000</span></td>
+                <td data-label="Mosquito / dengue"><span data-price="mosquito-m">Rs 8,000</span></td>
+                <td data-label="Annual Shield"><span data-price="annual-m">Rs 24,000</span>/yr</td>
               </tr>
               <tr>
-                <td><strong>201&ndash;300 sq yds</strong></td>
-                <td><span data-price="fumigation-ml">Rs 13,000</span></td>
-                <td><span data-price="termite-ml">Rs 20,000</span></td>
-                <td><span data-price="bedbug-ml">Rs 17,000</span></td>
-                <td><span data-price="rodent-ml">Rs 18,000</span></td>
-                <td><span data-price="mosquito-l">Rs 12,000</span></td>
-                <td><span data-price="annual-l">Rs 40,000</span>/yr</td>
+                <td data-label="Property size"><strong>201&ndash;300 sq yds</strong></td>
+                <td data-label="Fumigation"><span data-price="fumigation-ml">Rs 13,000</span></td>
+                <td data-label="Termite"><span data-price="termite-ml">Rs 20,000</span></td>
+                <td data-label="Bed bugs"><span data-price="bedbug-ml">Rs 17,000</span></td>
+                <td data-label="Rodent"><span data-price="rodent-ml">Rs 18,000</span></td>
+                <td data-label="Mosquito / dengue"><span data-price="mosquito-l">Rs 12,000</span></td>
+                <td data-label="Annual Shield"><span data-price="annual-l">Rs 40,000</span>/yr</td>
               </tr>
               <tr>
-                <td><strong>301&ndash;500 sq yds</strong></td>
-                <td><span data-price="fumigation-l">Rs 16,000</span></td>
-                <td><span data-price="termite-l">Rs 27,000</span></td>
-                <td><span data-price="bedbug-l">Rs 23,000</span></td>
-                <td><span data-price="rodent-l">Rs 21,000</span></td>
-                <td><span data-price="mosquito-l">Rs 12,000</span></td>
-                <td><span data-price="annual-l">Rs 40,000</span>/yr</td>
+                <td data-label="Property size"><strong>301&ndash;500 sq yds</strong></td>
+                <td data-label="Fumigation"><span data-price="fumigation-l">Rs 16,000</span></td>
+                <td data-label="Termite"><span data-price="termite-l">Rs 27,000</span></td>
+                <td data-label="Bed bugs"><span data-price="bedbug-l">Rs 23,000</span></td>
+                <td data-label="Rodent"><span data-price="rodent-l">Rs 21,000</span></td>
+                <td data-label="Mosquito / dengue"><span data-price="mosquito-l">Rs 12,000</span></td>
+                <td data-label="Annual Shield"><span data-price="annual-l">Rs 40,000</span>/yr</td>
               </tr>
               <tr>
-                <td><strong>501&ndash;1,000 sq yds</strong></td>
-                <td><span data-price="fumigation-xl">Rs 20,000</span></td>
-                <td><span data-price="termite-xl">Rs 37,000</span></td>
-                <td><span data-price="bedbug-xl">Rs 29,000</span></td>
-                <td><span data-price="rodent-xl">Rs 29,000</span></td>
-                <td><span data-price="mosquito-xl">Rs 18,000</span></td>
-                <td><span data-price="annual-xl">Rs 65,000</span>/yr</td>
+                <td data-label="Property size"><strong>501&ndash;1,000 sq yds</strong></td>
+                <td data-label="Fumigation"><span data-price="fumigation-xl">Rs 20,000</span></td>
+                <td data-label="Termite"><span data-price="termite-xl">Rs 37,000</span></td>
+                <td data-label="Bed bugs"><span data-price="bedbug-xl">Rs 29,000</span></td>
+                <td data-label="Rodent"><span data-price="rodent-xl">Rs 29,000</span></td>
+                <td data-label="Mosquito / dengue"><span data-price="mosquito-xl">Rs 18,000</span></td>
+                <td data-label="Annual Shield"><span data-price="annual-xl">Rs 65,000</span>/yr</td>
               </tr>
             </tbody>
           </table>
-        </div>
-        <div class="pricing-note">
+          </div>
+        </details>
+        <div class="pricing-note price-page-note">
           <strong>Price confirmed before we start. Zero hidden charges. Balance paid to technician on the day.</strong>
         </div>
         <p class="text-center text-sm text-muted mt-2">Not sure of your property size? <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20help%20with%20my%20property%20size" style="font-weight:600;">WhatsApp us</a> &mdash; we will confirm during booking.</p>
@@ -340,7 +532,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </section>
 
     <!-- 3. Size Calculator Widget -->
-    <section class="section-block section-alt" id="calculator">
+    <section class="section-block section-alt desktop-calculator" id="calculator">
       <div class="container">
         <div class="section-header">
           <h2>Calculate Your Estimate</h2>
@@ -348,8 +540,8 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         </div>
         <div class="calculator">
           <div class="form-group">
-            <label for="calcSize">Property Size (sq yards)</label>
-            <input type="number" id="calcSize" class="form-input" placeholder="e.g. 200" min="1" max="5000">
+            <label for="calcSize">Property Size (1–1,000 sq yards)</label>
+            <input type="number" id="calcSize" class="form-input" placeholder="e.g. 200" min="1" max="1000">
           </div>
           <div class="form-group">
             <label for="calcService">Service</label>
@@ -359,6 +551,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
               <option value="termite">Termite Treatment</option>
               <option value="bedbug">Bed Bug Treatment</option>
               <option value="rodent">Rodent Control</option>
+              <option value="mosquito">Mosquito / Dengue Treatment</option>
               <option value="annual">Annual Shield</option>
             </select>
           </div>
@@ -487,7 +680,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           <a href="https://wa.me/923308652035" style="color:#6EE086; margin-top:12px; display:inline-block;">📱 +92 330 8652035</a>
         </div>
         <div>
-          <h4>Services</h4>
+          <h3>Services</h3>
           <ul>
             <li><a href="/fumigation-services-karachi">General Fumigation</a></li>
             <li><a href="/termite-treatment-new-construction-karachi">Termite Treatment</a></li>
@@ -496,7 +689,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           </ul>
         </div>
         <div>
-          <h4>Areas</h4>
+          <h3>Areas</h3>
         <a href="/pest-control-dha-karachi">Fumigation &amp; Pest Control DHA</a>
         <a href="/pest-control-clifton-karachi">Fumigation &amp; Pest Control Clifton</a>
         <a href="/pest-control-north-nazimabad-karachi">North Nazimabad</a>
@@ -513,7 +706,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         <a href="/pest-control-korangi-industrial-area-karachi">Korangi Industrial (B2B)</a>
       </div>
         <div>
-          <h4>Certifications</h4>
+          <h3>Certifications</h3>
           <div class="footer-certs">
             <span class="footer-cert">WHO-Approved Chemicals</span>
           </div>
@@ -533,14 +726,167 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </svg>
   </a>
 
-  <!-- Mobile Sticky Bottom Bar -->
+  <!-- Mobile Sticky Bottom Bar: one dominant action, synced to price selection -->
   <div class="mobile-bar">
-    <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20pest%20control%20%28I%20saw%20your%20price%20list%29%20in%20Karachi"><span style="color:white;font-size:0.875rem">&#128241; WhatsApp Karo &mdash; Free Quote</span></a>
-    <a href="/book" class="btn-lime">Book Now</a>
+    <a class="mobile-price-sticky" id="mobilePriceSticky" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20general%20fumigation%20for%20a%20property%20up%20to%20100%20sq%20yds.%20The%20listed%20price%20is%20Rs%207%2C000.%20Please%20confirm%20availability%20in%20Karachi">WhatsApp at Rs 7,000</a>
   </div>
 
+  <script src="/prices.js"></script>
   <!-- Calculator JS -->
   <script>
+    (function () {
+      var serviceSelect = document.getElementById('mobilePriceService');
+      var sizeSelect = document.getElementById('mobilePriceSize');
+      var amountEl = document.getElementById('mobilePriceAmount');
+      var selectionEl = document.getElementById('mobilePriceSelection');
+      var detailEl = document.getElementById('mobilePriceDetail');
+      var quoteLink = document.getElementById('mobilePriceWhatsApp');
+      var stickyLink = document.getElementById('mobilePriceSticky');
+      var fullPriceTable = document.getElementById('fullPriceTable');
+      var priceFinder = document.querySelector('.mobile-price-finder');
+
+      if (!serviceSelect || !sizeSelect || !amountEl || !selectionEl || !detailEl || !quoteLink) return;
+
+      var sizes = {
+        s: 'Up to 100 sq yds',
+        m: '101–200 sq yds',
+        ml: '201–300 sq yds',
+        l: '301–500 sq yds',
+        xl: '501–1,000 sq yds'
+      };
+      var services = {
+        fumigation: {
+          label: 'General fumigation',
+          priceKeys: {s:'fumigation-s',m:'fumigation-m',ml:'fumigation-ml',l:'fumigation-l',xl:'fumigation-xl'},
+          details: {s:'1 visit, 90-day guarantee.',m:'1 visit, 90-day guarantee.',ml:'1 visit, 90-day guarantee.',l:'1 visit, 90-day guarantee.',xl:'1 visit, 90-day guarantee.'}
+        },
+        termite: {
+          label: 'Termite treatment',
+          priceKeys: {s:'termite-s',m:'termite-m',ml:'termite-ml',l:'termite-l',xl:'termite-xl'},
+          details: {s:'Post-construction drilling, soil injection + wood treatment. 5-year warranty.',m:'Post-construction drilling, soil injection + wood treatment. 5-year warranty.',ml:'Post-construction drilling, soil injection + wood treatment. 5-year warranty.',l:'Post-construction drilling, soil injection + wood treatment. 5-year warranty.',xl:'Post-construction drilling, soil injection + wood treatment. 5-year warranty.'}
+        },
+        bedbug: {
+          label: 'Bed bug treatment',
+          priceKeys: {s:'bedbug-s',m:'bedbug-m',ml:'bedbug-ml',l:'bedbug-l',xl:'bedbug-xl'},
+          details: {s:'Chemical spray + IGR. 90-day guarantee.',m:'Chemical spray + IGR. 90-day guarantee.',ml:'Chemical spray + IGR. 90-day guarantee.',l:'Chemical spray + IGR. 90-day guarantee.',xl:'Chemical spray + IGR. 90-day guarantee.'}
+        },
+        rodent: {
+          label: 'Rodent control',
+          priceKeys: {s:'rodent-s',m:'rodent-m',ml:'rodent-ml',l:'rodent-l',xl:'rodent-xl'},
+          details: {s:'2 visits, bait stations + entry point sealing.',m:'2 visits, bait stations + entry point sealing.',ml:'2 visits, bait stations + entry point sealing.',l:'2 visits, bait stations + entry point sealing.',xl:'2 visits, bait stations + entry point sealing.'}
+        },
+        mosquito: {
+          label: 'Mosquito / dengue treatment',
+          priceKeys: {s:'mosquito-s',m:'mosquito-m',ml:'mosquito-l',l:'mosquito-l',xl:'mosquito-xl'},
+          details: {s:'Mosquito / dengue treatment.',m:'Mosquito / dengue treatment.',ml:'Mosquito / dengue treatment.',l:'Mosquito / dengue treatment.',xl:'Mosquito / dengue treatment.'}
+        },
+        annual: {
+          label: 'Annual Shield plan',
+          period: '/year',
+          priceKeys: {s:'annual-s',m:'annual-m',ml:'annual-l',l:'annual-l',xl:'annual-xl'},
+          details: {
+            s:'4 quarterly visits + 1 emergency callout. Save Rs 10,000 vs booking separately.',
+            m:'4 quarterly visits + 1 emergency callout. Save Rs 20,000 vs booking separately.',
+            ml:'4 quarterly visits + 1 emergency callout. Save Rs 12,000 vs booking separately.',
+            l:'4 quarterly visits + 1 emergency callout. Save Rs 24,000 vs booking separately.',
+            xl:'4 quarterly visits + 1 emergency callout. Save Rs 15,000 vs booking separately.'
+          }
+        }
+      };
+
+      function formatPrice(value) {
+        return 'Rs ' + value.toLocaleString('en-PK');
+      }
+
+      function getPrice(serviceKey, sizeKey) {
+        var key = services[serviceKey].priceKeys[sizeKey];
+        if (window.SAFAIKARO_PRICES && SAFAIKARO_PRICES[key] !== undefined) {
+          return SAFAIKARO_PRICES[key];
+        }
+        var priceNode = document.querySelector('[data-price="' + key + '"]');
+        return parseInt((priceNode ? priceNode.textContent : '').replace(/[^0-9]/g, ''), 10);
+      }
+
+      function capturePricingEvent(name, properties, urgent) {
+        if (!window.posthog || typeof posthog.capture !== 'function') return;
+        try {
+          posthog.capture(name, properties, urgent ? { transport: 'sendBeacon', send_instantly: true } : undefined);
+        } catch (_) {
+          /* Tracking must never interrupt the quote flow. */
+        }
+      }
+
+      function updatePriceFinder(changedField) {
+        var serviceKey = serviceSelect.value;
+        var sizeKey = sizeSelect.value;
+        var service = services[serviceKey];
+        var amount = getPrice(serviceKey, sizeKey);
+        var formatted = formatPrice(amount);
+        var period = service.period || '';
+        var message = 'Hi SafaiKaro, I need ' + service.label.toLowerCase() + ' for a ' + sizes[sizeKey].toLowerCase() + ' property. The listed price is ' + formatted + period + '. Please confirm availability in Karachi.';
+        var href = 'https://wa.me/923308652035?text=' + encodeURIComponent(message);
+
+        amountEl.textContent = formatted + period;
+        selectionEl.textContent = service.label + ' · ' + sizes[sizeKey];
+        detailEl.textContent = service.details[sizeKey];
+        quoteLink.textContent = 'WhatsApp at ' + formatted;
+        quoteLink.href = href;
+        if (stickyLink) {
+          stickyLink.textContent = 'WhatsApp at ' + formatted;
+          stickyLink.href = href;
+        }
+
+        if (changedField) {
+          capturePricingEvent('pricing_selection_change', {
+            path: location.pathname,
+            changed_field: changedField,
+            service: serviceKey,
+            size_tier: sizeKey,
+            price_pkr: amount
+          });
+        }
+      }
+
+      serviceSelect.addEventListener('change', function () { updatePriceFinder('service'); });
+      sizeSelect.addEventListener('change', function () { updatePriceFinder('size'); });
+      quoteLink.addEventListener('click', function () {
+        capturePricingEvent('pricing_quote_click', {
+          path: location.pathname,
+          placement: 'price_finder',
+          service: serviceSelect.value,
+          size_tier: sizeSelect.value,
+          price_pkr: getPrice(serviceSelect.value, sizeSelect.value)
+        }, true);
+      });
+      if (stickyLink) {
+        stickyLink.addEventListener('click', function () {
+          capturePricingEvent('pricing_quote_click', {
+            path: location.pathname,
+            placement: 'mobile_sticky',
+            service: serviceSelect.value,
+            size_tier: sizeSelect.value,
+            price_pkr: getPrice(serviceSelect.value, sizeSelect.value)
+          }, true);
+        });
+      }
+
+      if (fullPriceTable && window.matchMedia('(max-width: 767px)').matches) {
+        fullPriceTable.removeAttribute('open');
+      }
+      function syncStickyVisibility() {
+        document.body.classList.toggle('show-desktop-price-float', window.matchMedia('(min-width: 768px)').matches && fullPriceTable && fullPriceTable.getBoundingClientRect().bottom < 80);
+        if (!priceFinder || !window.matchMedia('(max-width: 767px)').matches) {
+          document.body.classList.remove('show-mobile-price-sticky');
+          return;
+        }
+        document.body.classList.toggle('show-mobile-price-sticky', priceFinder.getBoundingClientRect().bottom < 80);
+      }
+      syncStickyVisibility();
+      window.addEventListener('scroll', syncStickyVisibility, { passive: true });
+      window.addEventListener('resize', syncStickyVisibility);
+      updatePriceFinder();
+    })();
+
     function calculatePrice() {
       var size = parseInt(document.getElementById('calcSize').value);
       var service = document.getElementById('calcService').value;
@@ -555,6 +901,13 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         return;
       }
 
+      if (size > 1000) {
+        result.style.display = 'block';
+        priceEl.textContent = 'Custom quote';
+        noteEl.textContent = 'WhatsApp your property details so we can confirm the price.';
+        return;
+      }
+
       var price = 0;
       var note = '';
 
@@ -564,7 +917,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       switch (service) {
         case 'fumigation':
           price = [7000, 11000, 13000, 16000, 20000][tier];
-          note = '1 visit, 30-day guarantee.';
+          note = '1 visit, 90-day guarantee.';
           break;
         case 'termite':
           price = [13000, 17000, 20000, 27000, 37000][tier];
@@ -578,6 +931,10 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           price = [13000, 16000, 18000, 21000, 29000][tier];
           note = '2 visits, bait stations + entry point sealing.';
           break;
+        case 'mosquito':
+          price = [6000, 8000, 12000, 12000, 18000][tier];
+          note = 'Mosquito / dengue treatment.';
+          break;
         case 'annual':
           price = [18000, 24000, 40000, 40000, 65000][tier];
           var saves = [10000, 20000, 12000, 24000, 15000][tier];
@@ -589,15 +946,6 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       priceEl.textContent = 'Rs ' + price.toLocaleString();
       noteEl.textContent = note || 'Final price confirmed before treatment begins.';
     }
-  </script>
-
-  <!-- Nav scroll behavior -->
-  <script>
-    window.addEventListener('scroll', function() {
-// Pricing tab switcher (mobile)
-document.querySelectorAll('.price-tab').forEach(function(btn){btn.addEventListener('click',function(){var tab=this.dataset.tab;document.querySelectorAll('.price-tab').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.price-panel').forEach(function(p){p.classList.remove('active');p.hidden=true});this.classList.add('active');this.setAttribute('aria-selected','true');var panel=document.getElementById('panel-'+tab);if(panel){panel.classList.add('active');panel.hidden=false}})});
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
-    });
   </script>
 
 <!-- 
@@ -796,6 +1144,6 @@ document.querySelectorAll('.price-tab').forEach(function(btn){btn.addEventListen
   });
 })();
 </script>
-<script src="/prices.js"></script><script src="/wa-desktop.js" defer></script>
+<script src="/wa-desktop.js" defer></script>
 </body>
 </html>

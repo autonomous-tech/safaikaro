@@ -8,17 +8,18 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://safaikaro.pk/book">
-  <title>Book Pest Control — SafaiKaro Karachi</title>
-  <meta name="description" content="Book pest control in Karachi in 60 seconds. Schedule fumigation, termite treatment, bed bug removal & more. Same-day booking across Karachi — DHA, Clifton, Gulshan, Nazimabad & more.">
+  <title>Get a Pest Control Quote — SafaiKaro Karachi</title>
+  <meta name="description" content="Get a Karachi pest control quote in 3 answers. Choose the service, area and property size, then confirm your timing and address on WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;600&amp;display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;600&amp;display=optional" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SafaiKaro">
-  <meta property="og:title" content="Book Pest Control in Karachi — SafaiKaro | Online Booking">
-  <meta property="og:description" content="Book certified pest control anywhere in Karachi online. Choose service, date, and time in 60 seconds. Transparent pricing. 90-day guarantee.">
+  <meta property="og:title" content="Get a Pest Control Quote in Karachi | SafaiKaro">
+  <meta property="og:description" content="Answer 3 questions to prepare your pest control quote, then confirm timing and address with SafaiKaro on WhatsApp.">
   <meta property="og:image" content="https://safaikaro.pk/images/og-default.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -404,18 +405,254 @@
   font-size: 0.8rem;
   font-weight: 600;
 }
+
+/* Three-answer WhatsApp quote composer */
+.book-header {
+  text-align: left;
+  padding: 96px 16px 42px;
+}
+.book-header__inner {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+}
+.book-header__copy { max-width: 620px; }
+.book-header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.65rem);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.book-header p {
+  max-width: 58ch;
+  color: rgba(249,248,244,0.88);
+  font-size: 1rem;
+}
+.direct-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 2px solid #6EE086;
+  border-radius: 8px;
+  color: #6EE086;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.direct-wa:hover { background: #6EE086; color: #0D4A2F; }
+.direct-wa:focus-visible,
+.quote-form :focus-visible {
+  outline: 3px solid #F5A623;
+  outline-offset: 3px;
+}
+.book-wrap {
+  max-width: 920px;
+  padding: 32px 16px 88px;
+}
+.quote-intro {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+  color: #374151;
+  font-size: 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.quote-intro strong { color: #0D4A2F; }
+.quote-form {
+  background: #fff;
+  border: 3px solid #0D4A2F;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.quote-question {
+  border: 0;
+  min-width: 0;
+  padding: 28px;
+  scroll-margin-top: 96px;
+}
+.quote-question + .quote-question { border-top: 2px solid #D9E4DD; }
+.question-heading {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.question-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  background: #0D4A2F;
+  color: #6EE086;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.question-title {
+  color: #0D4A2F;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  padding-top: 4px;
+}
+.question-help {
+  color: #4B5563;
+  font-size: 0.84rem;
+  margin: -8px 0 14px 44px;
+}
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.choice-grid--sizes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.choice-card { position: relative; cursor: pointer; }
+.choice-card input {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.choice-card__body {
+  display: flex;
+  min-height: 56px;
+  padding: 12px 14px;
+  align-items: center;
+  border: 2px solid #D1D5DB;
+  border-radius: 8px;
+  background: #fff;
+  color: #26322B;
+  font-weight: 650;
+  line-height: 1.25;
+  transition: border-color .15s ease-out, background .15s ease-out, transform .15s ease-out;
+}
+.choice-card:hover .choice-card__body { border-color: #0D4A2F; }
+.choice-card input:checked + .choice-card__body {
+  border-color: #0D4A2F;
+  background: #EAF8EE;
+  color: #0D4A2F;
+}
+.choice-card input:focus-visible + .choice-card__body {
+  outline: 3px solid #F5A623;
+  outline-offset: 3px;
+}
+.area-select {
+  width: 100%;
+  min-height: 52px;
+  border: 2px solid #AEB8B1;
+  border-radius: 8px;
+  padding: 11px 42px 11px 14px;
+  background: #fff;
+  color: #1A1A1A;
+  font: inherit;
+  font-size: 1rem;
+}
+.other-area-field {
+  margin-top: 12px;
+}
+.other-area-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: #26322B;
+  font-weight: 700;
+}
+.other-area-field[hidden] { display: none; }
+.field-error {
+  color: #9F1239;
+  font-weight: 650;
+  margin: 12px 0 0 44px;
+}
+.quote-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #0D4A2F;
+  color: #F9F8F4;
+}
+.quote-summary__price {
+  display: block;
+  color: #6EE086;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+.quote-summary__note {
+  color: rgba(249,248,244,0.82);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+.quote-submit {
+  min-height: 52px;
+  border: 3px solid #6EE086;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #6EE086;
+  color: #0D4A2F;
+  font: 800 0.95rem/1.2 'Sora', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform .15s ease-out, background .15s ease-out;
+}
+.quote-submit:hover { background: #8AEB9D; }
+.quote-submit:active { transform: translateY(1px); }
+.quote-submit[aria-disabled="true"] { opacity: .72; }
+.no-js-note {
+  margin: 18px 0 0;
+  border: 2px solid #0D4A2F;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #EAF8EE;
+  color: #0D4A2F;
+}
+.no-js-note a { font-weight: 800; text-decoration: underline; }
+.book-page .wa-float { display: none; }
+
+@media (max-width: 700px) {
+  .book-header { padding: 82px 16px 30px; }
+  .book-header__inner { grid-template-columns: 1fr; gap: 18px; }
+  .direct-wa { width: 100%; white-space: normal; text-align: center; }
+  .book-wrap { padding-top: 20px; }
+  .quote-intro { align-items: flex-start; }
+  .quote-question { padding: 22px 16px; }
+  .choice-grid,
+  .choice-grid--sizes { grid-template-columns: 1fr; }
+  .question-help,
+  .field-error { margin-left: 44px; }
+  .quote-summary { grid-template-columns: 1fr; padding: 22px 16px; }
+  .quote-submit { width: 100%; white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice-card__body,
+  .quote-submit { transition: none; }
+}
 </style>
 <script>
 !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
 posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https://us.i.posthog.com',defaults:'2026-01-30'});
 </script>
 </head>
-<body>
+<body class="book-page">
 
 <!-- Navigation -->
 <nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/images/logo.png" alt="" width="32" height="32">SafaiKaro</a>
+    <a href="/" class="logo"><img src="/favicon.svg" alt="" width="32" height="32">SafaiKaro</a>
     <div class="nav-links" id="navLinks">
       <a href="/">Home</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
@@ -424,287 +661,195 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </div>
     <a href="tel:+923308652035" class="nav-phone">&#128222; 0330 8652035</a>
       <a href="/book" class="btn-lime nav-cta">Book Now</a>
-    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+    <button class="hamburger" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" onclick="var m=document.getElementById('navLinks'),o=m.classList.toggle('open');this.setAttribute('aria-expanded',String(o));this.setAttribute('aria-label',o?'Close menu':'Open menu')">&#9776;</button>
   </div>
 </nav>
 
 <!-- Header -->
-<div class="book-header">
-  <h1>Book Pest Control in 60 Seconds</h1>
-  <p>Select your service and we'll connect you instantly on WhatsApp.</p>
-  <p style="margin-top:8px;"><a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20pest%20control%20%E2%80%94%20quote%20chahiye" style="color:#0D4A2F;font-weight:600;text-decoration:underline;">Form chhorein &mdash; seedha WhatsApp par baat karein &rarr;</a></p>
-  <div class="trust-pills">
-    <span class="trust-pill">✓ No upfront payment</span>
-    <span class="trust-pill">✓ Free cancellation</span>
-    <span class="trust-pill">✓ Same-day available</span>
+<header class="book-header">
+  <div class="book-header__inner">
+    <div class="book-header__copy">
+      <h1>3 Jawab Dein. Quote WhatsApp Par Paayein.</h1>
+      <p>Service, Karachi area aur property size select karein. Hum timing aur address WhatsApp par confirm kar lenge.</p>
+    </div>
+    <a class="direct-wa" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20mujhe%20pest%20control%20ka%20quote%20chahiye." target="_blank" rel="noopener">
+      Seedha WhatsApp kholein
+    </a>
   </div>
-</div>
+</header>
 
-<!-- Booking Form -->
-<div class="book-wrap">
+<main class="book-wrap" id="quote">
+  <h2 class="quote-intro" id="quoteFormTitle"><strong>Sirf 3 sawal.</strong> Contact details ya payment abhi dene ki zaroorat nahi.</h2>
 
-  <!-- Progress -->
-  <div class="progress-bar" id="progressBar">
-    <div class="progress-step active" data-step="1">
-      <div class="progress-dot">1</div>
-      <span class="progress-label">Service</span>
-    </div>
-    <div class="progress-step" data-step="2">
-      <div class="progress-dot">2</div>
-      <span class="progress-label">Property</span>
-    </div>
-    <div class="progress-step" data-step="3">
-      <div class="progress-dot">3</div>
-      <span class="progress-label">Date &amp; Time</span>
-    </div>
-    <div class="progress-step" data-step="4">
-      <div class="progress-dot">4</div>
-      <span class="progress-label">Contact</span>
-    </div>
-  </div>
+  <form class="quote-form" id="quoteForm" action="https://wa.me/923308652035" method="get" target="_blank" aria-labelledby="quoteFormTitle" novalidate>
+    <input type="hidden" name="text" value="Hi SafaiKaro, mujhe pest control ka quote chahiye.">
 
-  <!-- Step 1: Service -->
-  <div class="step active" id="step1">
-    <h2>What service do you need?</h2>
-    <div class="service-grid" id="serviceGrid">
-      <div class="service-card" data-service="General Fumigation" data-icon="🏠" onclick="selectService(this)">
-        <span class="service-card__icon">🏠</span>
-        <span class="service-card__name">General Fumigation</span>
-        <span class="service-card__price">from <span data-price="fumigation-s">Rs 7,000</span></span>
+    <fieldset class="quote-question" id="serviceQuestion" tabindex="-1" aria-describedby="serviceHelp serviceError">
+      <legend class="question-heading">
+        <span class="question-number" aria-hidden="true">1</span>
+        <span class="question-title">Kis service ki zaroorat hai?</span>
+      </legend>
+      <p class="question-help" id="serviceHelp">Jo problem sabse zyada nazar aa rahi hai woh select karein.</p>
+      <div class="choice-grid">
+        <label class="choice-card">
+          <input type="radio" name="service" value="General Fumigation" required>
+          <span class="choice-card__body">General fumigation</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="service" value="Termite Treatment">
+          <span class="choice-card__body">Deemak treatment</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="service" value="Bed Bug Treatment">
+          <span class="choice-card__body">Khatmal treatment</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="service" value="Rodent Control">
+          <span class="choice-card__body">Chooha control</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="service" value="Mosquito Control">
+          <span class="choice-card__body">Machhar control</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="service" value="Annual Shield Plan">
+          <span class="choice-card__body">Annual pest plan</span>
+        </label>
       </div>
-      <div class="service-card" data-service="Termite Treatment" data-icon="🐛" onclick="selectService(this)">
-        <span class="service-card__icon">🐛</span>
-        <span class="service-card__name">Termite Treatment</span>
-        <span class="service-card__price">from <span data-price="termite-s">Rs 13,000</span></span>
-      </div>
-      <div class="service-card" data-service="Bed Bug Treatment" data-icon="🛏️" onclick="selectService(this)">
-        <span class="service-card__icon">🛏️</span>
-        <span class="service-card__name">Bed Bug Treatment</span>
-        <span class="service-card__price">from <span data-price="bedbug-s">Rs 11,000</span></span>
-      </div>
-      <div class="service-card" data-service="Rodent Control" data-icon="🐀" onclick="selectService(this)">
-        <span class="service-card__icon">🐀</span>
-        <span class="service-card__name">Rodent Control</span>
-        <span class="service-card__price">from <span data-price="rodent-s">Rs 13,000</span></span>
-      </div>
-      <div class="service-card" data-service="Mosquito Control" data-icon="🦟" onclick="selectService(this)">
-        <span class="service-card__icon">🦟</span>
-        <span class="service-card__name">Mosquito Control</span>
-        <span class="service-card__price">from <span data-price="fumigation-s">Rs 7,000</span></span>
-      </div>
-      <div class="service-card" data-service="Annual Shield Plan" data-icon="🛡️" onclick="selectService(this)">
-        <span class="service-card__icon">🛡️</span>
-        <span class="service-card__name">Annual Shield Plan</span>
-        <span class="service-card__price">from <span data-price="annual-s">Rs 18,000</span>/yr</span>
-      </div>
-    </div>
-    <p class="field-error" id="err1">Please select a service to continue.</p>
-    <div class="step-nav">
-      <button class="btn-next" onclick="goNext(1)">Next →</button>
-    </div>
-  </div>
+      <p class="field-error" id="serviceError" role="alert">Ek service select karein.</p>
+    </fieldset>
 
-  <!-- Step 2: Property -->
-  <div class="step" id="step2">
-    <h2>Tell us about your property</h2>
-
-    <div class="field">
-      <label>Area</label>
-      <select id="areaSelect">
-        <option value="">Select your area</option>
+    <fieldset class="quote-question" id="areaQuestion" tabindex="-1" aria-describedby="areaHelp areaError">
+      <legend class="question-heading">
+        <span class="question-number" aria-hidden="true">2</span>
+        <span class="question-title">Karachi mein property kahan hai?</span>
+      </legend>
+      <p class="question-help" id="areaHelp">Area list mein na ho toh “Other / Not listed” select karein.</p>
+      <label class="sr-only" for="areaSelect">Karachi area</label>
+      <select class="area-select" id="areaSelect" name="area" aria-describedby="areaHelp areaError" required>
+        <option value="">Area select karein</option>
         <optgroup label="DHA">
-          <option value="DHA Phase 1">DHA Phase 1</option>
-          <option value="DHA Phase 2">DHA Phase 2</option>
-          <option value="DHA Phase 4">DHA Phase 4</option>
-          <option value="DHA Phase 5">DHA Phase 5</option>
-          <option value="DHA Phase 6">DHA Phase 6</option>
-          <option value="DHA Phase 7">DHA Phase 7</option>
-          <option value="DHA Phase 8">DHA Phase 8</option>
+          <option>DHA Phase 1</option>
+          <option>DHA Phase 2</option>
+          <option>DHA Phase 4</option>
+          <option>DHA Phase 5</option>
+          <option>DHA Phase 6</option>
+          <option>DHA Phase 7</option>
+          <option>DHA Phase 8</option>
         </optgroup>
         <optgroup label="Clifton">
-          <option value="Clifton Block 1">Clifton Block 1</option>
-          <option value="Clifton Block 2">Clifton Block 2</option>
-          <option value="Clifton Block 3">Clifton Block 3</option>
-          <option value="Clifton Block 4">Clifton Block 4</option>
-          <option value="Clifton Block 5">Clifton Block 5</option>
-          <option value="Clifton Block 6">Clifton Block 6</option>
-          <option value="Clifton Block 7">Clifton Block 7</option>
-          <option value="Clifton Block 8">Clifton Block 8</option>
-          <option value="Clifton Block 9">Clifton Block 9</option>
+          <option>Clifton Block 1</option>
+          <option>Clifton Block 2</option>
+          <option>Clifton Block 3</option>
+          <option>Clifton Block 4</option>
+          <option>Clifton Block 5</option>
+          <option>Clifton Block 6</option>
+          <option>Clifton Block 7</option>
+          <option>Clifton Block 8</option>
+          <option>Clifton Block 9</option>
         </optgroup>
-        <optgroup label="Other">
-          <option value="Bath Island">Bath Island</option>
-          <option value="PECHS">PECHS</option>
-        </optgroup>
-        <optgroup label="Other Karachi Areas">
-          <option value="North Nazimabad">North Nazimabad</option>
-          <option value="Federal B. Area">Federal B. Area</option>
-          <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
-          <option value="Nazimabad">Nazimabad</option>
-          <option value="Buffer Zone">Buffer Zone</option>
-          <option value="Gulberg">Gulberg</option>
-          <option value="Liaquatabad">Liaquatabad</option>
-          <option value="Bahadurabad">Bahadurabad</option>
-          <option value="Dhoraji Colony">Dhoraji Colony</option>
-          <option value="Mohammad Ali Society">Mohammad Ali Society</option>
-          <option value="Karsaz">Karsaz</option>
-          <option value="Tariq Road">Tariq Road</option>
-          <option value="Garden East">Garden East</option>
-          <option value="Garden West">Garden West</option>
-          <option value="Scheme 33">Scheme 33</option>
-          <option value="Gulshan-e-Maymar">Gulshan-e-Maymar</option>
-          <option value="Saadi Town">Saadi Town</option>
-          <option value="Malir Cantt">Malir Cantt</option>
-          <option value="Model Colony">Model Colony</option>
-          <option value="North Karachi">North Karachi</option>
-          <option value="Saddar">Saddar</option>
-          <option value="Soldier Bazaar">Soldier Bazaar</option>
-          <option value="Civil Lines">Civil Lines</option>
-          <option value="Shah Faisal Colony">Shah Faisal Colony</option>
-          <option value="Korangi Industrial Area">Korangi Industrial Area</option>
-          <option value="S.I.T.E. Area">S.I.T.E. Area</option>
-          <option value="Korangi Town">Korangi Town</option>
-          <option value="Landhi">Landhi</option>
-          <option value="Port Qasim">Port Qasim</option>
-          <option value="Other">Other / Not Listed</option>
+        <optgroup label="Karachi">
+          <option>Bath Island</option>
+          <option>PECHS</option>
+          <option>North Nazimabad</option>
+          <option>Federal B. Area</option>
+          <option>Gulshan-e-Iqbal</option>
+          <option>Nazimabad</option>
+          <option>Buffer Zone</option>
+          <option>Gulberg</option>
+          <option>Liaquatabad</option>
+          <option>Bahadurabad</option>
+          <option>Dhoraji Colony</option>
+          <option>Mohammad Ali Society</option>
+          <option>Karsaz</option>
+          <option>Tariq Road</option>
+          <option>Garden East</option>
+          <option>Garden West</option>
+          <option>Scheme 33</option>
+          <option>Gulshan-e-Maymar</option>
+          <option>Saadi Town</option>
+          <option>Malir Cantt</option>
+          <option>Model Colony</option>
+          <option>North Karachi</option>
+          <option>Saddar</option>
+          <option>Soldier Bazaar</option>
+          <option>Civil Lines</option>
+          <option>Shah Faisal Colony</option>
+          <option>Korangi Industrial Area</option>
+          <option>S.I.T.E. Area</option>
+          <option>Korangi Town</option>
+          <option>Landhi</option>
+          <option>Port Qasim</option>
+          <option value="Other">Other / Not listed</option>
         </optgroup>
       </select>
-    </div>
-
-    <div class="field">
-      <label>Property type</label>
-      <div class="pill-group" id="typeGroup">
-        <button class="pill" data-value="House" onclick="selectPill(this,'typeGroup','propType')">House</button>
-        <button class="pill" data-value="Apartment" onclick="selectPill(this,'typeGroup','propType')">Apartment</button>
-        <button class="pill" data-value="Office/Shop" onclick="selectPill(this,'typeGroup','propType')">Office / Shop</button>
-        <button class="pill" data-value="Villa" onclick="selectPill(this,'typeGroup','propType')">Villa</button>
+      <div class="other-area-field" id="otherAreaField" hidden>
+        <label for="otherAreaInput">Apna area likhein</label>
+        <input class="area-select" id="otherAreaInput" type="text" autocomplete="address-level3" maxlength="80" placeholder="Misal: Surjani Town">
       </div>
-    </div>
+      <p class="field-error" id="areaError" role="alert">Apna Karachi area select ya likhein.</p>
+    </fieldset>
 
-    <div class="field">
-      <label>Property size</label>
-      <div class="pill-group" id="sizeGroup">
-        <button class="pill" data-value="Up to 100 sq yds" onclick="selectPill(this,'sizeGroup','propSize')">Up to 100 sq yds</button>
-        <button class="pill" data-value="101–200 sq yds" onclick="selectPill(this,'sizeGroup','propSize')">101–200 sq yds</button>
-        <button class="pill" data-value="201–300 sq yds" onclick="selectPill(this,'sizeGroup','propSize')">201–300 sq yds</button>
-        <button class="pill" data-value="301–500 sq yds" onclick="selectPill(this,'sizeGroup','propSize')">301–500 sq yds</button>
-        <button class="pill" data-value="501–1,000 sq yds" onclick="selectPill(this,'sizeGroup','propSize')">501–1,000 sq yds</button>
+    <fieldset class="quote-question" id="sizeQuestion" tabindex="-1" aria-describedby="sizeHelp sizeError">
+      <legend class="question-heading">
+        <span class="question-number" aria-hidden="true">3</span>
+        <span class="question-title">Property ka size kitna hai?</span>
+      </legend>
+      <p class="question-help" id="sizeHelp">Approximate size theek hai. Final quote WhatsApp par confirm hoga.</p>
+      <div class="choice-grid choice-grid--sizes">
+        <label class="choice-card">
+          <input type="radio" name="size" value="Up to 100 sq yds" required>
+          <span class="choice-card__body">Up to 100 sq yds</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="size" value="101-200 sq yds">
+          <span class="choice-card__body">101-200 sq yds</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="size" value="201-300 sq yds">
+          <span class="choice-card__body">201-300 sq yds</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="size" value="301-500 sq yds">
+          <span class="choice-card__body">301-500 sq yds</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="size" value="501-1,000 sq yds">
+          <span class="choice-card__body">501-1,000 sq yds</span>
+        </label>
+        <label class="choice-card">
+          <input type="radio" name="size" value="Not sure">
+          <span class="choice-card__body">Size yaad nahi</span>
+        </label>
       </div>
-    </div>
+      <p class="field-error" id="sizeError" role="alert">Approximate property size select karein.</p>
+    </fieldset>
 
-    <!-- Price estimate -->
-    <div class="price-badge" id="priceBadge" style="display:none;">
-      <span class="price-badge__label">Estimated price</span>
-      <span class="price-badge__value" id="priceVal">—</span>
-    </div>
-
-    <p class="field-error" id="err2">Please fill in your area, property type, and size.</p>
-    <div class="step-nav">
-      <button class="btn-back" onclick="goBack(2)">← Back</button>
-      <button class="btn-next" onclick="goNext(2)">Next →</button>
-    </div>
-  </div>
-
-  <!-- Step 3: Date & Time -->
-  <div class="step" id="step3">
-    <h2>When should we come?</h2>
-
-    <div class="field">
-      <label>Pick a date</label>
-      <div class="date-slots" id="dateSlots"></div>
-    </div>
-
-    <div class="field">
-      <label>Preferred time</label>
-      <div class="time-grid">
-        <button class="time-btn" data-time="9:00 AM" onclick="selectTime(this)">9:00 AM</button>
-        <button class="time-btn" data-time="10:00 AM" onclick="selectTime(this)">10:00 AM</button>
-        <button class="time-btn" data-time="11:00 AM" onclick="selectTime(this)">11:00 AM</button>
-        <button class="time-btn" data-time="12:00 PM" onclick="selectTime(this)">12:00 PM</button>
-        <button class="time-btn" data-time="1:00 PM" onclick="selectTime(this)">1:00 PM</button>
-        <button class="time-btn" data-time="2:00 PM" onclick="selectTime(this)">2:00 PM</button>
-        <button class="time-btn" data-time="3:00 PM" onclick="selectTime(this)">3:00 PM</button>
-        <button class="time-btn" data-time="4:00 PM" onclick="selectTime(this)">4:00 PM</button>
-        <button class="time-btn" data-time="5:00 PM" onclick="selectTime(this)">5:00 PM</button>
-        <button class="time-btn" data-time="6:00 PM" onclick="selectTime(this)">6:00 PM</button>
+    <div class="quote-summary" aria-live="polite">
+      <div>
+        <span class="quote-summary__price" id="priceSummary">WhatsApp quote ready hoga</span>
+        <p class="quote-summary__note" id="quoteNote">3 answers ke baad aapka message khud tayyar ho jayega.</p>
       </div>
+      <button class="quote-submit" id="quoteSubmit" type="submit">Quote WhatsApp par bhejein</button>
     </div>
+  </form>
 
-    <p class="field-error" id="err3">Please select both a date and a time.</p>
-    <div class="step-nav">
-      <button class="btn-back" onclick="goBack(3)">← Back</button>
-      <button class="btn-next" onclick="goNext(3)">Next →</button>
-    </div>
-  </div>
-
-  <!-- Step 4: Contact -->
-  <div class="step" id="step4">
-    <h2>Your contact details</h2>
-
-    <div class="field">
-      <label for="cName">Full name</label>
-      <input type="text" id="cName" placeholder="e.g. Ahmed Khan" autocomplete="name">
-    </div>
-
-    <div class="field">
-      <label for="cPhone">WhatsApp number</label>
-      <div class="phone-wrap">
-        <span class="phone-prefix">+92</span>
-        <input type="tel" id="cPhone" placeholder="3XX XXXXXXX" autocomplete="tel">
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="cAddress">Property address</label>
-      <input type="text" id="cAddress" placeholder="e.g. House 42, Street 5, DHA Phase 6" autocomplete="street-address">
-    </div>
-
-    <div class="field">
-      <label for="cNotes">Additional notes <span style="color:#9CA3AF;font-weight:400;">(optional)</span></label>
-      <textarea id="cNotes" placeholder="Anything specific about the pest problem, access instructions, etc."></textarea>
-    </div>
-
-    <p class="field-error" id="err4">Please enter your name, WhatsApp number, and address.</p>
-    <div class="step-nav">
-      <button class="btn-back" onclick="goBack(4)">← Back</button>
-      <button class="btn-next" onclick="goNext(4)">Review &amp; Send on WhatsApp →</button>
-    </div>
-  </div>
-
-  <!-- Step 5: WhatsApp Preview -->
-  <div class="step" id="step5">
-    <div style="text-align:center;margin-bottom:20px;">
-      <span class="section-tag">Almost done!</span>
-      <h2 style="margin-top:8px;">Review your booking</h2>
-      <p style="font-size:0.875rem;color:#6B7280;">This message will be sent to SafaiKaro on WhatsApp. Review it, then tap the button below.</p>
-    </div>
-
-    <div class="wa-preview" id="waPreview"></div>
-
-    <a class="btn-whatsapp" id="waBtn" href="#" target="_blank" rel="noopener">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Send Booking on WhatsApp
-    </a>
-    <p class="step-note">WhatsApp will open with this message ready to send. We'll confirm your slot within 30 minutes.</p>
-
-    <div style="margin-top:20px;text-align:center;">
-      <button class="btn-back" onclick="goBack(5)" style="display:inline-block;">← Edit details</button>
-    </div>
-  </div>
-
-</div>
+  <noscript>
+    <p class="no-js-note">Form ke liye JavaScript chahiye. <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20mujhe%20pest%20control%20ka%20quote%20chahiye.">Seedha WhatsApp par quote maangein.</a></p>
+  </noscript>
+</main>
 
 <!-- Footer -->
 <footer class="footer" id="pageFooter">
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="/" class="logo"><img src="/images/logo.png" alt="" width="32" height="32">SafaiKaro</a>
+        <a href="/" class="logo"><img src="/favicon.svg" alt="" width="32" height="32">SafaiKaro</a>
         <p class="footer-tagline">Karachi ka trusted pest control.</p>
         <a href="https://wa.me/923308652035" style="color: #6EE086; display: inline-block; margin-top: 12px;">📱 +92 330 8652035</a>
       </div>
       <div>
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="/#services">General Fumigation</a></li>
           <li><a href="/termite-treatment-new-construction-karachi">Termite Treatment</a></li>
@@ -713,7 +858,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         </ul>
       </div>
       <div>
-        <h4>Areas</h4>
+        <h3>Areas</h3>
         <a href="/pest-control-dha-karachi">Fumigation &amp; Pest Control DHA</a>
         <a href="/pest-control-clifton-karachi">Fumigation &amp; Pest Control Clifton</a>
         <a href="/pest-control-north-nazimabad-karachi">North Nazimabad</a>
@@ -736,194 +881,240 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20booking%20pest%20control%20in%20Karachi"
-   class="wa-float" aria-label="WhatsApp SafaiKaro" target="_blank">
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
+<script src="/prices.js"></script>
 <script>
-// ── State ──
-var B = {
-  service: '', area: '', propType: '', propSize: '',
-  date: '', dateDisplay: '', time: '',
-  name: '', phone: '', address: '', notes: '',
-  price: 0
-};
+(function () {
+  var quoteForm = document.getElementById('quoteForm');
+  var areaSelect = document.getElementById('areaSelect');
+  var otherAreaField = document.getElementById('otherAreaField');
+  var otherAreaInput = document.getElementById('otherAreaInput');
+  var priceSummary = document.getElementById('priceSummary');
+  var quoteNote = document.getElementById('quoteNote');
 
-// ── Price table ──
-var PRICES = {
-  'General Fumigation':  {'Up to 100 sq yds':7000,'101–200 sq yds':11000,'201–300 sq yds':13000,'301–500 sq yds':16000,'501–1,000 sq yds':20000},
-  'Termite Treatment':   {'Up to 100 sq yds':13000,'101–200 sq yds':17000,'201–300 sq yds':20000,'301–500 sq yds':27000,'501–1,000 sq yds':37000},
-  'Bed Bug Treatment':   {'Up to 100 sq yds':11000,'101–200 sq yds':14000,'201–300 sq yds':17000,'301–500 sq yds':23000,'501–1,000 sq yds':29000},
-  'Rodent Control':      {'Up to 100 sq yds':13000,'101–200 sq yds':16000,'201–300 sq yds':18000,'301–500 sq yds':21000,'501–1,000 sq yds':29000},
-  'Annual Shield Plan':  {'Up to 100 sq yds':22000,'101–200 sq yds':28000,'201–300 sq yds':45000,'301–500 sq yds':45000,'501–1,000 sq yds':75000}
-};
+  var PRICE_PREFIX = {
+    'General Fumigation': 'fumigation',
+    'Termite Treatment': 'termite',
+    'Bed Bug Treatment': 'bedbug',
+    'Rodent Control': 'rodent',
+    'Mosquito Control': 'mosquito',
+    'Annual Shield Plan': 'annual'
+  };
+  var SIZE_SUFFIX = {
+    'Up to 100 sq yds': 's',
+    '101-200 sq yds': 'm',
+    '201-300 sq yds': 'ml',
+    '301-500 sq yds': 'l',
+    '501-1,000 sq yds': 'xl'
+  };
 
-var currentStep = 1;
-
-// ── Navigation ──
-function showStep(n) {
-  document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
-  var el = document.getElementById('step'+n);
-  if (el) el.classList.add('active');
-  // update progress
-  document.querySelectorAll('.progress-step').forEach(function(s){
-    var sn = parseInt(s.getAttribute('data-step'));
-    s.classList.remove('active','done');
-    if (sn < n) s.classList.add('done');
-    else if (sn === n) s.classList.add('active');
-  });
-  currentStep = n;
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-function goBack(fromStep) { showStep(fromStep - 1); }
-
-function goNext(fromStep) {
-  hideErrors();
-  if (fromStep === 1) {
-    if (!B.service) { showErr('err1'); return; }
-    showStep(2);
-  } else if (fromStep === 2) {
-    B.area = document.getElementById('areaSelect').value;
-    if (!B.area || !B.propType || !B.propSize) { showErr('err2'); return; }
-    // autocapture can't read <select> option values, so name the area explicitly
-    if (window.posthog) posthog.capture('booking_area_selected', { area: B.area });
-    showStep(3);
-  } else if (fromStep === 3) {
-    if (!B.date || !B.time) { showErr('err3'); return; }
-    showStep(4);
-  } else if (fromStep === 4) {
-    B.name    = document.getElementById('cName').value.trim();
-    B.phone   = document.getElementById('cPhone').value.trim();
-    B.address = document.getElementById('cAddress').value.trim();
-    B.notes   = document.getElementById('cNotes').value.trim();
-    if (!B.name || !B.phone || !B.address) { showErr('err4'); return; }
-    buildPreview();
-    showStep(5);
+  function getEstimate(service, size) {
+    var prefix = PRICE_PREFIX[service];
+    var suffix = SIZE_SUFFIX[size];
+    if (!prefix || !suffix || !window.SAFAIKARO_PRICES) return 0;
+    if ((prefix === 'mosquito' || prefix === 'annual') && suffix === 'ml') suffix = 'l';
+    return window.SAFAIKARO_PRICES[prefix + '-' + suffix] || 0;
   }
-}
 
-function showErr(id){ document.getElementById(id).classList.add('show'); }
-function hideErrors(){ document.querySelectorAll('.field-error').forEach(function(e){ e.classList.remove('show'); }); }
-
-// ── Service selection ──
-function selectService(el) {
-  document.querySelectorAll('.service-card').forEach(function(c){ c.classList.remove('selected'); });
-  el.classList.add('selected');
-  B.service = el.getAttribute('data-service');
-  updatePrice();
-}
-
-// ── Pill selection ──
-function selectPill(el, groupId, stateKey) {
-  document.querySelectorAll('#'+groupId+' .pill').forEach(function(p){ p.classList.remove('selected'); });
-  el.classList.add('selected');
-  B[stateKey] = el.getAttribute('data-value');
-  updatePrice();
-}
-
-// ── Price update ──
-function updatePrice() {
-  var badge = document.getElementById('priceBadge');
-  var val   = document.getElementById('priceVal');
-  if (B.service && B.propSize && PRICES[B.service] && PRICES[B.service][B.propSize] !== undefined) {
-    B.price = PRICES[B.service][B.propSize];
-    val.textContent = 'Rs ' + B.price.toLocaleString();
-    badge.style.display = 'flex';
-  } else {
-    badge.style.display = 'none';
+  function capture(eventName, properties, urgent) {
+    if (!window.posthog || typeof window.posthog.capture !== 'function') return;
+    try {
+      if (urgent) {
+        window.posthog.capture(eventName, properties, {
+          transport: 'sendBeacon',
+          send_instantly: true
+        });
+      } else {
+        window.posthog.capture(eventName, properties);
+      }
+    } catch (error) { /* Tracking must never interrupt the quote flow. */ }
   }
-}
 
-// ── Date slots ──
-function buildDates() {
-  var container = document.getElementById('dateSlots');
-  container.innerHTML = '';
-  var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var today = new Date();
-  today.setHours(0,0,0,0);
-  var count = 0;
-  var d = new Date(today);
-  while (count < 12) {
-    if (d.getDay() !== 0) { // skip Sundays
-      var slot = document.createElement('button');
-      slot.className = 'date-slot';
-      var isToday = d.getTime() === today.getTime();
-      if (isToday) slot.classList.add('today-slot');
-      var dd = d.getDate();
-      var mm = months[d.getMonth()];
-      var dy = days[d.getDay()];
-      slot.innerHTML = '<div class="date-slot__day">'+ dy +'</div><div class="date-slot__num">'+ dd +'</div><div class="date-slot__month">'+ mm +'</div>';
-      // Store as local date string YYYY-MM-DD (avoid UTC offset bugs)
-      var yyyy = d.getFullYear();
-      var mo = String(d.getMonth()+1).padStart(2,'0');
-      var da = String(dd).padStart(2,'0');
-      var dateStr = yyyy+'-'+mo+'-'+da;
-      var dispStr = dy+', '+dd+' '+mm;
-      slot.setAttribute('data-date', dateStr);
-      slot.setAttribute('data-disp', dispStr);
-      slot.addEventListener('click', function(){
-        document.querySelectorAll('.date-slot').forEach(function(s){ s.classList.remove('selected'); });
-        this.classList.add('selected');
-        B.date = this.getAttribute('data-date');
-        B.dateDisplay = this.getAttribute('data-disp');
-      });
-      container.appendChild(slot);
-      count++;
+  function selectedValue(name) {
+    var checked = quoteForm.querySelector('input[name="' + name + '"]:checked');
+    return checked ? checked.value : '';
+  }
+
+  var quoteStarted = false;
+  var completedQuestions = {};
+  function markQuoteStarted() {
+    if (quoteStarted) return;
+    quoteStarted = true;
+    capture('booking_quote_started', { path: window.location.pathname });
+  }
+
+  function markQuestionCompleted(question, value) {
+    if (completedQuestions[question]) return;
+    completedQuestions[question] = true;
+    capture('booking_question_completed', {
+      question: question,
+      value: value
+    });
+  }
+
+  function getAnswers() {
+    var selectedArea = areaSelect.value;
+    return {
+      service: selectedValue('service'),
+      area: selectedArea === 'Other' ? otherAreaInput.value.trim() : selectedArea,
+      size: selectedValue('size')
+    };
+  }
+
+  function updateSummary() {
+    var answers = getAnswers();
+    var amount = getEstimate(answers.service, answers.size);
+
+    if (amount) {
+      priceSummary.textContent = 'Estimate: Rs ' + amount.toLocaleString();
+      quoteNote.textContent = 'Final quote infestation aur site details dekh kar WhatsApp par confirm hoga.';
+      return amount;
     }
-    d.setDate(d.getDate()+1);
+
+    if (answers.service && answers.area && answers.size) {
+      priceSummary.textContent = 'Details ready hain';
+      quoteNote.textContent = 'Exact quote SafaiKaro WhatsApp par confirm karega.';
+    } else {
+      priceSummary.textContent = 'WhatsApp quote ready hoga';
+      quoteNote.textContent = '3 answers ke baad aapka message khud tayyar ho jayega.';
+    }
+    return 0;
   }
-}
 
-// ── Time selection ──
-function selectTime(el) {
-  document.querySelectorAll('.time-btn').forEach(function(b){ b.classList.remove('selected'); });
-  el.classList.add('selected');
-  B.time = el.getAttribute('data-time');
-}
+  function clearError(question) {
+    var error = document.getElementById(question + 'Error');
+    var fieldset = document.getElementById(question + 'Question');
+    if (error) error.classList.remove('show');
+    if (fieldset) fieldset.removeAttribute('aria-invalid');
+    if (question === 'area') {
+      areaSelect.removeAttribute('aria-invalid');
+      otherAreaInput.removeAttribute('aria-invalid');
+    }
+  }
 
-// ── Build WhatsApp preview ──
-function buildPreview() {
-  var priceStr = B.price > 0 ? 'Rs ' + B.price.toLocaleString() : 'Quote on inspection';
-  var notesStr = B.notes ? B.notes : '—';
-  // Clean phone — strip any leading +92, 0, spaces
-  var cleanPhone = B.phone.replace(/^(\+92|92|0)/, '').replace(/\s/g,'');
+  function showError(question) {
+    var error = document.getElementById(question + 'Error');
+    var fieldset = document.getElementById(question + 'Question');
+    if (error) error.classList.add('show');
+    if (fieldset) fieldset.setAttribute('aria-invalid', 'true');
+    if (question === 'area') {
+      areaSelect.setAttribute('aria-invalid', 'true');
+      if (areaSelect.value === 'Other') otherAreaInput.setAttribute('aria-invalid', 'true');
+    }
+  }
 
-  var msg = 'Hi SafaiKaro!\n\n'
-    + '*New Booking Request*\n'
-    + '---\n'
-    + '*Service:* ' + B.service + '\n'
-    + '*Area:* ' + B.area + '\n'
-    + '*Property:* ' + B.propType + ', ' + B.propSize + '\n'
-    + '*Date:* ' + B.dateDisplay + '\n'
-    + '*Time:* ' + B.time + '\n'
-    + '---\n'
-    + '*Name:* ' + B.name + '\n'
-    + '*Phone:* +92 ' + cleanPhone + '\n'
-    + '*Address:* ' + B.address + '\n'
-    + (B.notes ? '*Notes:* ' + B.notes + '\n' : '')
-    + '---\n'
-    + '*Estimated Price:* ' + priceStr + '\n\n'
-    + 'Please confirm my slot. Thank you!';
+  function validate(answers) {
+    ['service', 'area', 'size'].forEach(clearError);
+    var firstInvalid = null;
 
-  document.getElementById('waPreview').textContent = msg;
-  document.getElementById('waBtn').href = 'https://wa.me/923308652035?text=' + encodeURIComponent(msg);
-}
+    if (!answers.service) {
+      showError('service');
+      firstInvalid = document.getElementById('serviceQuestion');
+    }
+    if (!answers.area) {
+      showError('area');
+      if (!firstInvalid) firstInvalid = areaSelect.value === 'Other' ? otherAreaInput : areaSelect;
+    }
+    if (!answers.size) {
+      showError('size');
+      if (!firstInvalid) firstInvalid = document.getElementById('sizeQuestion');
+    }
 
-// ── Nav scroll ──
-window.addEventListener('scroll', function(){
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-}, {passive:true});
+    if (firstInvalid) {
+      firstInvalid.focus();
+      firstInvalid.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      return false;
+    }
+    return true;
+  }
 
-// ── Init ──
-document.addEventListener('DOMContentLoaded', function(){
-  buildDates();
-});
+  function buildMessage(answers, amount) {
+    var estimate = amount ? 'Rs ' + amount.toLocaleString() : 'Please confirm';
+    return [
+      'Hi SafaiKaro!',
+      '',
+      '*Pest Control Quote Request*',
+      '*Service:* ' + answers.service,
+      '*Area:* ' + answers.area,
+      '*Property size:* ' + answers.size,
+      '*Estimated price:* ' + estimate,
+      '',
+      'Please confirm the final quote and available timing.'
+    ].join('\n');
+  }
+
+  quoteForm.querySelectorAll('input[type="radio"]').forEach(function (input) {
+    input.addEventListener('change', function () {
+      markQuoteStarted();
+      var question = input.name === 'size' ? 'size' : 'service';
+      clearError(question);
+      markQuestionCompleted(question, input.value);
+      updateSummary();
+    });
+  });
+
+  areaSelect.addEventListener('change', function () {
+    markQuoteStarted();
+    var isOther = areaSelect.value === 'Other';
+    otherAreaField.hidden = !isOther;
+    if (isOther) {
+      otherAreaInput.focus();
+    } else {
+      otherAreaInput.value = '';
+      clearError('area');
+    }
+    if (areaSelect.value) {
+      capture('booking_area_selected', { area: areaSelect.value });
+      if (!isOther) markQuestionCompleted('area', areaSelect.value);
+    }
+    updateSummary();
+  });
+
+  otherAreaInput.addEventListener('change', function () {
+    markQuoteStarted();
+    if (otherAreaInput.value.trim()) {
+      clearError('area');
+      markQuestionCompleted('area', 'Other / Not listed');
+    }
+    updateSummary();
+  });
+
+  quoteForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var answers = getAnswers();
+    if (!validate(answers)) {
+      capture('booking_quote_validation_error', {
+        missing_service: !answers.service,
+        missing_area: !answers.area,
+        missing_size: !answers.size
+      });
+      return;
+    }
+
+    var amount = updateSummary();
+    var destination = 'https://wa.me/923308652035?text=' + encodeURIComponent(buildMessage(answers, amount));
+    var properties = {
+      path: window.location.pathname,
+      service: answers.service,
+      area: answers.area,
+      property_size: answers.size,
+      estimated_price: amount || null
+    };
+
+    capture('booking_quote_handoff_started', properties, true);
+    var whatsappLink = document.createElement('a');
+    whatsappLink.href = destination;
+    whatsappLink.target = '_blank';
+    whatsappLink.rel = 'noopener';
+    whatsappLink.textContent = 'Quote WhatsApp par bhejein';
+    whatsappLink.hidden = true;
+    document.body.appendChild(whatsappLink);
+    whatsappLink.click();
+    whatsappLink.remove();
+  });
+
+  updateSummary();
+})();
 </script>
-
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -990,12 +1181,12 @@ document.addEventListener('DOMContentLoaded', function(){
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Book Pest Control",
+        "name": "Get a Pest Control Quote",
         "item": "https://safaikaro.pk/book"
       }
     ]
   }
   </script>
-<script src="/prices.js"></script><script src="/wa-desktop.js" defer></script>
+<script src="/wa-desktop.js" defer></script>
 </body>
 </html>

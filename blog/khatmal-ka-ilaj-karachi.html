@@ -12,7 +12,8 @@
   <title>Khatmal Ka Ilaj (کھٹمل) — Bed Bugs Khatam Rs 11,000 Se | SafaiKaro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Sora:wght@400;600;700;800&amp;display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Sora:wght@400;600;700;800&amp;display=optional" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="/styles.css">
   <style>
     .blog-hero {
@@ -92,8 +93,8 @@
     .blog-body a:hover { color: #1a6b40; }
     .highlight-box {
       background: #f0faf4;
-      border-left: 4px solid #0D4A2F;
-      border-radius: 0 8px 8px 0;
+      border: 2px solid #0D4A2F;
+      border-radius: 8px;
       padding: 20px 24px;
       margin: 28px 0;
     }
@@ -108,7 +109,7 @@
       padding: 20px 24px;
       margin: 28px 0;
     }
-    .verdict-box strong { color: #B8740A; }
+    .verdict-box strong { color: #7A4A00; }
     .pricing-table-blog {
       width: 100%;
       border-collapse: collapse;
@@ -163,11 +164,112 @@
       font-size: 0.8125rem;
       font-weight: 500;
     }
+    .symptom-check {
+      margin: 30px 0 44px;
+      padding: 28px;
+      border: 3px solid #0D4A2F;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .symptom-check h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.3rem, 3vw, 1.65rem);
+      text-wrap: balance;
+    }
+    .symptom-check__intro {
+      margin-bottom: 18px !important;
+      color: #374151 !important;
+      font-size: 0.98rem !important;
+    }
+    .symptom-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 18px;
+    }
+    .symptom-option {
+      position: relative;
+      cursor: pointer;
+    }
+    .symptom-option input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+    .symptom-option__body {
+      display: flex;
+      align-items: center;
+      min-height: 68px;
+      padding: 12px 14px;
+      border: 2px solid #C7D0CA;
+      border-radius: 8px;
+      color: #26322B;
+      font-weight: 650;
+      line-height: 1.35;
+      transition: border-color .15s ease-out, background .15s ease-out;
+    }
+    .symptom-option:hover .symptom-option__body { border-color: #0D4A2F; }
+    .symptom-option input:checked + .symptom-option__body {
+      border-color: #0D4A2F;
+      background: #EAF8EE;
+      color: #0D4A2F;
+    }
+    .symptom-option input:focus-visible + .symptom-option__body,
+    .symptom-check button:focus-visible,
+    .context-cta a:focus-visible {
+      outline: 3px solid #F5A623;
+      outline-offset: 3px;
+    }
+    .symptom-check__action {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 2px solid #D9E4DD;
+    }
+    .symptom-check__status {
+      margin: 0 !important;
+      color: #0D4A2F !important;
+      font-size: 0.9rem !important;
+      font-weight: 700;
+    }
+    .symptom-check__action .btn-lime {
+      white-space: nowrap;
+    }
+    .context-cta {
+      margin: 30px 0;
+      padding: 24px;
+      border: 2px solid #0D4A2F;
+      border-radius: 12px;
+      background: #EAF8EE;
+    }
+    .context-cta h3 {
+      margin: 0 0 8px;
+      color: #0D4A2F;
+    }
+    .context-cta p {
+      margin: 0 0 16px;
+      font-size: 0.98rem;
+    }
+    .context-cta .btn-lime { text-decoration: none; }
+    .khatmal-guide .wa-float,
+    .khatmal-guide .mobile-bar { display: none; }
     @media (max-width: 600px) {
       .blog-body { padding: 40px 16px 64px; }
       .blog-cta { padding: 32px 20px; }
       .pricing-table-blog { font-size: 0.875rem; }
       .pricing-table-blog th, .pricing-table-blog td { padding: 10px 10px; }
+      .symptom-check { padding: 22px 16px; }
+      .symptom-options,
+      .symptom-check__action { grid-template-columns: 1fr; }
+      .symptom-check__action .btn-lime { width: 100%; white-space: normal; }
+      .context-cta { padding: 20px 16px; }
+      .context-cta .btn-lime { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .symptom-option__body { transition: none; }
     }
   </style>
   <!-- Open Graph -->
@@ -326,12 +428,12 @@
 posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https://us.i.posthog.com',defaults:'2026-01-30'});
 </script>
 </head>
-<body>
+<body class="khatmal-guide">
 
 <!-- NAV -->
 <nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/images/logo.png" alt="" width="32" height="32">SafaiKaro</a>
+    <a href="/" class="logo"><img src="/favicon.svg" alt="" width="32" height="32">SafaiKaro</a>
     <div class="nav-links" id="navLinks">
       <a href="/#services">Services</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
@@ -341,7 +443,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </div>
     <a href="tel:+923308652035" class="nav-phone">&#128222; 0330 8652035</a>
       <a href="/book" class="btn-lime nav-cta">Book Now</a>
-    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+    <button class="hamburger" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" onclick="var m=document.getElementById('navLinks'),o=m.classList.toggle('open');this.setAttribute('aria-expanded',String(o));this.setAttribute('aria-label',o?'Close menu':'Open menu')">&#9776;</button>
   </div>
 </nav>
 
@@ -376,7 +478,38 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 
   <p>Yeh guide aapko sab kuch batayegi jo khatmal ke baare mein jaanna chahiye: kya hote hain, kaise pehchanen, kahan chhupte hain, DIY sprays kyun fail hote hain, professional treatment ka exact process kya hai, aur Karachi mein bed bug treatment ki actual cost kitni hai.</p>
 
-  <p>Sab kuch seedha, honest, aur Roman Urdu mein — jaise SafaiKaro ka tareeqa hai.</p>
+  <p>Sab kuch seedha, honest, aur Roman Urdu mein - jaise SafaiKaro ka tareeqa hai.</p>
+
+  <form class="symptom-check" id="symptomCheck" action="https://wa.me/923308652035" method="get" target="_blank">
+    <input type="hidden" name="text" value="Hi SafaiKaro, mujhe khatmal ke signs check karwane hain.">
+    <h2>Kya Yeh Khatmal Ke Signs Hain?</h2>
+    <p class="symptom-check__intro">Jo signs aapne dekhe hain select karein. WhatsApp message mein woh khud add ho jayenge.</p>
+    <div class="symptom-options">
+      <label class="symptom-option">
+        <input type="checkbox" name="symptom" value="Subah line ya cluster mein red bites">
+        <span class="symptom-option__body">Subah line ya cluster mein red bites</span>
+      </label>
+      <label class="symptom-option">
+        <input type="checkbox" name="symptom" value="Bedsheet par rust ya blood stains">
+        <span class="symptom-option__body">Bedsheet par rust ya blood stains</span>
+      </label>
+      <label class="symptom-option">
+        <input type="checkbox" name="symptom" value="Mattress seams mein dark spots, eggs ya skins">
+        <span class="symptom-option__body">Mattress seams mein dark spots, eggs ya skins</span>
+      </label>
+      <label class="symptom-option">
+        <input type="checkbox" name="symptom" value="Kamray mein musty smell">
+        <span class="symptom-option__body">Kamray mein musty smell</span>
+      </label>
+    </div>
+    <div class="symptom-check__action">
+      <p class="symptom-check__status" id="symptomStatus" aria-live="polite">Sign select karna optional hai. Photo WhatsApp par bhej sakte hain.</p>
+      <button class="btn-lime" type="submit">Signs WhatsApp Par Bhejein</button>
+    </div>
+    <noscript>
+      <p class="no-js-note"><a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20mujhe%20khatmal%20ke%20signs%20check%20karwane%20hain.">Seedha WhatsApp par signs share karein.</a></p>
+    </noscript>
+  </form>
 
   <!-- SECTION 1: WHAT ARE KHATMAL -->
   <h2>Khatmal Kya Hote Hain? — کھٹمل (Bed Bugs in Urdu)</h2>
@@ -402,17 +535,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 
   <p>Khatmal ko English mein "bed bug" kehte hain (Urdu: کھٹمل), scientific name Cimex lectularius. Yeh chota, reddish-brown, khoon peene wala insect hai jo raat ko active hota hai aur din mein mattress seams ya bed frame mein chhupta hai, isi liye ise English mein bed bug kaha jata hai.</p>
 
-  <!-- CTA 1: EARLY BRIDGE TO PROFESSIONAL TREATMENT -->
-  <div class="blog-cta">
-    <h2>Khatmal Ka Professional Ilaj, Rs 11,000 Se</h2>
-    <p>DIY aur market spray try karne se pehle time aur paise waste na karein. SafaiKaro ka bed bug treatment WHO-approved chemicals, IGR, aur 90-day guarantee ke saath Rs 11,000 se shuru hota hai.</p>
-    <a href="/bed-bug-treatment-karachi" class="btn-lime">Bed Bug Treatment Dekhein &rarr;</a>
-    <div style="margin-top:16px;">
-      <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20bed%20bug%20treatment%20%28khatmal%29%20in%20Karachi" class="btn-lime" target="_blank" rel="noopener">WhatsApp Ab, +92 330 8652035</a>
-    </div>
-  </div>
-
-  <!-- SECTION 2: SIGNS -->
+<!-- SECTION 2: SIGNS -->
   <h2>Khatmal Ki Pehchaan — Yeh 5 Signs Zaroor Check Karein</h2>
 
   <p>Khatmal ki problem confirm karne ke liye yeh signs dekhein:</p>
@@ -434,6 +557,12 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 
   <div class="verdict-box">
     <p><strong>Ek bhi sign dikh raha hai toh delay mat karo.</strong> Khatmal ki ek female month mein 200-250 eggs de sakti hai. 6 hafte mein choti problem badi colony ban jaati hai.</p>
+  </div>
+
+  <div class="context-cta">
+    <h3>Mattress Par Sign Mila?</h3>
+    <p>Photo WhatsApp par bhejein aur batayein kis kamray mein sign mila. SafaiKaro aapko next step batayega.</p>
+    <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20mattress%20ya%20bedroom%20mein%20khatmal%20ka%20sign%20mila%20hai.%20Main%20photo%20share%20karna%20chahta%2Fchahti%20hoon." class="btn-lime contextual-khatmal-cta" target="_blank" rel="noopener" data-context="signs">Signs WhatsApp Par Bhejein</a>
   </div>
 
   <!-- SECTION 3: WHERE THEY HIDE -->
@@ -480,14 +609,11 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     <p><strong>Honest verdict:</strong> Market spray se time aur paise waste hote hain. 2-3 baar try karne ke baad log professional ke paas aate hain — lekin colony aur badi ho chuki hoti hai. Pehli baar hi professional karwao — time aur total cost dono bachaoge.</p>
   </div>
 
-  <!-- CTA 2: BRIDGE AFTER DIY SECTION -->
-  <div class="blog-cta">
-    <h2>Market Spray Fail Ho Gaya? Ab Professional Karwao</h2>
-    <p>SafaiKaro ka khatmal treatment Rs 11,000 se shuru hota hai, dono sessions aur 90-day guarantee included, koi hidden charges nahi.</p>
-    <a href="/bed-bug-treatment-karachi" class="btn-lime">Abhi Book Karwao &rarr;</a>
-    <div style="margin-top:16px;">
-      <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20bed%20bug%20treatment%20%28khatmal%29%20in%20Karachi" class="btn-lime" target="_blank" rel="noopener">WhatsApp Ab, +92 330 8652035</a>
-    </div>
+<!-- CTA 2: AFTER DIY SECTION -->
+  <div class="context-cta">
+    <h3>Market Spray Ke Baad Bhi Signs Hain?</h3>
+    <p>WhatsApp par batayein spray kab kiya tha aur kitne kamray affected hain. Message ready hai.</p>
+    <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20market%20spray%20ke%20baad%20bhi%20khatmal%20ke%20signs%20aa%20rahe%20hain.%20Mujhe%20professional%20treatment%20ka%20quote%20chahiye." class="btn-lime contextual-khatmal-cta" target="_blank" rel="noopener" data-context="diy-failed">Treatment Quote Lein</a>
   </div>
 
   <div class="highlight-box">
@@ -580,7 +706,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     </tbody>
   </table>
 
-  <p>Sab prices mein dono treatment sessions shamil hain (first + follow-up) aur 90-day guarantee. Exact quote property size aur infestation level pe depend karta hai. Free inspection ke liye <a href="/book">yahan book karein</a>.</p>
+  <p>Sab prices mein dono treatment sessions shamil hain (first + follow-up) aur 90-day guarantee. Exact quote property size aur infestation level pe depend karta hai. Free inspection ke liye <a href="/book">3 jawab de kar WhatsApp quote lein</a>.</p>
 
   <!-- SECTION 9: DHA & CLIFTON -->
   <h2>DHA Aur Clifton Mein Khatmal Ki Problem</h2>
@@ -651,9 +777,9 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 
   <!-- BOTTOM CTA -->
   <div class="blog-cta">
-    <h2>Khatmal Ka Ilaj Book Karo — Aaj Hi</h2>
+    <h2>Khatmal Treatment Ka Quote Lein</h2>
     <p>Free inspection. Transparent pricing. 90-day guarantee. DHA aur Clifton mein same-week slots available hain.</p>
-    <a href="/book" class="btn-lime">Khatmal Ka Ilaj Book Karo &rarr;</a>
+    <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20maine%20aapki%20khatmal%20guide%20parhi%20hai.%20Mujhe%20bed%20bug%20treatment%20ka%20quote%20chahiye." class="btn-lime contextual-khatmal-cta" target="_blank" rel="noopener" data-context="article-end">WhatsApp Quote Lein</a>
   </div>
 
 </article>
@@ -671,19 +797,19 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="/" class="logo"><img src="/images/logo.png" alt="" width="32" height="32">SafaiKaro</a>
+      <a href="/" class="logo"><img src="/favicon.svg" alt="" width="32" height="32">SafaiKaro</a>
       <p>Karachi ka trusted pest control</p>
       <a href="https://wa.me/923308652035" class="footer-wa">WhatsApp: +92 330 8652035</a>
     </div>
     <div class="footer-links">
-      <h4>Services</h4>
+      <h3>Services</h3>
       <a href="/#services">General Fumigation</a>
       <a href="/termite-treatment-new-construction-karachi">Termite Treatment</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
       <a href="/annual-pest-control-karachi">Annual Plan</a>
     </div>
     <div class="footer-links">
-      <h4>Areas</h4>
+      <h3>Areas</h3>
         <a href="/pest-control-dha-karachi">DHA Karachi</a>
         <a href="/pest-control-clifton-karachi">Clifton</a>
         <a href="/pest-control-north-nazimabad-karachi">North Nazimabad</a>
@@ -703,21 +829,92 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
   <div class="footer-bottom">&copy; SafaiKaro 2025. All rights reserved.</div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20bed%20bug%20treatment%20%28khatmal%29%20in%20Karachi" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.83.74 5.48 2.03 7.78L.07 31.93l8.36-2.19A15.9 15.9 0 0016 32c8.84 0 16-7.16 16-16S24.84 0 16 0zm8.16 22.56c-.34 1-2.02 1.88-2.78 2-.74.12-1.44.18-4.62-1-4.06-1.5-6.66-5.64-6.86-5.9-.2-.26-1.62-2.16-1.62-4.12s1.02-2.92 1.38-3.32c.36-.4.78-.5 1.04-.5.26 0 .52 0 .74.02.24.02.56-.08.88.68.32.78 1.1 2.7 1.2 2.9s.16.44.02.7c-.14.28-.2.44-.4.68-.2.24-.42.54-.6.72-.2.2-.4.42-.18.82.24.4.84 1.38 1.8 2.24 1.22 1.1 2.26 1.44 2.58 1.6.32.16.5.14.7-.08.18-.22.8-.94 1.02-1.26.22-.32.44-.28.74-.16.3.1 1.9.9 2.22 1.06.32.16.54.24.62.38.08.14.08.78-.26 1.54z"/></svg>
-</a>
-
-<!-- MOBILE BOTTOM BAR -->
-<div class="mobile-bar">
-  <a href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20bed%20bug%20treatment%20%28khatmal%29%20in%20Karachi"><span style="color:white;font-size:0.875rem">&#128241; WhatsApp Karo &mdash; Free Quote</span></a>
-  <a href="/book" class="btn-lime">Book Now</a>
-</div>
-
 <!-- SCRIPTS -->
 <script>
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10)},{passive:true});
-document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var item=this.closest('.faq-item'),wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!wasOpen){item.classList.add('open');this.setAttribute('aria-expanded','true')}})});
+(function () {
+  function capture(eventName, properties, urgent) {
+    if (!window.posthog || typeof window.posthog.capture !== 'function') return;
+    try {
+      window.posthog.capture(eventName, properties, urgent ? {
+        transport: 'sendBeacon',
+        send_instantly: true
+      } : undefined);
+    } catch (error) { /* Tracking must never interrupt the quote flow. */ }
+  }
+
+  var symptomForm = document.getElementById('symptomCheck');
+  var symptomStatus = document.getElementById('symptomStatus');
+
+  symptomForm.querySelectorAll('input[name="symptom"]').forEach(function (input) {
+    input.addEventListener('change', function () {
+      var selected = symptomForm.querySelectorAll('input[name="symptom"]:checked');
+      symptomStatus.textContent = selected.length
+        ? selected.length + ' sign message mein add hoga.'
+        : 'Sign select karna optional hai. Photo WhatsApp par bhej sakte hain.';
+      capture('khatmal_symptom_selected', {
+        symptom: input.value,
+        selected: input.checked,
+        selected_count: selected.length
+      });
+    });
+  });
+
+  symptomForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var symptoms = Array.from(symptomForm.querySelectorAll('input[name="symptom"]:checked')).map(function (input) {
+      return input.value;
+    });
+    var message = [
+      'Hi SafaiKaro!',
+      '',
+      '*Khatmal Signs Check*',
+      symptoms.length ? '*Maine yeh signs dekhe:*\n- ' + symptoms.join('\n- ') : '*Signs:* Main photo WhatsApp par share karunga/karungi.',
+      '',
+      'Please batayein next step kya hona chahiye.'
+    ].join('\n');
+    var destination = 'https://wa.me/923308652035?text=' + encodeURIComponent(message);
+    var properties = {
+      path: window.location.pathname,
+      selected_count: symptoms.length,
+      symptoms: symptoms
+    };
+
+    capture('khatmal_symptom_handoff_started', properties, true);
+    var whatsappLink = document.createElement('a');
+    whatsappLink.href = destination;
+    whatsappLink.target = '_blank';
+    whatsappLink.rel = 'noopener';
+    whatsappLink.textContent = 'Signs WhatsApp Par Bhejein';
+    whatsappLink.hidden = true;
+    document.body.appendChild(whatsappLink);
+    whatsappLink.click();
+    whatsappLink.remove();
+  });
+
+  document.querySelectorAll('.contextual-khatmal-cta').forEach(function (link) {
+    link.addEventListener('click', function () {
+      capture('khatmal_contextual_cta_click', {
+        path: window.location.pathname,
+        context: link.getAttribute('data-context')
+      }, true);
+    });
+  });
+
+  document.querySelectorAll('.faq-q').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var item = button.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
 </script>
 
 <style>.nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}.nav-links.open a{font-size:1rem;padding:8px 0}</style>

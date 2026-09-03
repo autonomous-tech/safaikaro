@@ -36,6 +36,12 @@ a {
   text-decoration: none;
 }
 
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #0D4A2F;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px #F9F8F4;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
@@ -241,6 +247,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 16px;
     margin-left: auto;
   }
+  .home-page .nav-cta {
+    display: none;
+  }
+  .home-page .hamburger {
+    margin-left: auto;
+  }
 }
 
 /* --- Hero Section --- */
@@ -346,11 +358,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 767px) {
-  .hero {
+  .home-page .hero {
     grid-template-columns: 1fr;
+    min-height: 100svh;
   }
-  .hero-content {
-    padding: 60px 24px 48px;
+  .home-page .hero-content {
+    padding: 40px 20px 48px;
+  }
+  .home-page .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.5rem);
+    text-wrap: balance;
+  }
+  .home-page .hero-sub {
+    margin: 14px 0 24px;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+  .home-page .hero-ctas {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .home-page .hero-ctas a {
+    width: 100%;
+    white-space: nowrap;
+  }
+  .home-page .hero-secondary-cta {
+    min-height: 44px;
+    padding: 8px 16px;
+    border-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .home-page .hero-image {
+    display: none;
   }
 }
 
@@ -383,6 +424,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #0D4A2F;
   white-space: nowrap;
+}
+
+.trust-item-bar::before {
+  content: '✓';
+  margin-right: 6px;
+  font-weight: 800;
+}
+
+@media (max-width: 767px) {
+  .home-page .trust-bar-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 16px;
+  }
+  .home-page .trust-item-bar {
+    white-space: normal;
+  }
 }
 
 /* --- Services Grid --- */
@@ -523,11 +581,28 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
 }
 
+.pricing-table tbody th {
+  background: transparent;
+  color: #1A1A1A;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(13,74,47,0.1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+}
+
 .pricing-table tr:last-child td {
   border-bottom: none;
 }
 
+.pricing-table tr:last-child th {
+  border-bottom: none;
+}
+
 .pricing-table tr:hover td {
+  background: rgba(110,224,134,0.08);
+}
+
+.pricing-table tr:hover th {
   background: rgba(110,224,134,0.08);
 }
 
@@ -888,7 +963,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #0D4A2F;
   font-size: 1.05rem;
   margin-bottom: 24px;
-  opacity: 0.8;
 }
 
 /* --- WhatsApp Float ---
@@ -940,6 +1014,44 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 767px) {
+  .home-page .wa-float {
+    display: none;
+  }
+}
+
+.home-page .wa-float {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+.home-page.show-followup-cta .wa-float {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.book-page .nav-cta {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .book-page .hamburger {
+    margin-left: auto;
+  }
+  .book-page .footer-links a,
+  .price-list-page .footer-links a,
+  .book-page .footer-inner > div > a,
+  .price-list-page .footer-inner > div > a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 /* --- Mobile Bottom Bar --- */
 .mobile-bar {
   display: none;
@@ -959,6 +1071,16 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-bar {
     display: flex;
   }
+  .home-page {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom));
+  }
+  .home-page .mobile-bar {
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: none;
+  }
+  .home-page.show-followup-cta .mobile-bar {
+    display: flex;
+  }
 }
 
 .mobile-bar span {
@@ -973,6 +1095,25 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
+.mobile-bar--single .btn-lime {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* --- Section Headings Utility --- */
 .section-label {
   font-size: 0.75rem;
@@ -981,6 +1122,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: #6EE086;
   margin-bottom: 8px;
+}
+
+.home-page :is(.services, .steps, .faq) .section-label {
+  color: #0D4A2F;
 }
 
 .section-title {
@@ -1065,6 +1210,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #25D366;
 }
 
+.footer-inner > div > h3,
+.footer-links h3,
 .footer-links h4 {
   color: white;
   font-size: 0.875rem;
@@ -1095,7 +1242,7 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
 }
 
 /* --- Utility --- */
