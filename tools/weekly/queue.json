@@ -4,10 +4,10 @@
   "type": "blog",
   "page": "/blog/chipkali-bhagane-ka-tarika",
   "query": "chipkali bhagane ka tarika",
-  "play": "Expand the chipkali post to the blog-writer standard (answer block, at-a-glance, FAQ parity, 3 CTAs) and research a September cockroach-season post.",
-  "reason": "New query entered at position 8 in its first week; season is open.",
+  "play": "Expand the chipkali post to the blog-writer standard (answer block, at-a-glance, FAQ parity, 3 CTAs). The September cockroach angle became a lal beg definition block on the existing cockroach post instead of a new post, which would have cannibalised it.",
+  "reason": "New query entered on page one in its first week; season is open.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-price-list-cta-fold",
@@ -15,19 +15,19 @@
   "page": "/pest-control-price-list-karachi",
   "query": null,
   "play": "Price anchor and WhatsApp CTA above the fold on mobile; ledger entry, read at 14 days.",
-  "reason": "Converts below site average on the highest-traffic money page; waiting one week for the cta placement property.",
+  "reason": "Converts below site average on the highest-traffic money page; the starting-price cards already shipped on main, so this run added the ledger entry to read them instead of changing the page again.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "dropped"
  },
  {
   "id": "2026-W35-fumigation-services-relevance",
   "type": "page",
   "page": "/fumigation-services-karachi",
   "query": "fumigation services",
-  "play": "Karachi-wide fumigation FAQ block answering 'fumigation services' variants, internal links from all 14 area pages.",
-  "reason": "Slipped from position 5 to 15 on the head term.",
+  "play": "Karachi-wide fumigation definition block and FAQ pairs answering 'fumigation services' variants, September freshness stamp; all area pages already link to the page.",
+  "reason": "Slipped on the head term the week after the site-wide rewrite.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-fumigation-services-links",
@@ -44,48 +44,168 @@
   "type": "area",
   "page": "/pest-control-gulshan-e-iqbal-karachi",
   "query": "fumigation services in gulshan e iqbal",
-  "play": "Fumigation section, price anchor and area prefill on Gulshan-e-Iqbal and Nazimabad pages.",
+  "play": "FAQ pair in the query's words, area prefill CTA under the fumigation section, next-available-slot wording on Gulshan-e-Iqbal and Nazimabad pages; float prefill fixed on all area pages.",
   "reason": "Both area queries appeared in search this week.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-deemak-ctr",
   "type": "meta",
   "page": "/blog/deemak-ka-ilaj-karachi",
   "query": "dimak ka ilaj",
-  "play": "Title and meta with the 'dimak' spelling variant, price anchor and guarantee, exact phrase first.",
-  "reason": "Slipped from 2.5 to 9.6 on a 439-impression query.",
+  "play": "Title and meta with the 'dimak' spelling variant, price anchor and guarantee, exact phrase first; answer block at the top.",
+  "reason": "Slipped on a high-impression query.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-bed-bug-relevance",
   "type": "page",
   "page": "/bed-bug-treatment-karachi",
   "query": "bed bug treatment",
-  "play": "Section answering 'bed bug treatment' with process and price, links from the khatmal post and homepage, FAQ pair.",
-  "reason": "Slipped from 8.7 to 14.1.",
+  "play": "Section answering 'bed bug treatment' with process and price, link from the khatmal post, khatmal company FAQ pair.",
+  "reason": "Slipped out of the top ten.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-khatmal-definition-box",
   "type": "page",
   "page": "/blog/khatmal-ka-ilaj-karachi",
   "query": "khatmal in english",
-  "play": "Definition box at the very top and a link from the bed-bug service page.",
-  "reason": "Follows the title rewrite shipped this week.",
+  "play": "Definition box at the very top and a link to the bed-bug service page.",
+  "reason": "Follows the title rewrite shipped last week.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W35-llms-refresh",
   "type": "llms",
   "page": "/llms.txt",
   "query": null,
-  "play": "Refresh the khatmal and price narratives after the two title changes merge.",
+  "play": "Refresh the narrative: Urdu pest names with treatment summaries, same-day areas, monthly price note, no certification wording.",
   "reason": "Narratives lag the pages.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-lal-beg-definition",
+  "type": "page",
+  "page": "/blog/cockroach-killer-spray-karachi",
+  "query": "lal beg insect",
+  "play": "Definition-first box for lal beg on the cockroach post and a lal beg FAQ pair on the cockroach service page (the khatmal pattern).",
+  "reason": "Definition query on the service page with no answer block; cockroach season is open.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-clifton-fumigation-ctr",
+  "type": "meta",
+  "page": "/pest-control-clifton-karachi",
+  "query": "fumigation services in clifton karachi",
+  "play": "Title and meta lead with the exact phrase, price anchor and guarantee so the area page takes the query from the homepage.",
+  "reason": "Homepage ranks near the top for the query with no clicks; the snippet does not match the intent.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-dha-defence-faq",
+  "type": "area",
+  "page": "/pest-control-dha-karachi",
+  "query": "pest control defence karachi",
+  "play": "FAQ pair explaining Defence equals DHA with the phases and price anchor.",
+  "reason": "Homepage slipped on the query after the de-DHA wave; the area page should carry it.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-rodent-definition",
+  "type": "page",
+  "page": "/rodent-control-karachi",
+  "query": "rodent control",
+  "play": "Answer-first block with the exact phrase and the two-visit process; near-me FAQ on the page.",
+  "reason": "Gaining query entering the top ten; the page converts above site average.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-freshness-september",
+  "type": "freshness",
+  "page": "/fumigation-services-karachi",
+  "query": null,
+  "play": "September 2026 in title and H1, Updated line under the H1 on the fumigation and annual pages (price list already carried it).",
+  "reason": "First run of the month; price and cost queries reward recency.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W35-machine-post-freshness",
+  "type": "freshness",
+  "page": "/blog/fumigation-machine-price-pakistan",
+  "query": null,
+  "play": "September 2026 stamp in title, H1, Updated line and dateModified.",
+  "reason": "Dropped: the post quotes market machine prices that are not in prices.js, so any edit fails the price lint. Needs a decision on how market prices are marked before the routine can touch the page.",
+  "added": "2026-W35",
+  "status": "dropped"
+ },
+ {
+  "id": "2026-W35-tracking-desktop-card",
+  "type": "instrumentation",
+  "page": "/",
+  "query": null,
+  "play": "Desktop card open no longer counts as whatsapp_click; copy-phone counts; one tap counts once; tester id excluded.",
+  "reason": "Analyst found card opens and double taps inflating lead counts.",
+  "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-homepage-scroll-hero",
+  "type": "cro",
+  "page": "/",
+  "query": null,
+  "play": "Hero copy that gives a reason to scroll (what happens next, price anchor visible) with a ledger entry; read the homepage lead rate clean of the tester first.",
+  "reason": "Homepage median scroll depth is the lowest on the site over 28 days and the page is the main entry point.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W36-termite-service-page",
+  "type": "page",
+  "page": "/termite-treatment-karachi",
+  "query": "termite fumigation in karachi",
+  "play": "Research and write a post-construction termite treatment service page (the existing page targets new construction); follow blog-writer.md for research, answer-first structure and FAQ parity.",
+  "reason": "The homepage carries the query at page two while a competitor's termite page sits on page one; termite season opens in October.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W36-dengue-season-refresh",
+  "type": "page",
+  "page": "/mosquito-dengue-control-karachi",
+  "query": "dengue spray karachi",
+  "play": "Season stamp, definition block for machar and dengue spray, FAQ pair, link from the dengue post; refresh the dengue post's dateModified.",
+  "reason": "Dengue season is active through November and the page has impressions with no clicks.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W36-page-prefills",
+  "type": "cro",
+  "page": "/rodent-control-karachi",
+  "query": null,
+  "play": "Page-specific WhatsApp prefills naming the service on the rodent and cockroach pages, copying the bee and wasp page pattern; ledger entry.",
+  "reason": "Bee and wasp, the only page with a service-specific prefill, converts far above site average.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W36-collector-channels",
+  "type": "instrumentation",
+  "page": "/",
+  "query": null,
+  "play": "Collector reports lead persons outside the Karachi filter on their own line and buckets utm_source=chatgpt.com as an AI channel.",
+  "reason": "Non-Karachi leads were silently dropped and ChatGPT referrals show as direct.",
   "added": "2026-W35",
   "status": "queued"
  }
