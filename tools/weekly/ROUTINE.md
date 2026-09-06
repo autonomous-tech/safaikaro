@@ -33,8 +33,8 @@ python3 tools/weekly/tests/test_weekly.py
 ## 1. Cloud environment (claude.ai/code → Environments)
 
 - **Repository:** `autonomous-tech/safaikaro`
-- **Network:** Custom → include default package managers → add `us.posthog.com`, `api.ahrefs.com`, `api.brevo.com`, `safaikaro.pk`, the R2 endpoint host from `CLOUDFLARE_R2_ENDPOINT_URL` (`*.googleapis.com` and `api.github.com` are in the default list).
-- **Setup script:** `pip install --break-system-packages --only-binary=:all: -r tools/weekly/requirements.txt`
+- **Network:** Custom → tick the package-manager default → add `us.posthog.com`, `api.ahrefs.com`, `api.brevo.com`, `safaikaro.pk`, `api.github.com`, `github.com`, and the R2 endpoint host from `CLOUDFLARE_R2_ENDPOINT_URL`. Without these the egress proxy answers 403 at CONNECT and the run stops in Phase 1. (`*.googleapis.com` and `api.github.com` are in the default list).
+- **Setup script** (no file path; the script does not run from the repo root): `pip install --break-system-packages --only-binary=:all: google-api-python-client google-auth Pillow cffi`
 - **Environment variables:**
   - `POSTHOG_API_KEY` (the `phx_` read key)
   - `GOOGLE_SERVICE_ACCOUNT_B64` (base64 of the SA json that is a user on `sc-domain:safaikaro.pk`)
