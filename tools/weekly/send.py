@@ -11,8 +11,24 @@ one trace marker (the Cobalt decision bar), quiet reading pages.
 import argparse, base64, datetime as dt, html, json, sys, urllib.error
 from pathlib import Path
 
-import charts
+import charts, r2
 from common import CONFIG, OUT, HERE, http_json, log, secret
+
+_PUBLISH = {"fn": None}
+
+
+def img(name, png, width=616):
+    """Chart bytes -> <img>. Published to R2 when configured (Gmail needs a real URL), else a data URI."""
+    if not png:
+        return ""
+    if _PUBLISH["fn"]:
+        try:
+            src = _PUBLISH["fn"](name, png)
+        except Exception as e:  # never lose the report over an upload
+            log("r2 upload failed:", e); src = "data:image/png;base64," + base64.b64encode(png).decode()
+    else:
+        src = "data:image/png;base64," + base64.b64encode(png).decode()
+    return f'<img src="{src}" width="{width}" alt="{esc(name.replace("-", " "))}" style="display:block;width:{width}px;max-width:100%;height:auto;border:0">'
 
 C = dict(cloud50="#fcfcfa", cloud100="#f3f5f6", cloud200="#e7ebed", cloud300="#d5dbdf", cloud500="#7d8996", cloud600="#5f6b7c", cloud700="#3f4a5b",
          cloud900="#111827", mid800="#0f1730", mid300="#8794ba", cobalt500="#3856e8", cobalt300="#9db9ff", cobalt700="#253b85", cobalt50="#eef1ff",
@@ -152,16 +168,32 @@ def actions_block(I, CH, pr_url):
     def li(tone, head, body):
         return f'<tr><td style="padding:6px 0;vertical-align:top;width:14px"><span style="display:inline-block;width:8px;height:8px;border-radius:99px;background:{tone};margin-top:6px"></span></td><td style="padding:6px 0 6px 8px;font:400 13px/20px {F_BODY};color:{C["cloud900"]}"><strong>{esc(head)}</strong> {esc(body)}</td></tr>'
     done = "".join(li(C["sage500"], TYPE_LABEL.get(s.get("type"), s.get("type", "Change")) + ":", f'{s.get("page", "")}. {s.get("reason", "")}') for s in shipped) or li(C["cloud300"], "Nothing shipped.", "")
-    done += "".join(li(C["red500"], "Dropped:", f'{s.get("page", "")}. {s.get("reason", "")}') for s in dropped)
+    done += "".join(li(C["red500"], "Dropped by red team:", f'{s.get("page", "")}. {s.get("reason", "")}') for s in dropped)
     queued = "".join(li(C["cobalt500"], (TYPE_LABEL.get(p.get("type"), p.get("type", "Change")) + ":") if p.get("type") else "Next run:", f'{p.get("page", "")}. {p.get("reason", "")}') for p in planned) or li(C["cloud300"], "Queue is empty.", "The next run rebuilds it from fresh data.")
     needs = "".join(li(C["gold500"], s.get("title", "") + ":", f'{s.get("detail", "")} ({s.get("owner", "you")}, {s.get("effort", "")})') for s in sug) or li(C["cloud300"], "Nothing needs you this week.", "")
     col = lambda title, rows: f'<p style="margin:0 0 4px;font:700 13px/18px {F_DISPLAY};color:{C["mid800"]}">{title}</p><table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse">{rows}</table>'
-    return (col("Done by the routine this week", done) + '<div style="height:12px"></div>' + col("Queued for the next run", queued) + '<div style="height:12px"></div>' +
+    return (col("Done by the routine this week (each item red-teamed, then linted)", done) + '<div style="height:12px"></div>' + col("Queued for the next run (tools/weekly/queue.json, executed first next Monday)", queued) + '<div style="height:12px"></div>' +
             col("Needs you", needs) + '<div style="height:16px"></div>' + pr_block(CH, pr_url))
+
+
+def play_status(m, CH, Q):
+    """shipped / queued / needs you badge for a mover or leak, from changes.json and queue.json."""
+    page, query = m.get("page"), m.get("query")
+    for s in CH.get("shipped", []):
+        if s.get("page") == page:
+            return badge("shipped, red team passed", "sage")
+    for it in Q:
+        if it.get("status") == "queued" and (it.get("page") == page or (query and it.get("query") == query)):
+            return badge("queued next run", "cobalt")
+        if it.get("status") == "needs_human" and (it.get("page") == page or (query and it.get("query") == query)):
+            return badge("needs you", "gold")
+    return ""
 
 
 def render(D, I, CH, pr_url=None):
     ph, g, a, h, cro = D.get("posthog") or {}, D.get("gsc") or {}, D.get("ahrefs") or {}, D.get("health") or {}, D.get("cro") or {}
+    Q = json.loads((HERE / "queue.json").read_text()) if (HERE / "queue.json").exists() else []
+    _PUBLISH["fn"] = r2.publish_run(D["week"]) if r2.available() else None
     tw = D["windows"]["this_week"]
     noise = (ph.get("data_quality") or {}).get("sample_warning", True)
     fd, f = ph.get("funnel_deltas") or {}, ph.get("funnel") or {}
@@ -199,30 +231,25 @@ def render(D, I, CH, pr_url=None):
     labels = [week_label(w) for w in tr.get("weeks", [])]
     trend_html = ""
     if labels:
-        trend_html += charts.line_chart([{"name": "Mobile visitors", "values": [x["visitors"] for x in tr["mobile"]], "color": charts.COBALT},
-                                         {"name": "Desktop visitors", "values": [x["visitors"] for x in tr["desktop"]], "color": charts.COBALT300}], labels, title="Karachi visitors per week")
-        trend_html += '<div style="height:14px"></div>'
-        trend_html += charts.line_chart([{"name": "Lead persons", "values": [x["lead_persons"] for x in tr["total"]], "color": charts.COBALT700},
-                                         {"name": "Mobile leads", "values": [x["lead_persons"] for x in tr["mobile"]], "color": charts.COBALT300}], labels, title="Lead persons per week")
-        trend_html += '<div style="height:14px"></div>'
-        trend_html += charts.line_chart([{"name": "Visitor to lead", "values": [round((x["lead_rate"] or 0) * 100, 1) if x["visitors"] >= 10 else None for x in tr["total"]], "color": charts.SAGE}], labels,
-                                        y_fmt=lambda v: f"{v:.0f}%", title="Lead rate per week (weeks with 10+ visitors)")
+        trend_html += img("visitors-per-week", charts.line_chart([{"name": "Mobile visitors", "values": [x["visitors"] for x in tr["mobile"]], "color": charts.COBALT},
+                                         {"name": "Desktop visitors", "values": [x["visitors"] for x in tr["desktop"]], "color": charts.COBALT300}], labels, title="Karachi visitors per week"))
+        trend_html += img("leads-per-week", charts.line_chart([{"name": "Lead persons", "values": [x["lead_persons"] for x in tr["total"]], "color": charts.COBALT700},
+                                         {"name": "Mobile leads", "values": [x["lead_persons"] for x in tr["mobile"]], "color": charts.COBALT300}], labels, title="Lead persons per week"))
+        trend_html += img("lead-rate-per-week", charts.line_chart([{"name": "Visitor to lead", "values": [round((x["lead_rate"] or 0) * 100, 1) if x["visitors"] >= 10 else None for x in tr["total"]], "color": charts.SAGE}], labels,
+                                        y_fmt=lambda v: f"{v:.0f}%", title="Lead rate per week (weeks with 10+ visitors)"))
     gt = g.get("trend") or []
     if gt:
         gl = [week_label(w["week_start"]) for w in gt]
-        trend_html += '<div style="height:14px"></div>'
-        trend_html += charts.line_chart([{"name": "Organic clicks", "values": [w["clicks"] for w in gt], "color": charts.COBALT}], gl, title="Search Console clicks per week")
-        trend_html += '<div style="height:14px"></div>'
-        trend_html += charts.line_chart([{"name": "Impressions", "values": [w["impressions"] for w in gt], "color": charts.COBALT300}], gl, title="Search Console impressions per week")
-        trend_html += '<div style="height:14px"></div>'
-        trend_html += charts.line_chart([{"name": "Avg position (lower is better)", "values": [w["position"] for w in gt], "color": charts.GOLD}], gl, invert=True, y_fmt=lambda v: f"{v:.1f}", title="Average position per week")
+        trend_html += img("clicks-per-week", charts.line_chart([{"name": "Organic clicks", "values": [w["clicks"] for w in gt], "color": charts.COBALT}], gl, title="Search Console clicks per week"))
+        trend_html += img("impressions-per-week", charts.line_chart([{"name": "Impressions", "values": [w["impressions"] for w in gt], "color": charts.COBALT300}], gl, title="Search Console impressions per week"))
+        trend_html += img("position-per-week", charts.line_chart([{"name": "Avg position (lower is better)", "values": [w["position"] for w in gt], "color": charts.GOLD}], gl, invert=True, y_fmt=lambda v: f"{v:.1f}", title="Average position per week"))
     P.append(section("Trend", "The last 13 weeks", SI.get("trend"), trend_html or para("No trend data.", 13, C["cloud600"]), note="Shaded band is this week. Karachi visitors only, test IDs excluded. Search Console weeks end 3 days ago (data lag)."))
 
     # 4. funnel visual
     steps = [("Visitors", "visitors"), ("Lead persons", "lead_persons"), ("Booking started", "booking_started"), ("Booking handoff", "handoff")]
     def fun(dev, label):
         cur = (f.get("this_week") or {}).get(dev, {})
-        return charts.funnel_chart([(lab, cur.get(k, 0)) for lab, k in steps], title=f"{label}: {n(cur.get('visitors'))} visitors, {pct(cur.get('lead_rate'))} to lead")
+        return img(f"funnel-{dev}", charts.funnel_chart([(lab, cur.get(k, 0)) for lab, k in steps], title=f"{label}: {n(cur.get('visitors'))} visitors, {pct(cur.get('lead_rate'))} to lead"), 300) or para(f"No {dev} visitors this week.", 12, C["cloud600"])
     funnel_html = (f'<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse"><tr><td style="width:50%;vertical-align:top;padding-right:8px">{fun("mobile", "Mobile")}</td>'
                    f'<td style="width:50%;vertical-align:top;padding-left:8px">{fun("desktop", "Desktop")}</td></tr></table>')
     rows = []
@@ -257,13 +284,13 @@ def render(D, I, CH, pr_url=None):
                     stat_tile("Avg position", n(gtot.get("last_28d", {}).get("position"), 1), f"CTR {pct(gtot.get('last_28d', {}).get('ctr'), 2)}", pill(gd.get("position", {}).get("mom"), "", invert=True))])
     b, bp = (g.get("buckets") or {}).get("last_28d", {}), (g.get("buckets") or {}).get("prior_28d", {})
     keys = [("Positions 1 to 3", "p1_3"), ("Positions 4 to 10", "p4_10"), ("Positions 11 to 20", "p11_20"), ("Beyond 20", "p21_plus")]
-    buckets_svg = charts.bucket_bars([b.get(k, 0) for _, k in keys], [bp.get(k, 0) for _, k in keys], [l for l, _ in keys]) if b else ""
+    buckets_svg = img("position-buckets", charts.bucket_bars([b.get(k, 0) for _, k in keys], [bp.get(k, 0) for _, k in keys], [l for l, _ in keys])) if b else ""
     def mover_rows(ms, gaining):
         return [[td(esc(m["query"]), strong=True), td(esc(m["page"]), mono=True, color=C["cloud600"]), td(f'{n(m["position_prev"], 1)} → {n(m["position"], 1)}', "right", mono=True),
-                 td(pill(m["clicks_delta"], ""), "right"), td(esc(play_for(m, gaining, plays)), color=C["cloud700"])] for m in ms[:8]]
+                 td(pill(m["clicks_delta"], ""), "right"), td(esc(play_for(m, gaining, plays)) + " " + play_status(m, CH, Q), color=C["cloud700"])] for m in ms[:8]]
     head = [th("Query"), th("Page"), th("Position", "right"), th("Δ clicks", "right"), th("What next")]
     sd = g.get("striking_distance", [])[:8]
-    srows = [[td(esc(r["query"]), strong=True), td(esc(r["page"]), mono=True, color=C["cloud600"]), td(n(r["position"], 1), "right", mono=True), td(n(r["impressions"]), "right", mono=True), td(esc(play_for(r, True, plays)), color=C["cloud700"])] for r in sd]
+    srows = [[td(esc(r["query"]), strong=True), td(esc(r["page"]), mono=True, color=C["cloud600"]), td(n(r["position"], 1), "right", mono=True), td(n(r["impressions"]), "right", mono=True), td(esc(play_for(r, True, plays)) + " " + play_status(r, CH, Q), color=C["cloud700"])] for r in sd]
     site_a = a.get("site") or {}
     comps = sorted([c for c in a.get("competitors", []) if c.get("dr") is not None], key=lambda c: -(c.get("refdomains") or 0))[:4]
     auth = (f'Refdomains <strong>{n(site_a.get("refdomains"))}</strong> (last week {n(site_a.get("refdomains_prev_week"))}), DR {n(site_a.get("dr"))}, {n(site_a.get("org_keywords"))} organic keywords in Ahrefs. '
@@ -288,7 +315,7 @@ def render(D, I, CH, pr_url=None):
         detail = {"low_lead_rate": f'{pct(l.get("lead_rate"))} vs site {pct(l.get("site_rate"))} on {n(l.get("uv"))} visitors', "low_scroll": f'median scroll {n(l.get("scroll_p50"))}% on {n(l.get("uv"))} visitors',
                   "rageclicks": f'{n(l.get("rageclicks"))} rage clicks', "device_gap": f'{pct(l.get("lead_rate"))} vs site {pct(l.get("site_rate"))} on {n(l.get("visitors"))} visitors',
                   "booking_dropoff": f'{n(l.get("started"))} started, {n(l.get("handoff"))} handed off'}[l["kind"]]
-        lrows.append([td(esc(kinds[l["kind"]]), strong=True), td(esc(l["page"]) + (f' ({esc(l["device"])})' if l.get("device") not in (None, "all") else ""), mono=True), td(esc(detail)), td(n(l.get("lead_gap_persons")) if l.get("lead_gap_persons") else "", "right", mono=True, strong=True), td(esc(plays.get(l["page"], plays_cro[l["kind"]])), color=C["cloud700"])])
+        lrows.append([td(esc(kinds[l["kind"]]), strong=True), td(esc(l["page"]) + (f' ({esc(l["device"])})' if l.get("device") not in (None, "all") else ""), mono=True), td(esc(detail)), td(n(l.get("lead_gap_persons")) if l.get("lead_gap_persons") else "", "right", mono=True, strong=True), td(esc(plays.get(l["page"], plays_cro[l["kind"]])) + " " + play_status(l, CH, Q), color=C["cloud700"])])
     vtone = {"working": "sage", "flat": "cloud", "worse": "red", "too_early": "gold", "not_on_main": "cloud"}
     rrows = [[td(esc(r["id"]), mono=True), td(esc(r.get("hypothesis") or ""), color=C["cloud700"]), td(f'{n(r.get("days_live"))}d', "right", mono=True), td((f'{pct(r["pre"]["rate"])} → {pct(r["post"]["rate"])}' if r.get("pre") and r.get("post") else ""), "right", mono=True), td(badge(r["verdict"].replace("_", " "), vtone.get(r["verdict"], "cloud")), "right")] for r in cro.get("ledger_reads", [])]
     cro_html = (sub("Leaks, ranked by lead persons at stake (28 days)") + table([th("Leak"), th("Page"), th("Evidence"), th("At stake", "right"), th("What next")], lrows, "No leaks above threshold.") +
@@ -334,7 +361,7 @@ def render(D, I, CH, pr_url=None):
           <p style="margin:10px 0 0">{mono(om.get("evidence_ref", ""), C["mid300"])}</p></td></tr></table></td></tr>''')
 
     P.append(f'''<tr><td style="padding:18px 32px 28px;border-top:1px solid {C["cloud200"]}"><p style="margin:0;font:400 11px/17px {F_CODE};color:{C["cloud600"]}">Generated {esc(D.get("generated_at"))} · PostHog project {CONFIG["posthog"]["project_id"]} · {esc(CONFIG["gsc_site"])} · Ahrefs Lite<br>
-      Every number in this email exists in report_data.json. Metrics never enter the public site repo or the PR. If charts do not show in your mail client, open the attached report.html.</p></td></tr>''')
+      Every number in this email exists in report_data.json. Metrics never enter the public site repo or the PR. Charts are hosted images; the attached report.html is the same report.</p></td></tr>''')
 
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SafaiKaro weekly {esc(D["week"])}</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">

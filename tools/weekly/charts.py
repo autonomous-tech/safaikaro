@@ -1,19 +1,30 @@
-"""Inline SVG charts for the weekly email. Pure functions, no dependencies.
-Render in browsers, Apple Mail, Outlook for Mac and the attached report.html; Gmail web drops SVG, which is why
-send.py attaches the HTML as well. Palette from docs/brand/tokens.css (Cobalt for the primary series, Cobalt 300 for
-the secondary, Cloud for prior periods, Sage for gains, Red for losses, Gold for attention).
+"""PNG charts for the weekly email, drawn with Pillow at 2x for retina, brand fonts bundled in fonts/.
+Every function returns PNG bytes; send.py publishes them (R2) or inlines them (data URI) and writes the <img>.
+Palette from docs/brand/tokens.css: Cobalt primary, Cobalt 300 secondary, Cloud for prior periods, Sage gains,
+Red losses, Gold attention. Email clients render <img> everywhere; SVG did not survive Gmail.
 """
-import html
+import io, math
+from pathlib import Path
 
-COBALT, COBALT300, COBALT700, CLOUD300, CLOUD500, CLOUD600, CLOUD900 = "#3856e8", "#9db9ff", "#253b85", "#d5dbdf", "#7d8996", "#5f6b7c", "#111827"
-SAGE, RED, GOLD, MID = "#7ca982", "#b42318", "#d1a44c", "#0f1730"
-F_CODE = "'Source Code Pro', Menlo, Consolas, monospace"
-F_BODY = "Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+from PIL import Image, ImageDraw, ImageFont
+
+FONTS = Path(__file__).resolve().parent / "fonts"
+COBALT, COBALT300, COBALT700, CLOUD100, CLOUD200, CLOUD300, CLOUD500, CLOUD600, CLOUD900 = "#3856e8", "#9db9ff", "#253b85", "#f3f5f6", "#e7ebed", "#d5dbdf", "#7d8996", "#5f6b7c", "#111827"
+SAGE, RED, GOLD, MID, WHITE = "#7ca982", "#b42318", "#d1a44c", "#0f1730", "#ffffff"
+S = 2  # supersampling scale
+
+
+def _font(name, size):
+    try:
+        return ImageFont.truetype(str(FONTS / name), int(size * S))
+    except OSError:
+        return ImageFont.load_default()
+
+
+F_BODY, F_BODY_B, F_HEAD, F_CODE = (lambda s: _font("Inter-Regular.ttf", s)), (lambda s: _font("Inter-Semibold.ttf", s)), (lambda s: _font("Archivo-Bold.ttf", s)), (lambda s: _font("SourceCodePro-Medium.ttf", s))
 
 
 def _nice(v):
-    """Round a top-of-axis value up to 1, 2, 2.5, 5 or 10 times a power of ten so gridlines land on clean numbers."""
-    import math
     if v <= 0:
         return 1
     mag = 10 ** math.floor(math.log10(v))
@@ -31,100 +42,107 @@ def _fmt(v):
     return f"{int(v):,}"
 
 
-def line_chart(series, labels, width=616, height=170, y_fmt=_fmt, invert=False, title=None, band_last=True):
-    """series: [{"name","values":[...],"color","width"}]; labels: x labels (week starts). Last point is the current week.
-    invert=True draws lower values higher (average position). Missing values (None) break the line."""
-    pad_l, pad_r, pad_t, pad_b = 44, 14, 22 if title else 10, 26
+def _png(im):
+    im = im.resize((im.width // S, im.height // S), Image.LANCZOS)
+    buf = io.BytesIO(); im.save(buf, "PNG", optimize=True)
+    return buf.getvalue()
+
+
+def _text(d, xy, s, font, fill, anchor="la"):
+    d.text((xy[0] * S, xy[1] * S), s, font=font, fill=fill, anchor=anchor)
+
+
+def line_chart(series, labels, width=616, height=190, y_fmt=_fmt, invert=False, title=None, band_last=True):
+    """series: [{"name","values":[...],"color"}]; labels: x labels. None values break the line. invert: lower is better."""
+    pad_l, pad_r, pad_t, pad_b = 48, 16, 30 if title else 12, 44
     w, h = width - pad_l - pad_r, height - pad_t - pad_b
     vals = [v for s in series for v in s["values"] if v is not None]
     if not vals:
-        return ""
-    lo, hi = 0, max(vals) * (1.1 if invert else 1.15) or 1
-    hi = _nice(hi)
+        return None
+    lo, hi = 0, _nice(max(vals) * (1.1 if invert else 1.15) or 1)
     n = max(len(labels), 2)
-    def x(i):
-        return pad_l + i * w / (n - 1)
-    def y(v):
-        t = (v - lo) / (hi - lo) if hi != lo else 0.5
-        return pad_t + (t * h if invert else (1 - t) * h)
-    parts = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="display:block;max-width:100%;font-family:{F_CODE}">']
+    x = lambda i: pad_l + i * w / (n - 1)
+    y = lambda v: pad_t + ((v - lo) / (hi - lo) * h if invert else (1 - (v - lo) / (hi - lo)) * h)
+    im = Image.new("RGB", (width * S, height * S), WHITE); d = ImageDraw.Draw(im)
     if title:
-        parts.append(f'<text x="{pad_l}" y="14" font-size="11" font-weight="600" fill="{CLOUD600}" font-family="{F_BODY}" letter-spacing=".06em">{html.escape(title.upper())}</text>')
-    # gridlines: 3
+        _text(d, (pad_l, 6), title.upper(), F_BODY_B(11), CLOUD600)
     for k in range(4):
-        gv = lo + (hi - lo) * k / 3
-        gy = y(gv)
-        parts.append(f'<line x1="{pad_l}" x2="{width - pad_r}" y1="{gy:.1f}" y2="{gy:.1f}" stroke="{CLOUD300}" stroke-width="1" stroke-dasharray="2 3"/>')
-        parts.append(f'<text x="{pad_l - 6}" y="{gy + 3:.1f}" font-size="10" fill="{CLOUD500}" text-anchor="end">{html.escape(y_fmt(round(gv, 1)))}</text>')
+        gv = lo + (hi - lo) * k / 3; gy = y(gv)
+        for xx in range(int(pad_l * S), int((width - pad_r) * S), 8 * S):
+            d.line([(xx, gy * S), (xx + 3 * S, gy * S)], fill=CLOUD300, width=S)
+        _text(d, (pad_l - 8, gy), y_fmt(round(gv, 1)), F_CODE(10), CLOUD500, "rm")
     if band_last and n >= 2:
-        parts.append(f'<rect x="{x(n - 2):.1f}" y="{pad_t}" width="{x(n - 1) - x(n - 2):.1f}" height="{h}" fill="{COBALT}" opacity="0.06"/>')
+        d.rectangle([x(n - 2) * S, pad_t * S, x(n - 1) * S, (pad_t + h) * S], fill="#eef1ff")
     for s in series:
-        pts, segs = [], []
+        col = s.get("color", COBALT); pts = []
+        segs = []
         for i, v in enumerate(s["values"][:n]):
             if v is None:
                 if pts: segs.append(pts); pts = []
                 continue
-            pts.append(f"{x(i):.1f},{y(v):.1f}")
+            pts.append((x(i) * S, y(v) * S))
         if pts: segs.append(pts)
         for seg in segs:
-            parts.append(f'<polyline fill="none" stroke="{s.get("color", COBALT)}" stroke-width="{s.get("width", 2)}" stroke-linejoin="round" stroke-linecap="round" points="{" ".join(seg)}"/>')
+            if len(seg) > 1:
+                d.line(seg, fill=col, width=int(2.2 * S), joint="curve")
         last = [(i, v) for i, v in enumerate(s["values"][:n]) if v is not None]
         if last:
-            i, v = last[-1]
-            parts.append(f'<circle cx="{x(i):.1f}" cy="{y(v):.1f}" r="3.5" fill="{s.get("color", COBALT)}"/>')
-            parts.append(f'<text x="{min(x(i) + 6, width - 2):.1f}" y="{y(v) - 6:.1f}" font-size="11" font-weight="600" fill="{s.get("color", COBALT)}" text-anchor="{"end" if i == n - 1 else "start"}">{html.escape(y_fmt(v))}</text>')
+            i, v = last[-1]; cx, cy = x(i) * S, y(v) * S
+            d.ellipse([cx - 4 * S, cy - 4 * S, cx + 4 * S, cy + 4 * S], fill=col)
+            _text(d, (x(i) + (0 if i == n - 1 else 7), y(v) - 8), y_fmt(v), F_CODE(11), col, "rd" if i == n - 1 else "ld")
     for i, lab in enumerate(labels):
         if i % 2 == 0 or i == n - 1:
-            anchor = "end" if i == n - 1 else "start" if i == 0 else "middle"
-            parts.append(f'<text x="{x(i):.1f}" y="{height - 8}" font-size="10" fill="{CLOUD500}" text-anchor="{anchor}">{html.escape(lab)}</text>')
-    parts.append("</svg>")
-    legend = " ".join(f'<span style="display:inline-block;margin-right:14px;font:600 11px/16px {F_BODY};color:{CLOUD600}"><span style="display:inline-block;width:18px;height:3px;background:{s.get("color", COBALT)};vertical-align:middle;margin-right:6px"></span>{html.escape(s["name"])}</span>' for s in series)
-    return "".join(parts) + f'<div style="margin:2px 0 0 44px">{legend}</div>'
+            _text(d, (x(i), height - pad_b + 10), lab, F_CODE(10), CLOUD500, "ra" if i == n - 1 else "la" if i == 0 else "ma")
+    lx = pad_l
+    for s in series:
+        col = s.get("color", COBALT)
+        d.line([(lx * S, (height - 12) * S), ((lx + 18) * S, (height - 12) * S)], fill=col, width=3 * S)
+        _text(d, (lx + 24, height - 12), s["name"], F_BODY_B(11), CLOUD600, "lm")
+        lx += 24 + int(d.textlength(s["name"], font=F_BODY_B(11)) / S) + 18
+    return _png(im)
 
 
 def funnel_chart(steps, width=300, title="", color=COBALT):
-    """steps: [(label, value)] top to bottom. Centered horizontal bars proportional to the first step, with step-to-step
-    conversion written on the right. Reads as a funnel without needing a chart library."""
+    """steps: [(label, value)] top to bottom; bars proportional to the first step, right column = share of the first."""
     if not steps or not steps[0][1]:
-        return f'<p style="font:400 12px/18px {F_BODY};color:{CLOUD600}">No {html.escape(title.lower())} visitors this window.</p>'
+        return None
     top = steps[0][1]
-    row_h, gap, label_w, right_w = 30, 8, 118, 66
+    row_h, gap, label_w, right_w = 30, 8, 118, 74
     bar_w = width - label_w - right_w
-    height = len(steps) * (row_h + gap) + (24 if title else 4)
-    parts = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="display:block;max-width:100%;font-family:{F_BODY}">']
-    y0 = 20 if title else 0
+    y0 = 26 if title else 2
+    height = y0 + len(steps) * (row_h + gap)
+    im = Image.new("RGB", (width * S, height * S), WHITE); d = ImageDraw.Draw(im)
     if title:
-        parts.append(f'<text x="0" y="13" font-size="13" font-weight="700" fill="{MID}" font-family="Archivo, Arial, sans-serif">{html.escape(title)}</text>')
+        _text(d, (0, 2), title, F_HEAD(13), MID)
     for i, (lab, v) in enumerate(steps):
-        y = y0 + i * (row_h + gap)
-        frac = (v / top) if top else 0
-        bw = max(3, bar_w * frac) if v else 0
-        bx = label_w + (bar_w - bw) / 2
-        parts.append(f'<text x="{label_w - 8}" y="{y + row_h / 2 + 4}" font-size="12" fill="{CLOUD900}" text-anchor="end">{html.escape(lab)}</text>')
-        parts.append(f'<rect x="{label_w}" y="{y}" width="{bar_w}" height="{row_h}" rx="4" fill="#f3f5f6"/>')
+        yy = y0 + i * (row_h + gap); frac = v / top if top else 0
+        bw = max(3, bar_w * frac) if v else 0; bx = label_w + (bar_w - bw) / 2
+        _text(d, (label_w - 8, yy + row_h / 2), lab, F_BODY(12), CLOUD900, "rm")
+        d.rounded_rectangle([label_w * S, yy * S, (label_w + bar_w) * S, (yy + row_h) * S], radius=4 * S, fill=CLOUD100)
         if v:
-            parts.append(f'<rect x="{bx:.1f}" y="{y}" width="{bw:.1f}" height="{row_h}" rx="4" fill="{color}" opacity="{0.55 + 0.45 * frac:.2f}"/>')
-        parts.append(f'<text x="{label_w + bar_w / 2}" y="{y + row_h / 2 + 4}" font-size="12" font-weight="700" fill="{"#ffffff" if frac > 0.45 else CLOUD900}" text-anchor="middle" font-family="{F_CODE}">{_fmt(v)}</text>')
+            shade = Image.new("RGB", (1, 1), color).getpixel((0, 0))
+            mix = tuple(int(c * (0.55 + 0.45 * frac) + 255 * (1 - (0.55 + 0.45 * frac))) for c in shade)
+            d.rounded_rectangle([bx * S, yy * S, (bx + bw) * S, (yy + row_h) * S], radius=4 * S, fill=mix)
+        _text(d, (label_w + bar_w / 2, yy + row_h / 2), _fmt(v), F_CODE(12), WHITE if frac > 0.45 else CLOUD900, "mm")
         if i > 0:
-            parts.append(f'<text x="{width - 2}" y="{y + row_h / 2 + 4}" font-size="11" fill="{CLOUD600}" text-anchor="end" font-family="{F_CODE}">{frac * 100:.0f}% of visitors</text>')
-    parts.append("</svg>")
-    return "".join(parts)
+            _text(d, (width - 2, yy + row_h / 2), f"{frac * 100:.0f}% of visitors", F_CODE(10), CLOUD600, "rm")
+    return _png(im)
 
 
 def bucket_bars(now, prior, labels, width=616):
-    """Paired horizontal bars: prior (cloud) vs now (cobalt) per bucket, values at the end."""
     mx = max([*now, *prior, 1])
-    row_h, gap, label_w, val_w = 12, 14, 130, 60
+    row_h, gap, label_w, val_w = 12, 14, 130, 90
     bar_w = width - label_w - val_w
-    height = len(labels) * (row_h * 2 + gap) + 6
-    parts = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="display:block;max-width:100%;font-family:{F_BODY}">']
+    height = len(labels) * (row_h * 2 + gap) + 22
+    im = Image.new("RGB", (width * S, height * S), WHITE); d = ImageDraw.Draw(im)
     for i, lab in enumerate(labels):
-        y = i * (row_h * 2 + gap)
-        parts.append(f'<text x="{label_w - 8}" y="{y + row_h + 4}" font-size="12" fill="{CLOUD900}" text-anchor="end">{html.escape(lab)}</text>')
-        parts.append(f'<rect x="{label_w}" y="{y}" width="{bar_w * prior[i] / mx:.1f}" height="{row_h - 2}" rx="2" fill="{CLOUD300}"/>')
-        parts.append(f'<rect x="{label_w}" y="{y + row_h}" width="{bar_w * now[i] / mx:.1f}" height="{row_h - 2}" rx="2" fill="{COBALT}"/>')
-        d = now[i] - prior[i]
-        parts.append(f'<text x="{label_w + bar_w * now[i] / mx + 6:.1f}" y="{y + row_h * 2 - 3}" font-size="11" font-weight="600" fill="{SAGE if d > 0 else RED if d < 0 else CLOUD600}" font-family="{F_CODE}">{_fmt(now[i])} ({"+" if d > 0 else ""}{d})</text>')
-    parts.append("</svg>")
-    parts.append(f'<div style="margin-left:{label_w}px;font:600 11px/16px {F_BODY};color:{CLOUD600}"><span style="display:inline-block;width:14px;height:8px;background:{CLOUD300};margin-right:6px"></span>prior 28d <span style="display:inline-block;width:14px;height:8px;background:{COBALT};margin:0 6px 0 14px"></span>last 28d</div>')
-    return "".join(parts)
+        yy = i * (row_h * 2 + gap)
+        _text(d, (label_w - 8, yy + row_h), lab, F_BODY(12), CLOUD900, "rm")
+        d.rounded_rectangle([label_w * S, yy * S, (label_w + bar_w * prior[i] / mx) * S, (yy + row_h - 2) * S], radius=2 * S, fill=CLOUD300)
+        d.rounded_rectangle([label_w * S, (yy + row_h) * S, (label_w + bar_w * now[i] / mx) * S, (yy + row_h * 2 - 2) * S], radius=2 * S, fill=COBALT)
+        dd = now[i] - prior[i]
+        _text(d, (label_w + bar_w * now[i] / mx + 6, yy + row_h * 1.5 - 1), f"{_fmt(now[i])} ({'+' if dd > 0 else ''}{dd})", F_CODE(11), SAGE if dd > 0 else RED if dd < 0 else CLOUD600, "lm")
+    ly = height - 8
+    d.rectangle([label_w * S, (ly - 4) * S, (label_w + 14) * S, (ly + 4) * S], fill=CLOUD300); _text(d, (label_w + 20, ly), "prior 28d", F_BODY_B(11), CLOUD600, "lm")
+    d.rectangle([(label_w + 90) * S, (ly - 4) * S, (label_w + 104) * S, (ly + 4) * S], fill=COBALT); _text(d, (label_w + 110, ly), "last 28d", F_BODY_B(11), CLOUD600, "lm")
+    return _png(im)
