@@ -33,7 +33,7 @@ python3 tools/weekly/tests/test_weekly.py
 ## 1. Cloud environment (claude.ai/code → Environments)
 
 - **Repository:** `autonomous-tech/safaikaro`
-- **Network:** Custom → include default package managers → add `us.posthog.com`, `api.ahrefs.com`, `api.brevo.com`, `safaikaro.pk` (`*.googleapis.com` and `api.github.com` are in the default list).
+- **Network:** Custom → include default package managers → add `us.posthog.com`, `api.ahrefs.com`, `api.brevo.com`, `safaikaro.pk`, the R2 endpoint host from `CLOUDFLARE_R2_ENDPOINT_URL` (`*.googleapis.com` and `api.github.com` are in the default list).
 - **Setup script:** `pip install --break-system-packages --only-binary=:all: -r tools/weekly/requirements.txt`
 - **Environment variables:**
   - `POSTHOG_API_KEY` (the `phx_` read key)
@@ -41,6 +41,7 @@ python3 tools/weekly/tests/test_weekly.py
   - `AHREFS_API_KEY`
   - `BREVO_API_KEY`
   - `GH_TOKEN` (fine-grained token, contents + pull-requests write on this repo; used by `gh pr create` and the Pages build check)
+  - `CLOUDFLARE_R2_ACCESS_KEY_ID`, `CLOUDFLARE_R2_SECRET_ACCESS_KEY`, `CLOUDFLARE_R2_ENDPOINT_URL`, `CLOUDFLARE_R2_BUCKET` (chart images; without them charts fall back to data URIs, which Gmail blocks)
   - optional `REPORT_TO` override; recipients otherwise come from `config.json`
 
 Secrets note: routines have no secret store. Use least-privilege keys (PostHog read-only, GSC readonly SA, fine-grained GH token scoped to this repo).
