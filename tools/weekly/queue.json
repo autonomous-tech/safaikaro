@@ -1,0 +1,92 @@
+[
+ {
+  "id": "2026-W35-chipkali-cockroach-post",
+  "type": "blog",
+  "page": "/blog/chipkali-bhagane-ka-tarika",
+  "query": "chipkali bhagane ka tarika",
+  "play": "Expand the chipkali post to the blog-writer standard (answer block, at-a-glance, FAQ parity, 3 CTAs) and research a September cockroach-season post.",
+  "reason": "New query entered at position 8 in its first week; season is open.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-price-list-cta-fold",
+  "type": "cro",
+  "page": "/pest-control-price-list-karachi",
+  "query": null,
+  "play": "Price anchor and WhatsApp CTA above the fold on mobile; ledger entry, read at 14 days.",
+  "reason": "Converts below site average on the highest-traffic money page; waiting one week for the cta placement property.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-fumigation-services-relevance",
+  "type": "page",
+  "page": "/fumigation-services-karachi",
+  "query": "fumigation services",
+  "play": "Karachi-wide fumigation FAQ block answering 'fumigation services' variants, internal links from all 14 area pages.",
+  "reason": "Slipped from position 5 to 15 on the head term.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-fumigation-services-links",
+  "type": "page",
+  "page": "/fumigation-services-karachi",
+  "query": "fumigation services in karachi",
+  "play": "Two directory citations (Bing Places, YellowPagesPK) pointing at the fumigation page.",
+  "reason": "Page-3 ceiling without links.",
+  "added": "2026-W35",
+  "status": "needs_human"
+ },
+ {
+  "id": "2026-W35-area-gulshan-nazimabad",
+  "type": "area",
+  "page": "/pest-control-gulshan-e-iqbal-karachi",
+  "query": "fumigation services in gulshan e iqbal",
+  "play": "Fumigation section, price anchor and area prefill on Gulshan-e-Iqbal and Nazimabad pages.",
+  "reason": "Both area queries appeared in search this week.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-deemak-ctr",
+  "type": "meta",
+  "page": "/blog/deemak-ka-ilaj-karachi",
+  "query": "dimak ka ilaj",
+  "play": "Title and meta with the 'dimak' spelling variant, price anchor and guarantee, exact phrase first.",
+  "reason": "Slipped from 2.5 to 9.6 on a 439-impression query.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-bed-bug-relevance",
+  "type": "page",
+  "page": "/bed-bug-treatment-karachi",
+  "query": "bed bug treatment",
+  "play": "Section answering 'bed bug treatment' with process and price, links from the khatmal post and homepage, FAQ pair.",
+  "reason": "Slipped from 8.7 to 14.1.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-khatmal-definition-box",
+  "type": "page",
+  "page": "/blog/khatmal-ka-ilaj-karachi",
+  "query": "khatmal in english",
+  "play": "Definition box at the very top and a link from the bed-bug service page.",
+  "reason": "Follows the title rewrite shipped this week.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W35-llms-refresh",
+  "type": "llms",
+  "page": "/llms.txt",
+  "query": null,
+  "play": "Refresh the khatmal and price narratives after the two title changes merge.",
+  "reason": "Narratives lag the pages.",
+  "added": "2026-W35",
+  "status": "queued"
+ }
+]
