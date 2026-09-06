@@ -13,30 +13,96 @@
       "019d1a03-a96a-7ce2-b7eb-9b1305689334"
     ],
     "lead_events": [
-      "whatsapp_click", "book_click", "call_click",
-      "booking_quote_handoff_started", "khatmal_symptom_handoff_started",
-      "khatmal_contextual_cta_click", "commercial_survey_request"
+      "whatsapp_click",
+      "book_click",
+      "call_click",
+      "booking_quote_handoff_started",
+      "khatmal_symptom_handoff_started",
+      "khatmal_contextual_cta_click",
+      "commercial_survey_request"
     ],
     "analyst_query_cap": 25
   },
   "money_pages": [
-    "/", "/book", "/pest-control-price-list-karachi", "/fumigation-services-karachi",
-    "/cockroach-control-karachi", "/bed-bug-treatment-karachi", "/rodent-control-karachi",
-    "/termite-treatment-new-construction-karachi", "/mosquito-dengue-control-karachi",
-    "/annual-pest-control-karachi", "/commercial", "/pest-control-dha-karachi", "/pest-control-clifton-karachi"
+    "/",
+    "/book",
+    "/pest-control-price-list-karachi",
+    "/fumigation-services-karachi",
+    "/cockroach-control-karachi",
+    "/bed-bug-treatment-karachi",
+    "/rodent-control-karachi",
+    "/termite-treatment-new-construction-karachi",
+    "/mosquito-dengue-control-karachi",
+    "/annual-pest-control-karachi",
+    "/commercial",
+    "/pest-control-dha-karachi",
+    "/pest-control-clifton-karachi"
   ],
   "competitors": [
-    "karachi-fumigation.com", "pestcontrolkarachi.com", "hafiservices.com",
-    "nestfumigationservices.com", "karachifumigationservices.com",
-    "a1fumigations.com", "pakistanfumigation.com", "c-shinegroup.com"
+    "karachi-fumigation.com",
+    "pestcontrolkarachi.com",
+    "hafiservices.com",
+    "nestfumigationservices.com",
+    "karachifumigationservices.com",
+    "a1fumigations.com",
+    "pakistanfumigation.com",
+    "c-shinegroup.com"
   ],
-  "ahrefs": { "country": "pk", "competitor_top_pages": 3, "keyword_candidates_max": 30 },
+  "ahrefs": {
+    "country": "pk",
+    "competitor_top_pages": 3,
+    "keyword_candidates_max": 30
+  },
   "season": [
-    { "name": "Dengue spray", "months": [9, 10, 11], "page": "/mosquito-dengue-control-karachi" },
-    { "name": "Termite pre-construction", "months": [10, 11, 12, 1, 2], "page": "/termite-treatment-new-construction-karachi" },
-    { "name": "Monsoon cockroach", "months": [7, 8, 9], "page": "/cockroach-control-karachi" },
-    { "name": "Summer bed bugs", "months": [4, 5, 6, 7], "page": "/bed-bug-treatment-karachi" },
-    { "name": "Eid deep clean / fumigation", "months": [2, 3, 5, 6], "page": "/fumigation-services-karachi" }
+    {
+      "name": "Dengue spray",
+      "months": [
+        9,
+        10,
+        11
+      ],
+      "page": "/mosquito-dengue-control-karachi"
+    },
+    {
+      "name": "Termite pre-construction",
+      "months": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "page": "/termite-treatment-new-construction-karachi"
+    },
+    {
+      "name": "Monsoon cockroach",
+      "months": [
+        7,
+        8,
+        9
+      ],
+      "page": "/cockroach-control-karachi"
+    },
+    {
+      "name": "Summer bed bugs",
+      "months": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "page": "/bed-bug-treatment-karachi"
+    },
+    {
+      "name": "Eid deep clean / fumigation",
+      "months": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "page": "/fumigation-services-karachi"
+    }
   ],
   "thresholds": {
     "min_lead_persons_for_rates": 20,
@@ -51,14 +117,36 @@
     "low_scroll_pct": 35
   },
   "banned_phrases": [
-    "PPCP", "Sindh EPA", "EPA Pakistan", "EPA-registered", "EPA registered", "certified by", "licensed by",
-    "aggregateRating", "restaurant", "cafe", "café", "food service", "hotel",
-    "8,000+ homes", "847 reviews", "340 reviews"
+    "PPCP",
+    "Sindh EPA",
+    "EPA Pakistan",
+    "EPA-registered",
+    "EPA registered",
+    "certified by",
+    "licensed by",
+    "aggregateRating",
+    "restaurant",
+    "cafe",
+    "caf\u00e9",
+    "food service",
+    "hotel",
+    "8,000+ homes",
+    "847 reviews",
+    "340 reviews"
   ],
   "email": {
-    "to": ["rizwan@autonomoustech.ca"],
+    "to": [
+      "rizwan@autonomoustech.ca",
+      "kingbhairyan@gmail.com"
+    ],
     "from": "noreply@autonomoustech.ca",
     "from_name": "Autonomous Weekly",
     "subject_prefix": "SafaiKaro weekly"
-  }
+  },
+  "freshness_pages": [
+    "/pest-control-price-list-karachi",
+    "/fumigation-services-karachi",
+    "/annual-pest-control-karachi",
+    "/blog/fumigation-machine-price-pakistan"
+  ]
 }

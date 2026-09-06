@@ -159,6 +159,24 @@ def collect_posthog(W):
         "sample_warning": (out["funnel"]["this_week"]["total"]["lead_persons"] or 0) < T["min_lead_persons_for_rates"],
     }
 
+    # 13-week trend by device (Mon-start weeks, Asia/Karachi), ending with this_week
+    start13 = W["this_week"][0] - dt.timedelta(weeks=12)
+    trend = ph.rows(f"""SELECT toString(toStartOfWeek(toTimeZone(timestamp,'Asia/Karachi'), 1)) AS week_start,
+        coalesce(properties.$device_type,'Other') AS device,
+        count(DISTINCT if(event='$pageview',person_id,NULL)) AS visitors, countIf(event='$pageview') AS pageviews,
+        count(DISTINCT if({LEAD},person_id,NULL)) AS lead_persons
+        FROM events WHERE {ph.between((start13, W['this_week'][1]))} AND {base} GROUP BY week_start, device ORDER BY week_start""")
+    weeks = [str(start13 + dt.timedelta(weeks=i)) for i in range(13)]
+    by = {(r["week_start"], r["device"]): r for r in trend}
+    out["trend"] = {"weeks": weeks, "mobile": [], "desktop": [], "total": []}
+    for wk in weeks:
+        m, d = by.get((wk, "Mobile"), {}), by.get((wk, "Desktop"), {})
+        allv = [r for (w, _), r in by.items() if w == wk]
+        out["trend"]["mobile"].append({"visitors": m.get("visitors", 0), "lead_persons": m.get("lead_persons", 0)})
+        out["trend"]["desktop"].append({"visitors": d.get("visitors", 0), "lead_persons": d.get("lead_persons", 0)})
+        tv, tl = sum(r["visitors"] for r in allv), sum(r["lead_persons"] for r in allv)
+        out["trend"]["total"].append({"visitors": tv, "lead_persons": tl, "lead_rate": safe_rate(tl, tv)})
+
     # CRO ship ledger reads
     out["ledger_reads"] = ledger_reads(ph, base, LEAD)
     return out
@@ -285,6 +303,18 @@ def collect_gsc(W):
     for r in prev28.values():
         pages_prev[r["page"]]["clicks"] += r["clicks"]; pages_prev[r["page"]]["impressions"] += r["impressions"]
     out["pages_28d"] = sorted([{"page": p, **v, "clicks_prev": pages_prev[p]["clicks"], "impressions_prev": pages_prev[p]["impressions"]} for p, v in pages.items()], key=lambda r: -r["clicks"])[:30]
+    # 13-week trend from the date dimension (one call), weeks aligned to the GSC this_week end
+    t_start = end - dt.timedelta(days=13 * 7 - 1)
+    daily = {r["keys"][0]: r for r in q((t_start, end), ["date"], limit=100)}
+    weeks = []
+    for i in range(13):
+        ws = t_start + dt.timedelta(days=7 * i)
+        days = [daily.get(str(ws + dt.timedelta(days=j))) for j in range(7)]
+        days = [d for d in days if d]
+        clicks, impr = sum(d["clicks"] for d in days), sum(d["impressions"] for d in days)
+        pos = round(sum(d["position"] * d["impressions"] for d in days) / impr, 1) if impr else None
+        weeks.append({"week_start": str(ws), "clicks": clicks, "impressions": impr, "ctr": safe_rate(clicks, impr), "position": pos})
+    out["trend"] = weeks
     return out
 
 
