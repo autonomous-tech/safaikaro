@@ -105,9 +105,9 @@
   "page": "/pest-control-clifton-karachi",
   "query": "fumigation services in clifton karachi",
   "play": "Title and meta lead with the exact phrase, price anchor and guarantee so the area page takes the query from the homepage.",
-  "reason": "Homepage ranks near the top for the query with no clicks; the snippet does not match the intent.",
+  "reason": "Second review failed the title length and description rhythm; restored to main.",
   "added": "2026-W35",
-  "status": "shipped"
+  "status": "dropped"
  },
  {
   "id": "2026-W35-dha-defence-faq",
@@ -206,6 +206,16 @@
   "query": null,
   "play": "Collector reports lead persons outside the Karachi filter on their own line and buckets utm_source=chatgpt.com as an AI channel.",
   "reason": "Non-Karachi leads were silently dropped and ChatGPT referrals show as direct.",
+  "added": "2026-W35",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W36-clifton-fumigation-ctr",
+  "type": "meta",
+  "page": "/pest-control-clifton-karachi",
+  "query": "fumigation services in clifton karachi",
+  "play": "Title 'Fumigation Services in Clifton Karachi: Rs 7,000, 90-Day Guarantee | SafaiKaro' mirrored in og, twitter and image alt; description under 160 characters with the guarantee before the cut and no comma triad.",
+  "reason": "Homepage ranks near the top for the query with no clicks; the area page should carry it. Reviewer wording captured from this run.",
   "added": "2026-W35",
   "status": "queued"
  }
