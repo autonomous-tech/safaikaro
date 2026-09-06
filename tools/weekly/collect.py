@@ -141,8 +141,10 @@ def collect_posthog(W):
     ev_prev = {r["event"] for r in ph.rows(f"SELECT event FROM events WHERE {ph.between(p4)} AND {ph.excl} GROUP BY event")}
     keys_now = {}
     try:
-        for r in ph.rows(f"""SELECT event, arrayJoin(JSONExtractKeys(properties)) AS k, count() AS c FROM events
-            WHERE {ph.between(tw)} AND {ph.excl} AND event NOT LIKE '$%' GROUP BY event, k"""):
+        # $-prefixed keys are dropped in SQL: with them, each event has 40+ keys and the default
+        # 100-row limit truncated the list to one custom key per event.
+        for r in ph.rows(f"""SELECT event, k, count() AS c FROM (SELECT event, arrayJoin(JSONExtractKeys(properties)) AS k FROM events
+            WHERE {ph.between(tw)} AND {ph.excl} AND event NOT LIKE '$%') WHERE k NOT LIKE '$%' GROUP BY event, k ORDER BY event, k LIMIT 500"""):
             if not r["k"].startswith("$") and r["k"] not in ("token", "distinct_id"):
                 keys_now.setdefault(r["event"], []).append(r["k"])
     except RuntimeError as e:

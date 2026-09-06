@@ -1,1 +1,11 @@
-[]
+[
+ {
+  "id": "2026-W35-price-list-start-cards",
+  "pages": [
+   "/pest-control-price-list-karachi"
+  ],
+  "hypothesis": "Starting-price cards with a WhatsApp CTA above the fold on mobile lift the price list's lead rate toward the site average, because visitors no longer scroll past the finder to reach a price and a button.",
+  "metric": "lead persons / unique visitors on the page, mobile, 14 days post vs 14 days pre; secondary: whatsapp_click with cta=starting-card share",
+  "commit": "d0865ea"
+ }
+]

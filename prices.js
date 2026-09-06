@@ -198,6 +198,11 @@ var SAFAIKARO_PRICES = {
     return page + '/' + placementOf(a);
   }
 
+  // One tap can arrive as two or three click events a few ms apart (touch +
+  // synthetic click, or a nested element bubbling twice): the same href within
+  // a second is counted once, so lead_events stops overstating lead_persons.
+  var lastClick = { href: '', at: 0 };
+
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t || !t.closest) return;
@@ -209,6 +214,15 @@ var SAFAIKARO_PRICES = {
       var event = null;
       var ref = '';
       if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
+        // On desktop wa-desktop.js intercepts every wa.me link and opens the
+        // QR card instead (it fires wa_desktop_card_open). That open is not a
+        // contact: whatsapp_click fires only from the card's own WhatsApp Web
+        // link, and phone_copy from its copy button, so desktop lead counts
+        // mean an action, not a card impression.
+        if (document.getElementById('wa-desk-card') && !a.classList.contains('wa-desk-web')) return;
+        var now = Date.now();
+        if (href === lastClick.href && now - lastClick.at < 1000) return;
+        lastClick.href = href; lastClick.at = now;
         event = 'whatsapp_click';
         ref = refOf(a);
       } else if (lower.indexOf('tel:') === 0) {

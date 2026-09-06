@@ -10,12 +10,14 @@
     "host": "https://us.posthog.com",
     "test_distinct_ids": [
       "019e8e44-e69e-7cd6-95b0-aa08792cc04f",
-      "019d1a03-a96a-7ce2-b7eb-9b1305689334"
+      "019d1a03-a96a-7ce2-b7eb-9b1305689334",
+      "019f8de3-0ef9-75e4-8573-c643e42092cd"
     ],
     "lead_events": [
       "whatsapp_click",
       "book_click",
       "call_click",
+      "phone_copy",
       "booking_quote_handoff_started",
       "khatmal_symptom_handoff_started",
       "khatmal_contextual_cta_click",

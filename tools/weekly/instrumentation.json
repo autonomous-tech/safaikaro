@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "id": "2026-W35-desktop-card-lead-definition",
+  "event": "whatsapp_click",
+  "property": "cta=desktop-card",
+  "question": "How many desktop visitors actually contact us, as opposed to opening the QR card? The delegate now skips the intercepted wa.me click on desktop; whatsapp_click fires only from the card's WhatsApp Web link and phone_copy (now a lead event, with cta=desktop-card) from its copy button.",
+  "pages": [
+   "all"
+  ]
+ },
+ {
+  "id": "2026-W35-whatsapp-click-dedupe",
+  "event": "whatsapp_click",
+  "property": "href",
+  "question": "Does lead_events overstate lead_persons because one tap fires two or three click events? The delegate drops a repeat of the same href within one second.",
+  "pages": [
+   "all"
+  ]
+ }
+]

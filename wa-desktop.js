@@ -82,10 +82,12 @@
 
   document.body.appendChild(card);
 
-  function ph(event) {
+  function ph(event, props) {
     try {
       if (window.posthog && typeof posthog.capture === 'function') {
-        posthog.capture(event, { path: location.pathname }, { transport: 'sendBeacon', send_instantly: true });
+        var p = props || {};
+        p.path = location.pathname;
+        posthog.capture(event, p, { transport: 'sendBeacon', send_instantly: true });
       }
     } catch (_) { /* tracking must never break the UI */ }
   }
@@ -99,7 +101,9 @@
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(PHONE_COPY).then(done, done);
     } else { done(); }
-    ph('phone_copy');
+    // A copied number is a real contact action (counted as a lead event in the
+    // weekly report); the card opening is not.
+    ph('phone_copy', { cta: 'desktop-card', section: 'wa-desk-card' });
   });
 
   function closeCard() {
@@ -115,7 +119,9 @@
   });
 
   // Intercept the float (and any wa.me CTA) on desktop: show the card.
-  // whatsapp_click still fires via the global delegate in prices.js.
+  // The global delegate in prices.js skips whatsapp_click for this intercepted
+  // click (the card open is not a contact); it fires for the card's own
+  // WhatsApp Web link below, and phone_copy covers the copy button.
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
     if (!a) return;
