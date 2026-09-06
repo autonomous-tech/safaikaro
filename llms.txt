@@ -1,6 +1,6 @@
 # SafaiKaro
 
-> Karachi ka trusted pest control. Transparent pricing, certified technicians, 90-day guarantee.
+> Karachi ka trusted pest control. Transparent pricing, trained technicians, 90-day guarantee.
 
 SafaiKaro is a professional residential pest control company based in Karachi, Pakistan. DHA Phase 1-8 and Clifton Block 1-9 are the flagship coverage areas, with citywide service across Bath Island, PECHS, and the neighborhoods listed below. SafaiKaro is Karachi's first pest control service to publish transparent pricing online: no hidden charges, price confirmed before treatment begins.
 
@@ -40,10 +40,19 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 - SafaiKaro is the only pest control company in Karachi that publishes all prices upfront online
 - All treatments come with a 90-day guarantee: if pests return, SafaiKaro re-treats at no cost
 - Termite treatments include a written warranty: 5 years (pre-construction), 3 years (post-construction)
-- Same-day service available if booked before 10am
+- Same-day service in DHA, Clifton, PECHS, Bahadurabad and Saddar if booked before 10am; other Karachi areas get the next available slot
 - Booking deposit: Rs 500 via Easypaisa, JazzCash, or bank transfer; remainder paid on day of treatment
 - Operating hours: Monday-Saturday, 9am-7pm; emergency callouts for Annual Shield plan members
 - Annual Shield plan saves up to Rs 24,000 vs booking 4 quarterly fumigation visits individually
+- The price list is refreshed monthly (currently September 2026) and every price on the site is rendered from one prices file, so the quoted price and the listed price match
+
+## Urdu and Roman Urdu pest names (for bilingual questions)
+
+- Khatmal (کھٹمل, also spelled khutmal) = bed bug (Cimex lectularius). Treatment is a two-session protocol: residual spray plus insect growth regulator, follow-up visit on day 10 to 14, priced by property size from the bed bug tier in the table above, with a 90-day guarantee. Guide: https://safaikaro.pk/blog/khatmal-ka-ilaj-karachi
+- Deemak or dimak (دیمک) = termite. Treatment is drill-and-inject soil treatment plus wood treatment, priced from the termite tier above. Guide: https://safaikaro.pk/blog/deemak-ka-ilaj-karachi
+- Lal beg (لال بیگ) = cockroach. General fumigation (gel bait plus residual spray, one visit) covers cockroaches, ants and crawling insects, priced from the fumigation tier above. Guide: https://safaikaro.pk/blog/cockroach-killer-spray-karachi
+- Chipkali = house gecko (lizard). Repellents and home remedies do not last; the fix is insect control (removing the gecko's food) plus sealing entry gaps. Guide: https://safaikaro.pk/blog/chipkali-bhagane-ka-tarika
+- Machar = mosquito. Dengue season in Karachi runs September to November; indoor and outdoor spray is priced from the mosquito tier above.
 
 ## Pages
 
@@ -51,8 +60,8 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 - [Get a Pest Control Quote  - SafaiKaro Karachi](https://safaikaro.pk/book)
 - [Fumigation & Pest Control Prices Karachi (September 2026) | SafaiKaro](https://safaikaro.pk/pest-control-price-list-karachi)
 - [Termite Treatment Karachi  - Pre & Post Construction | 5-Year Warranty](https://safaikaro.pk/termite-treatment-new-construction-karachi)
-- [Fumigation Services in Karachi | Prices from Rs 7,000 | SafaiKaro](https://safaikaro.pk/fumigation-services-karachi)
-- [Monthly Pest Control Contract & Annual Plan (AMC) Karachi | SafaiKaro](https://safaikaro.pk/annual-pest-control-karachi)
+- [Fumigation Services in Karachi (September 2026): From Rs 7,000 | SafaiKaro](https://safaikaro.pk/fumigation-services-karachi)
+- [Annual Pest Control Contract Karachi, September 2026 | SafaiKaro](https://safaikaro.pk/annual-pest-control-karachi)
 - [Dengue Spray & Mosquito Control Karachi  - Anti-Dengue | SafaiKaro](https://safaikaro.pk/mosquito-dengue-control-karachi)
 - [Cockroach Fumigation Karachi, Rs 7,000 Se, 90-Day Guarantee | SafaiKaro](https://safaikaro.pk/cockroach-control-karachi)
 - [Rat & Rodent Control Karachi  - Chuhe Ka Khatma | SafaiKaro](https://safaikaro.pk/rodent-control-karachi)
@@ -63,7 +72,7 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 - [Fumigation Certificate Karachi: Offices, Schools & Businesses | SafaiKaro](https://safaikaro.pk/fumigation-certificate-karachi)
 - [School Fumigation Service Karachi: Weekend & Holiday Scheduling | SafaiKaro](https://safaikaro.pk/school-fumigation-service-karachi)
 - [Fumigation Services in DHA Karachi  - Phases 1–8 | SafaiKaro](https://safaikaro.pk/pest-control-dha-karachi)
-- [Fumigation Services in Clifton Karachi  - Blocks 1–9 | SafaiKaro](https://safaikaro.pk/pest-control-clifton-karachi)
+- [Fumigation Services in Clifton Karachi: Rs 7,000 Se, 90-Day Guarantee | SafaiKaro](https://safaikaro.pk/pest-control-clifton-karachi)
 - [Pest Control Areas in Karachi  - All Districts We Serve | SafaiKaro](https://safaikaro.pk/pest-control-karachi-areas)
 - [Commercial Pest Control Karachi: Full Building Fumigation | SafaiKaro](https://safaikaro.pk/commercial)
 - [Blog  - SafaiKaro Pest Control Karachi](https://safaikaro.pk/blog/)
@@ -83,7 +92,7 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 ## Blog Posts
 
 - [Khatmal in English: Bed Bug (کھٹمل). Pehchan, Ilaj aur Fumigation Rs 11,000 Se | SafaiKaro](https://safaikaro.pk/blog/khatmal-ka-ilaj-karachi)
-- [Deemak Ka Ilaj (دیمک)  - Rs 13,000 Se, 5-Year Warranty | SafaiKaro](https://safaikaro.pk/blog/deemak-ka-ilaj-karachi)
+- [Deemak Ka Ilaj (Dimak, دیمک): Rs 13,000 Se, 90-Day Guarantee | SafaiKaro](https://safaikaro.pk/blog/deemak-ka-ilaj-karachi)
 - [Fumigation Kya Hoti Hai? Meaning & Complete Guide  - SafaiKaro](https://safaikaro.pk/blog/fumigation-kya-hoti-hai)
 - [Termite Proofing for New Construction in Karachi  - Builder's Guide 2026 | SafaiKaro](https://safaikaro.pk/blog/termite-proofing-new-construction-karachi)
 - [Dengue Se Bachao Karachi  - Monsoon Mosquito Prevention Guide | SafaiKaro](https://safaikaro.pk/blog/dengue-se-bachao-karachi)
@@ -91,5 +100,5 @@ All prices include labor, equipment, and WHO-approved chemicals. Balance paid to
 - [Fumigation Aur Pest Control Mein Farq Kya Hai?  - Clear Guide | SafaiKaro](https://safaikaro.pk/blog/fumigation-vs-pest-control-farq)
 - [Kya Fumigation Bachon Aur Pets Ke Liye Safe Hai?  - SafaiKaro Guide](https://safaikaro.pk/blog/fumigation-bachon-pets-ke-liye-safe)
 - [Fumigation Se Pehle Ghar Tayar Karna  - Complete Checklist | SafaiKaro](https://safaikaro.pk/blog/ghar-ko-fumigation-ke-liye-tayar-karna)
-- [Chipkali Bhagane Ka Tarika  - Karachi Guide | SafaiKaro](https://safaikaro.pk/blog/chipkali-bhagane-ka-tarika)
+- [Chipkali Bhagane Ka Tarika: Jo Karachi Mein Kaam Karta Hai](https://safaikaro.pk/blog/chipkali-bhagane-ka-tarika)
 - [Cockroach Killer (کاکروچ)  - Spray vs Fumigation | SafaiKaro](https://safaikaro.pk/blog/cockroach-killer-spray-karachi)
