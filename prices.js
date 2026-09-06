@@ -189,21 +189,13 @@ var SAFAIKARO_PRICES = {
   }
 
   // Short page/placement key, e.g. home/sticky, rodent-control/hero,
-  // blog-khatmal-ka-ilaj/article. Appended to the WhatsApp prefill so the SDR
-  // can log which page + CTA each conversation came from (founder-approved
-  // 2026-09-06). Same value goes on the event as `ref` for the join.
+  // blog-khatmal-ka-ilaj/article. Event-only: the founder ruled out putting
+  // it in the customer's WhatsApp message (2026-09-06).
   function refOf(a) {
     var seg = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
     var page = seg.length ? seg[seg.length - 1].replace(/\.html$/, '').replace(/-karachi$/, '') : 'home';
     if (seg[0] === 'blog' && seg.length > 1) page = 'blog-' + page;
     return page + '/' + placementOf(a);
-  }
-  function tagWhatsAppHref(a, ref) {
-    var href = a.getAttribute('href') || '';
-    if (/\(ref(:|%3A)/i.test(href)) return href; // already tagged (href is URL-encoded)
-    var tag = encodeURIComponent(' (ref: ' + ref + ')');
-    if (/[?&]text=/.test(href)) return href + tag;
-    return href + (href.indexOf('?') === -1 ? '?' : '&') + 'text=' + encodeURIComponent('Hi SafaiKaro') + tag;
   }
 
   document.addEventListener('click', function (e) {
@@ -219,7 +211,6 @@ var SAFAIKARO_PRICES = {
       if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
         event = 'whatsapp_click';
         ref = refOf(a);
-        try { a.setAttribute('href', tagWhatsAppHref(a, ref)); } catch (_) {} // never block the click
       } else if (lower.indexOf('tel:') === 0) {
         event = 'call_click';
       } else if (href === '/book' || href.indexOf('/book') === 0 || /\/book(\/|\?|#|$)/.test(href)) {

@@ -204,6 +204,29 @@
   .nav-links.open a{font-size:1rem;padding:8px 0}
 
   .mobile-price-finder{display:none}
+  .price-hero h1{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15;margin:6px 0 0}
+  .price-hero .hero-sub{font-size:1rem}
+  .start-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:32px auto 0;max-width:1000px;text-align:left}
+  .start-card{background:#fff;border:3px solid #0D4A2F;border-radius:8px;padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0}
+  .start-card h3{font-size:1.05rem;color:#0D4A2F;margin:0 0 4px}
+  .start-card__price{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:#0D4A2F;line-height:1.2;white-space:nowrap}
+  .start-card p{color:#374151;font-size:.88rem;line-height:1.45;margin:6px 0 12px;flex:1}
+  .start-card__cta{display:block;text-align:center;padding:11px 12px;font-size:.92rem}
+  .start-card__more{display:block;margin-top:10px;font-size:.85rem;font-weight:600;color:#0D4A2F;text-decoration:underline}
+  .start-card__cta-short{display:none}
+  .start-note{color:#DDEBE3;font-size:.9rem;margin-top:16px}
+  .start-note a{color:#6EE086;text-decoration:underline}
+  @media (max-width:767px){
+    .start-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+    .start-card{padding:12px 12px 10px}
+    .start-card h3{font-size:.9rem;line-height:1.25}
+    .start-card__price{font-size:1.05rem}
+    .start-card p{font-size:.78rem;margin:4px 0 10px}
+    .start-card__cta{padding:9px 4px;font-size:.8rem;white-space:nowrap}
+    .start-card__cta-long{display:none}
+    .start-card__cta-short{display:inline}
+    .start-card__more{font-size:.78rem}
+  }
   .full-price-summary{display:none}
   .price-page-note{color:#0D4A2F;font-style:normal}
   .hero__badge{color:#C8F6D2;font-weight:700}
@@ -388,21 +411,66 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
   <main class="main-content">
 
     <!-- 1. Hero -->
-    <section class="hero" style="min-height:auto;padding:100px 0 60px;grid-template-columns:1fr;">
+    <section class="hero price-hero" style="min-height:auto;padding:88px 0 40px;grid-template-columns:1fr;">
       <div class="container">
         <div class="hero-inner" style="grid-template-columns:1fr;">
           <div style="text-align:center; max-width:700px; margin:0 auto;">
             <span class="hero__badge">Transparent pricing. Always.</span>
             <h1>Pest Control Prices in Karachi, Complete Price List (September 2026)</h1>
             <p class="hero-updated" style="margin:8px 0 0;font-size:.9rem;opacity:.85;">Updated September 2026. Rates checked against our current job sheet.</p>
-            <p class="hero-sub" style="margin:16px auto 32px; max-width:560px;">Karachi mein hum akele hain jo price pehle batate hain. Koi hidden charges nahi, ever.</p>
+            <p class="hero-sub" style="margin:10px auto 18px; max-width:560px;">Karachi mein hum akele hain jo price pehle batate hain. Koi hidden charges nahi, ever.</p>
             <div class="trust-row" style="justify-content:center;">
               <span><span class="check">✓</span> Fixed Prices</span>
               <span><span class="check">✓</span> No Hidden Charges</span>
               <span><span class="check">✓</span> Chemicals Included</span>
             </div>
-            <a class="btn-lime price-hero-cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20saw%20your%20price%20list%20and%20need%20a%20quote." target="_blank" rel="noopener">Get WhatsApp Quote</a>
           </div>
+          <!-- Starting prices: one card per service, above the fold. Exact price by size is the finder below (#prices). -->
+          <div class="start-grid" data-cta="starting-card" aria-label="Starting prices by service">
+            <div class="start-card">
+              <h3>General fumigation</h3>
+              <div class="start-card__price">From <span data-price="fumigation-s">Rs —</span></div>
+              <p>1 visit, 90-day guarantee</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20general%20fumigation.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/fumigation-services-karachi">Service details &rarr;</a>
+            </div>
+            <div class="start-card">
+              <h3>Termite treatment</h3>
+              <div class="start-card__price">From <span data-price="termite-s">Rs —</span></div>
+              <p>Drilling + soil injection, 5-year warranty</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20termite%20treatment.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/termite-treatment-new-construction-karachi">Service details &rarr;</a>
+            </div>
+            <div class="start-card">
+              <h3>Bed bug treatment</h3>
+              <div class="start-card__price">From <span data-price="bedbug-s">Rs —</span></div>
+              <p>Spray + IGR, both sessions, 90-day guarantee</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20bed%20bug%20treatment.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/bed-bug-treatment-karachi">Service details &rarr;</a>
+            </div>
+            <div class="start-card">
+              <h3>Rodent control</h3>
+              <div class="start-card__price">From <span data-price="rodent-s">Rs —</span></div>
+              <p>2 visits, bait stations + sealing</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20rodent%20control.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/rodent-control-karachi">Service details &rarr;</a>
+            </div>
+            <div class="start-card">
+              <h3>Mosquito / dengue spray</h3>
+              <div class="start-card__price">From <span data-price="mosquito-s">Rs —</span></div>
+              <p>Indoor + outdoor, 90-day guarantee</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20mosquito%20/%20dengue%20spray.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/mosquito-dengue-control-karachi">Service details &rarr;</a>
+            </div>
+            <div class="start-card">
+              <h3>Annual Shield plan</h3>
+              <div class="start-card__price">From <span data-price="annual-s">Rs —</span></div>
+              <p>4 visits + 1 emergency callout, per year</p>
+              <a class="btn-lime start-card__cta" href="https://wa.me/923308652035?text=Hi%20SafaiKaro%2C%20I%20need%20the%20Annual%20Shield%20plan.%20Please%20confirm%20the%20listed%20starting%20price%20and%20availability.%20My%20property%20size%20is%20___%20sq%20yds."><span class="start-card__cta-long">WhatsApp this price</span><span class="start-card__cta-short">WhatsApp Karo</span></a>
+              <a class="start-card__more" href="/annual-pest-control-karachi">Service details &rarr;</a>
+            </div>
+          </div>
+          <p class="start-note">Prices start at the smallest property size (up to 100 sq yds). <a href="#prices">See your exact price by size &darr;</a></p>
         </div>
       </div>
     </section>
