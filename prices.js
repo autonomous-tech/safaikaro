@@ -128,7 +128,7 @@ var SAFAIKARO_PRICES = {
  * blocked, so a tracking failure can never break a CTA.
  *
  * Events: whatsapp_click, book_click, call_click
- *   { path, text, href, cta, section, prefill }
+ *   { path, text, href, cta, section, prefill, ref }
  *
  * cta = WHERE the click happened, derived from the DOM at click time so no
  * page markup needs tagging (35% of WhatsApp clicks used to arrive with empty
@@ -188,6 +188,24 @@ var SAFAIKARO_PRICES = {
     catch (_) { return ''; }
   }
 
+  // Short page/placement key, e.g. home/sticky, rodent-control/hero,
+  // blog-khatmal-ka-ilaj/article. Appended to the WhatsApp prefill so the SDR
+  // can log which page + CTA each conversation came from (founder-approved
+  // 2026-09-06). Same value goes on the event as `ref` for the join.
+  function refOf(a) {
+    var seg = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+    var page = seg.length ? seg[seg.length - 1].replace(/\.html$/, '').replace(/-karachi$/, '') : 'home';
+    if (seg[0] === 'blog' && seg.length > 1) page = 'blog-' + page;
+    return page + '/' + placementOf(a);
+  }
+  function tagWhatsAppHref(a, ref) {
+    var href = a.getAttribute('href') || '';
+    if (/\(ref(:|%3A)/i.test(href)) return href; // already tagged (href is URL-encoded)
+    var tag = encodeURIComponent(' (ref: ' + ref + ')');
+    if (/[?&]text=/.test(href)) return href + tag;
+    return href + (href.indexOf('?') === -1 ? '?' : '&') + 'text=' + encodeURIComponent('Hi SafaiKaro') + tag;
+  }
+
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t || !t.closest) return;
@@ -197,8 +215,11 @@ var SAFAIKARO_PRICES = {
       var href = a.getAttribute('href') || '';
       var lower = href.toLowerCase();
       var event = null;
+      var ref = '';
       if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
         event = 'whatsapp_click';
+        ref = refOf(a);
+        try { a.setAttribute('href', tagWhatsAppHref(a, ref)); } catch (_) {} // never block the click
       } else if (lower.indexOf('tel:') === 0) {
         event = 'call_click';
       } else if (href === '/book' || href.indexOf('/book') === 0 || /\/book(\/|\?|#|$)/.test(href)) {
@@ -211,7 +232,8 @@ var SAFAIKARO_PRICES = {
         href: href,
         cta: placementOf(a),
         section: sectionOf(a),
-        prefill: event === 'whatsapp_click' ? prefillOf(href) : ''
+        prefill: event === 'whatsapp_click' ? prefillOf(href) : '',
+        ref: ref
       }, true);
       return;
     }
