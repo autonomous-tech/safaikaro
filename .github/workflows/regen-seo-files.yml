@@ -45,6 +45,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Tracking + internal-link guard
+        if: steps.msg_guard.outputs.skip != 'true'
+        run: python3 tools/check-tracking.py
+
       - name: Loop guard — only generated files changed
         id: diff_guard
         if: steps.msg_guard.outputs.skip != 'true'

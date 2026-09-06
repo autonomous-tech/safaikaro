@@ -127,30 +127,108 @@ var SAFAIKARO_PRICES = {
  * delivered even as the page unloads. No preventDefault — the link is never
  * blocked, so a tracking failure can never break a CTA.
  *
- * Events: whatsapp_click, book_click, call_click  { path, text, href }
+ * Events: whatsapp_click, book_click, call_click
+ *   { path, text, href, cta, section, prefill }
+ *
+ * cta = WHERE the click happened, derived from the DOM at click time so no
+ * page markup needs tagging (35% of WhatsApp clicks used to arrive with empty
+ * text because the float pill is icon-only, making placement unreadable).
+ * An explicit data-cta="..." on the anchor or any ancestor wins.
+ *
+ * Micro-conversions (same listener, buttons not links):
+ *   faq_open { question, path }   .faq-q
+ *   price_tab_change { tab, path } .price-tab
+ *   nav_menu_open { path }         .hamburger
  */
 (function () {
   if (typeof document === 'undefined') return;
-  document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a') : null;
-    if (!a || !window.posthog || typeof posthog.capture !== 'function') return;
-    var href = a.getAttribute('href') || '';
-    var lower = href.toLowerCase();
-    var event = null;
-    if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
-      event = 'whatsapp_click';
-    } else if (lower.indexOf('tel:') === 0) {
-      event = 'call_click';
-    } else if (href === '/book' || href.indexOf('/book') === 0 || /\/book(\/|\?|#|$)/.test(href)) {
-      // matches /book, /book/, /book?..., and absolute https://safaikaro.pk/book
-      event = 'book_click';
-    }
-    if (!event) return;
-    var props = { path: location.pathname, text: (a.textContent || '').trim().slice(0, 60), href: href };
+
+  function ph(event, props, urgent) {
+    if (!window.posthog || typeof posthog.capture !== 'function') return;
+    props.path = location.pathname;
     try {
-      posthog.capture(event, props, { transport: 'sendBeacon', send_instantly: true });
+      posthog.capture(event, props, urgent ? { transport: 'sendBeacon', send_instantly: true } : undefined);
     } catch (_) {
       posthog.capture(event, props); // fallback: never let tracking throw into the click path
+    }
+  }
+
+  // Placement, most specific first. Order matters: the float sits inside <body>
+  // not a section; the desktop card is injected at body level too.
+  var PLACEMENTS = [
+    ['[data-cta]', function (el) { return el.getAttribute('data-cta'); }],
+    ['#wa-desk-card', 'desktop-card'],
+    ['.wa-float', 'float'],
+    ['.mobile-bar, .mobile-price-sticky', 'sticky'],
+    ['nav, header', 'nav'],
+    ['footer', 'footer'],
+    ['.hero, .cert-hero, .price-hero, [class*="hero"]', 'hero'],
+    ['.faq-item', 'faq'],
+    ['.price-finder, .price-table, .price-panel, [class*="price"]', 'price-row'],
+    ['article', 'article']
+  ];
+  function placementOf(a) {
+    for (var i = 0; i < PLACEMENTS.length; i++) {
+      var hit = a.closest(PLACEMENTS[i][0]);
+      if (hit) { var v = PLACEMENTS[i][1]; return typeof v === 'function' ? v(hit) : v; }
+    }
+    return 'inline';
+  }
+  function sectionOf(a) {
+    var sec = a.closest('section[id], section');
+    if (!sec) return '';
+    if (sec.id) return sec.id;
+    var h = sec.querySelector('h2, h3');
+    return h ? (h.textContent || '').trim().slice(0, 50) : (sec.className || '').split(' ')[0];
+  }
+  function prefillOf(href) {
+    var m = /[?&]text=([^&]*)/.exec(href);
+    if (!m) return '';
+    try { return decodeURIComponent(m[1].replace(/\+/g, ' ')).replace(/^Hi SafaiKaro,?\s*/i, '').slice(0, 80); }
+    catch (_) { return ''; }
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+
+    var a = t.closest('a');
+    if (a) {
+      var href = a.getAttribute('href') || '';
+      var lower = href.toLowerCase();
+      var event = null;
+      if (lower.indexOf('wa.me') !== -1 || lower.indexOf('whatsapp') !== -1) {
+        event = 'whatsapp_click';
+      } else if (lower.indexOf('tel:') === 0) {
+        event = 'call_click';
+      } else if (href === '/book' || href.indexOf('/book') === 0 || /\/book(\/|\?|#|$)/.test(href)) {
+        // matches /book, /book/, /book?..., and absolute https://safaikaro.pk/book
+        event = 'book_click';
+      }
+      if (!event) return;
+      ph(event, {
+        text: ((a.textContent || '').trim() || a.getAttribute('aria-label') || '').slice(0, 60),
+        href: href,
+        cta: placementOf(a),
+        section: sectionOf(a),
+        prefill: event === 'whatsapp_click' ? prefillOf(href) : ''
+      }, true);
+      return;
+    }
+
+    var faq = t.closest('.faq-q');
+    if (faq && faq.getAttribute('aria-expanded') !== 'true') {
+      ph('faq_open', { question: (faq.textContent || '').trim().slice(0, 120) });
+      return;
+    }
+    var tab = t.closest('.price-tab');
+    if (tab && !tab.classList.contains('active')) {
+      ph('price_tab_change', { tab: tab.dataset.tab || (tab.textContent || '').trim().slice(0, 40) });
+      return;
+    }
+    var burger = t.closest('.hamburger');
+    if (burger && burger.getAttribute('aria-expanded') !== 'true') {
+      ph('nav_menu_open', {});
     }
   }, true);
 })();

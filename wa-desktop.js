@@ -73,6 +73,7 @@
 
   var web = document.createElement('a');
   web.className = 'wa-desk-web';
+  web.setAttribute('data-cta', 'desktop-card');
   web.href = 'https://wa.me/923308652035';
   web.target = '_blank';
   web.rel = 'noopener';

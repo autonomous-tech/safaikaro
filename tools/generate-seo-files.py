@@ -87,9 +87,9 @@ PAGE_ORDER = [
     "/lizard-control-karachi",
     "/fumigation-certificate-karachi",
     "/school-fumigation-service-karachi",
-    "/restaurant-pest-control-karachi",
     "/pest-control-dha-karachi",
     "/pest-control-clifton-karachi",
+    "/pest-control-karachi-areas",
     "/commercial",
     "/blog/",
 ]
@@ -105,6 +105,8 @@ BLOG_ORDER = [
     "/blog/fumigation-vs-pest-control-farq",
     "/blog/fumigation-bachon-pets-ke-liye-safe",
     "/blog/ghar-ko-fumigation-ke-liye-tayar-karna",
+    "/blog/chipkali-bhagane-ka-tarika",
+    "/blog/cockroach-killer-spray-karachi",
 ]
 
 # path -> (priority, changefreq). Falls back to DEFAULT_PRIORITY below.
@@ -115,6 +117,7 @@ PRIORITY_MAP = {
     "/termite-treatment-new-construction-karachi": ("0.9", "monthly"),
     "/pest-control-dha-karachi": ("0.9", "monthly"),
     "/pest-control-clifton-karachi": ("0.9", "monthly"),
+    "/pest-control-karachi-areas": ("0.8", "monthly"),
     "/fumigation-services-karachi": ("0.8", "monthly"),
     "/annual-pest-control-karachi": ("0.8", "monthly"),
     "/fumigation-certificate-karachi": ("0.8", "monthly"),
@@ -123,7 +126,6 @@ PRIORITY_MAP = {
     "/rodent-control-karachi": ("0.8", "monthly"),
     "/bed-bug-treatment-karachi": ("0.8", "monthly"),
     "/school-fumigation-service-karachi": ("0.8", "monthly"),
-    "/restaurant-pest-control-karachi": ("0.8", "monthly"),
     "/commercial": ("0.7", "monthly"),
     "/bee-wasp-removal-karachi": ("0.7", "monthly"),
     "/ant-control-karachi": ("0.7", "monthly"),
@@ -131,6 +133,12 @@ PRIORITY_MAP = {
     "/blog/": ("0.6", "monthly"),
 }
 DEFAULT_BLOG_PRIORITY = ("0.7", "monthly")
+# Area pages are discovered by URL shape, never listed by name: the citywide
+# expansion adds districts faster than anyone edits this file. Hubs (DHA,
+# Clifton, the areas index) are in PAGE_ORDER/PRIORITY_MAP above.
+AREA_PATTERN = re.compile(r"^/pest-control-[a-z0-9-]+-karachi$|^/pest-control-north-karachi$")
+AREA_HUB = "/pest-control-karachi-areas"
+AREA_PRIORITY = ("0.7", "monthly")
 DEFAULT_PRIORITY = ("0.6", "monthly")
 
 EM_DASH = "—"
@@ -353,7 +361,13 @@ def priority_for(url: str) -> tuple[str, str]:
         return PRIORITY_MAP[url]
     if url.startswith("/blog/") and url != "/blog/":
         return DEFAULT_BLOG_PRIORITY
+    if is_area_page(url):
+        return AREA_PRIORITY
     return DEFAULT_PRIORITY
+
+
+def is_area_page(url: str) -> bool:
+    return bool(AREA_PATTERN.match(url)) and url not in PRIORITY_MAP
 
 
 def build_sitemap(pages: list[Page]) -> str:
@@ -361,7 +375,8 @@ def build_sitemap(pages: list[Page]) -> str:
 
     core_urls = [u for u in PAGE_ORDER if u in by_url]
     blog_urls = [u for u in BLOG_ORDER if u in by_url]
-    known = set(core_urls) | set(blog_urls)
+    area_urls = sorted(u for u in by_url if is_area_page(u))
+    known = set(core_urls) | set(blog_urls) | set(area_urls)
     extra_urls = sorted(u for u in by_url if u not in known)
 
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ""]
@@ -383,6 +398,7 @@ def build_sitemap(pages: list[Page]) -> str:
         lines.append("")
 
     emit_group("Core pages", core_urls)
+    emit_group("Area pages", area_urls)
     emit_group("Blog posts", blog_urls)
     emit_group("Additional pages", extra_urls)
 
