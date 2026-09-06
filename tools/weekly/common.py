@@ -1,5 +1,5 @@
 """Shared helpers for the weekly routine: config, credentials, windows, HogQL, HTTP."""
-import base64, datetime as dt, json, os, subprocess, sys, urllib.error, urllib.parse, urllib.request
+import base64, datetime as dt, json, os, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -89,13 +89,23 @@ class PostHog:
         self.karachi = "coalesce(properties.$geoip_city_name,'') IN ('Karachi','')"
         self.lead = "event IN (" + ",".join(f"'{e}'" for e in self.cfg["lead_events"]) + ")"
 
-    def q(self, sql):
+    RETRY_CODES = (429, 502, 503, 504)
+
+    def q(self, sql, attempts=3):
+        """One HogQL query. Transient errors (429/5xx timeouts) are retried with backoff:
+        a single 504 must not empty the whole PostHog section of the report."""
         url = f"{self.cfg['host']}/api/projects/{self.cfg['project_id']}/query/"
-        try:
-            res = http_json(url, {"Authorization": f"Bearer {self.key}"}, {"query": {"kind": "HogQLQuery", "query": sql}})
-        except urllib.error.HTTPError as e:
-            raise RuntimeError(f"HogQL {e.code}: {e.read().decode()[:300]}\nSQL: {sql[:300]}")
-        return res.get("results", []), res.get("columns", [])
+        for i in range(attempts):
+            try:
+                res = http_json(url, {"Authorization": f"Bearer {self.key}"}, {"query": {"kind": "HogQLQuery", "query": sql}}, timeout=180)
+                return res.get("results", []), res.get("columns", [])
+            except urllib.error.HTTPError as e:
+                body = e.read().decode()[:300]
+                if e.code in self.RETRY_CODES and i < attempts - 1:
+                    log(f"HogQL {e.code}, retry {i + 1}/{attempts - 1} in {5 * (i + 1)}s")
+                    time.sleep(5 * (i + 1))
+                    continue
+                raise RuntimeError(f"HogQL {e.code}: {body}\nSQL: {sql[:300]}")
 
     def rows(self, sql):
         rows, cols = self.q(sql)
