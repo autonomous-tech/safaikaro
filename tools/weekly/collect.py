@@ -108,10 +108,11 @@ def collect_posthog(W):
             count(DISTINCT if({LEAD},person_id,NULL)) AS lead_persons, countIf({LEAD}) AS lead_events,
             countIf(event='$rageclick') AS rageclicks
             FROM events WHERE {ph.between(win)} AND {base} GROUP BY path HAVING pv > 0 ORDER BY pv DESC LIMIT 120""")}
+        # scroll p50 needs a sample: under min_scroll_leaves pageleaves the median is one or two people, so it is left null
         for r in ph.rows(f"""SELECT coalesce(properties.$prev_pageview_pathname,'?') AS path,
-            quantile(0.5)(toFloat(properties.$prev_pageview_max_scroll_percentage)) AS scroll_p50
+            quantile(0.5)(toFloat(properties.$prev_pageview_max_scroll_percentage)) AS scroll_p50, count() AS leaves
             FROM events WHERE {ph.between(win)} AND {base} AND properties.$prev_pageview_max_scroll_percentage IS NOT NULL GROUP BY path"""):
-            if r["path"] in rows and r["scroll_p50"] is not None:
+            if r["path"] in rows and r["scroll_p50"] is not None and r["leaves"] >= T["min_scroll_leaves"]:
                 rows[r["path"]]["scroll_p50"] = round(r["scroll_p50"] * (100 if r["scroll_p50"] <= 1 else 1))
         for r in rows.values():
             r["lead_rate"] = safe_rate(r["lead_persons"], r["uv"])
@@ -123,10 +124,12 @@ def collect_posthog(W):
         r["vs_site_avg"] = round(r["lead_rate"] / site_rate, 2) if r["lead_rate"] is not None and site_rate else None
 
     # booking chain by device (28d) and CTA placement x device (28d)
+    # booking chain keeps a city column and no city filter: an out-of-city completion is visible instead of vanishing
     out["booking_steps"] = ph.rows(f"""SELECT event, coalesce(properties.$device_type,'Other') AS device,
         coalesce(toString(properties.step), toString(properties.question), '') AS step,
+        if({ph.karachi}, 'Karachi', coalesce(nullIf(properties.$geoip_city_name,''),'unknown')) AS city,
         count() AS c, count(DISTINCT person_id) AS persons
-        FROM events WHERE {ph.between(w28)} AND {base} AND event LIKE 'booking_%' GROUP BY event, device, step ORDER BY event, device, step""")
+        FROM events WHERE {ph.between(w28)} AND {ph.excl} AND event LIKE 'booking_%' GROUP BY event, device, step, city ORDER BY event, device, step, city""")
     out["cta_placement"] = ph.rows(f"""SELECT event, coalesce(nullIf(toString(properties.cta),''),'untagged') AS cta,
         coalesce(properties.$device_type,'Other') AS device, count() AS clicks, count(DISTINCT person_id) AS persons
         FROM events WHERE {ph.between(w28)} AND {base} AND {LEAD} GROUP BY event, cta, device ORDER BY clicks DESC""")
@@ -160,6 +163,36 @@ def collect_posthog(W):
             FROM events WHERE {ph.between(w28)} AND {ph.excl} AND event='$pageview' GROUP BY city ORDER BY persons DESC LIMIT 8"""),
         "sample_warning": (out["funnel"]["this_week"]["total"]["lead_persons"] or 0) < T["min_lead_persons_for_rates"],
     }
+
+    # channels: referrer + utm buckets with lead persons (AI assistants such as chatgpt.com used to show as direct).
+    # Buckets are per event (last touch): a person can be a Google visitor and a Direct lead, so channel visitors
+    # can sum above funnel visitors. Then the lead persons the Karachi city filter drops (named non-Karachi cities,
+    # plus empty city on a non-Pakistan device timezone, shown as unknown).
+    CHANNEL = """multiIf(
+        match(lower(coalesce(toString(properties.utm_source),'')), 'chatgpt|openai|perplexity|copilot|gemini|claude')
+          OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'chatgpt|openai|perplexity|copilot\\\\.microsoft|gemini\\\\.google|claude\\\\.ai'), 'AI assistants',
+        lower(coalesce(toString(properties.utm_source),'')) LIKE 'gbp%', 'Google Business Profile',
+        lower(coalesce(toString(properties.utm_source),'')) = 'whatsapp' OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'whatsapp'), 'WhatsApp',
+        match(lower(coalesce(toString(properties.$referring_domain),'')), 'google\\\\.'), 'Google',
+        match(lower(coalesce(toString(properties.$referring_domain),'')), '(^|\\\\.)bing\\\\.|duckduckgo|yahoo|yandex'), 'Other search',
+        match(lower(coalesce(toString(properties.$referring_domain),'')), 'facebook|instagram|(^|\\\\.)fb\\\\.|linkedin|tiktok|youtube|twitter|(^|\\\\.)x\\\\.com$'), 'Social',
+        coalesce(toString(properties.$referring_domain),'') IN ('', '$direct') OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'safaikaro\\\\.pk$'), 'Direct',
+        'Referral')"""
+
+    def channels(win):
+        return ph.rows(f"""SELECT {CHANNEL} AS channel,
+            count(DISTINCT if(event='$pageview',person_id,NULL)) AS visitors,
+            count(DISTINCT if({LEAD},person_id,NULL)) AS lead_persons
+            FROM events WHERE {ph.between(win)} AND {base} GROUP BY channel ORDER BY visitors DESC""")
+
+    def outside_karachi(win):
+        rows = ph.rows(f"""SELECT coalesce(nullIf(properties.$geoip_city_name,''),'unknown') AS city, count(DISTINCT person_id) AS lead_persons
+            FROM events WHERE {ph.between(win)} AND {ph.excl} AND NOT ({ph.karachi}) AND {LEAD} GROUP BY city ORDER BY lead_persons DESC LIMIT 200""")
+        # the total is a sum per city, so a person whose events geolocate to two cities counts twice
+        return {"lead_persons": sum(r["lead_persons"] for r in rows), "by_city": rows[:8]}
+
+    out["channels"] = {k: channels(W[k]) for k in ("this_week", "last_28d")}
+    out["leads_outside_karachi"] = {k: outside_karachi(W[k]) for k in ("this_week", "last_28d")}
 
     # 13-week trend by device (Mon-start weeks, Asia/Karachi), ending with this_week
     start13 = W["this_week"][0] - dt.timedelta(weeks=12)

@@ -11,7 +11,10 @@
     "test_distinct_ids": [
       "019e8e44-e69e-7cd6-95b0-aa08792cc04f",
       "019d1a03-a96a-7ce2-b7eb-9b1305689334",
-      "019f8de3-0ef9-75e4-8573-c643e42092cd"
+      "019f8de3-0ef9-75e4-8573-c643e42092cd",
+      "01a05895-a9e6-7958-a44a-1ae974ea4293",
+      "01a05b38-a630-7996-84e0-db56c08d9f5d",
+      "01a05e44-12f6-7876-8e72-36ee125726d8"
     ],
     "lead_events": [
       "whatsapp_click",
@@ -116,7 +119,8 @@
     "new_query_min_impressions": 10,
     "burst_lead_events_per_day": 3,
     "leak_lead_rate_vs_site": 0.7,
-    "low_scroll_pct": 35
+    "low_scroll_pct": 35,
+    "min_scroll_leaves": 10
   },
   "banned_phrases": [
     "PPCP",
