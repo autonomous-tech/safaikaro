@@ -165,9 +165,9 @@
   "page": "/",
   "query": null,
   "play": "Hero copy that gives a reason to scroll (what happens next, price anchor visible) with a ledger entry; read the homepage lead rate clean of the tester first.",
-  "reason": "Homepage median scroll depth is the lowest on the site over 28 days and the page is the main entry point.",
+  "reason": "Homepage median scroll depth is the lowest on the site; the analyst found part of that is hero conversions, so the ledger reads lead rate as well as scroll.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W36-termite-service-page",
@@ -177,7 +177,7 @@
   "play": "Research and write a post-construction termite treatment service page (the existing page targets new construction); follow blog-writer.md for research, answer-first structure and FAQ parity.",
   "reason": "The homepage carries the query at page two while a competitor's termite page sits on page one; termite season opens in October.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W36-dengue-season-refresh",
@@ -187,7 +187,7 @@
   "play": "Season stamp, definition block for machar and dengue spray, FAQ pair, link from the dengue post; refresh the dengue post's dateModified.",
   "reason": "Dengue season is active through November and the page has impressions with no clicks.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W36-page-prefills",
@@ -195,9 +195,9 @@
   "page": "/rodent-control-karachi",
   "query": null,
   "play": "Page-specific WhatsApp prefills naming the service on the rodent and cockroach pages, copying the bee and wasp page pattern; ledger entry.",
-  "reason": "Bee and wasp, the only page with a service-specific prefill, converts far above site average.",
+  "reason": "Dropped: the rodent and cockroach pages already carry service-named WhatsApp prefills on every CTA, so there was nothing to copy from the bee and wasp page.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "dropped"
  },
  {
   "id": "2026-W36-collector-channels",
@@ -207,7 +207,7 @@
   "play": "Collector reports lead persons outside the Karachi filter on their own line and buckets utm_source=chatgpt.com as an AI channel.",
   "reason": "Non-Karachi leads were silently dropped and ChatGPT referrals show as direct.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W36-clifton-fumigation-ctr",
@@ -217,6 +217,116 @@
   "play": "Title 'Fumigation Services in Clifton Karachi: Rs 7,000, 90-Day Guarantee | SafaiKaro' mirrored in og, twitter and image alt; description under 160 characters with the guarantee before the cut and no comma triad.",
   "reason": "Homepage ranks near the top for the query with no clicks; the area page should carry it. Reviewer wording captured from this run.",
   "added": "2026-W35",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-north-nazimabad-faq",
+  "type": "area",
+  "page": "/pest-control-north-nazimabad-karachi",
+  "query": "north nazimabad pest control service",
+  "play": "FAQ pair in the query's words, fumigation prefill CTA under the fumigation section, every same-day promise on the page rewritten to next-available-slot wording.",
+  "reason": "Two North Nazimabad queries appeared in search this week and the page still promised same-day outside the same-day areas.",
+  "added": "2026-W36",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-khatmal-inline-cta",
+  "type": "page",
+  "page": "/blog/khatmal-ka-ilaj-karachi",
+  "query": "khatmal insect",
+  "play": "The phrase 'khatmal insect' in the definition box and an inline CTA with the price anchor under the first section.",
+  "reason": "The post carries most of the site's search impressions, readers scroll to the end and leave, and the symptom widget produced nothing in 28 days.",
+  "added": "2026-W36",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-tester-ids-and-guards",
+  "type": "instrumentation",
+  "page": "/",
+  "query": null,
+  "play": "Three internal distinct_ids added to the tester list; scroll_p50 suppressed under ten pageleaves; booking_steps keeps a city column; empty-city visitors need a Pakistan device timezone.",
+  "reason": "The analyst traced the desktop and commercial activity, the only booking selection and every desktop zero-scroll leave to three internal devices.",
+  "added": "2026-W36",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-llms-termite-narrative",
+  "type": "llms",
+  "page": "/llms.txt",
+  "query": null,
+  "play": "Deemak line in the narrative names the post-construction service page, the process, the 90-day guarantee and the October season.",
+  "reason": "A new service page changes what SafaiKaro says about termites.",
+  "added": "2026-W36",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W36-termite-warranty-wording",
+  "type": "page",
+  "page": "/blog/deemak-ka-ilaj-karachi",
+  "query": null,
+  "play": "Founder decides the termite warranty wording; the routine then aligns the deemak post, the termite-proofing post, the homepage service card, four area pages and llms.txt to it.",
+  "reason": "The standard says 90-day, the new termite page says 90-day, and eight older pages still promise a 5-year or 3-year written warranty.",
+  "added": "2026-W36",
+  "status": "needs_human"
+ },
+ {
+  "id": "2026-W36-market-price-marker",
+  "type": "freshness",
+  "page": "/blog/fumigation-machine-price-pakistan",
+  "query": null,
+  "play": "Decide how market prices that are not SafaiKaro prices are marked (an attribute the lint ignores, or a separate prices list), then the routine can refresh the machine post monthly.",
+  "reason": "Second month the machine post cannot be touched because its market prices fail the price lint.",
+  "added": "2026-W36",
+  "status": "needs_human"
+ },
+ {
+  "id": "2026-W37-khutmals-faq-bedbug",
+  "type": "page",
+  "page": "/bed-bug-treatment-karachi",
+  "query": "khutmals fumigation",
+  "play": "FAQ pair using the khutmals spelling with the price anchor and the two-session process, once last week's bed bug section has settled.",
+  "reason": "Striking-distance query on the price list and the khatmal post that belongs on the service page; the page slipped after last week's edit so it holds a week first.",
+  "added": "2026-W36",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W37-price-list-termite-link",
+  "type": "page",
+  "page": "/pest-control-price-list-karachi",
+  "query": "termite fumigation service price",
+  "play": "Link the termite row of the price list to the new termite service page on the query phrase, after the starting-price cards ledger has been read at 14 days.",
+  "reason": "The price list ranks near the top for the query with no clicks; the termite page now carries the answer.",
+  "added": "2026-W36",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W37-desktop-read",
+  "type": "cro",
+  "page": "/",
+  "query": null,
+  "play": "Read desktop lead persons after one clean week of the new lead definition and the cta tag; if Google desktop is still zero, test a visible phone number and copy button in the desktop hero with a ledger entry.",
+  "reason": "Google desktop brought visitors and no leads in 28 days, but the desktop lead definition changed inside the window.",
+  "added": "2026-W36",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-fumigation-page-faq",
+  "type": "page",
+  "page": "/fumigation-services-karachi",
+  "query": "fumigation karachi",
+  "play": "After the two-week hold, re-read the positions; if the page has settled, add FAQ pairs for 'fumigation karachi' and 'apartment fumigation karachi' with the price anchor.",
+  "reason": "Both queries sit in striking distance on the homepage and the fumigation page slipped after last week's rewrite, so no edit until it settles.",
+  "added": "2026-W36",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-deemak-insect-line",
+  "type": "page",
+  "page": "/blog/deemak-ka-ilaj-karachi",
+  "query": "deemak insect",
+  "play": "After the hold, a one-line 'deemak insect' definition in the post's answer block and a link to the termite service page on that phrase.",
+  "reason": "Definition query in striking distance; the post slipped after last week's title change so it holds first.",
+  "added": "2026-W36",
   "status": "queued"
  }
 ]
