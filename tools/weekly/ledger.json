@@ -15,6 +15,6 @@
   ],
   "hypothesis": "A three-step 'what happens next' list under the hero CTAs, a second price anchor (termite) and a line saying every service rate is further down give mobile visitors a reason to scroll and to tap WhatsApp, lifting homepage scroll depth and lead rate.",
   "metric": "homepage scroll_p50 and lead persons / unique visitors, mobile, 14 days post vs 14 days pre, tester ids excluded; secondary: whatsapp_click with cta=hero share",
-  "commit": null
+  "commit": "604a222"
  }
 ]
