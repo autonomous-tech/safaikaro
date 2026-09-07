@@ -86,7 +86,9 @@ class PostHog:
         ids = ",".join(f"'{i}'" for i in self.cfg["test_distinct_ids"])
         self.excl = (f"distinct_id NOT IN ({ids}) AND NOT match(coalesce(properties.$host,''), "
                      "'^(localhost|127\\\\.0\\\\.0\\\\.1)($|:)')")
-        self.karachi = "coalesce(properties.$geoip_city_name,'') IN ('Karachi','')"
+        # Karachi, or an unknown city on a device whose clock says Pakistan (a foreign visitor with no geo used to slip in)
+        self.karachi = ("(coalesce(properties.$geoip_city_name,'') = 'Karachi' OR (coalesce(properties.$geoip_city_name,'') = '' "
+                        "AND coalesce(properties.$timezone,'') IN ('Asia/Karachi','')))")
         self.lead = "event IN (" + ",".join(f"'{e}'" for e in self.cfg["lead_events"]) + ")"
 
     RETRY_CODES = (429, 502, 503, 504)
