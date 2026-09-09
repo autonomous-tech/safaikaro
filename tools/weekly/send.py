@@ -272,8 +272,19 @@ def render(D, I, CH, pr_url=None):
     prows = [[td(esc(r["path"]), mono=True), td(n(r["uv"]), "right", mono=True), td(n(r["lead_persons"]), "right", mono=True, strong=True), td(pct(r.get("lead_rate")), "right", mono=True),
               td((badge(f'{r["vs_site_avg"]}x', "sage" if r["vs_site_avg"] >= 1 else "red" if r["vs_site_avg"] < 0.7 else "cloud") if r.get("vs_site_avg") is not None else ""), "right"),
               td(n(r.get("scroll_p50")) + ("%" if r.get("scroll_p50") is not None else ""), "right", mono=True, color=C["cloud600"])] for r in pg]
+    ch28 = (ph.get("channels") or {}).get("last_28d", [])
+    chtw = {r["channel"]: r for r in (ph.get("channels") or {}).get("this_week", [])}
+    crows = [[td(esc(r["channel"]), strong=True), td(n(r.get("visitors")), "right", mono=True), td(n(r.get("lead_persons")), "right", mono=True, strong=True),
+              td(pct((r.get("lead_persons") or 0) / r["visitors"] if r.get("visitors") else None), "right", mono=True), td(n(chtw.get(r["channel"], {}).get("lead_persons", 0)), "right", mono=True)] for r in ch28]
+    outside = ph.get("leads_outside_karachi") or {}
+    o28, otw = outside.get("last_28d") or {}, outside.get("this_week") or {}
+    ocities = ", ".join(f'{esc(c["city"])} {n(c["lead_persons"])}' for c in (o28.get("by_city") or [])[:4]) or "none"
+    outside_line = f'Leads outside the Karachi filter, not counted anywhere above: {n(o28.get("lead_persons"))} in 28 days ({ocities}), {n(otw.get("lead_persons"))} this week.' if outside else ""
     where = (sub("Karachi areas, last 28 days") + table([th("Area"), th("Sessions", "right"), th("Leads", "right"), th("Rate", "right"), th("Dropdown", "right"), th("This wk", "right"), th("MoM", "right")], arows, "No area-page landings yet. Area pages are days old in the index.") +
              para(f"Area = area page landed on, booking dropdown choice, or the area in the WhatsApp prefill. PostHog geo stops at city (this month: {cities}), so this is intent by area.", 12, C["cloud600"], margin="8px 0 0") +
+             (para(outside_line, 12, C["cloud600"], margin="6px 0 0") if outside_line else "") +
+             sub("Channels, last 28 days") + table([th("Channel"), th("Visitors", "right"), th("Leads", "right"), th("Rate", "right"), th("This wk", "right")], crows, "No channel data in this window.") +
+             para("Channel = utm_source first, then the referring domain, per event: a person who arrived from Google and came back direct to convert is a Google visitor and a Direct lead, so channel visitors can sum above the funnel. AI assistants covers chatgpt.com, Perplexity, Copilot, Gemini and Claude referrals; GBP and WhatsApp only appear once those links carry a utm_source.", 12, C["cloud600"], margin="8px 0 0") +
              sub("Pages, last 28 days") + table([th("Page"), th("Visitors", "right"), th("Leads", "right"), th("Rate", "right"), th("vs site", "right"), th("Scroll p50", "right")], prows))
     P.append(section("Where", "Areas and pages", SI.get("where"), where))
 

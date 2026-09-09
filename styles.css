@@ -305,6 +305,42 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
+.hero-next {
+  list-style: none;
+  counter-reset: step;
+  margin: 22px 0 0;
+  padding: 0;
+  max-width: 520px;
+  display: grid;
+  gap: 8px;
+}
+
+.hero-next li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 34px;
+  color: rgba(249,248,244,0.85);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.hero-next li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #6EE086;
+  color: #0D4A2F;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero-image {
   background: #6EE086;
   border-left: 4px solid #6EE086;
