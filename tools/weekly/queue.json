@@ -177,7 +177,8 @@
   "play": "Research and write a post-construction termite treatment service page (the existing page targets new construction); follow blog-writer.md for research, answer-first structure and FAQ parity.",
   "reason": "The homepage carries the query at page two while a competitor's termite page sits on page one; termite season opens in October.",
   "added": "2026-W35",
-  "status": "shipped"
+  "status": "shipped",
+  "audit_followup": "The W36 service page is already shipped. September 9 audit changes reconcile its existing-home scope, pricing and guarantee wording; observe the merged version after recrawl before another message test."
  },
  {
   "id": "2026-W36-dengue-season-refresh",
@@ -217,7 +218,8 @@
   "play": "Title 'Fumigation Services in Clifton Karachi: Rs 7,000, 90-Day Guarantee | SafaiKaro' mirrored in og, twitter and image alt; description under 160 characters with the guarantee before the cut and no comma triad.",
   "reason": "Homepage ranks near the top for the query with no clicks; the area page should carry it. Reviewer wording captured from this run.",
   "added": "2026-W35",
-  "status": "shipped"
+  "status": "shipped",
+  "audit_followup": "Preserve the title already shipped in W36. September 9 audit adds heading/package clarity and contextual links; observe the combined landing-page version after recrawl rather than queueing another title rewrite."
  },
  {
   "id": "2026-W36-north-nazimabad-faq",
@@ -267,7 +269,8 @@
   "play": "Founder decides the termite warranty wording; the routine then aligns the deemak post, the termite-proofing post, the homepage service card, four area pages and llms.txt to it.",
   "reason": "The standard says 90-day, the new termite page says 90-day, and eight older pages still promise a 5-year or 3-year written warranty.",
   "added": "2026-W36",
-  "status": "needs_human"
+  "status": "needs_human",
+  "audit_followup": "September 9 audit commit 6dd860d aligns website wording to the approved interim 90-day policy. Confirm deployment before closing this task. A longer warranty still requires the founder decision."
  },
  {
   "id": "2026-W36-market-price-marker",
@@ -277,7 +280,8 @@
   "play": "Decide how market prices that are not SafaiKaro prices are marked (an attribute the lint ignores, or a separate prices list), then the routine can refresh the machine post monthly.",
   "reason": "Second month the machine post cannot be touched because its market prices fail the price lint.",
   "added": "2026-W36",
-  "status": "needs_human"
+  "status": "needs_human",
+  "audit_followup": "September 9 lint fix checks prices on added lines for existing pages, while new pages and --all retain full checks. Existing unchanged market prices no longer block unrelated edits. Updating editorial prices still requires source validation and a supported pricing policy; this task is not a blanket exemption."
  },
  {
   "id": "2026-W37-khutmals-faq-bedbug",
@@ -297,7 +301,8 @@
   "play": "Link the termite row of the price list to the new termite service page on the query phrase, after the starting-price cards ledger has been read at 14 days.",
   "reason": "The price list ranks near the top for the query with no clicks; the termite page now carries the answer.",
   "added": "2026-W36",
-  "status": "queued"
+  "status": "queued",
+  "audit_followup": "September 9 pricing package commit 6dd860d links the starting card and a new termite-price answer section to the existing-home service page. After deployment, reconcile this queued action against those links before adding another change; use the combined pricing-package ledger for measurement."
  },
  {
   "id": "2026-W37-desktop-read",

@@ -14,7 +14,7 @@ Price usi chat mein confirm hoti hai, koi hidden charge nahi.
 
 Slot fix: DHA, Clifton, PECHS, Bahadurabad aur Saddar mein same-day, baqi Karachi mein next available slot.
 
-Trained technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Serving all of Karachi
@@ -23,7 +23,7 @@ Our Services
 
 ## Professional Pest Control for Every Need
 
-Certified technicians, WHO-approved chemicals, 90-day guarantee on every service.
+Pest control technicians, treatment chemicals, 90-day guarantee on every service.
 
 ### General Fumigation
 
@@ -35,7 +35,7 @@ Learn More →
 
 ### Termite Treatment
 
-Pre and post-construction termite treatment with 5-year warranty.
+Pre and post-construction termite treatment with 90-day guarantee.
 
 From Rs 13,000
 
@@ -87,7 +87,7 @@ Service choose karo, date pick karo  -  60 seconds mein done.
 
 ### Tech aata hai
 
-Certified, uniformed, ID card ke saath  -  time pe.
+Uniformed, ID card ke saath - time pe.
 
 3
 
@@ -227,7 +227,7 @@ Yes  -  if you book before 10am, same-day slots are often available. Our technic
 
 Kya treatment bachon aur pets ke liye safe hai?
 
-All chemicals we use are WHO-approved and safe for re-entry after 4 hours. We recommend keeping children and pets out of treated rooms during and for 4 hours post-treatment.
+Preparation and re-entry precautions depend on the treatment product. Tell the team about children, pets and health concerns before booking, and follow the product label and treatment-specific instructions.
 
 Fumigation mein kitna time lagta hai?
 
@@ -235,7 +235,7 @@ A standard 3-bed house takes 2-3 hours. We notify you before arrival with an est
 
 Kya aap written guarantee dete ho?
 
-Yes  -  all treatments come with a 90-day guarantee. If pests return within 90 days, we return and re-treat at no additional cost. Termite treatments carry a 5-year written warranty.
+Yes  -  all treatments come with a 90-day guarantee. If pests return within 90 days, we return and re-treat at no additional cost. Termite treatments carry a 90-day guarantee.
 
 Karachi mein aap kahan kahan serve karte ho?
 
@@ -251,7 +251,7 @@ For most Karachi homes, quarterly treatment (4 times/year) is ideal. Our Annual 
 
 ## Ghar pest-free karo  -  aaj hi book karo
 
-Transparent pricing, certified technicians, 90-day guarantee.
+Transparent pricing, pest control technicians, 90-day guarantee.
 
 Book Now →
 
@@ -383,7 +383,7 @@ Form ke liye JavaScript chahiye. Seedha WhatsApp par quote maangein.
 ---
 
 URL: https://safaikaro.pk/pest-control-price-list-karachi
-TITLE: Fumigation & Pest Control Prices Karachi (September 2026) | SafaiKaro
+TITLE: Fumigation Prices Karachi: From Rs 7,000 | SafaiKaro
 
 Transparent pricing. Always.
 
@@ -399,7 +399,7 @@ Karachi mein hum akele hain jo price pehle batate hain. Koi hidden charges nahi,
 
 ### General fumigation
 
-From Rs  - 
+From Rs 7,000
 
 1 visit, 90-day guarantee
 
@@ -408,16 +408,16 @@ Service details →
 
 ### Termite treatment
 
-From Rs  - 
+From Rs 13,000
 
-Drilling + soil injection, 5-year warranty
+Drilling + soil injection, 90-day guarantee
 
 WhatsApp this priceWhatsApp Karo
 Service details →
 
 ### Bed bug treatment
 
-From Rs  - 
+From Rs 11,000
 
 Spray + IGR, both sessions, 90-day guarantee
 
@@ -426,7 +426,7 @@ Service details →
 
 ### Rodent control
 
-From Rs  - 
+From Rs 13,000
 
 2 visits, bait stations + sealing
 
@@ -435,7 +435,7 @@ Service details →
 
 ### Mosquito / dengue spray
 
-From Rs  - 
+From Rs 6,000
 
 Indoor + outdoor, 90-day guarantee
 
@@ -444,7 +444,7 @@ Service details →
 
 ### Annual Shield plan
 
-From Rs  - 
+From Rs 18,000
 
 4 visits + 1 emergency callout, per year
 
@@ -455,7 +455,7 @@ Prices start at the smallest property size (up to 100 sq yds). See your exact pr
 
 ## Complete Price List  -  All Services
 
-All prices include labor, equipment, and WHO-approved chemicals.
+All prices include labor, equipment, and treatment chemicals.
 
 ### Find your listed price
 
@@ -570,11 +570,17 @@ Calculate Estimate
 
 Estimated Price
 
+## Termite treatment prices: existing homes and new construction
+
+Existing homes: Post-construction treatment starts from Rs 13,000 for up to 100 sq yards. The listed scope is drilling, soil injection and wood treatment, with a 90-day guarantee. See the table above for larger properties and our existing-home termite treatment page for the service scope. Confirm the affected areas and treatment scope before booking.
+
+New construction: Soil treatment is planned around the construction stages. Request a site inspection and a project quote through our new-construction termite treatment page. The existing-home price tiers use square yards of property size; they are not a per-square-foot construction quote.
+
 ## Why We Publish Our Prices
 
-Most pest control companies in Karachi won't tell you the price until they've visited and assessed. We disagree. Transparent pricing builds trust  -  and trust is the foundation of a good service relationship.
+Check the listed rate for your treatment and property size before sharing your contact details. Each service has its own scope and follow-up terms.
 
-When you book with SafaiKaro, you know the price before our technician even arrives. The only variable: your property size, which you provide when booking. Final price is confirmed before we start. Zero surprises.
+When you book with SafaiKaro, you know the price before our technician even arrives. Share your property size and pest problem when booking. We confirm the treatment scope and final price before work starts.
 
 ## How to Pay
 
@@ -599,7 +605,7 @@ Rs 500 refundable booking deposit required to confirm your slot for a single-vis
 Kya quoted price mein chemicals included hain?
 ⌄
 
-Yes  -  all prices include equipment, labor, and WHO-approved chemicals. No add-ons, no surprises. The price you see is the price you pay.
+Yes - all prices include equipment, labor, and treatment chemicals. No add-ons, no surprises. The price you see is the price you pay.
 
 Meri property ka size kaise measure karta hoon?
 ⌄
@@ -629,21 +635,21 @@ A 3-bedroom house (301-500 sq yards) costs Rs 16,000 for general fumigation at S
 How much does termite proofing cost per square foot in Pakistan?
 ⌄
 
-Pre-construction termite proofing costs approximately Rs 20-30 per square foot. Post-construction termite treatment starts at Rs 13,000 depending on property size.
+Existing-home termite treatment starts at Rs 13,000 for up to 100 square yards. New-construction treatment is quoted after a site inspection; these property-size tiers are not per-square-foot construction rates.
 
 Is cheap pest control effective?
 ⌄
 
-Very low-cost pest control often uses diluted chemicals or skips areas. SafaiKaro uses WHO-approved chemicals at proper concentrations with a 90-day guarantee: if pests return, we re-treat free.
+Compare the treated property size, included areas, number of visits and follow-up terms before choosing a price. SafaiKaro confirms the treatment scope before work starts and includes a 90-day guarantee.
 
 What is included in a pest control package in Karachi?
 ⌄
 
-SafaiKaro packages include inspection, WHO-approved chemicals, technician labor, all equipment, and a 90-day re-treatment guarantee. No add-ons or hidden charges.
+SafaiKaro packages include inspection, treatment chemicals, technician labor, all equipment, and a 90-day re-treatment guarantee. No add-ons or hidden charges.
 
 ## Ready to Book?
 
-Transparent pricing. Certified technicians. Same-day service available.
+Transparent pricing. Pest control technicians. Same-day service available.
 
 Book Now →
 
@@ -656,23 +662,23 @@ WhatsApp at Rs 7,000
 ---
 
 URL: https://safaikaro.pk/termite-treatment-new-construction-karachi
-TITLE: Termite Treatment Karachi  - Pre & Post Construction | 5-Year Warranty
+TITLE: New-Construction Termite Treatment Karachi | SafaiKaro
 
 Home
 ›
 Termite Treatment Karachi
 
-🛡️ Zero Competitor Pages Rank for This
+New-Construction Termite Treatment
 
 # Pre-Construction Termite Treatment in Karachi  -  Protect Your Home Before It's Built
 
-Ghar banane se pehle treatment karwana  -  lifelong protection ka sabse smart tariqa.
+Ghar banane se pehle termite treatment ko construction schedule mein plan karein.
 
 Book Free Inspection →
 
-✓ 5-Year Written Warranty
-✓ WHO-Approved Chemicals
-✓ From Rs 13,000
+✓ 90-day guarantee
+✓ Treatment details confirmed
+✓ Project quote after inspection
 
 ## Baad mein nahi, pehle  -  why timing is everything
 
@@ -707,8 +713,8 @@ Maximum  -  prevents entry
 High  -  eliminates active colonies
 
 Warranty
-5-year written warranty
-3-year written warranty
+90-day guarantee
+90-day guarantee
 
 Disruption
 None  -  done during construction
@@ -734,25 +740,25 @@ Soil barrier + wood treatment recommendation tailored to your plot.
 
 ### Treatment
 
-Certified technicians apply WHO-approved chemicals on-site.
+Pest control technicians apply treatment chemicals on-site.
 
 4
 
 ### Warranty Issued
 
-5-year written warranty registered to your property address.
+90-day guarantee registered to your property address.
 
-## Termite Treatment Pricing  -  No Surprises
+## Existing-Home Prices for Comparison
 
-Transparent pricing. What you see is what you pay.
+The rates below apply to already-built homes by property size in square yards. New-construction soil treatment needs a separate project quote after inspection.
 
 Property Size
 Termite Treatment Price
 
-Up to 100 sq yds (small flat / 5 marla)
+Up to 100 sq yds (small flat)
 Rs 13,000
 
-101–200 sq yds (standard house / 10 marla)
+101–200 sq yds (standard house)
 Rs 17,000
 
 201–300 sq yds (large home)
@@ -761,10 +767,10 @@ Rs 20,000
 301–500 sq yds (large house / bungalow)
 Rs 27,000
 
-501–1,000 sq yds (villa / 1 kanal)
+501–1,000 sq yds (villa)
 Rs 37,000
 
-Post-construction drilling, soil injection + wood treatment. 5-year warranty included.
+Post-construction drilling, soil injection + wood treatment. 90-day guarantee included.
 
 Price confirmed before we start. Zero hidden charges. Balance paid to technician on the day.
 
@@ -772,7 +778,7 @@ If the house is already built and you are seeing deemak, the post-construction s
 
 Not sure of your property size? WhatsApp us  -  we will confirm during booking.
 
-Book Free Inspection →
+See Existing-Home Treatment →
 
 ## Our Work  -  Before & After
 
@@ -780,11 +786,13 @@ Before: Soil treatment during construction
 
 After: Protected foundation complete
 
-5-year warranty card issued after every treatment
+## Termites in an existing home?
 
-5-year written warranty  -  registered against your property
+See post-construction termite treatment and property-size prices for already-built homes. New-construction treatment is planned around the building stages.
 
-WHO-approved chemicals  -  safe after 4 hours
+90-day guarantee - registered against your property
+
+Follow treatment-specific preparation and re-entry instructions
 
 DHA Phase 1–8, Clifton, Gulshan, PECHS, Bahria Town
 
@@ -805,7 +813,7 @@ For post-construction treatment, you can re-enter after 4 hours. The chemicals w
 5-saal warranty mein kya cover hota hai?
 ⌄
 
-Our 5-year warranty covers any re-infestation of termites at the treated property. If termites return within 5 years, we return and re-treat at no additional cost. The warranty is registered against your property address.
+Our 90-day guarantee covers any re-infestation of termites at the treated property. If termites return within 90 days, we return and re-treat at no additional cost. The warranty is registered against your property address.
 
 Kya puri building ka treatment karna zarori hai?
 ⌄
@@ -855,9 +863,9 @@ TITLE: Fumigation Services in Karachi (September 2026): From Rs 7,000 | SafaiKar
 
 Updated September 2026. Rates checked against our current job sheet.
 
-Single-visit general fumigation for cockroaches, ants, and crawling insects. WHO-approved chemicals, priced by property size, 90-day guarantee. No hidden charges.
+Single-visit general fumigation for cockroaches, ants, and crawling insects. treatment chemicals, priced by property size, 90-day guarantee. No hidden charges.
 
-✓ WHO-Approved Chemicals
+✓ treatment chemicals
 ✓ Transparent Pricing
 ✓ 90-Day Guarantee
 
@@ -877,11 +885,11 @@ General fumigation is SafaiKaro's most-booked service: a single-visit treatment 
 
 Full property inspection before treatment starts
 
-WHO-approved chemicals, equipment and labor included
+treatment chemicals, equipment and labor included
 
 Single-visit treatment for cockroaches, ants & crawling insects
 
-Certified technician for the full visit
+Technician for the full visit
 
 90-day guarantee, free re-treatment if pests return
 
@@ -929,7 +937,7 @@ Your technician inspects the property, confirms the size tier and price, and ide
 
 ### Fumigation Treatment
 
-WHO-approved chemicals are applied throughout the property, targeting cockroaches, ants, and crawling insects. A standard 3-bed house (201–300 sq yards) takes 2–3 hours.
+treatment chemicals are applied throughout the property, targeting cockroaches, ants, and crawling insects. A standard 3-bed house (201–300 sq yards) takes 2–3 hours.
 
 4
 
@@ -945,9 +953,9 @@ If your property is a school, daycare, or has particularly sensitive occupants, 
 
 ## Why SafaiKaro Offers the Best Fumigation Services in Karachi
 
-SafaiKaro publishes fumigation prices before you book, uses WHO-approved chemicals at every visit, and backs every job with a 90-day guarantee. Technicians are based across DHA and Clifton, so response times stay fast wherever you are.
+SafaiKaro publishes fumigation prices before you book, uses treatment chemicals at every visit, and backs every job with a 90-day guarantee. Technicians are based across DHA and Clifton, so response times stay fast wherever you are.
 
-✓ WHO-approved chemicals
+✓ treatment chemicals
 
 ✓ Single-visit treatment
 
@@ -965,7 +973,7 @@ Flagship service areas: DHA Phase 1–8, Clifton Block 1–9, Bath Island, and P
 
 What's included in SafaiKaro's fumigation services in Karachi?
 
-Every fumigation visit includes a property inspection, WHO-approved chemicals, technician labor, and a single-visit treatment for cockroaches, ants, and crawling insects. Prices are published upfront, from Rs 7,000 for properties up to 100 sq yards to Rs 20,000 for 501–1,000 sq yards, with a 90-day guarantee. If pests return, we re-treat at no additional cost.
+Every fumigation visit includes a property inspection, treatment chemicals, technician labor, and a single-visit treatment for cockroaches, ants, and crawling insects. Prices are published upfront, from Rs 7,000 for properties up to 100 sq yards to Rs 20,000 for 501–1,000 sq yards, with a 90-day guarantee. If pests return, we re-treat at no additional cost.
 
 Fumigation services near me in Karachi?
 
@@ -985,7 +993,7 @@ A standard 3-bed house (201–300 sq yards) takes 2–3 hours in a single visit.
 
 Do you provide fumigation for schools or businesses that need a certificate?
 
-Yes. For schools and daycares, see our school fumigation service. For offices, warehouses, and businesses that need hygiene documentation, see our fumigation certificate service. Both use the same WHO-approved chemicals as residential fumigation.
+Yes. For schools and daycares, see our school fumigation service. For offices, warehouses, and businesses that need hygiene documentation, see our fumigation certificate service. Both use the same treatment chemicals as residential fumigation.
 
 Fumigation services Karachi ke kis area mein milti hain?
 
@@ -2617,7 +2625,7 @@ TITLE: Fumigation Certificate Karachi: Offices, Schools & Businesses | SafaiKaro
 Treatment done. Certificate issued same day for single-visit treatments. A dated, stamped record for your files.
 
 ✓ Certificate Issued Same Day
-✓ WHO-Approved Chemicals
+✓ treatment chemicals
 
 WhatsApp for a Quote →
 
@@ -2697,9 +2705,9 @@ Rs 500 refundable booking deposit secures your slot for a single-visit treatment
 
 3
 
-### Certified Technicians On-Site
+### Pest Control Team On-Site
 
-Our certified team arrives, does a quick premises assessment, then carries out the full treatment: floors, storage, washrooms, and back-of-house areas. WHO-approved chemicals only. Treatment time: 1-3 hours depending on premises size.
+Our team arrives, does a quick premises assessment, then carries out the full treatment: floors, storage, washrooms, and back-of-house areas. treatment chemicals only. Treatment time: 1-3 hours depending on premises size.
 
 4
 
@@ -2749,7 +2757,7 @@ WhatsApp for Quote  -  +92 330 8652035
 
 ## Why Businesses Choose SafaiKaro
 
-✓ WHO-approved chemicals
+✓ treatment chemicals
 
 ✓ Certificate issued same day
 
@@ -2807,9 +2815,9 @@ TITLE: School Fumigation Service Karachi: Weekend & Holiday Scheduling | SafaiKa
 
 # School Fumigation Service Karachi: Weekend & Holiday Scheduling, Child-Safe, Documented
 
-Scheduled fumigation for schools and daycares, booked around your calendar. WHO-approved chemicals, treatment done while classrooms are empty, and a certificate after every visit.
+Scheduled fumigation for schools and daycares, booked around your calendar. treatment chemicals, treatment done while classrooms are empty, and a certificate after every visit.
 
-✓ Child-Safe WHO-Approved Chemicals
+✓ Child-Safe treatment chemicals
 ✓ After-Hours & Holiday Treatment
 ✓ Treatment Certificate Issued
 
@@ -2841,7 +2849,7 @@ SafaiKaro builds a treatment plan around your campus and your timetable  -  not 
 
 ### Child-Safe Chemicals
 
-WHO-approved chemicals applied at controlled doses, with a recommended re-entry interval so rooms are clear and ventilated before children return.
+treatment chemicals applied at controlled doses, with a recommended re-entry interval so rooms are clear and ventilated before children return.
 
 🌙
 
@@ -2903,9 +2911,9 @@ We agree a slot that fits your academic calendar  -  after dismissal, a weekend,
 
 3
 
-### Certified Treatment
+### Scheduled Treatment
 
-Our certified team treats classrooms, corridors, washrooms, the canteen, storerooms, and grounds using WHO-approved, child-safe chemicals at controlled doses. Treatment time depends on campus size.
+Our team treats classrooms, corridors, washrooms, the canteen, storerooms, and grounds using WHO-approved, child-safe chemicals at controlled doses. Treatment time depends on campus size.
 
 4
 
@@ -2955,7 +2963,7 @@ WhatsApp for Quote  -  +92 330 8652035
 
 ## Why Schools Choose SafaiKaro
 
-✓ Child-safe WHO-approved chemicals
+✓ Child-safe treatment chemicals
 
 ✓ After-hours & holiday treatment
 
@@ -2973,7 +2981,7 @@ SafaiKaro serves schools and daycares across DHA Phase 1-8, Clifton Block 1-9, B
 
 Is the treatment safe for children in schools and daycares?
 
-SafaiKaro uses WHO-approved chemicals applied at controlled doses. Treatment is scheduled after hours, on weekends, or during holidays so classrooms are empty and fully ventilated before children return. We advise on a safe re-entry interval after each treatment.
+SafaiKaro uses treatment chemicals applied at controlled doses. Treatment is scheduled after hours, on weekends, or during holidays so classrooms are empty and fully ventilated before children return. We advise on a safe re-entry interval after each treatment.
 
 When can a school be fumigated without disrupting classes?
 
@@ -3029,17 +3037,17 @@ DHA Karachi
 
 # Pest Control in DHA Karachi  -  All Phases Covered
 
-Phase 1 to Phase 8  -  same-day available, prices online, 90-day guarantee. Certified technicians who know DHA.
+Phase 1 to Phase 8  -  same-day available, prices online, 90-day guarantee. Pest control technicians who know DHA.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 All DHA phases covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 DHA Karachi
 
@@ -3047,7 +3055,7 @@ DHA Karachi
 
 DHA Karachi is one of the most diverse residential zones in the city  -  stretching from the 1960s bungalows of Phase 1 near the creek to the brand-new plots of Phase 8 off Khayaban-e-Jinnah. That diversity creates a wide range of pest challenges, and a single generic treatment simply does not address all of them.
 
-SafaiKaro has treated over 3,000 homes across all 8 DHA phases. Our technicians are permanently based in DHA  -  they know the drainage layout of Phase 5’s khayabans, the timber construction patterns in Phase 1 bungalows, and the construction-phase termite risks that come with active development in Phase 7. That ground-level knowledge is why our treatments last.
+SafaiKaro provides pest control for homes in DHA. Choose the treatment for your pest problem, then check the listed price for your property size before booking.
 
 Every price is published upfront before you book. Fumigation starts from Rs 7,000, termite proofing from Rs 13,000, and our Annual Shield plan covers 4 visits a year plus 1 emergency callout between visits. Same-day appointments are often available if you contact us before 10am.
 
@@ -3302,19 +3310,19 @@ Home
 ›
 Clifton Karachi
 
-# Pest Control in Clifton Karachi  -  All Blocks Covered
+# Fumigation Services in Clifton Karachi
 
-Block 1 to Block 9  -  same-day available, prices online, 90-day guarantee. Certified technicians who know Clifton.
+General fumigation across Blocks 1-9 from Rs 7,000 for homes up to 100 sq yards. One visit with a 90-day guarantee. Check your property size and confirm your block and available slot on WhatsApp.
 
 Book a Visit →
-See Prices
+See Prices by Property Size
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 All 9 Clifton blocks covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Clifton Karachi
 
@@ -3322,15 +3330,15 @@ Clifton Karachi
 
 Clifton Karachi is one of the most diverse residential zones in the city  -  stretching from the seafront apartment complexes of Block 1 on the Marine Promenade to the new towers rising around Do Talwar in Block 9. That diversity creates a wide range of pest challenges, and a single generic treatment simply does not address all of them.
 
-SafaiKaro has treated over 3,000 homes across all 9 Clifton blocks. Our technicians are permanently based minutes from Clifton  -  they know the drainage layout of the high-rises near Park Towers in Block 5, the timber construction patterns in the older Kehkashan bungalows, and the construction-site pest pressure that comes with active development in Blocks 8 and 9. That ground-level knowledge is why our treatments last.
+SafaiKaro provides pest control for homes in Clifton. Choose the treatment for your pest problem, then check the listed price for your property size before booking.
 
-Every price is published upfront before you book. Fumigation starts from Rs 7,000, termite proofing from Rs 13,000, and our Annual Shield plan covers 4 visits a year plus 1 emergency callout between visits. Same-day appointments are often available if you contact us before 10am.
+Compare prices by property size and see what general fumigation includes before you book. Fumigation starts from Rs 7,000, termite proofing from Rs 13,000, and our Annual Shield plan covers 4 visits a year plus 1 emergency callout between visits. Same-day appointments are often available if you contact us before 10am.
 
 Fumigation
 
 ## Fumigation Services in Clifton Karachi
 
-Looking for fumigation services in Clifton Karachi? SafaiKaro provides general fumigation across every Clifton block from Rs 7,000 (up to 100 sq yds)  -  single visit, WHO-approved chemicals, and a 90-day guarantee. Our technicians are based in Clifton Block 8, so same-day fumigation is usually available anywhere in Clifton if you book before 10am.
+Looking for fumigation services in Clifton Karachi? SafaiKaro provides general fumigation across every Clifton block from Rs 7,000 (up to 100 sq yds) - single visit, treatment chemicals, and a 90-day guarantee. Share your block and property size to confirm the next available slot.
 
 One treatment covers cockroaches, ants, lizards, and general crawling insects across the whole property. See the full fumigation service details or the complete price list, or WhatsApp us your block and property size for an instant confirmed price.
 
@@ -3430,7 +3438,7 @@ Clifton Block 6 is best known for Karachi Grammar School and the 55-acre Boat Ba
 
 Housing here mixes established bungalows with newer apartment towers. For houses, our standard Block 6 visit covers boundary-wall residual spray facing the park side, larvicide in garden standing water, and kitchen-bathroom gel baiting. For apartment buildings, we recommend building-wide treatment  -  cockroaches move between units through shared risers and conduit, and single-flat treatments reinfest within days.
 
-Families with school-run routines around KGS often prefer scheduled early-morning slots so treatment is done and ventilated before children return  -  ask for a before-9am slot when you book. All chemicals are WHO-approved and safe for homes with children and pets once dry.
+Families with school-run routines around KGS can ask about early-morning appointments when booking. Confirm preparation and re-entry instructions with the team before booking, including any precautions for children and pets.
 
 Full guide: Clifton Block 6.
 
@@ -3452,7 +3460,7 @@ Construction zones amplify pest populations: excavation disturbs subterranean te
 
 For the block’s clinics, supermarkets, offices, and food outlets we run dedicated monthly pest management with full documentation for regulatory inspections. See our commercial service.
 
-SafaiKaro’s own office on Al Murtaza Commercial Lane is minutes from Block 8, so response times here are among the fastest of any area we cover  -  same-day service for emergency call-outs is almost always available. Full guide: Clifton Block 8.
+For a property in Block 8, share your pest problem and property size to confirm treatment scope and the next available appointment.
 
 ## Pest Control in Clifton Block 9 Karachi
 
@@ -3550,7 +3558,7 @@ FAQ
 
 Which Clifton blocks does SafaiKaro cover?
 
-SafaiKaro covers all 9 Clifton blocks: Block 1, Block 2, Block 3, Block 4, Block 5, Block 6, Block 7, Block 8, and Block 9. Same-day service is available across all blocks if you book before 10am. Blocks 5, 6, and 8 have the highest technician density and the fastest response times.
+SafaiKaro covers all 9 Clifton blocks: Block 1, Block 2, Block 3, Block 4, Block 5, Block 6, Block 7, Block 8, and Block 9. Contact us with your block and property size to confirm the next available appointment.
 
 What is the price for pest control in Clifton Karachi?
 
@@ -3598,12 +3606,12 @@ Every district, same published prices  -  same-day available, 90-day guarantee. 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 All of Karachi covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Karachi, City-Wide
 
@@ -4005,7 +4013,7 @@ Termite Treatment
 
 ## Deemak Ka Ilaj Karachi
 
-Professional termite treatment options for Karachi homes  -  pre-construction vs post-construction, costs, and what a 5-year warranty covers.
+Professional termite treatment options for Karachi homes - pre-construction vs post-construction, costs, and what a 90-day guarantee covers.
 
 Read More →
 
@@ -4061,7 +4069,7 @@ Safety Guide
 
 ## Kya Fumigation Bachon Ke Liye Safe Hai?
 
-Kya pest control bachon, pets aur pregnant khawateen ke liye safe hai  -  WHO-approved chemicals, 4-ghante re-entry guide aur zaroori precautions.
+Kya pest control bachon, pets aur pregnant khawateen ke liye safe hai - treatment chemicals, 4-ghante re-entry guide aur zaroori precautions.
 
 Read More →
 
@@ -4243,7 +4251,7 @@ Poore ghar ki fumigation chahiye? Agar sirf khatmal nahi balke cockroach, machar
 
 SafaiKaro ka bed bug treatment process yeh hai:
 
-Inspection: Certified technician bedroom aur adjacent areas thoroughly inspect karta hai. Infestation level, hiding spots, aur spread assess kiya jaata hai. Exact quote us waqt confirm hoti hai  -  koi vague estimate nahi.
+Inspection: Technician bedroom aur adjacent areas thoroughly inspect karta hai. Infestation level, hiding spots, aur spread assess kiya jaata hai. Exact quote us waqt confirm hoti hai - koi vague estimate nahi.
 
 Preparation (Aapka Kaam): Treatment se pehle bedding (sheets, pillow covers, duvet covers) hot wash (60°C+) karo aur dryer pe high heat se dry karo. Clothes wardrobe mein band rakho. Bed ke aas paas clutter hata do  -  technician ko clear access chahiye.
 
@@ -4498,7 +4506,7 @@ Professional termite treatment mein 4 main methods hain. Har method alag situati
 
 ### 1. Chemical Soil Barrier (Soil Injection)
 
-Yeh sabse common post-construction method hai. Certified technician foundation ke around drill karta hai aur high-concentration termiticide (imidacloprid ya bifenthrin) inject karta hai. Yeh chemical soil mein ek invisible barrier bana deta hai  -  deemak is barrier ko cross nahi kar sakti.
+Yeh sabse common post-construction method hai. Technician foundation ke around drill karta hai aur high-concentration termiticide (imidacloprid ya bifenthrin) inject karta hai. Yeh chemical soil mein ek invisible barrier bana deta hai - deemak is barrier ko cross nahi kar sakti.
 
 Duration: 5-8 saal effective rehta hai
 
@@ -4650,7 +4658,7 @@ Treatment Plan: Property ki size, infestation level, aur construction type ke hi
 
 Professional Treatment: Technicians WHO-approved termiticides use karte hain. Full treatment 4-8 ghante mein complete.
 
-Written Warranty: 5-year warranty certificate us din milta hai. Agar deemak wapas aaye  -  free re-treatment.
+Written Warranty: 90-day guarantee certificate us din milta hai. Agar deemak wapas aaye - free re-treatment.
 
 Post-Treatment Report: PDF report email hoti hai  -  kya treat kiya, chemicals used, next inspection date.
 
@@ -4658,7 +4666,7 @@ Post-Treatment Report: PDF report email hoti hai  -  kya treat kiya, chemicals u
 
 Transparent pricing  -  price pehle confirm hoti hai, koi surprise charges nahi
 
-5-year written warranty on termite treatment
+90-day guarantee on termite treatment
 
 Same-week inspection available in DHA aur Clifton
 
@@ -4668,7 +4676,7 @@ Trusted by homeowners across DHA & Clifton
 
 Deemak ka spray (دیمک کا سپرے) kaunsa best hai?
 
-Market ke deemak spray sirf woh workers maarte hain jo lakdi ki surface par nazar aate hain  -  underground colony aur queen tak spray kabhi nahi pohnchta, is liye deemak 2-4 hafte mein wapas aa jaati hai. Asal ilaj soil injection (drill-and-inject) ya baiting system hai jo poori colony khatam karta hai. SafaiKaro ka treatment Rs 13,000 se, 5-year warranty ke saath.
+Market ke deemak spray sirf woh workers maarte hain jo lakdi ki surface par nazar aate hain - underground colony aur queen tak spray kabhi nahi pohnchta, is liye deemak 2-4 hafte mein wapas aa jaati hai. Asal ilaj soil injection (drill-and-inject) ya baiting system hai jo poori colony khatam karta hai. SafaiKaro ka treatment Rs 13,000 se, 90-day guarantee ke saath.
 
 Deemak khatam karne ka tarika ghar mein kya hai?
 
@@ -4692,13 +4700,13 @@ SafaiKaro ki deemak treatment ke saath 5 saal ki written warranty milti hai. Aga
 
 ## Deemak Ka Ilaj Book Karo  -  Aaj Hi
 
-Free site inspection. Transparent pricing. 5-year written warranty. DHA aur Clifton mein same-week slots available hain.
+Free site inspection. Transparent pricing. 90-day guarantee. DHA aur Clifton mein same-week slots available hain.
 
 Deemak Ka Ilaj Book Karo →
 
 About SafaiKaro  -  founded by Rizwan Qaiser
 
-Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses WHO-approved chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
+Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses treatment chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
 
 📱 WhatsApp Karo  -  Free Quote
 Book Now
@@ -4742,7 +4750,7 @@ Yeh confusion bohot common hai  -  kai log dono ko same samajhte hain. Lekin don
 
 Pest Control ek broad term hai. Iske andar kai methods aate hain: gel baiting cockroaches ke liye, sticky traps, targeted sprays, termite soil injection, rodent bait stations. Pest control specific pests ko specific methods se target karta hai.
 
-Fumigation ek intensive, enclosed chemical treatment hai. Puri jagah ya room seal kiya jaata hai, phir WHO-approved insecticide chemicals spray ki jaati hain  -  typically pyrethroid family se. Chemical air mein spread hoti hai, har corner, crack, aur crevice mein pahonchti hai. Fumigation multiple pests ek saath target karti hai: cockroaches, mosquitoes, bed bugs, flies, aur chhote crawling insects.
+Fumigation ek intensive, enclosed chemical treatment hai. Puri jagah ya room seal kiya jaata hai, phir treatment chemicals spray ki jaati hain - typically pyrethroid family se. Chemical air mein spread hoti hai, har corner, crack, aur crevice mein pahonchti hai. Fumigation multiple pests ek saath target karti hai: cockroaches, mosquitoes, bed bugs, flies, aur chhote crawling insects.
 
 Simple farq: Pest control = surgical strike (specific pest, specific method). Fumigation = full sweep (enclosed space mein chemical saturation, sab kuch target).
 
@@ -4752,19 +4760,19 @@ Dono ek saath bhi use hote hain  -  jaise termite treatment (targeted soil injec
 
 Ek professional fumigation mein yeh steps hote hain:
 
-Inspection: Certified technician ghar visit karta hai. Infestation level, affected areas, aur property size assess hoti hai. Is ke baad accurate quote milta hai  -  koi surprise charges nahi.
+Inspection: Technician ghar visit karta hai. Infestation level, affected areas, aur property size assess hoti hai. Is ke baad accurate quote milta hai - koi surprise charges nahi.
 
-Preparation: Aapko kuch cheezein prepare karni hoti hain (neeche details hain). Technician bhi equipment ready karta hai  -  WHO-approved insecticide, ULV (Ultra Low Volume) sprayer ya mist sprayer.
+Preparation: Aapko kuch cheezein prepare karni hoti hain (neeche details hain). Technician bhi equipment ready karta hai - treatment product, ULV (Ultra Low Volume) sprayer ya mist sprayer.
 
 Sealing: Doors, windows, aur ventilation gaps seal kiye jaate hain taake chemical properly dwell kare aur bahar na nikle. AC units bhi band kiye jaate hain.
 
 Spray / Treatment: Technician systematically har room mein spray karta hai  -  walls, ceilings, under furniture, inside cabinets, bathroom corners, kitchen drain areas. Chemical mist air mein spread hoti hai.
 
-Dwell Time: Chemical ko 2-3 ghante dwell karne diya jaata hai. Is waqt ghar bilkul band rehta hai.
+Treatment time: Treatment ke dauran access aur waiting-time instructions technician se confirm karein.
 
-Ventilation: Treatment ke baad doors aur windows kholi jaati hain. 30-45 minute ventilate karna zaroori hai taake chemical disperse ho.
+Ventilation: Istemal hone wale product ki ventilation instructions follow karein.
 
-Re-entry: Minimum 4 ghante baad ghar mein safe entry hoti hai. Kitchen surfaces saaf kar ke normal life resume ho sakti hai.
+Re-entry: Product label aur technician ki treatment-specific re-entry aur cleaning instructions follow karein.
 
 Poora process  -  inspection se re-entry tak  -  typically ek hi din mein complete hota hai. Zyada bada ghar ho toh 2-3 ghante extra lag sakte hain.
 
@@ -4800,7 +4808,7 @@ Thodi si preparation se fumigation zyada effective hoti hai aur aapka ghar safe 
 
 Khaana cover ya hata dein: Open food items, fruits, vegetables airtight containers mein rakhein ya fridge mein. Uncovered pots, plates, aur glasses ko kapde se dhak dein.
 
-Bachche aur pregnant khawateen bahar bhejein: Treatment ke waqt aur baad mein minimum 4-6 ghante  -  ideally treatment ke din bahar rehein.
+Preparation pehle confirm karein: Bachchon, pregnancy aur pets ke liye treatment-specific instructions booking se pehle lein.
 
 Pets bahar lejayein: Cats, dogs, birds  -  sab ko treatment ke din ghar se bahar rakhein. Fish tank ko damp cloth se cover karein aur aerator band kar dein.
 
@@ -4814,21 +4822,7 @@ Important: Technician ko clearly batayein agar ghar mein koi asthma ya respirato
 
 ## Fumigation Ke Baad Kab Ghar Mein Aa Sakte Hain?
 
-Yeh sabse common question hai. Simple rule yeh hai:
-
-Minimum 4 ghante: General fumigation ke baad 4 ghante ghar bilkul band rakhna zaroori hai. Yeh dwell time hai jab chemical apna kaam karta hai.
-
-Ventilation zaroor karo: 4 ghante baad, pehle doors aur windows kholo. 30-45 minute ventilate karo  -  fans chal sakti hain. Phir entry karo.
-
-Kitchen surfaces saaf karo: Entry ke baad kitchen counter, dining table, aur open shelves ko geelay kapde se ek baar saaf karo. احتیاط best hai.
-
-Pregnant khawateen aur neonates: 6-8 ghante baad enter karein  -  chemical extra precaution ke liye zyada dwell hone dein.
-
-Pets: Dogs aur cats 4-6 ghante baad safely enter kar sakte hain jab ventilation complete ho. Birds zyada sensitive hote hain  -  6-8 ghante.
-
-Fish tank: Agar tank cover kiya tha aur aerator band tha toh aerator dobara on karo, 30 minute baad cover hata dein.
-
-Quick rule: 4 hours + ventilate = safe re-entry for most people. Jab chemical dry ho jaata hai  -  smell bilkul minimal hoti hai aur surface safe hote hain.
+Re-entry ka waqt aur precautions istemal hone wale product aur treatment par depend karte hain. Booking se pehle bachchon, pregnancy, pets ya health concerns ka zikr karein. Product label aur technician ki treatment-specific preparation, ventilation aur re-entry instructions follow karein; sirf dry hone ya smell kam hone ko safety ka proof na samjhein.
 
 ## Fumigation Ki Cost Kitni Hai Karachi Mein?
 
@@ -4866,23 +4860,7 @@ Exact quote property size aur infestation level pe depend karta hai. Free inspec
 
 ## Kya Fumigation Bachchon Aur Pets Ke Liye Safe Hai?
 
-Yeh ek bohot important concern hai  -  aur bilkul sahi hai. SafaiKaro ka straight jawab:
-
-WHO-approved chemicals: SafaiKaro sirf World Health Organization aur Pakistan EPA approved insecticides use karta hai  -  pyrethroid-based compounds jo insects ke nervous system ko target karte hain lekin mammals mein (humans, dogs, cats) metabolism bohot fast hota hai. Same chemical insect ke liye toxic hai, hamare liye safe (threshold doses mein).
-
-Drying = safe: Chemical wet state mein risky hota hai. 4 ghante aur ventilation ke baad chemical dry ho jaata hai  -  residue minimum rehta hai. Yahi wajah hai ke 4-hour rule itna important hai.
-
-Special precautions:
-
-Asthma ya respiratory conditions  -  technician ko batayein. Lower concentration ya alternative formulation possible hai.
-
-Chhotay bachche (3 saal se kam)  -  6 ghante baad entry.
-
-Pregnant khawateen  -  6-8 ghante baad entry, extra ventilation.
-
-Fish  -  most sensitive. Tank cover + aerator band karna zaroor hai.
-
-SafaiKaro ke technicians chemical handling mein trained hain. Koi bhi concern ho  -  treatment se pehle openly poochh sakte hain.
+Re-entry ka waqt aur precautions istemal hone wale product aur treatment par depend karte hain. Booking se pehle bachchon, pregnancy, pets ya health concerns ka zikr karein. Product label aur technician ki treatment-specific preparation, ventilation aur re-entry instructions follow karein; sirf dry hone ya smell kam hone ko safety ka proof na samjhein.
 
 ## Kitni Baar Fumigation Karwani Chahiye?
 
@@ -4904,15 +4882,15 @@ Yeh bhi dhyan rakhein: ghar ke aas paas agar koi construction chal rahi hai ya n
 
 ## SafaiKaro Ka Tareeqa  -  Kya Milta Hai?
 
-SafaiKaro Karachi ka certified pest control service hai jو DHA aur Clifton se lekar PECHS, Bath Island, Gulshan, aur Defence Housing Authority tak poore shahar mein operate karta hai.
+SafaiKaro Karachi ka pest control service hai jو DHA aur Clifton se lekar PECHS, Bath Island, Gulshan, aur Defence Housing Authority tak poore shahar mein operate karta hai.
 
 ### Humara Process
 
 Free Inspection aur Quote: Technician visit pe exact quote milta hai. Koi vague estimate nahi  -  actual price pehle confirm hoti hai, then treatment starts.
 
-WHO-Approved Chemicals: Sirf certified insecticides use hote hain. Chemical batch numbers treatment report mein document hote hain.
+treatment chemicals: Treatment ke chemicals aur preparation instructions booking ke waqt confirm karein. Chemical batch numbers treatment report mein document hote hain.
 
-Certified Technicians: Trained aur experienced team  -  koi random worker nahi.
+Pest Control Technicians: Trained aur experienced team - koi random worker nahi.
 
 90-Day Guarantee: General fumigation pe 90-day re-treatment guarantee. Agar pests wapas aayen warranty period mein  -  hum free re-treat karte hain. No questions asked.
 
@@ -4922,7 +4900,7 @@ Same-Week Slots: DHA aur Clifton mein same-week availability. Emergency cases me
 
 Transparent pricing  -  price pehle, treatment baad mein
 
-WHO-approved chemicals  -  family-safe protocol
+Treatment-specific preparation aur re-entry instructions
 
 90-day guarantee on general fumigation
 
@@ -4942,11 +4920,11 @@ Fumigation ka Urdu mein matlab hai  -  kisi jagah ko sealed karke us mein insect
 
 Fumigation aur pest control mein kya farq hai?
 
-Pest control ek broad term hai jisme traps, gels, sprays, aur baiting systems sab shamil hain. Fumigation specifically ek intensive enclosed chemical treatment hai  -  puri jagah seal karke WHO-approved chemicals spray ki jaati hain. Fumigation multiple pests ek saath target karta hai jabke pest control aksar specific pests ke liye targeted hoti hai.
+Pest control ek broad term hai jisme traps, gels, sprays, aur baiting systems sab shamil hain. Fumigation specifically ek intensive enclosed chemical treatment hai - puri jagah seal karke treatment chemicals spray ki jaati hain. Fumigation multiple pests ek saath target karta hai jabke pest control aksar specific pests ke liye targeted hoti hai.
 
 Ghar mein fumigation ke baad kab wapis aa sakte hain?
 
-General fumigation ke baad minimum 4 ghante door rehna chahiye. Baad mein doors aur windows khol ke 30-45 minute ventilate karo. Kitchen surfaces geelay kapde se saaf karo. Pregnant khawateen aur chhotay bachche 6-8 ghante baad enter karein. Pets ko bhi 4-6 ghante baad laana chahiye.
+Re-entry ka waqt aur precautions istemal hone wale product aur treatment par depend karte hain. Booking se pehle bachchon, pregnancy, pets ya health concerns ka zikr karein. Product label aur technician ki treatment-specific preparation, ventilation aur re-entry instructions follow karein; sirf dry hone ya smell kam hone ko safety ka proof na samjhein.
 
 Pakistan mein fumigation ki cost kitni hai?
 
@@ -4954,7 +4932,7 @@ Karachi mein general fumigation Rs 7,000 se shuru hoti hai (1 bedroom flat). Ter
 
 Kya fumigation bachchon ke liye safe hai?
 
-SafaiKaro sirf WHO-approved chemicals use karta hai jo drying ke baad safe hote hain. Children aur pets ke liye simple rule: treatment ke din 4-6 ghante bahar rehna. Pregnant khawateen 6-8 ghante baad enter karein. Chemical residue sirf wet state mein risky hota hai  -  dry hone ke baad bilkul safe hai.
+Re-entry ka waqt aur precautions istemal hone wale product aur treatment par depend karte hain. Booking se pehle bachchon, pregnancy, pets ya health concerns ka zikr karein. Product label aur technician ki treatment-specific preparation, ventilation aur re-entry instructions follow karein; sirf dry hone ya smell kam hone ko safety ka proof na samjhein.
 
 Fumigation kitni baar karwani chahiye?
 
@@ -4968,7 +4946,7 @@ Fumigation Book Karo →
 
 About SafaiKaro  -  founded by Rizwan Qaiser
 
-Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses WHO-approved chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
+Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses treatment chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
 
 📱 WhatsApp Karo  -  Free Quote
 Book Now
@@ -5018,7 +4996,7 @@ Chlorpyrifos EC (emulsifiable concentrate)  -  a broad-spectrum organophosphate 
 
 Imidacloprid  -  a neonicotinoid that works at lower concentrations and is less toxic to non-target species. Preferred for residential builds where long-term safety is a priority.
 
-The chemical is diluted with water and applied using a pressurised sprayer at a rate of approximately 5 litres per square metre for horizontal surfaces and 7.5 litres per linear metre along foundation walls. A certified technician applies it in three stages: soil fill, perimeter, and junction points.
+The chemical is diluted with water and applied using a pressurised sprayer at a rate of approximately 5 litres per square metre for horizontal surfaces and 7.5 litres per linear metre along foundation walls. A technician applies it in three stages: soil fill, perimeter, and junction points.
 
 ### When in the construction timeline does it happen?
 
@@ -5044,15 +5022,15 @@ Drill & inject into floors / walls
 
 Cost
 Rs 20–30 per sq ft
-Rs 13,000+ (by property size)
+Rs 13,000+ (by property size)
 
 Effectiveness
 95%+  -  barrier covers entire sub-slab
 85–90%  -  injection misses some paths
 
 Warranty
-5-year written warranty
-3-year written warranty
+90-day guarantee
+90-day guarantee
 
 Disruption to residents
 None  -  done during construction
@@ -5072,7 +5050,7 @@ The verdict for new construction is clear: pre-construction treatment is cheaper
 
 Here is exactly what happens during a professional pre-construction termite treatment:
 
-Site inspection and measurement A certified technician visits the site, measures the total area to be treated (foundation footprint plus perimeter), assesses soil type and moisture, and confirms the construction stage. This typically takes 30–45 minutes.
+Site inspection and measurement A technician visits the site, measures the total area to be treated (foundation footprint plus perimeter), assesses soil type and moisture, and confirms the construction stage. This typically takes 30–45 minutes.
 
 Treatment plan and documentation A written treatment plan is prepared specifying the chemical product, dilution rate, application rate, and coverage area. This document forms the basis of your warranty.
 
@@ -5086,7 +5064,7 @@ Junction and penetration treatment All pipe penetrations, utility entries, and f
 
 Treatment report issued A detailed treatment report is issued documenting the date, chemicals used, batch numbers, application rates, and areas covered. This report is submitted to the client and forms the basis of the warranty registration.
 
-Warranty certificate A 5-year warranty certificate is issued, registered against the property address, specifying re-treatment obligations if termites are detected within the warranty period.
+Warranty certificate A 90-day guarantee certificate is issued, registered against the property address, specifying re-treatment obligations if termites are detected within the warranty period.
 
 Construction can typically resume within 24 hours of treatment  -  or sooner for dry-weather applications. The treatment does not require any special curing time, but the soil should not be disturbed or washed out before the slab is poured.
 
@@ -5192,7 +5170,7 @@ Certification: Look for documented technician training and proof that the compan
 
 Written treatment report: Any professional company will provide a detailed treatment report documenting the chemicals used, application rates, coverage area, and date. If they cannot provide this, walk away.
 
-Minimum 5-year warranty: Industry standard for pre-construction treatment in Pakistan is a 5-year warranty. Insist on it in writing. Check that the warranty specifies re-treatment obligations  -  not just a token inspection.
+Written guarantee terms: Check the duration, treated areas and re-treatment obligations before booking. SafaiKaro uses a 90-day guarantee.
 
 Re-treatment clause: The warranty should explicitly state that if termites are detected at the treated property within the warranty period, the company will re-treat at no additional cost. Some cheaper operators issue "inspection only" warranties  -  not acceptable.
 
@@ -5202,7 +5180,7 @@ Experience with new construction: Ask specifically about their pre-construction 
 
 ## SafaiKaro Pre-Construction Termite Proofing
 
-SafaiKaro provides certified pre-construction termite proofing for residential and commercial builds across DHA Phase 1–8, Clifton Block 1–9, PECHS, Bath Island, and surrounding areas. Our termite treatment service is carried out by trained technicians using WHO-approved chemicals at manufacturer-specified application rates.
+SafaiKaro provides pre-construction termite proofing for residential and commercial builds across DHA Phase 1–8, Clifton Block 1–9, PECHS, Bath Island, and surrounding areas. Our termite treatment service is carried out by trained technicians using treatment chemicals at manufacturer-specified application rates.
 
 Every pre-construction treatment includes:
 
@@ -5212,7 +5190,7 @@ Full sub-slab horizontal barrier + perimeter vertical barrier + junction treatme
 
 Detailed written treatment report with chemical batch documentation
 
-5-year written warranty registered to your property address
+90-day guarantee registered to your property address
 
 Re-treatment at no cost if termites are detected within the warranty period
 
@@ -5228,7 +5206,7 @@ After excavation and levelling is complete, but before any foundation concrete i
 
 What is pre-construction vs post-construction termite treatment?
 
-Pre-construction treatment applies a chemical soil barrier before the foundation slab is poured  -  it protects from below. Post-construction treatment is done after the building is complete, requiring drilling into finished floors and walls to inject termiticide. Pre-construction is cheaper (Rs 20–30/sq ft), more effective (95%+ coverage), and involves zero disruption. Post-construction starts from Rs 13,000 and requires drilling.
+Pre-construction treatment applies a chemical soil barrier before the foundation slab is poured  -  it protects from below. Post-construction treatment is done after the building is complete, requiring drilling into finished floors and walls to inject termiticide. Pre-construction is cheaper (Rs 20–30/sq ft), more effective (95%+ coverage), and involves zero disruption. Post-construction starts from Rs 13,000 and requires drilling.
 
 How much does termite proofing cost per square foot in Pakistan?
 
@@ -5240,11 +5218,11 @@ It is not universally mandated by Pakistan's national building code, but Karachi
 
 How long does termite proofing last?
 
-Professional pre-construction treatment carries a 5-year written warranty as standard. The physical barrier in undisturbed soil can remain effective for significantly longer. Annual maintenance inspections (Rs 5,000–8,000/year) help extend protection and catch any barrier breaches early. Modern slow-release formulations from reputable manufacturers claim 8–10 year effectiveness.
+SafaiKaro pre-construction treatment carries a 90-day guarantee. The physical barrier in undisturbed soil can remain effective for significantly longer. Annual maintenance inspections (Rs 5,000–8,000/year) help extend protection and catch any barrier breaches early. Modern slow-release formulations from reputable manufacturers claim 8–10 year effectiveness.
 
 ## Get a Termite Proofing Quote for Your Build
 
-Free site inspection. Treatment report + 5-year warranty included. We coordinate with your site supervisor.
+Free site inspection. Treatment report + 90-day guarantee included. We coordinate with your site supervisor.
 
 Get a Termite Proofing Quote →
 
@@ -5252,7 +5230,7 @@ Ya WhatsApp par poochein →
 
 About SafaiKaro  -  founded by Rizwan Qaiser
 
-Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses WHO-approved chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
+Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses treatment chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
 
 📱 WhatsApp Karo  -  Free Quote
 Book Now
@@ -5679,7 +5657,7 @@ Commercial property hai aur health code compliance zaroori hai
 
 Agar aap Karachi mein hain  -  DHA Phase 1-8, Clifton Block 1-9, Bath Island, ya PECHS mein  -  aur machine khareedne ki bajaye professional service consider kar rahe hain, toh SafaiKaro ki fumigation kya cover karti hai:
 
-WHO-approved chemicals: Sirf verified insecticides  -  correct concentration, correct chemical per pest type
+treatment chemicals: Sirf verified insecticides - correct concentration, correct chemical per pest type
 
 Trained technicians: Experienced aur professionally trained staff
 
@@ -5702,23 +5680,23 @@ Kya Include Hai
 Cost
 
 Small (up to 100 sq yd)
-WHO chemicals + certified tech + 90-day guarantee
+Treatment chemicals + technician + 90-day guarantee
 Rs 7,000
 
 Medium (101–200 sq yd)
-WHO chemicals + certified tech + 90-day guarantee
+Treatment chemicals + technician + 90-day guarantee
 Rs 11,000
 
 Large (201–300 sq yd)
-WHO chemicals + certified tech + 90-day guarantee
+Treatment chemicals + technician + 90-day guarantee
 Rs 13,000
 
 Large (301–500 sq yd)
-WHO chemicals + certified tech + 90-day guarantee
+Treatment chemicals + technician + 90-day guarantee
 Rs 16,000
 
 XL / Villa (501–1,000 sq yd)
-WHO chemicals + certified tech + 90-day guarantee
+Treatment chemicals + technician + 90-day guarantee
 Rs 20,000
 
 Ek saal mein agar 2-3 baar professional fumigation karwayein toh annual cost ULV fogger machine + chemicals + PPE ke total investment se often compare ho jaati hai  -  aur results reliable hote hain guarantee ke saath. Free quote ke liye yahan book karein.
@@ -5749,11 +5727,11 @@ Technically haan, machine khareed ke use kar sakte hain  -  lekin practically ba
 
 Fumigation ke liye chemicals kaun se chahiye aur kahan milte hain?
 
-Professional fumigation mein pyrethroid insecticides (cypermethrin, deltamethrin, bifenthrin) common hain. Pakistan mein yeh agricultural chemical suppliers se milte hain. Lekin concentration, mixing ratio, aur application method har pest ke liye alag hota hai. Galat dilution se ya toh kaam nahi karta ya over-concentration se health hazard ban jaata hai. WHO-approved chemicals ka use karna zaroor ensure karein.
+Professional fumigation mein pyrethroid insecticides (cypermethrin, deltamethrin, bifenthrin) common hain. Pakistan mein yeh agricultural chemical suppliers se milte hain. Lekin concentration, mixing ratio, aur application method har pest ke liye alag hota hai. Galat dilution se ya toh kaam nahi karta ya over-concentration se health hazard ban jaata hai. treatment chemicals ka use karna zaroor ensure karein.
 
 Ghar ki fumigation ki cost Karachi mein kitni hai?
 
-SafaiKaro Karachi mein general fumigation Rs 7,000 se shuru karta hai (small property, up to 100 sq yd). Medium ke liye Rs 11,000, large ke liye Rs 16,000, aur XL ke liye Rs 20,000. Is mein WHO-approved chemicals, certified technicians, aur 90-day guarantee shamil hai. Full pricing page dekhein.
+SafaiKaro Karachi mein general fumigation Rs 7,000 se shuru karta hai (small property, up to 100 sq yd). Medium ke liye Rs 11,000, large ke liye Rs 16,000, aur XL ke liye Rs 20,000. Is mein treatment chemicals, pest control technicians, aur 90-day guarantee shamil hai. Full pricing page dekhein.
 
 Fumigation machine khareedne ke baad running cost kitni hoti hai?
 
@@ -5761,13 +5739,13 @@ Machine price ke ilawa running costs mein chemicals (har use pe), PPE replacemen
 
 ## Machine Ki Jhanjhat Nahi  -  Professional Fumigation Book Karo
 
-WHO-approved chemicals. 90-day guarantee. DHA aur Clifton mein same-week slots available hain.
+treatment chemicals. 90-day guarantee. DHA aur Clifton mein same-week slots available hain.
 
 Free Quote Book Karo →
 
 About SafaiKaro  -  founded by Rizwan Qaiser
 
-Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses WHO-approved chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
+Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses treatment chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
 
 📱 WhatsApp Karo  -  Free Quote
 Book Now
@@ -5961,7 +5939,7 @@ SafaiKaro DHA Phase 1–8 aur Clifton Block 1–9 mein yeh services provide kart
 
 General Fumigation: Cockroaches, ants, general insects  -  Rs 7,000 se (100 sq yd). Full price list
 
-Termite Treatment: Post-construction soil injection, 5-year warranty. Details yahan
+Termite Treatment: Post-construction soil injection, 90-day guarantee. Details yahan
 
 Bed Bug Treatment: 2-session protocol, 90-day guarantee
 
@@ -5981,9 +5959,9 @@ Free inspection: Technician aata hai, ghar assess karta hai, exact problem ident
 
 Confirmed quote: Kaunsi service best hai, exact cost, aur kab available hai  -  sab treatment se pehle confirm hota hai. Koi surprise charges nahi.
 
-Treatment: Technician WHO-approved chemicals ke saath professionally treat karta hai.
+Treatment: Technician treatment chemicals ke saath professionally treat karta hai.
 
-Guarantee: 90-day guarantee on general pest control (termite pe 5-year warranty).
+Guarantee: 90-day guarantee on general pest control (termite pe 90-day guarantee).
 
 ## Aksar Pooche Jaane Wale Sawal (FAQ)
 
@@ -5993,7 +5971,7 @@ Fumigation ek specific method hai  -  chemical spray ya gas se ghar ke andar ins
 
 Deemak ke liye fumigation ya soil injection  -  kya chahiye?
 
-Termite ke liye spray fumigation kaam nahi karta  -  termites underground hote hain. Termite treatment ke liye soil injection (drill-and-inject) ya baiting system chahiye. Yeh fumigation se bilkul alag method hai. SafaiKaro termite-specific treatment offer karta hai  -  5-year warranty ke saath.
+Termite ke liye spray fumigation kaam nahi karta - termites underground hote hain. Termite treatment ke liye soil injection (drill-and-inject) ya baiting system chahiye. Yeh fumigation se bilkul alag method hai. SafaiKaro termite-specific treatment offer karta hai - 90-day guarantee ke saath.
 
 Cockroaches ke liye kaunsi service book karein?
 
@@ -6019,7 +5997,7 @@ Free Inspection Book Karo →
 
 About SafaiKaro  -  founded by Rizwan Qaiser
 
-Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses WHO-approved chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
+Rizwan Qaiser founded SafaiKaro in 2026 to bring transparent, fixed-price pest control to homes and businesses across Karachi. The SafaiKaro team uses treatment chemicals and backs every treatment with a 90-day re-treatment guarantee. Find SafaiKaro on Google →
 
 📱 WhatsApp Karo  -  Free Quote
 Book Now
@@ -6947,17 +6925,17 @@ Bahadurabad, Karsaz & Bath Island Karachi
 
 # Pest Control in Bahadurabad, Karsaz & Bath Island Karachi
 
-Bahadurabad Chowrangi, Karsaz, Nursery, Baloch Colony & Bath Island  -  same-day available, prices online, 90-day guarantee. Certified technicians dispatched daily from our DHA Phase 8 base.
+Bahadurabad Chowrangi, Karsaz, Nursery, Baloch Colony & Bath Island  -  same-day available, prices online, 90-day guarantee. Pest control technicians dispatched daily from our DHA Phase 8 base.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Bahadurabad, Karsaz & Bath Island covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Bahadurabad, Karsaz & Bath Island
 
@@ -7160,17 +7138,17 @@ Federal B. Area & Gulberg Karachi
 
 # Pest Control in Federal B. Area & Gulberg Karachi
 
-FB Area, Water Pump, Karimabad, Azizabad, Samanabad & Shafiq Colony  -  same-day available, prices online, 90-day guarantee. Certified technicians dispatched daily from our DHA Phase 8 base.
+FB Area, Water Pump, Karimabad, Azizabad, Samanabad & Shafiq Colony  -  same-day available, prices online, 90-day guarantee. Pest control technicians dispatched daily from our DHA Phase 8 base.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 FB Area & Gulberg Town covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Federal B. Area & Gulberg
 
@@ -7392,12 +7370,12 @@ All 19 Gulshan-e-Iqbal blocks, NIPA Chowrangi, Metroville & Gulistan-e-Johar : n
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Next available slot
 Gulshan-e-Iqbal & Gulistan-e-Johar covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Gulshan-e-Iqbal & Gulistan-e-Johar
 
@@ -7453,7 +7431,7 @@ NIPA Chowrangi is a major traffic and commercial junction linking Gulshan-e-Iqba
 
 Homes and flats closest to the NIPA Chowrangi intersection tend to see more consistent cockroach pressure than properties set further back on quieter streets, since proximity to shared commercial drainage is the main driver here.
 
-Our approach around NIPA Chowrangi combines drainage cover treatment and perimeter gel baiting at shared re-entry points for residential units with a dedicated commercial programme (monthly visits, WHO-approved chemicals and documentation for building records) for the plazas themselves.
+Our approach around NIPA Chowrangi combines drainage cover treatment and perimeter gel baiting at shared re-entry points for residential units with a dedicated commercial programme (monthly visits, treatment chemicals and documentation for building records) for the plazas themselves.
 
 General fumigation for homes near NIPA Chowrangi starts from Rs 7,000. If you run a shop at the junction, see our commercial pest control service.
 
@@ -7625,12 +7603,12 @@ Gulshan-e-Maymar, Scheme 33, Gulzar-e-Hijri & Saadi Town  -  same-day available,
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Gulshan-e-Maymar to Saadi Town covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Gulshan-e-Maymar & Scheme 33
 
@@ -7838,12 +7816,12 @@ Factories, godowns, warehouses & homes across Korangi Industrial Area, Landhi & 
 Book a Visit →
 Commercial Rates
 
-Certified technicians
+Pest control technicians
 90-day residential guarantee
 Commercial contracts available
 Korangi Industrial Area to Port Qasim covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Korangi Industrial Area, Landhi & Port Qasim
 
@@ -7853,7 +7831,7 @@ Korangi Industrial Area is one of Karachi's major industrial estates, in the sou
 
 This is a stored-goods environment first and a residential one second. Dense factory, warehouse and godown construction with large stored-goods inventories is classic rodent and stored-product-pest habitat, and the Landhi/Korangi corridor is one of Pakistan's largest concentrations of export manufacturing and warehousing  -  a continuous volume of stored goods that sustains commercial-scale pest pressure, not the kind a single residential-style visit resolves. In several parts of Landhi, residential lanes back directly onto factory and warehouse boundaries, so pests moving through commercial storage areas move straight into adjoining homes. River-adjacent low-lying sections of Landhi also share the Malir River flood exposure documented in Malir Cantt and Model Colony, with the added complication of industrial runoff and debris.
 
-For factories, godowns and warehouses, we run a dedicated commercial programme with monthly visits, WHO-approved chemicals, and documentation for regulatory and health inspections  -  contract pricing is based on facility size and visit frequency. See our commercial pest control service for a quote. Residential fumigation in Landhi's housing areas is priced the same as the rest of Karachi, starting from Rs 7,000, with termite proofing from Rs 13,000 and Annual Shield from Rs 18,000 per year.
+For factories, godowns and warehouses, we run a dedicated commercial programme with monthly visits, treatment chemicals, and documentation for regulatory and health inspections  -  contract pricing is based on facility size and visit frequency. See our commercial pest control service for a quote. Residential fumigation in Landhi's housing areas is priced the same as the rest of Karachi, starting from Rs 7,000, with termite proofing from Rs 13,000 and Annual Shield from Rs 18,000 per year.
 
 ## Commercial Pest Control for Korangi Industrial Area
 
@@ -7883,7 +7861,7 @@ Korangi Industrial Area is one of Karachi's major industrial estates in the sout
 
 Continuous inbound and outbound goods movement means reinfestation risk never fully resets the way it might in a closed residential property. A factory or godown that treats once and waits a year for the next visit is treating reactively in an environment that needs ongoing coverage.
 
-Our commercial programme for Korangi Industrial Area facilities includes monthly service visits, tamper-resistant bait stations placed at loading docks and storage entry points, WHO-approved chemicals safe for use around stored goods, and full documentation for regulatory or health inspections. See our commercial service for contract details.
+Our commercial programme for Korangi Industrial Area facilities includes monthly service visits, tamper-resistant bait stations placed at loading docks and storage entry points, treatment chemicals safe for use around stored goods, and full documentation for regulatory or health inspections. See our commercial service for contract details.
 
 Commercial contract pricing is based on facility size and visit frequency  -  contact us for a quote. Residential fumigation for homes in the area starts from Rs 7,000.
 
@@ -7913,7 +7891,7 @@ Port Qasim is a 12,000-acre port and industrial zone that includes Pakistan Stee
 
 Large-scale warehousing and heavy industrial activity across Port Qasim create the same rodent and stored-product-pest environment documented at Korangi Industrial Area and Landhi's Export Processing Zone, but at greater scale. A single-visit residential-style fumigation is not built for a facility of this size or throughput  -  it requires an ongoing commercial pest-management programme.
 
-We offer commercial contracts for Port Qasim and Bin Qasim facilities covering monthly visits, tamper-resistant bait stations at loading and storage points, WHO-approved chemicals, and full documentation for regulatory and health inspections. See our commercial service to discuss your facility.
+We offer commercial contracts for Port Qasim and Bin Qasim facilities covering monthly visits, tamper-resistant bait stations at loading and storage points, treatment chemicals, and full documentation for regulatory and health inspections. See our commercial service to discuss your facility.
 
 Contract pricing is custom, based on warehouse or facility size and visit frequency  -  contact us for a quote.
 
@@ -8003,7 +7981,7 @@ FAQ
 
 Do you offer commercial pest control for Korangi Industrial Area factories and godowns?
 
-Yes  -  a dedicated commercial programme with monthly visits, WHO-approved chemicals and documentation for regulatory and health inspections. See our commercial pest control service for details.
+Yes  -  a dedicated commercial programme with monthly visits, treatment chemicals and documentation for regulatory and health inspections. See our commercial pest control service for details.
 
 Landhi mein Malir River ke paas flooding ke baad rodent control milta hai?
 
@@ -8046,17 +8024,17 @@ Malir Karachi
 
 # Pest Control in Malir Cantt & Model Colony Karachi
 
-Malir Cantt, Malir Town and Model Colony  -  same-day available, prices online, 90-day guarantee. Certified technicians dispatched daily from our DHA Phase 8 base.
+Malir Cantt, Malir Town and Model Colony  -  same-day available, prices online, 90-day guarantee. Pest control technicians dispatched daily from our DHA Phase 8 base.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Malir Cantt & Model Colony covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Malir Karachi
 
@@ -8264,12 +8242,12 @@ Blocks 1 to 5, Rizvia Society, Liaquatabad & FC Area : next available slot, pric
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Next available slot
 Nazimabad & Liaquatabad covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Nazimabad & Liaquatabad
 
@@ -8492,17 +8470,17 @@ North Karachi
 
 # Pest Control in North Karachi  -  Sectors 5 & 7–12
 
-Sectors 5, 7, 11-C, 11-J and Khawaja Ajmer Nagri  -  same-day available, prices online, 90-day guarantee. Certified technicians dispatched daily from our DHA Phase 8 base.
+Sectors 5, 7, 11-C, 11-J and Khawaja Ajmer Nagri  -  same-day available, prices online, 90-day guarantee. Pest control technicians dispatched daily from our DHA Phase 8 base.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 All North Karachi sectors covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 North Karachi
 
@@ -8542,7 +8520,7 @@ North Karachi's core sectors  -  Sector 7 through Sector 12  -  were developed i
 
 The area's location between the Manghopir Hills and the Lyari River corridor adds a second layer of pressure. The Gujjar Nala  -  the storm drain that repeatedly floods Liaquatabad, Gulberg and North Nazimabad further downstream  -  originates within North Karachi's Sector 11-J, so the whole Sectors 7–12 corridor sits inside the same nullah network and faces recurring standing-water exposure during monsoon, on top of its termite risk.
 
-Our approach in the older Sectors 7–12 blocks starts with a structural assessment of roof beams, window frames, and skirting boards before any chemical is applied. For confirmed termite infestations we use a soil injection and bait station combination, which is more effective than surface spray alone in aging-construction homes, backed by a 3-year structural guarantee. Fumigation visits in flood-affected sections of the corridor include larvicide on standing water and residual spray on outdoor walls as standard, not as an add-on.
+Our approach in the older Sectors 7–12 blocks starts with a structural assessment of roof beams, window frames, and skirting boards before any chemical is applied. For confirmed termite infestations we use a soil injection and bait station combination, which is more effective than surface spray alone in aging-construction homes, backed by a 90-day guarantee. Fumigation visits in flood-affected sections of the corridor include larvicide on standing water and residual spray on outdoor walls as standard, not as an add-on.
 
 General fumigation for a standard North Karachi home up to 100 sq yards is Rs 7,000, and termite treatment starts from Rs 13,000. Book an inspection before the next monsoon if your home is in a low-lying section of Sectors 7–12.
 
@@ -8674,7 +8652,7 @@ General fumigation starts from Rs 7,000 for homes up to 100 sq yards, and Rs 11,
 
 Do you offer termite treatment for older Sector 7 homes?
 
-Yes. We start with a structural assessment of roof beams, window frames and skirting boards, then apply a soil injection and bait station combination for confirmed infestations, backed by a 3-year structural guarantee  -  the same protocol used for other 1950s-60s Karachi housing stock. Termite treatment starts from Rs 13,000.
+Yes. We start with a structural assessment of roof beams, window frames and skirting boards, then apply a soil injection and bait station combination for confirmed infestations, backed by a 90-day guarantee  -  the same protocol used for other 1950s-60s Karachi housing stock. Termite treatment starts from Rs 13,000.
 
 Same-day service North Karachi mein available hai?
 
@@ -8710,12 +8688,12 @@ Blocks A to T, Hyderi, Sakhi Hassan, Five Star Chowrangi & Buffer Zone: next ava
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Next available slot
 All North Nazimabad blocks covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 North Nazimabad Karachi
 
@@ -8777,7 +8755,7 @@ Hyderi also carries a documented flood risk: Dawn.com reported shops near Hyderi
 
 Because Hyderi's cockroach pressure is driven by shared commercial drainage, a treatment limited to your unit alone tends to see reinfestation within weeks. Our protocol for Hyderi includes drainage cover treatment and perimeter gel baiting at shared re-entry points, plus outdoor larvicide application to any standing water left after rain, applied as part of the same visit rather than as an add-on.
 
-General fumigation in Hyderi starts from Rs 7,000 for units up to 100 sq yards. For Hyderi shopkeepers and food-stall owners, we offer a dedicated commercial programme with WHO-approved chemicals safe for food-preparation environments  -  see our commercial service.
+General fumigation in Hyderi starts from Rs 7,000 for units up to 100 sq yards. For Hyderi shopkeepers and food-stall owners, we offer a dedicated commercial programme with treatment chemicals safe for food-preparation environments  -  see our commercial service.
 
 ## Pest Control in Sakhi Hassan Karachi
 
@@ -8815,7 +8793,7 @@ Five Star Chowrangi is a well-known North Nazimabad commercial landmark, with re
 
 Homes and flats closest to the Chowrangi intersection tend to see more consistent cockroach and rodent activity than properties set further back, simply because proximity to shared commercial drainage is the main driver of pest pressure here, not the age or condition of the individual home.
 
-Our approach around Five Star Chowrangi mirrors what we use on other commercial-adjacent residential strips in Karachi: drainage cover treatment and perimeter gel baiting at shared re-entry points for residential units, plus a dedicated commercial programme with monthly visits and WHO-approved chemicals for the shops themselves.
+Our approach around Five Star Chowrangi mirrors what we use on other commercial-adjacent residential strips in Karachi: drainage cover treatment and perimeter gel baiting at shared re-entry points for residential units, plus a dedicated commercial programme with monthly visits and treatment chemicals for the shops themselves.
 
 General fumigation for homes near Five Star Chowrangi starts from Rs 7,000. If you run a shop at the intersection, see our commercial pest control service for documentation kept on file for building records.
 
@@ -8952,17 +8930,17 @@ PECHS & Tariq Road Karachi
 
 # Pest Control in PECHS & Tariq Road Karachi
 
-PECHS, Tariq Road, Dhoraji Colony & Mohammad Ali Society  -  same-day available, prices online, 90-day guarantee. Certified technicians dispatched daily from our DHA Phase 8 base.
+PECHS, Tariq Road, Dhoraji Colony & Mohammad Ali Society  -  same-day available, prices online, 90-day guarantee. Pest control technicians dispatched daily from our DHA Phase 8 base.
 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 PECHS, Tariq Road & Dhoraji covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 PECHS Karachi
 
@@ -9170,12 +9148,12 @@ Saddar, Empress Market, Civil Lines, Garden East/West, Soldier Bazaar and Burns 
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Commercial rates available
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Saddar Karachi
 
@@ -9219,7 +9197,7 @@ Saddar is Karachi's oldest commercial core, dating to the colonial era, with a d
 
 Saddar's ground-floor wholesale and retail shops typically share storage godowns above and behind them with any residential units in the same buildings. That shared storage space is ideal rodent harborage, and because the boundary between commercial and residential floors in Saddar's older buildings is often just an internal staircase, rodent and cockroach activity moves freely between the two.
 
-Our approach in Saddar starts with a structural assessment of the building  -  roof beams, window frames, shared risers and storage areas  -  before any chemical is applied. For confirmed termite infestations we use a soil injection and bait station combination with a 3-year structural guarantee. For mixed commercial-residential buildings, we treat storage and shop-floor harborage points alongside the residential units, not just the flat that called us.
+Our approach in Saddar starts with a structural assessment of the building  -  roof beams, window frames, shared risers and storage areas  -  before any chemical is applied. For confirmed termite infestations we use a soil injection and bait station combination with a 90-day guarantee. For mixed commercial-residential buildings, we treat storage and shop-floor harborage points alongside the residential units, not just the flat that called us.
 
 General fumigation for a Saddar unit up to 100 sq yards starts from Rs 7,000. For ground-floor shops and godowns, we offer a dedicated commercial programme  -  see our commercial service.
 
@@ -9229,7 +9207,7 @@ Civil Lines is a colonial-era planned district adjoining Saddar, home to older g
 
 The termite risk profile in Civil Lines' aging structures is comparable to DHA Phase 1's oldest 1960s bungalows  -  unaddressed cracks and cavities that have gone unattended for decades are the common thread. Institutional buildings mixed in with residential bungalows can also mean inconsistent maintenance history block to block, so pest pressure varies more within Civil Lines than in a uniformly built residential scheme.
 
-Our treatment in Civil Lines begins the same way it does across Karachi's older neighbourhoods: a structural assessment of roof beams, window frames and skirting boards, followed by soil injection and bait station treatment for confirmed termite infestations, backed by a 3-year structural guarantee. For institutional or mixed-use buildings, we can schedule a full-building assessment rather than treating unit by unit.
+Our treatment in Civil Lines begins the same way it does across Karachi's older neighbourhoods: a structural assessment of roof beams, window frames and skirting boards, followed by soil injection and bait station treatment for confirmed termite infestations, backed by a 90-day guarantee. For institutional or mixed-use buildings, we can schedule a full-building assessment rather than treating unit by unit.
 
 General fumigation starts from Rs 7,000 for homes up to 100 sq yards, and termite treatment from Rs 13,000. Book an inspection if your Civil Lines property hasn't had a structural pest check in several years.
 
@@ -9239,7 +9217,7 @@ Garden East and Garden West are among Karachi's oldest residential settlements, 
 
 The area's proximity to the Lyari River corridor is the second major pest driver. That location puts Garden East and West in the same standing-water and drainage-overflow risk category documented along the Gujjar Nala/Lyari system further inland  -  monsoon rain that collects near the riverbank and in poorly drained lanes is a reliable mosquito-breeding trigger, on top of the area's aging-construction termite risk.
 
-Our fumigation visits in Garden East and West apply larvicide to standing water points as a standard part of the service rather than as an add-on, alongside residual insecticide on exterior walls. For termite concerns in the area's older bungalows, we follow the same structural-assessment-first approach used across Karachi's other 1950s-era housing stock, with a 3-year structural guarantee on confirmed infestations.
+Our fumigation visits in Garden East and West apply larvicide to standing water points as a standard part of the service rather than as an add-on, alongside residual insecticide on exterior walls. For termite concerns in the area's older bungalows, we follow the same structural-assessment-first approach used across Karachi's other 1950s-era housing stock, with a 90-day guarantee on confirmed infestations.
 
 General fumigation with larvicide included starts from Rs 7,000 for homes up to 100 sq yards, and termite treatment from Rs 13,000.
 
@@ -9249,7 +9227,7 @@ Soldier Bazaar is a dense historic food and retail bazaar centred on Clayton Roa
 
 Bazaar-adjacent residential lanes in Soldier Bazaar share boundary walls and drainage with the market itself. Pest pressure from the bazaar routinely spills into nearby homes  -  the same dynamic documented on DHA Phase 2's Khayaban-e-Ittehad commercial strip, where a residential-only treatment that ignores the shared commercial source sees reinfestation within weeks.
 
-Our Soldier Bazaar protocol includes drainage cover treatment and perimeter gel baiting at shared re-entry points between market stalls and adjoining residences, not interior spraying alone. For bazaar shops themselves, we offer a dedicated commercial programme with monthly visits, WHO-approved chemicals safe for food-preparation environments, and documentation for health inspections.
+Our Soldier Bazaar protocol includes drainage cover treatment and perimeter gel baiting at shared re-entry points between market stalls and adjoining residences, not interior spraying alone. For bazaar shops themselves, we offer a dedicated commercial programme with monthly visits, treatment chemicals safe for food-preparation environments, and documentation for health inspections.
 
 Rodent control in Soldier Bazaar starts from Rs 13,000 for homes up to 100 sq yards, with commercial rates available for bazaar shops on request. See our commercial service.
 
@@ -9349,7 +9327,7 @@ FAQ
 
 Saddar aur Burns Road ke paas commercial pest control milta hai?
 
-Yes. We offer a dedicated commercial programme with monthly service visits, WHO-approved chemicals, and documentation kept on file for building records, for offices and shops along Saddar and Burns Road.
+Yes. We offer a dedicated commercial programme with monthly service visits, treatment chemicals, and documentation kept on file for building records, for offices and shops along Saddar and Burns Road.
 
 Which areas does this page cover  -  Saddar, Civil Lines, Garden, Soldier Bazaar?
 
@@ -9357,7 +9335,7 @@ This page covers Saddar and Empress Market, Civil Lines, Garden East and Garden 
 
 Do you treat old colonial-era buildings for termites?
 
-Yes  -  we start with a structural assessment, then apply a soil injection and bait station combination for confirmed infestations, backed by a 3-year structural guarantee. This is the same protocol used across Karachi's other decades-old masonry and timber-frame buildings. Termite treatment starts from Rs 13,000.
+Yes  -  we start with a structural assessment, then apply a soil injection and bait station combination for confirmed infestations, backed by a 90-day guarantee. This is the same protocol used across Karachi's other decades-old masonry and timber-frame buildings. Termite treatment starts from Rs 13,000.
 
 Soldier Bazaar mein rodent control ki price kya hai?
 
@@ -9397,12 +9375,12 @@ Shah Faisal Colony, Shah Faisal Town, Korangi Town & Korangi Road  -  same-day a
 Book a Visit →
 See Prices
 
-Certified technicians
+Pest control technicians
 90-day guarantee
 Same-day available
 Shah Faisal to Korangi Town covered
 
-WHO-Approved Chemicals
+treatment chemicals
 
 Shah Faisal Colony & Korangi Town
 
@@ -9472,7 +9450,7 @@ The FTC Flyover intersection of Korangi Road with Shahrah-e-Faisal is a major co
 
 Commercial pest populations along Korangi Road do not respect property boundaries. A residential fumigation that ignores shared drainage and boundary entry points with an adjoining workshop or eatery will see reinfestation within weeks. Our protocol for this corridor specifically includes drainage cover treatment and perimeter gel baiting at potential re-entry points, not just an interior spray.
 
-For Korangi Road businesses  -  workshops, godowns, eateries  -  we offer a dedicated commercial programme with monthly service visits, documentation for health and regulatory inspections, and WHO-approved chemicals. See our commercial service.
+For Korangi Road businesses  -  workshops, godowns, eateries  -  we offer a dedicated commercial programme with monthly service visits, documentation for health and regulatory inspections, and treatment chemicals. See our commercial service.
 
 Residential fumigation along the corridor starts from Rs 7,000. Contact us for a commercial quote if you run a business along Korangi Road.
 
@@ -9633,7 +9611,7 @@ WhatsApp karein, aaj hi slot confirm hoga →
 
 ## Termite treatment cost / termite fumigation service price
 
-Karachi mein SafaiKaro ka termite treatment cost property size par hai, infestation level par nahi. 100 sq yd tak ka flat ya portion Rs 13,000, 200 sq yd tak ka ghar Rs 17,000, 1,000 sq yd tak ka bungalow Rs 37,000. Yehi termite fumigation service price hai jo WhatsApp par confirm hoti hai; site par koi alag rate nahi banta.
+Karachi mein SafaiKaro ke listed termite treatment rates property size par hain. Booking se pehle affected areas aur treatment scope confirm karein. 100 sq yd tak ka flat ya portion Rs 13,000, 200 sq yd tak ka ghar Rs 17,000, 1,000 sq yd tak ka bungalow Rs 37,000. Property-size tiers square yards mein hain; yeh new-construction ke per-square-foot rates nahi. Final scope aur price kaam shuru hone se pehle confirm hoti hai. See the existing-home and new-construction pricing explanation.
 
 Priced by property size
 

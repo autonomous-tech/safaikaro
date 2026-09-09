@@ -3,6 +3,8 @@ Run: python3 -m pytest tools/weekly/tests -q   (or: python3 tools/weekly/tests/t
 """
 import datetime as dt, json, sys, tempfile
 from pathlib import Path
+from unittest.mock import patch
+from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import common, collect, lint, send  # noqa: E402
@@ -59,6 +61,42 @@ def test_render_minimal_fixture():
          "gsc": {}, "ahrefs": {}, "health": {}, "cro": {}}
     html = send.render(D, {"narrative": "Quiet week."}, {"pr_url": "https://github.com/x/y/pull/7", "shipped": [{"type": "blog", "page": "/blog/a", "reason": "r", "critic": "passed"}]})
     assert "Quiet week." in html and "PR #7" in html and "Review and approve PR" in html and "/blog/a" in html
+
+
+def test_price_gate_checks_added_copy_and_all_audits_legacy():
+    path = common.ROOT / "index.html"
+    text = '<p>Legacy machine price Rs 99,999.</p><p>SafaiKaro from Rs 7,000.</p>'
+    kwargs = dict(path=path, text=text, is_new=False, prices={7000}, banned=[], sitemap=set())
+    with patch.object(lint, "added_lines", return_value='<p>SafaiKaro from Rs 7,000.</p>'):
+        assert lint.lint_html(**kwargs) == []
+    with patch.object(lint, "added_lines", return_value='<p>SafaiKaro from Rs 99,998.</p>'):
+        assert any('Rs 99,998' in x for x in lint.lint_html(**kwargs))
+    # Whole-site audits retain legacy findings regardless of diff scope.
+    assert any('Rs 99,999' in x for x in lint.lint_html(**kwargs, base=None))
+    kwargs['is_new'] = True
+    assert any('Rs 99,999' in x for x in lint.lint_html(**kwargs))
+
+
+def test_nested_index_sitemap_route_is_exact():
+    kwargs = dict(path=common.ROOT / "blog/index.html", text='<p>Blog</p>', is_new=False,
+                  prices=set(), banned=[], base=None)
+    assert lint.lint_html(**kwargs, sitemap={'https://safaikaro.pk/blog/'}) == []
+    assert any('not in sitemap' in x for x in lint.lint_html(**kwargs, sitemap={'https://safaikaro.pk/blog'}))
+    # Do not strip a literal index suffix from an ordinary page filename.
+    kwargs['path'] = common.ROOT / 'price-index.html'
+    assert lint.lint_html(**kwargs, sitemap={'https://safaikaro.pk/price-index'}) == []
+
+
+def test_gate_includes_staged_html_from_base_diff():
+    def fake_git(*args):
+        return 'index.html' if args == ('diff', '--name-only', 'origin/main') else ''
+    with patch.object(lint, 'git', side_effect=fake_git), patch.object(sys, 'argv', ['lint.py']), \
+         patch.object(lint, 'lint_html', return_value=[]) as checker, \
+         patch.object(lint, 'lint_ledgers', return_value=[]), \
+         patch.object(lint.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout='')):
+        assert lint.main() == 0
+        assert checker.call_count == 1
+        assert checker.call_args.args[0] == common.ROOT / 'index.html'
 
 
 if __name__ == "__main__":
