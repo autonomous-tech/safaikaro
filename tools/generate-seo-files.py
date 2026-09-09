@@ -207,7 +207,7 @@ def order_key(order_list, path):
 # ---------------------------------------------------------------------------
 CATEGORIES = [
     ("General fumigation", "fumigation", ["s", "m", "ml", "l", "xl"], ""),
-    ("Termite treatment (post-construction, 5-year warranty)", "termite", ["s", "m", "ml", "l", "xl"], ""),
+    ("Termite treatment (post-construction, 90-day guarantee)", "termite", ["s", "m", "ml", "l", "xl"], ""),
     ("Bed bug treatment (both sessions included)", "bedbug", ["s", "m", "ml", "l", "xl"], ""),
     ("Rodent control (2 visits included)", "rodent", ["s", "m", "ml", "l", "xl"], ""),
     ("Mosquito control", "mosquito", ["s", "m", "ml", "l", "xl"], ""),

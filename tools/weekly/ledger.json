@@ -7,5 +7,14 @@
   "hypothesis": "Starting-price cards with a WhatsApp CTA above the fold on mobile lift the price list's lead rate toward the site average, because visitors no longer scroll past the finder to reach a price and a button.",
   "metric": "lead persons / unique visitors on the page, mobile, 14 days post vs 14 days pre; secondary: whatsapp_click with cta=starting-card share",
   "commit": "d0865ea"
+ },
+ {
+  "id": "2026-09-09-pricing-clarity-package",
+  "pages": [
+   "/pest-control-price-list-karachi"
+  ],
+  "hypothesis": "A price-led search message, populated starting prices and clear existing-home versus new-construction termite scope help buyers recognize the package and enquire. Evaluate as one combined package; overlapping starting-card work prevents an isolated title-test conclusion.",
+  "metric": "Fixed Pakistan mobile pricing query group CTR, position and landing URL after 28 complete post-crawl days; secondary qualified organic enquiries and price-page lead persons / unique visitors. Extend low-volume observation to 6-8 weeks.",
+  "commit": null
  }
 ]

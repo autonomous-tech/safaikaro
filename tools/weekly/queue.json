@@ -175,9 +175,9 @@
   "page": "/termite-treatment-karachi",
   "query": "termite fumigation in karachi",
   "play": "Research and write a post-construction termite treatment service page (the existing page targets new construction); follow blog-writer.md for research, answer-first structure and FAQ parity.",
-  "reason": "The homepage carries the query at page two while a competitor's termite page sits on page one; termite season opens in October.",
+  "reason": "Implemented locally on fix/audit-clarity-2026-09-09 using approved existing-home property tiers and 90-day guarantee; not yet deployed. Parent release workflow owns merge and shipped status.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "ready_for_review"
  },
  {
   "id": "2026-W36-dengue-season-refresh",
@@ -215,8 +215,8 @@
   "page": "/pest-control-clifton-karachi",
   "query": "fumigation services in clifton karachi",
   "play": "Title 'Fumigation Services in Clifton Karachi: Rs 7,000, 90-Day Guarantee | SafaiKaro' mirrored in og, twitter and image alt; description under 160 characters with the guarantee before the cut and no comma triad.",
-  "reason": "Homepage ranks near the top for the query with no clicks; the area page should carry it. Reviewer wording captured from this run.",
+  "reason": "Superseded by the September 9 audit: current title already targets fumigation. H1, opening package scope and contextual links implemented locally on fix/audit-clarity-2026-09-09; await release and recrawl observation before another message change.",
   "added": "2026-W35",
-  "status": "queued"
+  "status": "dropped"
  }
 ]

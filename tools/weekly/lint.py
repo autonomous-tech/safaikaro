@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """lint.py: the PR gate. Exit 1 on any finding in changed HTML (vs origin/main) or in the ledger files.
 
-Checks: banned phrases (config), em-dashes, literal Rs prices not present in prices.js, broken internal links,
+Checks: banned phrases (config), em-dashes and literal Rs prices on added lines (whole page for new pages/--all); broken internal links,
 JSON-LD parse + FAQPage parity with on-page FAQ text, new pages missing PostHog/prices.js, changed pages missing
 from sitemap.xml, ledger/instrumentation entries missing required fields. Then runs tools/check-tracking.py.
 Usage: python tools/weekly/lint.py [--all] [--base origin/main]
@@ -36,7 +36,7 @@ def strip_tags(s):
 
 
 def added_lines(rel, base):
-    """Lines this branch added to the file (legacy copy is not re-linted for em-dashes)."""
+    """Lines this branch added, including staged/unstaged edits; --all audits legacy copy."""
     diff = git("diff", "-U0", base, "--", rel) or git("diff", "-U0", "--", rel)
     return "\n".join(l[1:] for l in diff.splitlines() if l.startswith("+") and not l.startswith("+++"))
 
@@ -45,7 +45,7 @@ def lint_html(path, text, is_new, prices, banned, sitemap, base="origin/main"):
     rel = path.relative_to(ROOT).as_posix()
     out = []
     visible = re.sub(r"<script.*?</script>|<style.*?</style>", " ", text, flags=re.S | re.I)
-    # claims and em-dashes are checked on what this branch wrote (whole file for new pages, added lines otherwise);
+    # Claims, prices and em-dashes are checked on what this branch wrote (whole file for new pages, added lines otherwise);
     # `--all` passes base=None to sweep every page.
     scope = visible if (is_new or base is None) else added_lines(rel, base)
     for b in banned:
@@ -53,7 +53,7 @@ def lint_html(path, text, is_new, prices, banned, sitemap, base="origin/main"):
             out.append(f"{rel}: banned phrase '{b}'")
     if "—" in scope:
         out.append(f"{rel}: em-dash in copy you added")
-    for m in re.finditer(r"Rs\.?\s?([\d,]{4,})", strip_tags(visible), re.I):
+    for m in re.finditer(r"Rs\.?\s?([\d,]{4,})", strip_tags(scope), re.I):
         v = int(m.group(1).replace(",", ""))
         if v not in prices:
             out.append(f"{rel}: literal price Rs {m.group(1)} not in prices.js")
@@ -79,8 +79,10 @@ def lint_html(path, text, is_new, prices, banned, sitemap, base="origin/main"):
         out.append(f"{rel}: new page without posthog.init")
     if is_new and "prices.js" not in text and "http-equiv" not in text:
         out.append(f"{rel}: new page without prices.js")
-    url = CONFIG["site_url"] + "/" + rel[:-5] if rel != "index.html" else CONFIG["site_url"] + "/"
-    if sitemap and "http-equiv" not in text and rel != "404.html" and url not in sitemap and url.replace("/index", "") not in sitemap:
+    # Match the generator: index.html -> /, nested/index.html -> /nested/.
+    route = "/" + (rel[:-10] if (rel == "index.html" or rel.endswith("/index.html")) else rel[:-5])
+    url = CONFIG["site_url"].rstrip("/") + route
+    if sitemap and "http-equiv" not in text and rel != "404.html" and url not in sitemap:
         out.append(f"{rel}: not in sitemap.xml (run tools/generate-seo-files.py)")
     return out
 
@@ -114,9 +116,9 @@ def main():
         files = [p for p in ROOT.rglob("*.html") if not (set(p.relative_to(ROOT).parts) & SKIP)]
         new = set(); a.base = None
     else:
-        changed = git("diff", "--name-only", f"{a.base}...HEAD").splitlines() + git("diff", "--name-only").splitlines() + git("ls-files", "--others", "--exclude-standard").splitlines()
+        changed = git("diff", "--name-only", a.base).splitlines() + git("ls-files", "--others", "--exclude-standard").splitlines()
         files = [ROOT / f for f in dict.fromkeys(changed) if f.endswith(".html") and (ROOT / f).exists() and not (set(Path(f).parts) & SKIP)]
-        new = set(git("diff", "--name-only", "--diff-filter=A", f"{a.base}...HEAD").splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
+        new = set(git("diff", "--name-only", "--diff-filter=A", a.base).splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
     prices, banned = price_set(), CONFIG["banned_phrases"]
     sitemap = set(re.findall(r"<loc>(.*?)</loc>", (ROOT / "sitemap.xml").read_text())) if (ROOT / "sitemap.xml").exists() else set()
     findings = []
