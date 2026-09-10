@@ -1,0 +1,53 @@
+name: SafaiKaro approved daily Reels
+
+on:
+  schedule:
+    # Prepare at 12:20 PKT; the runner waits until 12:30 PKT to publish.
+    # Exact dates and year are also enforced by the finite approved plan.
+    - cron: '20 7 11,12 9 *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: safaikaro-approved-instagram-reels
+  cancel-in-progress: false
+
+jobs:
+  publish-approved-reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the approved plan and runner
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Test date, music, duplicate, and uncertain-write guards
+        run: python -m unittest discover -s scripts/social -p test_scheduled_instagram_reels.py -q
+      - name: Validate or execute the finite approved schedule
+        env:
+          SOCIAL_META_PAGE_TOKEN: ${{ secrets.SAFAIKARO_SOCIAL_META_PAGE_TOKEN }}
+          SOCIAL_INSTAGRAM_USER_ID: '17841428978573204'
+          SOCIAL_META_API_VERSION: 'v26.0'
+          SAFAIKARO_WORKFLOW_FILE: 'safaikaro-daily-reels.yml'
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            python scripts/social/scheduled_instagram_reels.py --plan scripts/social/reels-september-2026.json --receipt delivery-receipt.json --execute
+          else
+            python scripts/social/scheduled_instagram_reels.py --plan scripts/social/reels-september-2026.json --receipt delivery-receipt.json
+          fi
+      - name: Preserve the delivery checkpoint without credentials
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: safaikaro-reel-receipt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: delivery-receipt.json
+          if-no-files-found: warn
+          retention-days: 90
