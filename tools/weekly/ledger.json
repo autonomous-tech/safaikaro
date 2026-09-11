@@ -25,5 +25,17 @@
   "hypothesis": "A price-led search message, populated starting prices and clear existing-home versus new-construction termite scope help buyers recognize the package and enquire. Evaluate as one combined package; overlapping starting-card work prevents an isolated title-test conclusion.",
   "metric": "Fixed Pakistan mobile pricing query group CTR, position and landing URL after 28 complete post-crawl days; secondary qualified organic enquiries and price-page lead persons / unique visitors. Extend low-volume observation to 6-8 weeks.",
   "commit": "6dd860d"
+ },
+ {
+  "id": "2026-09-11-commercial-cleaning-discovery",
+  "pages": [
+   "/commercial-cleaning-karachi",
+   "/office-cleaning-services-karachi",
+   "/",
+   "/commercial"
+  ],
+  "hypothesis": "Distinct cleaning service pages with clear quotation requirements and contextual links help commercial buyers find the right scope and start an enquiry. This release adds homepage footer links and a commercial-page crosslink; existing money-page search titles and pricing copy are unchanged.",
+  "metric": "Search Console impressions, clicks and query ownership for the new routes; WhatsApp and phone CTA activity by landing page. Qualified enquiries and won work must be confirmed separately from clicks. Record release date before evaluation.",
+  "status": "ready_for_review"
  }
 ]
