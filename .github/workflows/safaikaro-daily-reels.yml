@@ -4,7 +4,7 @@ on:
   schedule:
     # Prepare at 12:20 PKT; the runner waits until 12:30 PKT to publish.
     # Exact dates and year are also enforced by the finite approved plan.
-    - cron: '20 7 11,12 9 *'
+    - cron: '20 7 13,14 9 *'
   workflow_dispatch:
 
 permissions:

@@ -1,17 +1,17 @@
 {
   "authorized": true,
-  "authorization": "Owner approved the reviewed content and explicitly requested scheduling the already made posts at 12:30 pm PKT daily.",
+  "authorization": "Owner reviewed the kitchen Reel and revised natural chai Reel, then explicitly requested: schedule them. Slots: September 13 and 14, 2026 at 12:30 pm Asia/Karachi. Use existing Instagram workflow and native Meta music.",
   "instagram_username": "safaikaro.pk",
   "timezone": "Asia/Karachi",
   "jobs": [
     {
-      "id": "mithai-reel",
+      "id": "midnight-kitchen-reel-v1",
       "platform": "instagram",
       "format": "reel",
-      "scheduled_at": "2026-09-11T12:30:00+05:00",
-      "video_url": "https://safaikaro.pk/social-media/mithai-reel-v1-b7c2350b.mp4",
-      "sha256": "b7c2350b2cba5d863beb77b6ce003730e9e67f0afe3f0600de6116e705dccf2e",
-      "caption": "Mithai mehmaanon ke liye rakhi thi. Cheentiyon ne bhi plan bana liya.\n\nDaawat se pehle counter par baar baar cheentiyan nazar aa rahi hain? Apna area aur maslay ki photo WhatsApp par bhej dein.\n\nWhatsApp: +92 330 8652035\n\n#SafaiKaro #DHAKarachi #CliftonKarachi #PestControlKarachi",
+      "scheduled_at": "2026-09-13T12:30:00+05:00",
+      "video_url": "https://safaikaro.pk/social-media/midnight-kitchen-reel-v1-2a2d69fa.mp4",
+      "sha256": "2a2d69fad29d5d920d9272bc8758f172b5b78cd8a0be6aa255d0123d2da918da",
+      "caption": "Paani peene uthay thay. Kitchen mein pehle se company thi.\n\nAap glass bhartay ya seedha wapas?\n\nSafaiKaro | Karachi\nWhatsApp: +92 330 8652035\n\n#SafaiKaro #Karachi #DHAKarachi #CliftonKarachi",
       "native_audio": {
         "audio_id": "1759672808494145",
         "audio_volume": 80,
@@ -20,16 +20,16 @@
       "audio_title": "Bird Watching",
       "audio_artist": "Danny Peter Wolf",
       "ai_generated": true,
-      "video_path": "social-media/mithai-reel-v1-b7c2350b.mp4"
+      "video_path": "social-media/midnight-kitchen-reel-v1-2a2d69fa.mp4"
     },
     {
-      "id": "guest-worry-reel",
+      "id": "chai-natural-reel-v2",
       "platform": "instagram",
       "format": "reel",
-      "scheduled_at": "2026-09-12T12:30:00+05:00",
-      "video_url": "https://safaikaro.pk/social-media/guest-worry-reel-v5-2df90003.mp4",
-      "sha256": "2df90003f2661449f30d0943c22ef08a71dbd7054e4f93faf5fb7643e9dc7dca",
-      "caption": "Chai tayyar. Mehmaan aane walay hain. Aur nazar baar baar kitchen ke kone par.\n\nWoh tension samajh aati hai. Daawat se pehle SafaiKaro se baat kar lein.\n\nWhatsApp: +92 330 8652035\n\n#SafaiKaro #DHAKarachi #CliftonKarachi #PestControlKarachi",
+      "scheduled_at": "2026-09-14T12:30:00+05:00",
+      "video_url": "https://safaikaro.pk/social-media/chai-natural-reel-v2-bea5f228.mp4",
+      "sha256": "bea5f228f7aa3d96064a6a84ac3b3f4bd88901e5a82eda2aac596aefe2a33353",
+      "caption": "Chai garam thi. Phir machhar aa gaye.\n\nAapki shaam ki chai bhi aisi hoti hai?\n\nSafaiKaro | Karachi\nWhatsApp: +92 330 8652035\n\n#SafaiKaro #Karachi #ChaiTime #CliftonKarachi",
       "native_audio": {
         "audio_id": "1759672808494145",
         "audio_volume": 80,
@@ -38,7 +38,7 @@
       "audio_title": "Bird Watching",
       "audio_artist": "Danny Peter Wolf",
       "ai_generated": true,
-      "video_path": "social-media/guest-worry-reel-v5-2df90003.mp4"
+      "video_path": "social-media/chai-natural-reel-v2-bea5f228.mp4"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Approved SafaiKaro Reel schedule
 
-This finite queue publishes two existing, owner-approved Instagram Reels to `safaikaro.pk`: Mithai on 11 September 2026 and the guest-worry Reel on 12 September 2026, both targeting 12:30 pm Asia/Karachi. It does not generate content or publish Facebook, image, or carousel posts.
+This finite queue publishes two existing, owner-approved Instagram Reels to `safaikaro.pk`: the midnight-kitchen Reel on 13 September 2026 and the revised natural chai/mosquitoes Reel on 14 September 2026, both targeting 12:30 pm Asia/Karachi. It does not generate content or publish Facebook, image, or carousel posts.
 
 The workflow starts at 12:20 pm PKT to validate the account, track and exact hosted video bytes, prepare the Instagram container, and wait until 12:30 before publishing. GitHub Actions can delay or drop scheduled runs; this is a target time, not a guarantee of delivery at the exact minute. The runner refuses jobs beyond their allowed lateness window and prevents blind re-execution after a scheduled attempt. The full year/date in the plan prevents the cron expression from publishing again next year.
 
