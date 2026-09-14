@@ -526,6 +526,17 @@
     .svc-card a { text-decoration: none; color: #0D4A2F; }
     .svc-card a:hover { text-decoration: underline; }
 
+    .comm-illustration { margin: 0; min-width: 0; }
+    .comm-illustration img { display: block; width: 100%; height: auto; border-radius: 8px; }
+    .comm-illustration figcaption { margin-top: 8px; font-size: 0.75rem; line-height: 1.5; color: #59665D; }
+    .comm-hero .comm-illustration { max-width: 1000px; margin: 36px auto 0; text-align: left; }
+    .comm-hero .comm-illustration figcaption { color: #D9E4DD; }
+    .svc-card.contract-feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+    @media (max-width: 700px) {
+      .svc-card.contract-feature { grid-template-columns: 1fr; gap: 18px; }
+      .comm-hero .comm-illustration { margin-top: 28px; }
+    }
+
     /* How we work steps */
     .process-steps {
       display: flex;
@@ -729,6 +740,10 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
         Talk to Us on WhatsApp
       </a>
       <a href="#survey" class="hero-second">Or build your survey request in 20 seconds</a>
+      <figure class="comm-illustration">
+        <img src="/images/commercial-pest-treatment-karachi-ai.webp" alt="Illustration of a pest-control technician treating a commercial corridor after hours" width="1672" height="941" decoding="async" fetchpriority="high">
+        <figcaption>AI-generated illustration of commercial pest treatment.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -880,9 +895,15 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
           <h3><a href="/fumigation-certificate-karachi">Fumigation certificate</a></h3>
           <p>Premises, date, chemicals, areas treated, technician, stamp and next treatment date. A dated, stamped treatment record that businesses keep on file for inspections and audits.</p>
         </div>
-        <div class="svc-card">
-          <h3><a href="/annual-pest-control-karachi#business-amc">AMC and monthly contracts, quoted after survey</a></h3>
-          <p>A monthly pest control contract or quarterly annual maintenance contract, with a treatment record and a certificate kept on file for every visit.</p>
+        <div class="svc-card contract-feature">
+          <div>
+            <h3><a href="/annual-pest-control-karachi#business-amc">AMC and monthly contracts, quoted after survey</a></h3>
+            <p>A monthly pest control contract or quarterly annual maintenance contract, with a treatment record and a certificate kept on file for every visit.</p>
+          </div>
+          <figure class="comm-illustration">
+            <img src="/images/commercial-pest-maintenance-contract-karachi-ai.webp" alt="Illustration of a technician checking a closed rodent station while a property manager records the visit" width="1672" height="941" loading="lazy" decoding="async">
+            <figcaption>AI-generated illustration of a commercial pest inspection.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
