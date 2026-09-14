@@ -47,6 +47,6 @@
   ],
   "hypothesis": "A WhatsApp link inside the price FAQ answer on area pages converts the reader who opens the price question and leaves, because the tap is where the price is read instead of a scroll away.",
   "metric": "whatsapp_click with cta=faq on the three pages, and lead persons / unique visitors on them, 28 days post vs 28 days pre; secondary: faq_open on the price question followed by a lead event in the same session",
-  "commit": null
+  "commit": "7eb9b9d"
  }
 ]
