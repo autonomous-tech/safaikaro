@@ -34,5 +34,41 @@
   "pages": [
    "all"
   ]
+ },
+ {
+  "id": "2026-W37-faq-open-question-normalised",
+  "event": "faq_open",
+  "property": "question",
+  "question": "Which FAQ question is opened before a lead or an abandon, grouped as one value across pages? The delegate now strips the text chevron glyph and collapses whitespace from the button text, so the price list, annual page and new-construction page questions group with the SVG-chevron pages.",
+  "pages": [
+   "all"
+  ]
+ },
+ {
+  "id": "2026-W37-collector-social-utm",
+  "event": "$pageview",
+  "property": "utm_source",
+  "question": "Do Instagram bio-link and Facebook visits reach the Social bucket when the referrer is bit.ly or empty? Collector-side: the channel rule now also matches utm_source instagram, facebook, fb, linkedin, tiktok, youtube, twitter and x (gbp already matched).",
+  "pages": [
+   "all"
+  ]
+ },
+ {
+  "id": "2026-W37-tester-id-desktop-mac",
+  "event": "all",
+  "property": "distinct_id",
+  "question": "A recurring Mac Chrome desktop id (three separate days, Search Console referrer, seen on the cleaning pages) added to test_distinct_ids so desktop lead persons read clean.",
+  "pages": [
+   "all"
+  ]
+ },
+ {
+  "id": "2026-W37-starting-card-section",
+  "event": "whatsapp_click",
+  "property": "section",
+  "question": "Which starting-price card gets tapped on the price list? The delegate now reads the card's own heading (for example Termite treatment) instead of the group heading above the cards.",
+  "pages": [
+   "/pest-control-price-list-karachi"
+  ]
  }
 ]

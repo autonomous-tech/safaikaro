@@ -175,6 +175,9 @@ var SAFAIKARO_PRICES = {
     return 'inline';
   }
   function sectionOf(a) {
+    // A starting-price card names its own service; the group heading above it does not.
+    var card = a.closest('.start-card');
+    if (card) { var ch = card.querySelector('h3'); if (ch) return (ch.textContent || '').trim().slice(0, 50); }
     var sec = a.closest('section[id], section');
     if (!sec) return '';
     if (sec.id) return sec.id;
@@ -245,7 +248,9 @@ var SAFAIKARO_PRICES = {
 
     var faq = t.closest('.faq-q');
     if (faq && faq.getAttribute('aria-expanded') !== 'true') {
-      ph('faq_open', { question: (faq.textContent || '').trim().slice(0, 120) });
+      // Some pages use a text chevron (U+2304) in the button; strip it and collapse whitespace so one
+      // question is one value across pages.
+      ph('faq_open', { question: (faq.textContent || '').replace(/[\u2304\u2303\u25BE\u25BC\u2228]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 120) });
       return;
     }
     var tab = t.closest('.price-tab');

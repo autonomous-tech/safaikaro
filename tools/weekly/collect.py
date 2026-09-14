@@ -175,7 +175,8 @@ def collect_posthog(W):
         lower(coalesce(toString(properties.utm_source),'')) = 'whatsapp' OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'whatsapp'), 'WhatsApp',
         match(lower(coalesce(toString(properties.$referring_domain),'')), 'google\\\\.'), 'Google',
         match(lower(coalesce(toString(properties.$referring_domain),'')), '(^|\\\\.)bing\\\\.|duckduckgo|yahoo|yandex'), 'Other search',
-        match(lower(coalesce(toString(properties.$referring_domain),'')), 'facebook|instagram|(^|\\\\.)fb\\\\.|linkedin|tiktok|youtube|twitter|(^|\\\\.)x\\\\.com$'), 'Social',
+        match(lower(coalesce(toString(properties.utm_source),'')), '^(instagram|facebook|fb|linkedin|tiktok|youtube|twitter|x)$')
+          OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'facebook|instagram|(^|\\\\.)fb\\\\.|linkedin|tiktok|youtube|twitter|(^|\\\\.)x\\\\.com$'), 'Social',
         coalesce(toString(properties.$referring_domain),'') IN ('', '$direct') OR match(lower(coalesce(toString(properties.$referring_domain),'')), 'safaikaro\\\\.pk$'), 'Direct',
         'Referral')"""
 
