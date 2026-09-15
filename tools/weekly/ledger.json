@@ -37,5 +37,16 @@
   "hypothesis": "Distinct cleaning service pages with clear quotation requirements and contextual links help commercial buyers find the right scope and start an enquiry. This release adds homepage footer links and a commercial-page crosslink; existing money-page search titles and pricing copy are unchanged.",
   "metric": "Search Console impressions, clicks and query ownership for the new routes; WhatsApp and phone CTA activity by landing page. Qualified enquiries and won work must be confirmed separately from clicks. Record release date before evaluation.",
   "status": "ready_for_review"
+ },
+ {
+  "id": "2026-W37-area-faq-whatsapp-link",
+  "pages": [
+   "/pest-control-gulshan-e-iqbal-karachi",
+   "/pest-control-nazimabad-karachi",
+   "/pest-control-north-nazimabad-karachi"
+  ],
+  "hypothesis": "A WhatsApp link inside the price FAQ answer on area pages converts the reader who opens the price question and leaves, because the tap is where the price is read instead of a scroll away.",
+  "metric": "whatsapp_click with cta=faq on the three pages, and lead persons / unique visitors on them, 28 days post vs 28 days pre; secondary: faq_open on the price question followed by a lead event in the same session",
+  "commit": "7eb9b9d"
  }
 ]
