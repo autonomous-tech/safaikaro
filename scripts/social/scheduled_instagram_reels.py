@@ -485,8 +485,13 @@ def main(argv=None):
     if not args.execute:
         jobs = validate_plan(plan, config, http)
         if env.get("GITHUB_ACTIONS") == "true":
+            # Already-delivered jobs legitimately have a prior scheduled run; only
+            # today's and future jobs must still be free of one.
+            today_utc = datetime.now(timezone.utc).date()
             for job in jobs:
-                _guard_prior_run(env, http, _parse_time(job["scheduled_at"]))
+                target = _parse_time(job["scheduled_at"])
+                if target.astimezone(timezone.utc).date() >= today_utc:
+                    _guard_prior_run(env, http, target)
         if args.receipt:
             _atomic_write(args.receipt, {"phase": "validated", "job_ids": [job["id"] for job in jobs]})
         print(json.dumps({"phase": "validated", "jobs": [job["id"] for job in jobs]}))
