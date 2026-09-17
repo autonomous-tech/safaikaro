@@ -6997,7 +6997,7 @@ The building committee or union, the society office, or the management company. 
 What gets treated
 Common areas: basement and parking, stairwells and lift lobbies, service ducts, roof and water tank area, drains and the garbage point.
 Price
-No rate card. Priced after a free site survey, and the number reaches you in writing.
+No rate card. Priced after a free site survey, and the number reaches you in writing. If four or more flats in the same building book together, a block rate applies, given in the written quote.
 How
 Request a survey. One-off, or a recurring schedule.
 
@@ -7268,7 +7268,7 @@ A single visit. A 201 to 300 sq yd home takes 2 to 3 hours, smaller flats take l
 
 How much does apartment fumigation cost in Karachi?
 
-A single flat is charged at SafaiKaro's published home price, set by size in square yards, with the 90-day re-treatment guarantee. The price table on this page and the Karachi price list show every tier. A whole building or society has no rate card: it is priced after a free site survey and the number reaches you in writing.
+A single flat is charged at SafaiKaro's published home price, set by size in square yards, with the 90-day re-treatment guarantee. The price table on this page and the Karachi price list show every tier. A whole building or society has no rate card: it is priced after a free site survey and the number reaches you in writing. If four or more flats in the same building book together, a block rate applies, given in the written quote.
 
 Can the building or society committee put pest control on a recurring schedule?
 
@@ -7835,7 +7835,7 @@ Whether our own team or a specialist subcontractor does each item, named in your
 03
 ### Cleaning is not pest treatment
 
-We do not quote pest work for kitchens.
+A clean is not a pest treatment, but pest control for the kitchen can be quoted alongside the cleaning. See pest control for businesses.
 
 Taking grease and soil off surfaces removes much of what attracts cockroaches, rodents and flies
 
@@ -7858,8 +7858,6 @@ Inside ducted exhaustDuct interiors, and anything needing height access or disma
 Equipment strip downTaking apart or reassembling cooking equipment, gas connections and electrical fittings.
 
 Repairs and replacementWe report damaged tiles, seals, filters, hoods and fittings. We do not repair them.
-
-Pest treatmentWe do not quote pest work for kitchens. A clean is not a pest treatment.
 
 Certificates and auditsA clean is not a hygiene certificate, an audit result or an inspection outcome, and we offer none.
 
@@ -7920,7 +7918,7 @@ Do you clean kitchen hoods, filters and exhaust ducts?
 SafaiKaro does not include hood, filter or exhaust duct cleaning automatically in a commercial kitchen quote, and we do not clean inside ducts. What else we can take depends on the hood type and whether your kitchen staff can lift the filters out safely. We survey the hood, the duct route and where the extract fan sits, and the written quotation names whether our own team or a specialist subcontractor does each item.
 
 What is excluded from a commercial kitchen clean?
-Grease traps and liquid waste, the inside of ducted exhaust runs, taking equipment apart or putting it back together, gas and electrical work, repairs, and anything needing height access. SafaiKaro does not quote pest treatment for kitchens. SafaiKaro issues no hygiene certificate, audit result or inspection sign off. We write every exclusion into the quotation before the visit.
+Grease traps and liquid waste, the inside of ducted exhaust runs, taking equipment apart or putting it back together, gas and electrical work, repairs, and anything needing height access. Pest control is not part of the cleaning price, though it can be quoted alongside the cleaning. SafaiKaro issues no hygiene certificate, audit result or inspection sign off. We write every exclusion into the quotation before the visit.
 
 When can a commercial kitchen be cleaned?
 The kitchen has to be out of use while we work: counters cleared, equipment cool, and nobody walking on the floor while we wash and rinse it. Tell us the hours the kitchen can be out of use. The schedule is agreed at the survey, or before booking when surface work is quoted from photos, and the working window goes in writing.
@@ -7932,7 +7930,7 @@ Which areas of Karachi do you cover for commercial kitchen cleaning?
 SafaiKaro covers Karachi. What decides whether we can take a kitchen is the site rather than the address: drain fall in basement and plaza kitchens, a water point near the cook line, and a power supply that will run cleaning machines during a KE outage. Kitchen work is never a same day visit. Send your broad area and kitchen details and we confirm the next step.
 
 Does kitchen cleaning include pest control?
-No. SafaiKaro quotes commercial kitchen cleaning, not pest treatment, and does not quote pest work for kitchens. Taking grease and soil off surfaces removes much of what attracts cockroaches, rodents and flies, but it does not treat activity that is already there. Tell us what you have seen so it goes into the cleaning notes.
+No, not in the cleaning price. Pest control for the kitchen can be quoted alongside the cleaning, priced separately. Taking grease and soil off surfaces removes much of what attracts cockroaches, rodents and flies, but it does not treat activity that is already there. Tell us what you have seen so it goes into the cleaning notes.
 
 📱
 📱 WhatsApp for a quoteGet a quote
@@ -8491,7 +8489,7 @@ Nothing is submitted here. The button opens WhatsApp with your details already t
 
 Contract billing is written into your quotation, not assumed from a one off job.
 
-The survey is free and carries no obligation. The quotation comes in writing, itemised by zone. For a contract, how often you are invoiced, the minimum term and the notice period are written into that quotation before you sign. For one off commercial jobs, the published payment policy is on our commercial pest control page.
+The survey is free and carries no obligation. The quotation comes in writing, itemised by zone. Payment is 50% in advance and 50% on completion. For a contract, how often you are invoiced, the minimum term and the notice period are written into that quotation before you sign. For one off commercial jobs, the published payment policy is on our commercial pest control page.
 
 Facilities and admin buyers usually need a document to circulate rather than a chat thread. The written quotation is that document, itemised by zone. If you would rather start on email than WhatsApp, write to hello@safaikaro.pk or call +92 330 8652035 and ask for a survey slot.
 
@@ -8521,7 +8519,7 @@ A contract includes as many visits as the agreed cadence produces across the ter
 
 What happens if pests appear between scheduled visits?
 
-The 90-day re-treatment guarantee published on our commercial page covers the pest treatment work we carry out. How we respond between scheduled visits, including any callouts, is set out in your quotation before you sign, so check that it is listed there. Send a message on WhatsApp with photographs of what you are seeing and we will tell you what the contract covers.
+The 90-day re-treatment guarantee published on our commercial page covers the pest treatment work we carry out. Contract customers get priority response over one off jobs when something comes up between visits. How we respond between scheduled visits, including any callouts, is set out in your quotation before you sign, so check that it is listed there. Send a message on WhatsApp with photographs of what you are seeing and we will tell you what the contract covers.
 
 How much does a business pest control contract cost in Karachi?
 
@@ -8530,6 +8528,10 @@ There is no rate card for contracts and we do not publish one, because a single 
 What paperwork do we get for our records?
 
 After each contracted visit you get a dated treatment record. The fumigation certificate lists the premises, date, chemicals used, areas treated, technician, stamp and next treatment date, and is issued after every visit or at the points agreed in your quotation. Keep both on file for inspections and internal audits.
+
+How do we pay for a pest control contract?
+
+Payment is 50% in advance and 50% on completion. Invoicing frequency and the rest of the payment terms are written into your quotation before you sign.
 
 Can we start with one treatment and move to a contract later?
 
