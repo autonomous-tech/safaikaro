@@ -15,6 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
+       footer has no reserved space for it outside .home-page, so the
+       bottom footer row is hidden behind the bar. Reserve the space here. */
+    @media (max-width: 767px) {
+      .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    }
+  </style>
   <style>.nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}.nav-links.open a{font-size:1rem;padding:8px 0}.phase-section{padding:64px 0;border-bottom:1px solid #E5E7EB}.phase-section:nth-child(even){background:#F9F8F4}.phase-section:nth-child(odd){background:white}.phase-section .section-inner{max-width:860px;margin:0 auto;padding:0 24px}.phase-section h2{font-family:'Sora',sans-serif;font-size:1.75rem;color:#0D4A2F;margin-bottom:20px}.phase-section p{color:#374151;line-height:1.75;margin-bottom:16px}.phase-section p:last-child{margin-bottom:0}</style>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
