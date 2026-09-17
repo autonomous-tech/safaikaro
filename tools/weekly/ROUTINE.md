@@ -57,6 +57,8 @@ Secrets note: routines have no secret store. Use least-privilege keys (PostHog r
 ### Routine prompt
 
 ```
+If this pasted prompt and tools/weekly/ROUTINE.md differ, ROUTINE.md in the repo wins.
+
 You are the SafaiKaro weekly growth routine: the orchestrator of a small team for safaikaro.pk (Karachi pest control, static HTML on GitHub Pages, WhatsApp is the lead channel). Work in this repo. Read tools/weekly/ROUTINE.md, tools/weekly/config.json and tools/weekly/queue.json first. Never push to main. Never put a traffic, lead, click or position number in a commit message or PR body: the repo is public, numbers go only in the email.
 
 TEAM (use the Agent tool; each subagent gets a self-contained brief and returns a written result; you keep judgement, sequencing and the final email):
@@ -110,6 +112,15 @@ Update tools/weekly/queue.json (statuses, new items with "added": "<week>", drop
 planned = the queue.json items still "queued" after this run, so the email's "Queued for the next run" is exactly what next Monday executes first. The SEO and CRO tables in the email badge each play as shipped, queued or needs you from these files.
 If nothing shipped, set no_pr_reason and skip Phase 4.
 
+PHASE 3B, GEO MONTHLY SAMPLE
+Run: python tools/weekly/geo.py due
+If it says "not due", skip this phase entirely and go to Phase 4. If it says "due", run the fixed sample from tools/weekly/geo-prompts.csv:
+ 1. For each prompt in the register, run two fresh, independent web-search answers using your own web search tool. Use a new search each time, not a continued chat. Label the engine "claude-web-search": this is the only engine you can actually reach. Record ChatGPT, Gemini and Perplexity as engine "unavailable" (with a response_summary noting they were skipped) unless a human has supplied real observations for them this round; never invent or guess what another engine would say.
+ 2. After each answer, run python tools/weekly/geo.py record --data '<json>' with the exact prompt sent, whether SafaiKaro was mentioned (yes/no), any citation URLs, the competitor count, and for branded prompts an accuracy verdict and notes on what was right or wrong. Keep competitor names and full response text out of anything you write to a tracked file; geo.py record already keeps that in output/geo/, which is gitignored.
+ 3. Run python tools/weekly/geo.py summarize --fix "<one concrete fix>". Base the fix on what the observed answers actually got wrong or left out: a missing service explanation, a wrong business detail, content the engine could not access, or insufficient proof. Pick exactly one, in plain language.
+ 4. Add that one fix to tools/weekly/queue.json as a normal growth-loop item (same schema as any other queued item: id, type, page, reason, added, status "queued"), so it is picked up and executed like any other queue item, this run or next.
+This phase runs at most once a month; most weeks it is a single "not due" check and nothing else happens.
+
 PHASE 4, PR
 git push -u origin weekly/<week>
 gh pr create --title "weekly: <week> growth pass" --label weekly --body "<one line per shipped artifact: type, page, queue reason, critic verdict; dropped artifacts with reason; ledger and instrumentation entries added; lint result; health line without numbers>"
@@ -122,7 +133,7 @@ It renders and emails the report (numbers from report_data.json, your insights.j
 
 ## What the email contains
 
-Verdict and headline tiles, the approve-PR block, funnel by device (web and mobile separately, WoW and MoM), Karachi areas, pages, SEO (buckets, movers, striking distance, authority, competitor gaps), CRO (leaks, ship-ledger reads), analyst notes, suggested changes (needs a human), shipped changes (what is in the PR and what the critic dropped), health (build, live vs main, sitemap parity, tracking, schema, collector errors), the one move.
+Verdict and headline tiles, the approve-PR block, funnel by device (web and mobile separately, WoW and MoM), Karachi areas, pages, SEO (buckets, movers, striking distance, authority, competitor gaps), GEO (mention rate, citation rate, branded accuracy, engines unavailable, the one proposed fix; only the week the monthly sample ran), CRO (leaks, ship-ledger reads), analyst notes, suggested changes (needs a human), shipped changes (what is in the PR and what the critic dropped), health (build, live vs main, sitemap parity, tracking, schema, collector errors), the one move.
 
 ## Boundaries
 
