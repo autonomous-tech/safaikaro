@@ -6,6 +6,14 @@ The workflow starts at 12:20 pm PKT to validate the account, track and exact hos
 
 Music is attached through Meta's native `audio_configuration`, using the already verified Bird Watching track by Danny Peter Wolf. The hosted masters contain household ambience only. Container acceptance is not proof of final music attribution; the resulting public post must still be checked after it exists.
 
+## Facebook Page cross-post
+
+A job may carry an optional `facebook` block (`video_path`, `sha256`, `caption`). Jobs without one stay Instagram-only. Facebook has no native-music API, so the Facebook master is a separate MP4 with the licensed Bird Watching track mixed under the ambience; its bytes are uploaded from this checkout, so validation hashes the local file instead of a hosted URL.
+
+Facebook runs only after the Instagram readback succeeds: a duplicate-description check against the Page's recent Reels, then start, raw byte upload, finish, and a reconcile `GET /{video_id}`. The finish response shape is not trusted; `publishing_phase.publish_status == "published"` on the reconcile is the only proof of publication.
+
+Any failed or ambiguous Facebook step checkpoints `facebook_uncertain` with the video id and exits non-zero without retrying and without altering the recorded Instagram result. The Page id is the non-secret workflow env `SOCIAL_FACEBOOK_PAGE_ID`; the Page token is the same existing secret.
+
 ## Operation
 
 - Scheduled workflow events execute the finite approved plan.

@@ -34,6 +34,7 @@ jobs:
         env:
           SOCIAL_META_PAGE_TOKEN: ${{ secrets.SAFAIKARO_SOCIAL_META_PAGE_TOKEN }}
           SOCIAL_INSTAGRAM_USER_ID: '17841428978573204'
+          SOCIAL_FACEBOOK_PAGE_ID: '1350795041443230'
           SOCIAL_META_API_VERSION: 'v26.0'
           SAFAIKARO_WORKFLOW_FILE: 'safaikaro-daily-reels.yml'
           GITHUB_TOKEN: ${{ github.token }}

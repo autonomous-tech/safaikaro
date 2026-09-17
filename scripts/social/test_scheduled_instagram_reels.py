@@ -48,6 +48,46 @@ class FakeHTTP:
         raise AssertionError((method, url, params))
 
 
+class FacebookHTTP(FakeHTTP):
+    """FakeHTTP plus the Page Reel edges: start, raw upload, finish, reconcile."""
+
+    page_id = "1350795041443230"
+
+    def __init__(self, *args, reels=None, start=None, finish=None, status=None, upload=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.reels = reels if reels is not None else []
+        self.start = start if start is not None else {"video_id": "fb-video-1", "upload_url": "https://rupload.facebook.com/video-upload/v26.0/fb-video-1"}
+        # Today's real finish response was not the shape the strict parser expected.
+        self.finish = finish if finish is not None else "OK"
+        self.status = status if status is not None else {"id": "fb-video-1", "published": True, "permalink_url": "https://www.facebook.com/reel/fb-video-1/", "status": {"video_status": "ready", "publishing_phase": {"status": "complete", "publish_status": "published"}}}
+        self.upload = upload if upload is not None else {"success": True}
+        self.uploads = []
+
+    def _result(self, value):
+        if isinstance(value, Exception):
+            raise value
+        return value
+
+    def __call__(self, method, url, params=None, headers=None):
+        if f"/{self.page_id}/video_reels" in url or url.endswith("/fb-video-1"):
+            self.calls.append((method, url, params or {}))
+            if method == "GET" and "/video_reels?" in url:
+                return {"data": self.reels}
+            if method == "GET":
+                return self._result(self.status)
+            phase = (params or {}).get("upload_phase")
+            if phase == "start":
+                return self._result(self.start)
+            if phase == "finish":
+                return self._result(self.finish)
+            raise AssertionError((method, url, params))
+        return super().__call__(method, url, params, headers)
+
+    def raw_post(self, url, headers, body):
+        self.uploads.append((url, dict(headers), len(body)))
+        return self._result(self.upload)
+
+
 class URLResponse:
     def __init__(self, body, content_type="application/json", status=200):
         self.body = body
@@ -79,8 +119,13 @@ class ScheduledReelTests(unittest.TestCase):
         }
         return {"authorized": True, "instagram_username": "safaikaro.pk", "jobs": [job]}
 
+    def facebook_block(self, directory, caption="Deemak ka raasta.\nWhatsApp: https://wa.me/923308652035"):
+        path = Path(directory) / "facebook-master.mp4"
+        path.write_bytes(b"facebook-video")
+        return {"video_path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "caption": caption}
+
     def execution_env(self):
-        return {"GITHUB_EVENT_NAME": "schedule", "GITHUB_RUN_ATTEMPT": "1", "GITHUB_WORKFLOW_ID": "77", "GITHUB_REPOSITORY": "org/repo", "GITHUB_RUN_ID": "99", "GITHUB_TOKEN": "token", "GITHUB_API_URL": "https://api.github.com", "SOCIAL_INSTAGRAM_USER_ID": "ig-1", "SOCIAL_META_API_VERSION": "v26", "SOCIAL_META_PAGE_TOKEN": "secret"}
+        return {"SOCIAL_FACEBOOK_PAGE_ID": "1350795041443230", "GITHUB_EVENT_NAME": "schedule", "GITHUB_RUN_ATTEMPT": "1", "GITHUB_WORKFLOW_ID": "77", "GITHUB_REPOSITORY": "org/repo", "GITHUB_RUN_ID": "99", "GITHUB_TOKEN": "token", "GITHUB_API_URL": "https://api.github.com", "SOCIAL_INSTAGRAM_USER_ID": "ig-1", "SOCIAL_META_API_VERSION": "v26", "SOCIAL_META_PAGE_TOKEN": "secret"}
 
     def test_validate_checks_account_video_and_sha(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -246,6 +291,99 @@ class ScheduledReelTests(unittest.TestCase):
                         execute(plan, self.execution_env(), request, NOW, receipt)
                     self.assertEqual(sum(url.endswith(failing_edge) for url in writes), 1)
                     self.assertEqual(json.loads(receipt.read_text())["phase"], phase)
+
+
+    def test_validate_checks_facebook_master_file_and_hash(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "reel.mp4"
+            path.write_bytes(b"video")
+            config = {"ig_id": "ig-1", "version": "v26", "token": "secret"}
+            facebook = self.facebook_block(directory)
+            plan = self.make_plan(path, facebook=dict(facebook))
+            jobs = validate_plan(plan, config, FakeHTTP(plan["jobs"][0]["video_url"]), NOW)
+            self.assertEqual(jobs[0]["facebook"], facebook)
+            for broken in (
+                {**facebook, "sha256": "0" * 64},
+                {**facebook, "video_path": str(Path(directory) / "missing.mp4")},
+                {**facebook, "caption": "  "},
+                {**facebook, "unexpected": "field"},
+            ):
+                with self.subTest(broken=sorted(broken)):
+                    with self.assertRaisesRegex(RunnerError, "facebook"):
+                        validate_plan(self.make_plan(path, facebook=broken), config, FakeHTTP(plan["jobs"][0]["video_url"]), NOW)
+
+    def test_execute_publishes_instagram_then_facebook_and_reconciles_finish(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "reel.mp4"
+            path.write_bytes(b"video")
+            facebook = self.facebook_block(directory)
+            plan = self.make_plan(path, facebook=dict(facebook))
+            env = self.execution_env()
+            env["SAFAIKARO_WORKFLOW_FILE"] = "safaikaro-daily-reels.yml"
+            http = FacebookHTTP(plan["jobs"][0]["video_url"], statuses=["FINISHED"])
+            receipt = Path(directory) / "receipt.json"
+            result = execute(plan, env, http, NOW, receipt)
+            self.assertEqual(result, {"id": "media-1", "permalink": "https://instagram.com/reel/media-1", "phase": "published"})
+            saved = json.loads(receipt.read_text())
+            self.assertEqual(saved["phase"], "published")
+            self.assertEqual(saved["facebook"]["phase"], "facebook_published")
+            self.assertEqual(saved["facebook"]["video_id"], "fb-video-1")
+            self.assertEqual(saved["facebook"]["permalink_url"], "https://www.facebook.com/reel/fb-video-1/")
+            self.assertEqual(saved["facebook"]["page_id"], "1350795041443230")
+            phases = [call[2].get("upload_phase") for call in http.calls if call[0] == "POST" and call[1].endswith("/video_reels")]
+            self.assertEqual(phases, ["start", "finish"])
+            self.assertEqual(len(http.uploads), 1)
+            url, headers, size = http.uploads[0]
+            self.assertEqual(url, "https://rupload.facebook.com/video-upload/v26.0/fb-video-1")
+            self.assertEqual(headers["Authorization"], "OAuth secret")
+            self.assertEqual((headers["Content-Type"], headers["offset"], headers["file_size"]), ("video/mp4", "0", str(size)))
+            finish = [call for call in http.calls if call[0] == "POST" and call[2].get("upload_phase") == "finish"][0]
+            self.assertEqual(finish[2]["description"], facebook["caption"])
+            self.assertEqual(finish[2]["video_state"], "PUBLISHED")
+            reconcile = [call for call in http.calls if call[0] == "GET" and call[1].endswith("/fb-video-1")]
+            self.assertEqual(reconcile[0][2], {"fields": "status,published,permalink_url"})
+
+    def test_execute_refuses_duplicate_facebook_caption_before_start(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "reel.mp4"
+            path.write_bytes(b"video")
+            facebook = self.facebook_block(directory)
+            plan = self.make_plan(path, facebook=dict(facebook))
+            env = self.execution_env()
+            env["SAFAIKARO_WORKFLOW_FILE"] = "safaikaro-daily-reels.yml"
+            http = FacebookHTTP(plan["jobs"][0]["video_url"], statuses=["FINISHED"], reels=[{"id": "fb-old", "description": facebook["caption"]}])
+            receipt = Path(directory) / "receipt.json"
+            with self.assertRaisesRegex(RunnerError, "duplicate Facebook caption"):
+                execute(plan, env, http, NOW, receipt)
+            self.assertFalse(any(call[0] == "POST" and call[1].endswith("/video_reels") for call in http.calls))
+            self.assertEqual(http.uploads, [])
+            saved = json.loads(receipt.read_text())
+            self.assertEqual(saved["phase"], "published")
+            self.assertEqual(saved["id"], "media-1")
+            self.assertEqual(saved["facebook"]["phase"], "facebook_refused")
+            self.assertNotIn("video_id", saved["facebook"])
+
+    def test_facebook_upload_failure_is_uncertain_and_keeps_the_instagram_result(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "reel.mp4"
+            path.write_bytes(b"video")
+            facebook = self.facebook_block(directory)
+            plan = self.make_plan(path, facebook=dict(facebook))
+            env = self.execution_env()
+            env["SAFAIKARO_WORKFLOW_FILE"] = "safaikaro-daily-reels.yml"
+            http = FacebookHTTP(plan["jobs"][0]["video_url"], statuses=["FINISHED"], upload=TimeoutError("uncertain"))
+            receipt = Path(directory) / "receipt.json"
+            # main() turns any RunnerError into the blocked JSON line and SystemExit(2).
+            with self.assertRaises(RunnerError):
+                execute(plan, env, http, NOW, receipt)
+            self.assertEqual(len(http.uploads), 1)
+            self.assertFalse(any(call[2].get("upload_phase") == "finish" for call in http.calls))
+            saved = json.loads(receipt.read_text())
+            self.assertEqual(saved["facebook"]["phase"], "facebook_uncertain")
+            self.assertEqual(saved["facebook"]["video_id"], "fb-video-1")
+            self.assertEqual(saved["phase"], "published")
+            self.assertEqual(saved["id"], "media-1")
+            self.assertEqual(saved["permalink"], "https://instagram.com/reel/media-1")
 
 
 if __name__ == "__main__":

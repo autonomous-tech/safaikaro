@@ -122,6 +122,22 @@ def week_label(ws):
     return f"{d.day} {MONTHS[d.month - 1][:3]}"
 
 
+def geo_section_data(D):
+    """output/geo/summary.json, but only for the week it was actually generated in -- the GEO sample is
+    monthly (see geo.py `due`), so a report built on an off week must not keep re-showing a stale month's
+    numbers as if they were fresh. Returns None when there is nothing to show this run."""
+    p = OUT / "geo" / "summary.json"
+    if not p.exists():
+        return None
+    try:
+        s = json.loads(p.read_text())
+        gen_date = dt.datetime.fromisoformat(s["generated_at"]).date()
+        tw0, tw1 = (dt.date.fromisoformat(x) for x in D["windows"]["this_week"])
+    except (json.JSONDecodeError, KeyError, ValueError, TypeError, OSError):
+        return None
+    return s if tw0 <= gen_date <= tw1 else None
+
+
 # ─── plays: what next for a query, deterministic, agent can override via insights.plays ───
 def play_for(m, gaining, plays):
     q, page, pos = m["query"], m["page"], m["position"]
@@ -316,6 +332,25 @@ def render(D, I, CH, pr_url=None):
            sub("Authority") + para(auth, 13) + (sub("Competitor keyword gaps (Ahrefs, Pakistan)") + table([th("Keyword"), th("Volume", "right"), th("Who ranks"), th("Pos", "right")], grows) if grows else ""))
     gw = g.get("windows") or {}
     P.append(section("SEO", "Positions, movers, authority", SI.get("seo"), seo, note=f'Search Console {gw.get("this_week", ["", ""])[0]} to {gw.get("this_week", ["", ""])[1]} (3-day lag); Ahrefs as of {esc(a.get("date"))}. Movers compare 28 days vs the prior 28.'))
+
+    # 6b. GEO: monthly AI answer-engine visibility sample, only shown the week it ran
+    geo_s = geo_section_data(D)
+    if geo_s:
+        oc, unb, br = geo_s.get("observation_counts") or {}, geo_s.get("unbranded") or {}, geo_s.get("branded") or {}
+        geo_tiles = "".join([stat_tile("Mention rate", pct(unb.get("mention_rate")), f"{n(oc.get('unbranded_completed'))} unbranded prompts", ""),
+                             stat_tile("Citation rate", pct(unb.get("citation_rate")), "prompts where an engine linked a source", ""),
+                             stat_tile("Branded accuracy", pct(br.get("accuracy_rate")), f"{n(oc.get('branded_completed'))} branded prompts", "")])
+        eng_rows = [[td(esc(group), color=C["cloud600"]), td(esc(eng), strong=True, mono=True), td(n(r.get("n")), "right", mono=True),
+                     td(pct(r.get("mention_rate") if "mention_rate" in r else r.get("accuracy_rate")), "right", mono=True)]
+                    for group, block in (("Unbranded", unb), ("Branded", br)) for eng, r in (block.get("by_engine") or {}).items()]
+        unavail = oc.get("unavailable", 0)
+        fix = geo_s.get("proposed_fix")
+        geo_html = (f'<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:separate;border-spacing:0"><tr>{geo_tiles}</tr></table>' +
+                    (sub("By engine") + table([th("Group"), th("Engine"), th("n", "right"), th("Rate", "right")], eng_rows) if eng_rows else "") +
+                    para(f'{n(unavail)} observation(s) recorded as unavailable this run (an engine the routine cannot reach).', 12, C["cloud600"], margin="10px 0 0") +
+                    (para(f'Proposed fix: {esc(fix)}', 13, C["mid800"], weight=600, margin="10px 0 0") if fix else ""))
+        P.append(section("GEO", "AI answer-engine visibility, monthly sample", SI.get("geo"), geo_html,
+                         note=f'Month {esc(geo_s.get("month", ""))}. Only engines the routine can reach are sampled live; the rest are recorded unavailable, never fabricated. Full observations, competitor names and prompt text stay out of the repo in output/geo/.'))
 
     # 7. CRO
     kinds = {"low_lead_rate": "Lead rate below site", "low_scroll": "Low scroll depth", "rageclicks": "Rage clicks", "device_gap": "Device converting below site", "booking_dropoff": "Booking chain drop-off"}

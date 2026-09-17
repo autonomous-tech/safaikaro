@@ -70,6 +70,32 @@ def _native_audio(value):
     return result
 
 
+_FACEBOOK_UPLOAD_HOSTS = {"rupload.facebook.com"}
+
+
+def _upload_url_allowed(value):
+    parsed = urlparse(value or "")
+    return parsed.scheme == "https" and (parsed.hostname or "").lower().rstrip(".") in _FACEBOOK_UPLOAD_HOSTS
+
+
+def _facebook(value):
+    if value is None:
+        return None
+    if not isinstance(value, dict) or set(value) - {"video_path", "sha256", "caption"}:
+        raise RunnerError("facebook fields are invalid")
+    if not isinstance(value.get("video_path"), str) or not value["video_path"].strip():
+        raise RunnerError("facebook video_path is required")
+    if not re.fullmatch(r"[0-9a-fA-F]{64}", value.get("sha256", "")):
+        raise RunnerError("facebook sha256 must be a 64-character digest")
+    if not isinstance(value.get("caption"), str) or not value["caption"].strip():
+        raise RunnerError("facebook caption is required")
+    if not Path(value["video_path"]).is_file():
+        raise RunnerError("facebook media file does not exist")
+    if _sha256(value["video_path"]).lower() != value["sha256"].lower():
+        raise RunnerError("facebook media hash does not match the plan")
+    return {"video_path": value["video_path"], "sha256": value["sha256"], "caption": value["caption"]}
+
+
 def _real_http(token, version, github_token=None):
     graph_base = f"https://graph.facebook.com/{version.strip('/')}"
     max_media_bytes = 250 * 1024 * 1024
@@ -108,6 +134,22 @@ def _real_http(token, version, github_token=None):
         except Exception as exc:
             raise RunnerError(f"Meta {method} request failed") from exc
 
+    def raw_post(url, headers, body):
+        # Reel bytes go to a non-graph Meta upload host; never follow a redirect with the token.
+        if not _upload_url_allowed(url):
+            raise RunnerError("Meta upload URL is not an approved host")
+        request_obj = Request(url, data=body, method="POST", headers=dict(headers))
+        try:
+            with urlopen(request_obj, timeout=120) as response:
+                payload = response.read(max_media_bytes + 1)
+                parsed_body = json.loads(payload.decode()) if payload else {}
+        except Exception as exc:
+            raise RunnerError("Meta upload request failed") from exc
+        if not isinstance(parsed_body, dict):
+            raise RunnerError("Meta returned an invalid response")
+        return parsed_body
+
+    request.raw_post = raw_post
     return request
 
 
@@ -135,6 +177,25 @@ def _call(http, method, url, params=None):
         raise RunnerError("Meta returned an invalid response")
     if result.get("error") or result.get("success") is False:
         raise RunnerError(f"Meta {method} request was rejected")
+    return result
+
+
+def _upload(http, url, headers, body):
+    raw_post = getattr(http, "raw_post", None)
+    if raw_post is None:
+        raise RunnerError("HTTP transport cannot upload raw media")
+    if not _upload_url_allowed(url):
+        raise RunnerError("Meta upload URL is not an approved host")
+    try:
+        result = raw_post(url, headers, body)
+    except RunnerError:
+        raise
+    except Exception as exc:
+        raise RunnerError("Meta upload request failed") from exc
+    if not isinstance(result, dict):
+        raise RunnerError("Meta returned an invalid response")
+    if result.get("error") or result.get("success") is False:
+        raise RunnerError("Meta upload was rejected")
     return result
 
 
@@ -178,6 +239,8 @@ def validate_plan(plan, config, http, now=None):
         if not isinstance(job.get("caption"), str) or not job["caption"].strip():
             raise RunnerError("caption is required")
         job["native_audio"] = _native_audio(job.get("native_audio"))
+        if job.get("facebook") is not None:
+            job["facebook"] = _facebook(job["facebook"])
         job["_ig_id"] = config["ig_id"]
         _validate_track(job, http)
         track = _call(http, "GET", job["video_url"])
@@ -263,6 +326,85 @@ def _poll(http, config, container_id, sleep, clock):
         sleep(min(30, max(1, deadline - clock())))
 
 
+def _facebook_page(env):
+    page_id = str(env.get("SOCIAL_FACEBOOK_PAGE_ID") or "")
+    if not page_id.isdigit():
+        raise RunnerError("Facebook Page id is missing or invalid")
+    return page_id
+
+
+def _facebook_duplicate(http, page_id, caption):
+    result = _call(http, "GET", f"/{page_id}/video_reels?fields=id,description&limit=100")
+    reels = result.get("data")
+    if not isinstance(reels, list):
+        raise RunnerError("Facebook Reel history is unavailable")
+    if any(isinstance(item, dict) and item.get("description") == caption for item in reels):
+        raise RunnerError("duplicate Facebook caption already exists")
+
+
+def _facebook_finish(http, page_id, video_id, caption):
+    # The finish POST publishes server-side even when its body is an unexpected
+    # shape, so it is issued exactly once and the reconcile GET is the authority.
+    params = {"upload_phase": "finish", "video_state": "PUBLISHED", "video_id": video_id, "description": caption, "is_ai_generated": "true"}
+    try:
+        result = http("POST", f"/{page_id}/video_reels", params)
+    except Exception:
+        return {"parsed": False}
+    return result if isinstance(result, dict) else {"parsed": False}
+
+
+def _facebook_published(details):
+    status = details.get("status")
+    phase = status.get("publishing_phase") if isinstance(status, dict) else None
+    return isinstance(phase, dict) and phase.get("publish_status") == "published"
+
+
+def _publish_facebook(env, config, http, job, receipt, receipt_path):
+    facebook = job["facebook"]
+    page_id = _facebook_page(env)
+    state = {"phase": "facebook_preflight", "page_id": page_id, "sha256": facebook["sha256"]}
+    receipt["facebook"] = state
+    _atomic_write(receipt_path, receipt)
+    try:
+        _facebook_duplicate(http, page_id, facebook["caption"])
+    except RunnerError:
+        state["phase"] = "facebook_refused"
+        _atomic_write(receipt_path, receipt)
+        raise
+    state["phase"] = "facebook_start"
+    _atomic_write(receipt_path, receipt)
+    video_id = None
+    try:
+        started = _call(http, "POST", f"/{page_id}/video_reels", {"upload_phase": "start", "is_ai_generated": "true"})
+        video_id = started.get("video_id") or started.get("id")
+        upload_url = started.get("upload_url")
+        if not video_id or not isinstance(upload_url, str) or not _upload_url_allowed(upload_url):
+            raise RunnerError("Facebook start response was incomplete")
+        video_id = str(video_id)
+        state.update({"phase": "facebook_uploading", "video_id": video_id})
+        _atomic_write(receipt_path, receipt)
+        body = Path(facebook["video_path"]).read_bytes()
+        headers = {"Authorization": f"OAuth {config['token']}", "Content-Type": "video/mp4", "offset": "0", "file_size": str(len(body))}
+        _upload(http, upload_url, headers, body)
+        state["phase"] = "facebook_finishing"
+        _atomic_write(receipt_path, receipt)
+        finished = _facebook_finish(http, page_id, video_id, facebook["caption"])
+        state.update({"phase": "facebook_reconciling", "finish_keys": sorted(str(key) for key in finished)})
+        _atomic_write(receipt_path, receipt)
+        details = _call(http, "GET", f"/{video_id}", {"fields": "status,published,permalink_url"})
+        if not _facebook_published(details):
+            raise RunnerError("Facebook Reel did not reconcile as published")
+        state.update({"phase": "facebook_published", "video_id": video_id, "permalink_url": details.get("permalink_url")})
+        _atomic_write(receipt_path, receipt)
+    except Exception as exc:
+        state.update({"phase": "facebook_uncertain", "video_id": video_id})
+        _atomic_write(receipt_path, receipt)
+        if isinstance(exc, RunnerError):
+            raise
+        raise RunnerError("Facebook delivery is uncertain; reconcile before retrying") from exc
+    return state
+
+
 def execute(plan, env, http, now=None, receipt_path=None, sleep=time.sleep, now_fn=None):
     if env.get("GITHUB_EVENT_NAME") != "schedule":
         raise RunnerError("execution is allowed only for schedule events")
@@ -321,6 +463,8 @@ def execute(plan, env, http, now=None, receipt_path=None, sleep=time.sleep, now_
         raise RunnerError("Instagram publish readback did not match the plan")
     receipt.update({"phase": "published", "id": published_id, "permalink": details.get("permalink")})
     _atomic_write(receipt_path, receipt)
+    if job.get("facebook"):
+        _publish_facebook(env, config, http, job, receipt, receipt_path)
     return {key: receipt.get(key) for key in ("id", "permalink", "phase")}
 
 
@@ -341,8 +485,13 @@ def main(argv=None):
     if not args.execute:
         jobs = validate_plan(plan, config, http)
         if env.get("GITHUB_ACTIONS") == "true":
+            # Already-delivered jobs legitimately have a prior scheduled run; only
+            # today's and future jobs must still be free of one.
+            today_utc = datetime.now(timezone.utc).date()
             for job in jobs:
-                _guard_prior_run(env, http, _parse_time(job["scheduled_at"]))
+                target = _parse_time(job["scheduled_at"])
+                if target.astimezone(timezone.utc).date() >= today_utc:
+                    _guard_prior_run(env, http, target)
         if args.receipt:
             _atomic_write(args.receipt, {"phase": "validated", "job_ids": [job["id"] for job in jobs]})
         print(json.dumps({"phase": "validated", "jobs": [job["id"] for job in jobs]}))
