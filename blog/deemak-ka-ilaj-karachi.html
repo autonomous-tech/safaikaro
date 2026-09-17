@@ -169,6 +169,12 @@
       .pricing-table-blog { font-size: 0.875rem; }
       .pricing-table-blog th, .pricing-table-blog td { padding: 10px 10px; }
     }
+    /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
+       footer has no reserved space for it outside .home-page, so the
+       bottom footer row is hidden behind the bar. Reserve the space here. */
+    @media (max-width: 767px) {
+      .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    }
   </style>
   <!-- Open Graph -->
   <meta property="og:type" content="article">
@@ -485,6 +491,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
 
   <p>SafaiKaro ki transparent pricing — koi hidden charges nahi. Full pricing list dekhni ho toh <a href="/pest-control-price-list-karachi">yahan jaayein</a>.</p>
 
+  <div style="overflow-x:auto;">
   <table class="pricing-table-blog" aria-label="Deemak treatment pricing Karachi">
     <thead>
       <tr>
@@ -539,6 +546,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       </tr>
     </tbody>
   </table>
+  </div>
 
   <p>Sab prices property size pe depend karti hain. Free inspection aur exact quote ke liye <a href="/book">yahan book karein</a> — koi obligation nahi.</p>
 
@@ -662,7 +670,8 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     <div class="footer-links">
       <h4>Services</h4>
       <a href="/#services">General Fumigation</a>
-      <a href="/termite-treatment-new-construction-karachi">Termite Treatment</a>
+      <a href="/termite-treatment-karachi">Termite Treatment</a>
+      <a href="/termite-treatment-new-construction-karachi">Pre-Construction Termite</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
       <a href="/annual-pest-control-karachi">Annual Plan</a>
     </div>

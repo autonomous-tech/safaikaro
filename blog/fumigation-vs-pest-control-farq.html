@@ -205,6 +205,12 @@
       .compare-table th, .compare-table td { padding: 10px 10px; }
       .pest-card-grid { grid-template-columns: 1fr; }
     }
+    /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
+       footer has no reserved space for it outside .home-page, so the
+       bottom footer row is hidden behind the bar. Reserve the space here. */
+    @media (max-width: 767px) {
+      .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    }
   </style>
   <!-- Open Graph -->
   <meta property="og:type" content="article">
@@ -427,6 +433,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
   <!-- SECTION 2: COMPARISON TABLE -->
   <h2>Side-by-Side Comparison — Kya Fark Hai</h2>
 
+  <div style="overflow-x:auto;">
   <table class="compare-table" aria-label="Fumigation vs pest control methods comparison">
     <thead>
       <tr>
@@ -475,6 +482,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
       </tr>
     </tbody>
   </table>
+  </div>
 
   <!-- SECTION 3: PEST BY PEST GUIDE -->
   <h2>Kaunse Pest Ke Liye Kaunsi Service — Karachi Guide</h2>
@@ -490,7 +498,7 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     <div class="pest-card">
       <span class="treatment-tag">Specialist Treatment</span>
       <h3>Termites (Deemak)</h3>
-      <p>Soil injection ya baiting system: spray kaam nahi karta. Underground colony ke liye dedicated <a href="/termite-treatment-new-construction-karachi">termite treatment</a> chahiye. 90-day guarantee milti hai.</p>
+      <p>Soil injection ya baiting system: spray kaam nahi karta. Underground colony ke liye dedicated <a href="/termite-treatment-karachi">termite treatment</a> chahiye. 90-day guarantee milti hai.</p>
     </div>
     <div class="pest-card">
       <span class="treatment-tag">Specialist Treatment</span>
@@ -647,7 +655,8 @@ posthog.init('phc_xwbyY2msrjU6e5VlZal3FFqJ6p51D9ciEX4dxSqHXRb',{api_host:'https:
     <div class="footer-links">
       <h4>Services</h4>
       <a href="/#services">General Fumigation</a>
-      <a href="/termite-treatment-new-construction-karachi">Termite Treatment</a>
+      <a href="/termite-treatment-karachi">Termite Treatment</a>
+      <a href="/termite-treatment-new-construction-karachi">Pre-Construction Termite</a>
       <a href="/pest-control-price-list-karachi">Pricing</a>
       <a href="/annual-pest-control-karachi">Annual Plan</a>
     </div>
