@@ -390,6 +390,9 @@
       .needs-grid { grid-template-columns: 1fr 1fr; }
       .cert-contents { padding: 24px 20px; }
     }
+    @media (max-width: 360px) {
+      .needs-grid { grid-template-columns: 1fr; }
+    }
 
     /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
        footer has no reserved space for it outside .home-page, so the
