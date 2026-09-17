@@ -255,6 +255,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Header crowding fix (320-360px): logo + "Book Now" CTA + hamburger don't
+   fit together at the narrowest phone widths, clipping the logo text behind
+   the CTA button. Same breakpoint and pattern as .clean-page's existing fix
+   (commercial-cleaning-karachi.html), generalized to every page so pages
+   without a page-specific body class get it too. Menu, hero and bottom
+   mobile-bar contact actions are untouched. */
+@media (max-width: 360px) {
+  .nav-cta {
+    display: none;
+  }
+  .hamburger {
+    margin-left: auto;
+  }
+}
+
 /* --- Hero Section --- */
 .hero {
   padding-top: 64px;
