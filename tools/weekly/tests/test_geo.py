@@ -1,7 +1,7 @@
 """Tests for geo.py: due-date logic, observation-schema validation, summary maths.
 Run: python3 -m pytest tools/weekly/tests/test_geo.py -q   (or: python3 tools/weekly/tests/test_geo.py)
 """
-import datetime as dt, json, sys
+import datetime as dt, json, sys, tempfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -191,10 +191,10 @@ def test_summary_empty_rows_gives_none_rates_not_crash():
 
 
 if __name__ == "__main__":
+    # tmp_path stands in for pytest's fixture here: a fresh, real directory per run so a stale
+    # hardcoded path never goes missing (it used to point at an unmade /tmp/geo-test-tmp).
+    tmp_path = Path(tempfile.mkdtemp(prefix="geo-test-"))
     for k, v in list(globals().items()):
         if k.startswith("test_"):
-            try:
-                v(tmp_path=Path("/tmp/geo-test-tmp")) if "tmp_path" in v.__code__.co_varnames[:v.__code__.co_argcount] else v()
-            except TypeError:
-                v()
+            v(tmp_path=tmp_path) if "tmp_path" in v.__code__.co_varnames[:v.__code__.co_argcount] else v()
             print("ok", k)
