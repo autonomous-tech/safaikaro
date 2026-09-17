@@ -155,5 +155,39 @@
   "hypothesis": "Shared navigation change, not a content change: the footer link 'General Fumigation' pointed to the homepage services section on part of the site instead of /fumigation-services-karachi, and the footer had no links to the commercial contract, apartment fumigation and fumigation certificate pages or to the blog hub. Every affected footer now sends 'General Fumigation' to /fumigation-services-karachi and adds 'Pest Control Contracts', 'Apartment Fumigation', 'Fumigation Certificate' and 'Pest Control Guides' where the footer did not already carry them. Released together with contextual body-link fixes on core, area and blog pages in the same PR. Pest-control-clifton-karachi and pest-control-dha-karachi received the footer-only change under the measurement-hold allowance; no other content on those two pages changed.",
   "metric": "Search Console impressions, clicks, average position and landing URL for /fumigation-services-karachi, /pest-control-contract-karachi, /apartment-fumigation-karachi and /fumigation-certificate-karachi on their query groups, 28 days post vs 28 days pre; secondary: whether fumigation, contract and apartment queries shift landing URL away from the homepage. Any ranking movement on pest-control-clifton-karachi or pest-control-dha-karachi in this window should be attributed to this shared footer change, not to their page content, since only footer links changed on those two pages.",
   "status": "ready_for_review"
+ },
+ {
+  "id": "2026-09-17-reentry-time-who-claim-fix",
+  "pages": [
+   "/annual-pest-control-karachi",
+   "/ant-control-karachi",
+   "/apartment-fumigation-karachi",
+   "/bed-bug-treatment-karachi",
+   "/bee-wasp-removal-karachi",
+   "/blog/",
+   "/blog/chipkali-bhagane-ka-tarika",
+   "/blog/cockroach-killer-spray-karachi",
+   "/blog/deemak-ka-ilaj-karachi",
+   "/blog/dengue-se-bachao-karachi",
+   "/blog/fumigation-bachon-pets-ke-liye-safe",
+   "/blog/fumigation-machine-price-pakistan",
+   "/blog/ghar-ko-fumigation-ke-liye-tayar-karna",
+   "/blog/khatmal-ka-ilaj-karachi",
+   "/cockroach-control-karachi",
+   "/fumigation-services-karachi",
+   "/lizard-control-karachi",
+   "/mosquito-dengue-control-karachi",
+   "/pest-control-bahadurabad-karachi",
+   "/pest-control-dha-karachi",
+   "/pest-control-federal-b-area-gulberg-karachi",
+   "/pest-control-north-karachi",
+   "/rodent-control-karachi",
+   "/school-fumigation-service-karachi",
+   "/termite-treatment-karachi",
+   "/termite-treatment-new-construction-karachi"
+  ],
+  "hypothesis": "2026-09-17 compliance copy fix: re-entry time and WHO claim removal. Not a content test; a correction. The site stated conflicting re-entry-to-treated-space times (2 to 8 hours depending on page and household member) against the founder-confirmed fact that re-entry is 30 minutes to 1 hour once treated surfaces are dry; every such statement, in visible copy, FAQ text and matching JSON-LD, now reads 30 minutes to 1 hour, phrased for each page's language. The unsupported 'WHO-approved'/'WHO approved' chemicals claim, already banned per docs/clients/safaikaro/gtm/certification-claims-removal.md and removed from /commercial on 2026-09-12, was still live on 24 pages plus llms-full.txt; it is now removed everywhere with the smallest natural rewrite, and 'WHO-approved' and 'WHO approved' are added to tools/weekly/config.json banned_phrases. Treatment-length durations, the 72-hour no-mop rule, the 24 to 48 hour ant colony collapse line and the annual-plan emergency response time were left unchanged. pest-control-dha-karachi received a compliance-only edit (one WHO-approved larvicide mention removed) under the content measurement hold; pest-control-clifton-karachi was checked and had no WHO claim or wrong re-entry time to fix, so it was not touched by this change.",
+  "metric": "No search or conversion metric applies; this is a factual-accuracy and compliance correction, not a content experiment. Verify by grep for 'WHO-approved'/'WHO approved' and for any remaining 4-hour, 6-8 hour or 2-3 hour re-entry statement across the site returning zero matches.",
+  "status": "ready_for_review"
  }
 ]
