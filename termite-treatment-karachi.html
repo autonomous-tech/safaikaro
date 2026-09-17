@@ -400,6 +400,12 @@
       .price-callout { padding: 28px 20px; }
       .price-callout .price-amount { font-size: 2.2rem; }
     }
+    /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
+       footer has no reserved space for it outside .home-page, so the
+       bottom footer row is hidden behind the bar. Reserve the space here. */
+    @media (max-width: 767px) {
+      .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    }
   </style>
 <style>.nav-links.open{display:flex!important;position:absolute;top:64px;left:0;right:0;background:#F9F8F4;flex-direction:column;padding:16px 24px;gap:12px;border-bottom:3px solid #0D4A2F;box-shadow:0 8px 24px rgba(0,0,0,.1)}.nav-links.open a{font-size:1rem;padding:8px 0}</style>
   <!-- Open Graph -->
