@@ -200,6 +200,17 @@
       .article-body { padding: 40px 16px 64px; }
       .article-cta { padding: 36px 20px; }
     }
+    /* Fixed .mobile-bar covers the last ~75px of the page on mobile; the
+       footer has no reserved space for it outside .home-page, so the
+       bottom footer row is hidden behind the bar. Reserve the space here. */
+    @media (max-width: 767px) {
+      .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    }
+    @media (max-width: 360px) {
+      .mobile-bar { gap: 10px; }
+      .footer { padding-bottom: calc(130px + env(safe-area-inset-bottom)); }
+      .mobile-bar .btn-lime { flex-shrink: 1; white-space: normal; text-align: center; padding: 10px 12px; }
+    }
   </style>
   <!-- Open Graph -->
   <meta property="og:type" content="article">
