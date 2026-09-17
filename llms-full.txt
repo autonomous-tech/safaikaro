@@ -819,7 +819,7 @@ Treatment ke baad ghar mein rehna safe hai?
 
 For post-construction treatment, you can re-enter after 4 hours. The chemicals we use are WHO-approved and safe for children and pets after the re-entry period. Our technician will give you specific instructions on the day.
 
-5-saal warranty mein kya cover hota hai?
+90-day guarantee mein kya cover hota hai?
 ⌄
 
 Our 90-day guarantee covers any re-infestation of termites at the treated property. If termites return within 90 days, we return and re-treat at no additional cost. The warranty is registered against your property address.
@@ -2033,6 +2033,10 @@ Is SafaiKaro a khatmal treatment company that covers all of Karachi?
 
 Yes. SafaiKaro is a Karachi bed bug (khatmal) treatment company covering DHA, Clifton, PECHS, Bahadurabad, Saddar, Gulshan-e-Iqbal, Nazimabad, North Nazimabad, Federal B Area, Malir, Korangi and North Karachi at the same published price: from Rs 11,000 for homes up to 100 sq yards, two sessions included, with a 90-day guarantee. Same-day slots are available in DHA, Clifton, PECHS, Bahadurabad and Saddar; other areas get the next available slot.
 
+Khutmals fumigation ka rate kya hai aur kitne sessions lagte hain?
+
+Khutmals (khatmal, English mein bed bugs) ki fumigation Rs 11,000 se shuru hoti hai, 100 sq yards tak ke ghar ke liye, dono sessions included. Pehle session mein residual spray aur IGR lagta hai, doosra session day 10 se 14 par bache hue nymphs ke liye. Dono sessions ke baad 90-day guarantee: khatmal wapas aayein to re-treatment free.
+
 ## Book Bed Bug Treatment  -  Same-Day Available in DHA & Clifton
 
 WhatsApp your area, number of affected rooms, and how long the problem has been present. We'll confirm pricing and a slot in the same conversation.
@@ -3116,7 +3120,7 @@ DHA Phase 1 is the oldest part of the Defence Housing Authority  -  bungalows he
 
 The mature trees lining Phase 1’s streets add another layer of pest pressure. Tree roots disturb underground drainage pipes, creating moisture pathways that attract subterranean termites. Fallen leaf litter and decomposing mulch near boundary walls are breeding grounds for cockroaches and ants. Homes backing onto the creek in Phase 1 see mosquito activity year-round, not just in monsoon.
 
-Our approach in Phase 1 starts with a structural assessment before any chemical is applied. We check roof beams, window frames, and skirting boards for active termite galleries. For confirmed termite infestations we use a soil injection + bait station combination that is more effective than surface spray alone in old-construction homes. Our termite work in Phase 1 comes with a three-year structural guarantee.
+Our approach in Phase 1 starts with a structural assessment before any chemical is applied. We check roof beams, window frames, and skirting boards for active termite galleries. For confirmed termite infestations we use a soil injection + bait station combination that is more effective than surface spray alone in old-construction homes. Our termite work in Phase 1 comes with our 90-day guarantee.
 
 General fumigation for Phase 1 bungalows is priced per square yard  -  a standard 200-sq-yard bungalow costs Rs 11,000. If you are renovating or extending your Phase 1 property, book a pre-treatment consultation before any excavation work disturbs existing termite colonies and drives them deeper into the structure.
 
@@ -4587,7 +4591,7 @@ Cost: Rs 13,000 se shuru (100 sq yds)
 
 Best time: Jab bhi deemak signs dikhen  -  ya annually prevention ke liye
 
-Warranty: 5 saal
+Warranty: 90-day guarantee
 
 Rule of thumb: Naya ghar bana rahe ho? Pre-construction treatment must hai  -  save karo future damage ka kharcha. Ghar ban gaya? Post-construction treatment immediate karwao  -  delay se damage zyada hoga.
 
@@ -4603,27 +4607,27 @@ Warranty
 Post-Construction (Soil Injection)
 Up to 100 sq yds
 Rs 13,000
-5 saal
+90-day
 
 Post-Construction
 101–200 sq yds
 Rs 17,000
-5 saal
+90-day
 
 Post-Construction
 201–300 sq yds
 Rs 20,000
-5 saal
+90-day
 
 Post-Construction
 301–500 sq yds
 Rs 27,000
-5 saal
+90-day
 
 Post-Construction
 501–1,000 sq yds
 Rs 37,000
-5 saal
+90-day
 
 Pre-Construction (New Build)
 Up to 200 sq yds
@@ -4729,7 +4733,7 @@ DHA Karachi mein garden villas, bade lawn, aur puraane mature trees hain  -  yeh
 
 Deemak treatment ki warranty kitni hoti hai?
 
-SafaiKaro ki deemak treatment ke saath 5 saal ki written warranty milti hai. Agar warranty period mein deemak wapas aaye, hum free re-treatment karte hain. Yeh warranty certificate aapko treatment ke din mil jaata hai. Pre-construction treatment pe warranty 10 saal tak hoti hai.
+SafaiKaro ki deemak treatment ke saath 90-day guarantee milti hai. Agar 90 din mein deemak wapas aaye, hum free re-treatment karte hain. Guarantee certificate aapko treatment ke din mil jaata hai. Pre-construction treatment ki guarantee quote ke saath likhi hui milti hai.
 
 ## Deemak Ka Ilaj Book Karo  -  Aaj Hi
 
@@ -5510,16 +5514,16 @@ Book Now
 ---
 
 URL: https://safaikaro.pk/blog/fumigation-machine-price-pakistan
-TITLE: Fumigation Machine Price in Pakistan  - Types, Costs & DIY Reality Check | SafaiKaro
+TITLE: Fumigation Machine Price in Pakistan (September 2026) | SafaiKaro
 
 Home›
 Blog›
 Fumigation Machine Price Pakistan
 
-# Fumigation Machine Price in Pakistan  -  Types, Costs & DIY Ki Haqeeqat
+# Fumigation Machine Price in Pakistan (September 2026): Types, Costs aur DIY Ki Haqeeqat
 
 SafaiKaro Team
-June 2026
+Updated September 2026
 11 min read
 
 Fumigation Machine
@@ -5632,7 +5636,7 @@ PPE ki initial cost Rs 5,000 se Rs 15,000+ tak ho sakti hai aur masks/gloves reg
 
 Fumigation machines ko regular cleaning aur maintenance chahiye  -  nozzle clog ho jaati hain, seals replace hote hain, aur motors eventually kharab hote hain. Repair cost alag se hoti hai.
 
-Asli Hisaab: Agar aap saal mein sirf 2-4 baar fumigation karna chahte hain (average ghar), toh machine + chemicals + PPE ka total investment aksar professional service ke annual cost se zyada ho jaata hai  -  aur results bhi inferior hote hain. Machine sirf tab financially make sense karta hai jab regular, frequent, large-scale use ho (jaise commercial property, warehouse, ya restaurant chain).
+Asli Hisaab: Agar aap saal mein sirf 2-4 baar fumigation karna chahte hain (average ghar), toh machine + chemicals + PPE ka total investment aksar professional service ke annual cost se zyada ho jaata hai, aur results bhi inferior hote hain. Machine sirf tab financially make sense karta hai jab regular, frequent, large-scale use ho (jaise commercial property, warehouse ya factory floor).
 
 ## DIY Fumigation Kyun Zyada Baar Fail Hoti Hai?
 
@@ -5854,7 +5858,7 @@ Cockroaches, ants, silverfish, flies, mosquitoes (adult), general insects
 Termite Treatment (Soil Injection)
 Foundation ke around drill kark ke soil mein termiticide inject karna  -  chemical barrier
 Sirf termites (deemak)
-4–8 hrs. 5–10 saal protection
+4–8 hrs. 90-day re-treatment guarantee
 
 Bed Bug Treatment
 Targeted insecticide + IGR spray  -  mattress, bed frame, furniture. 2-session protocol
@@ -5890,7 +5894,7 @@ Specialist Treatment
 
 ### Termites (Deemak)
 
-Soil injection ya baiting system  -  spray kaam nahi karta. Underground colony ke liye dedicated termite treatment chahiye. 5-saal warranty milti hai.
+Soil injection ya baiting system: spray kaam nahi karta. Underground colony ke liye dedicated termite treatment chahiye. 90-day guarantee milti hai.
 
 Specialist Treatment
 
@@ -8136,7 +8140,7 @@ Nursery and Baloch Colony sit on the same Shahrah-e-Faisal flood corridor named 
 
 Older residential blocks in Nursery and Baloch Colony predate much of the surrounding commercial redevelopment, giving them a similar aging-construction termite profile to Karachi's other 1950s-60s neighbourhoods. Decades-old timber roofing and window frames carry the same risk we treat in DHA Phase 1 and PECHS's oldest blocks.
 
-Our protocol here combines standing-water larvicide treatment for the flood exposure with a structural termite assessment for the older housing stock  -  checking roof beams and window frames before applying soil injection and bait stations where infestation is confirmed, backed by a three-year structural guarantee.
+Our protocol here combines standing-water larvicide treatment for the flood exposure with a structural termite assessment for the older housing stock: checking roof beams and window frames before applying soil injection and bait stations where infestation is confirmed, backed by our 90-day guarantee.
 
 Fumigation with larvicide included starts from Rs 7,000, and termite proofing from Rs 13,000. Book a same-day inspection if you notice termite activity or standing water near your foundation after rain.
 
@@ -8146,7 +8150,7 @@ Bath Island is one of the specific locations named in Karachi's recurring monsoo
 
 Bath Island is predominantly older, established bungalows with mature gardens close to the Clifton boundary  -  a termite-in-garden-timber exposure comparable to Clifton's upscale blocks, where wooden garden furniture and boundary planters give subterranean termites a stepping stone from soil to the main structure.
 
-We apply larvicide to standing water points and residual insecticide to shaded wall surfaces as part of every Bath Island fumigation, reducing adult mosquito populations by over 90% within 72 hours and lasting 4 to 6 weeks. For the garden termite risk, our full-perimeter termite programme covers garden structures as well as the house, backed by a three-year structural guarantee.
+We apply larvicide to standing water points and residual insecticide to shaded wall surfaces as part of every Bath Island fumigation, reducing adult mosquito populations by over 90% within 72 hours and lasting 4 to 6 weeks. For the garden termite risk, our full-perimeter termite programme covers garden structures as well as the house, backed by our 90-day guarantee.
 
 General fumigation on Bath Island is priced by plot size  -  Rs 11,000 for 101–200 sq yards up to Rs 16,000 for larger plots  -  and full-perimeter termite proofing for the villa-scale properties typical here runs Rs 27,000 to Rs 37,000. Discreet, unmarked-vehicle appointments are available on request.
 
@@ -8615,7 +8619,7 @@ Federal B. Area was planned in the late 1950s alongside North Nazimabad as KDA S
 
 FB Area's street grid mixes those older single-story government-quota homes with later infill apartment construction, so termite versus cockroach pressure varies block by block depending on renovation history. A generic treatment plan does not fit every FB Area block equally.
 
-For confirmed termite activity in FB Area's older blocks, we run a structural assessment first, then treat with soil injection and bait stations, backed by a three-year structural guarantee. For blocks with newer apartment infill, our focus shifts to shared-riser gel baiting, the same approach we use in Gulistan-e-Johar's apartment stock.
+For confirmed termite activity in FB Area's older blocks, we run a structural assessment first, then treat with soil injection and bait stations, backed by our 90-day guarantee. For blocks with newer apartment infill, our focus shifts to shared-riser gel baiting, the same approach we use in Gulistan-e-Johar's apartment stock.
 
 General fumigation for an FB Area home is priced from Rs 7,000 for homes up to 100 sq yards, scaling with property size. Book a structural assessment before any renovation disturbs an older block's foundation.
 
@@ -8655,7 +8659,7 @@ Shafiq Colony is an established residential pocket within Gulberg Town with olde
 
 Mature trees near boundary walls disturb underground drainage with their root systems, creating moisture pathways that draw subterranean termites toward foundations  -  while decomposing leaf litter along the same boundary walls sustains ant and cockroach colonies that have had years to establish.
 
-For Shafiq Colony we start with a structural and perimeter assessment before treatment, checking boundary walls and foundation lines for active termite activity, then apply soil injection and bait stations where infestation is confirmed, backed by a three-year structural guarantee.
+For Shafiq Colony we start with a structural and perimeter assessment before treatment, checking boundary walls and foundation lines for active termite activity, then apply soil injection and bait stations where infestation is confirmed, backed by our 90-day guarantee.
 
 Termite proofing in Shafiq Colony starts from Rs 13,000 for homes up to 100 sq yards. Book an inspection if you notice ant trails or wood damage along boundary walls.
 
@@ -9716,7 +9720,7 @@ Nazimabad was developed from 1952 under the Greater Karachi Resettlement Plan to
 
 These blocks were designed around internal, self-sufficient market sections. Older shared drainage and market infrastructure near the block cores concentrates cockroach and rodent pressure that spreads to adjoining homes  -  a home near a Block 1–3 internal market faces meaningfully more pest pressure than one on a quieter residential street further from the market core.
 
-Our approach for Block 1–3 starts with a structural assessment of roof beams and window frames before any chemical is applied, since seven-decade-old timber is the primary termite entry point. For confirmed activity we use a soil injection plus bait station combination with a three-year structural guarantee. For homes near the internal market sections, we add drainage cover treatment and perimeter gel baiting to address the shared-infrastructure cockroach and rodent pressure.
+Our approach for Block 1–3 starts with a structural assessment of roof beams and window frames before any chemical is applied, since seven-decade-old timber is the primary termite entry point. For confirmed activity we use a soil injection plus bait station combination with our 90-day guarantee. For homes near the internal market sections, we add drainage cover treatment and perimeter gel baiting to address the shared-infrastructure cockroach and rodent pressure.
 
 Termite treatment for a Block 1–3 home starts from Rs 13,000 for properties up to 100 sq yards. General fumigation starts from Rs 7,000. Book a structural inspection before any renovation disturbs original timber framing.
 
@@ -9736,7 +9740,7 @@ Rizvia Society is a residential society within Nazimabad, predominantly built up
 
 Because Rizvia Society sits within the broader Nazimabad scheme, the same drivers apply here as in the numbered blocks: unaddressed structural aging is the primary pest risk, more than any factor unique to the society itself.
 
-Our protocol for Rizvia Society mirrors what we use across Nazimabad's older blocks  -  a structural assessment first, followed by soil injection and bait station treatment for confirmed termite activity, backed by a three-year structural guarantee.
+Our protocol for Rizvia Society mirrors what we use across Nazimabad's older blocks: a structural assessment first, followed by soil injection and bait station treatment for confirmed termite activity, backed by our 90-day guarantee.
 
 Termite treatment in Rizvia Society starts from Rs 13,000 for homes up to 100 sq yards. General fumigation starts from Rs 7,000. Book a structural assessment to get a property-specific quote.
 
@@ -9846,7 +9850,7 @@ FAQ
 
 Nazimabad ke purane makanon mein termite kaise hoti hai?
 
-Seven-decade-old timber roof beams and window frames from the original 1950s construction are the main entry point for termites in Nazimabad. We recommend a structural assessment before any chemical treatment, followed by a soil injection plus bait station combination with a three-year structural guarantee for confirmed activity.
+Seven-decade-old timber roof beams and window frames from the original 1950s construction are the main entry point for termites in Nazimabad. We recommend a structural assessment before any chemical treatment, followed by a soil injection plus bait station combination with our 90-day guarantee for confirmed activity.
 
 Which Nazimabad and Liaquatabad blocks do you cover?
 
@@ -10166,7 +10170,7 @@ Block A and Block B are the original 1958 core of North Nazimabad  -  laid out f
 
 Long-established boundary walls and garden beds in unrenovated homes have had decades to become entrenched cockroach and ant harborage. Unlike a newly built property, a Block A or B bungalow rarely has just one entry point  -  cracked masonry, aging garden beds and root-disturbed drainage all feed into each other, so a surface-only spray tends to leave the underlying colony intact.
 
-Our approach here starts with a structural assessment of roof beams, window frames and skirting boards before any chemical is applied, followed by a soil injection plus bait station combination for confirmed termite activity  -  the same protocol we use in DHA Phase 1, backed by a three-year structural guarantee. General fumigation for boundary-wall cockroach and ant activity is priced by property size.
+Our approach here starts with a structural assessment of roof beams, window frames and skirting boards before any chemical is applied, followed by a soil injection plus bait station combination for confirmed termite activity, the same protocol we use in DHA Phase 1, backed by our 90-day guarantee. General fumigation for boundary-wall cockroach and ant activity is priced by property size.
 
 Block A plots are typically around 240 sq yards, which puts general fumigation in the Rs 13,000 (201–300 sq yards) tier; Block B's larger 400 sq yard plots fall in the Rs 16,000 (301–500 sq yards) tier  -  always confirmed against your actual plot size before we start. If you're renovating an older Block A or B property, book a termite inspection before any excavation disturbs existing colonies and drives them deeper into the structure.
 
@@ -10314,7 +10318,7 @@ Ek visit mein inspection, treatment aur likhi hui price, sab pehle se tay. Gener
 
 North Nazimabad ke purane makanon mein termite ka masla hai, kya karte hain aap log?
 
-We start with a structural assessment of roof beams and window frames, since many North Nazimabad homes still have their original 1950s-60s timber. For confirmed termite activity we use a soil injection plus bait station combination, backed by a three-year structural guarantee  -  the same protocol we use on DHA Phase 1's 1960s bungalows.
+We start with a structural assessment of roof beams and window frames, since many North Nazimabad homes still have their original 1950s-60s timber. For confirmed termite activity we use a soil injection plus bait station combination, backed by our 90-day guarantee. It is the same protocol we use on DHA Phase 1's 1960s bungalows.
 
 Kya Hyderi aur Sakhi Hassan mein same-day service milti hai?
 
@@ -10403,7 +10407,7 @@ PECHS was founded in 1950 by Mehmood Ahmad Nizami, making it one of Karachi's fi
 
 That aging timber puts Block 2 and Block 6 in the same termite-risk category as DHA Phase 1's oldest bungalows and Nazimabad's earliest blocks: decades of cracks, gaps, and cavities in original masonry give subterranean and drywood termites an easy entry point into the roof structure and window frames.
 
-Our approach in PECHS starts with a structural assessment before any chemical is applied  -  checking roof beams, window frames, and skirting boards for active termite galleries. For confirmed infestations we use a soil injection plus bait station combination, backed by a three-year structural guarantee.
+Our approach in PECHS starts with a structural assessment before any chemical is applied: checking roof beams, window frames, and skirting boards for active termite galleries. For confirmed infestations we use a soil injection plus bait station combination, backed by our 90-day guarantee.
 
 Many PECHS bungalows have also been subdivided or converted into ground-floor commercial units over the decades. That mixed residential-commercial use raises cockroach pressure from food-service tenants spreading into the residential floors above  -  for these properties we add drainage cover treatment and perimeter gel baiting to the standard fumigation. General fumigation for a 200-sq-yard PECHS bungalow is priced at Rs 11,000.
 
@@ -10423,7 +10427,7 @@ Dhoraji Colony is a historically Memon residential colony adjoining KDA Scheme 7
 
 Mature gardens create the same termite-stepping-stone risk documented in Phase 6: wooden garden furniture, boundary planters, and ornamental timber give subterranean termites a route from soil into the main structure, often before homeowners notice any activity indoors.
 
-Our Dhoraji Colony termite programme covers the full property perimeter, garden structures included, not just the house  -  the same protocol we use for Phase 6's villa belt. Confirmed infestations are treated with soil injection and bait stations, backed by a three-year structural guarantee.
+Our Dhoraji Colony termite programme covers the full property perimeter, garden structures included, not just the house. It is the same protocol we use for Phase 6's villa belt. Confirmed infestations are treated with soil injection and bait stations, backed by our 90-day guarantee.
 
 General fumigation for a Dhoraji Colony bungalow typically runs Rs 11,000 to Rs 16,000 depending on plot size (from Rs 7,000 for homes up to 100 sq yards), and termite proofing from Rs 13,000. Book a same-day inspection if you have noticed timber damage in garden furniture or boundary structures.
 
@@ -10531,7 +10535,7 @@ Drainage cover treatment and perimeter gel baiting at shared re-entry points is 
 
 Do you treat Dhoraji Colony bungalows for termites?
 
-Yes  -  soil injection and bait station combination with a three-year structural guarantee, the same protocol used across Karachi's older bungalow blocks. Dhoraji Colony's mature garden bungalows carry a similar termite-in-garden-timber risk to DHA Phase 6's villa belt. Termite proofing starts from Rs 13,000.
+Yes: soil injection and bait station combination with our 90-day guarantee, the same protocol used across Karachi's older bungalow blocks. Dhoraji Colony's mature garden bungalows carry a similar termite-in-garden-timber risk to DHA Phase 6's villa belt. Termite proofing starts from Rs 13,000.
 
 Mohammad Ali Society mein renovation ke baad pest control price kya hai?
 
@@ -10843,7 +10847,7 @@ Shah Faisal Colony was founded in 1952 as Drigh Colony, making it one of Karachi
 
 The colony is accessed via Korangi Road and the FTC Flyover intersection with Shahrah-e-Faisal, and dense commercial activity along this corridor  -  workshops and small eateries  -  creates a steady food-waste source that pushes rodent pressure into the adjoining residential blocks. A treatment that only addresses the inside of your home without also sealing entry points along shared boundaries will see reinfestation from this commercial edge.
 
-Our approach in Shah Faisal Colony starts with a structural assessment for termite cases before any chemical is applied, followed by a soil injection and bait station combination for confirmed infestations, backed by a three-year structural guarantee. For rodent pressure coming from the Korangi Road commercial strip, we use tamper-resistant bait stations placed at utility and boundary entry points rather than interior trapping alone.
+Our approach in Shah Faisal Colony starts with a structural assessment for termite cases before any chemical is applied, followed by a soil injection and bait station combination for confirmed infestations, backed by our 90-day guarantee. For rodent pressure coming from the Korangi Road commercial strip, we use tamper-resistant bait stations placed at utility and boundary entry points rather than interior trapping alone.
 
 General fumigation for a Shah Faisal Colony home in the 101–200 sq yard range is Rs 11,000 (see the table below for your size), and termite treatment starts from Rs 13,000. Book an inspection before signs of termite damage in roof beams or window frames get worse.
 
