@@ -4,7 +4,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://safaikaro.pk/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +16,7 @@
   </url>
   <url>
     <loc>https://safaikaro.pk/pest-control-price-list-karachi</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -272,6 +272,12 @@
   </url>
 
   <!-- Additional pages -->
+  <url>
+    <loc>https://safaikaro.pk/apartment-fumigation-karachi</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://safaikaro.pk/commercial-cleaning-karachi</loc>
     <lastmod>2026-09-12</lastmod>
