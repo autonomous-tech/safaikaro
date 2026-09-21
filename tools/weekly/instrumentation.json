@@ -70,5 +70,14 @@
   "pages": [
    "/pest-control-price-list-karachi"
   ]
+ },
+ {
+  "id": "2026-W38-internal-ids-and-aws-crawler",
+  "event": "all",
+  "property": "distinct_id, $geoip_city_name, $os",
+  "question": "How many desktop visitors are the team checking links after a deploy, and how much of the all-city count is a crawler? Three link-walking desktop ids seen right after the 2026-09-17 footer commits are added to test_distinct_ids; collector-side, a Linux desktop visitor geolocated to the AWS regions Boardman or Columbus that sweeps ten pages a second with a fresh id each week is excluded by shape, since it cannot be listed by id.",
+  "pages": [
+   "all"
+  ]
  }
 ]

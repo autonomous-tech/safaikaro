@@ -84,8 +84,11 @@ class PostHog:
         if not self.key:
             raise RuntimeError("POSTHOG_API_KEY missing")
         ids = ",".join(f"'{i}'" for i in self.cfg["test_distinct_ids"])
+        # A crawler from AWS regions (Boardman, Columbus) sweeps ten pages a second with a fresh distinct_id each week,
+        # so it is excluded by shape (city plus Linux desktop) rather than by id.
         self.excl = (f"distinct_id NOT IN ({ids}) AND NOT match(coalesce(properties.$host,''), "
-                     "'^(localhost|127\\\\.0\\\\.0\\\\.1)($|:)')")
+                     "'^(localhost|127\\\\.0\\\\.0\\\\.1)($|:)') "
+                     "AND NOT (coalesce(properties.$geoip_city_name,'') IN ('Boardman','Columbus') AND coalesce(properties.$os,'') = 'Linux')")
         # Karachi, or an unknown city on a device whose clock says Pakistan (a foreign visitor with no geo used to slip in)
         self.karachi = ("(coalesce(properties.$geoip_city_name,'') = 'Karachi' OR (coalesce(properties.$geoip_city_name,'') = '' "
                         "AND coalesce(properties.$timezone,'') IN ('Asia/Karachi','')))")

@@ -309,7 +309,7 @@
   "type": "cro",
   "page": "/",
   "query": null,
-  "play": "Read desktop lead persons after one clean week of the new lead definition (W37 was the first). If Google desktop stays at zero leads, test a visible phone number and copy button in the desktop hero with a ledger entry, once the homepage hero ledger (W36) has passed its 28-day window.",
+  "play": "Read desktop lead persons after one clean week of the new lead definition (W37 was the first). If Google desktop stays at zero leads, test a visible phone number and copy button in the desktop hero with a ledger entry, once the homepage hero ledger (W36) has passed its 28-day window. W38: desktop read stayed at zero leads for the week under the clean definition; the homepage hero ledger is still inside its 28-day window, so the desktop hero test waits for the window to close before a second change lands on the same page. W38: desktop read stayed at zero leads for the week under the clean definition; the homepage hero ledger is still inside its 28-day window, so the desktop hero test waits for the window to close before a second change lands on the same page.",
   "reason": "First clean week under the new desktop lead definition showed desktop leads again but the homepage is inside an open ledger window, so no second CRO change on the homepage yet.",
   "added": "2026-W36",
   "status": "queued"
@@ -319,20 +319,20 @@
   "type": "page",
   "page": "/fumigation-services-karachi",
   "query": "fumigation karachi",
-  "play": "After the two-week hold, re-read the positions; if the page has settled, add FAQ pairs for \"fumigation karachi\", \"apartment fumigation karachi\" and \"complete home fumigation karachi\" with the price anchor.",
+  "play": "After the two-week hold, re-read the positions; if the page has settled, add FAQ pairs for \"fumigation karachi\", \"apartment fumigation karachi\" and \"complete home fumigation karachi\" with the price anchor. W38: the page did not settle, it fell further on the head terms while the homepage rose to page one for the same cluster; the fumigation intent went into the homepage title and a homepage FAQ pair instead, and the query the page did gain (house fumigation near me) was folded into its near-me FAQ. W38: the page did not settle, it fell further on the head terms while the homepage rose to page one for the same cluster; the fumigation intent went into the homepage title and a homepage FAQ pair instead, and the query the page did gain (house fumigation near me) was folded into its near-me FAQ.",
   "reason": "All three queries sit in striking distance on the homepage while the fumigation page keeps slipping after the September edits, so no edit until it settles.",
   "added": "2026-W36",
-  "status": "queued"
+  "status": "dropped"
  },
  {
   "id": "2026-W38-deemak-insect-line",
   "type": "page",
   "page": "/blog/deemak-ka-ilaj-karachi",
   "query": "deemak insect",
-  "play": "After the hold, a one-line 'deemak insect' definition in the post's answer block and a link to the termite service page on that phrase.",
+  "play": "After the hold, a one-line 'deemak insect' definition in the post's answer block and a link to the termite service page on that phrase. W38: built and rejected twice by the red team; the phrase read as keyword injection inside the answer-block prose. Re-planned as a labelled FAQ pair (see the W38 item). W38: built and rejected twice by the red team; the phrase read as keyword injection inside the answer-block prose. Re-planned as a labelled FAQ pair (see the W38 item).",
   "reason": "Definition query in striking distance; the post slipped again this week on the dimak spelling after the title change and the September 9 audit edits, so it holds another week. The W37 run only corrected its termite guarantee wording.",
   "added": "2026-W36",
-  "status": "queued"
+  "status": "dropped"
  },
  {
   "id": "2026-W37-machine-post-freshness",
@@ -379,27 +379,27 @@
   "type": "page",
   "page": "/termite-treatment-karachi",
   "query": "termite control services",
-  "play": "After the September 9 audit version has been recrawled, add an FAQ pair and an H2 lead using 'termite control services' and 'termite fumigation in karachi', and link the phrase from the homepage service card.",
+  "play": "After the September 9 audit version has been recrawled, add an FAQ pair and an H2 lead using 'termite control services' and 'termite fumigation in karachi', and link the phrase from the homepage service card. Shipped W38: FAQ pair contrasting termite control services with termite fumigation in Karachi, a lead paragraph under the building-type H2; the homepage service card already linked the phrase. Shipped W38: FAQ pair contrasting termite control services with termite fumigation in Karachi, a lead paragraph under the building-type H2; the homepage service card already linked the phrase.",
   "reason": "A competitor's termite page holds the top spot for the phrase while the homepage, not the service page, carries the related query on page one; termite season opens in October.",
   "added": "2026-W37",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W38-chipkali-snippet-read",
   "type": "meta",
   "page": "/blog/chipkali-bhagane-ka-tarika",
   "query": "chipkali bhagane ka tarika",
-  "play": "Re-read after a second week; if the query still shows impressions on page one with no clicks, rewrite the meta description answer-first (the three things that work) and keep the title.",
+  "play": "Re-read after a second week; if the query still shows impressions on page one with no clicks, rewrite the meta description answer-first (the three things that work) and keep the title. Shipped W38: the query still showed page-one impressions with no clicks after a second week, so the meta description was rewritten answer-first with the Urdu-script phrase and the three things that work; title held. Shipped W38: the query still showed page-one impressions with no clicks after a second week, so the meta description was rewritten answer-first with the Urdu-script phrase and the three things that work; title held.",
   "reason": "New page-one query in its first full week with no clicks yet; the post was rebuilt on September 6 so it holds a week before another edit.",
   "added": "2026-W37",
-  "status": "queued"
+  "status": "shipped"
  },
  {
   "id": "2026-W38-price-list-spray-services-faq",
   "type": "page",
   "page": "/pest-control-price-list-karachi",
   "query": "pest control spray services karachi",
-  "play": "FAQ pair in the query's words with the fumigation price anchor, once the two open price-list ledgers have been read at 14 days.",
+  "play": "FAQ pair in the query's words with the fumigation price anchor, once the two open price-list ledgers have been read at 14 days. W38: both price-list ledgers still read too early, so the FAQ pair waits one more week. W38: both price-list ledgers still read too early, so the FAQ pair waits one more week.",
   "reason": "New query landing on the price list outside page one; the page has two CRO ledgers in flight so it holds.",
   "added": "2026-W37",
   "status": "queued"
@@ -423,5 +423,125 @@
   "reason": "The analyst could not group FAQ questions across pages, could not tell which starting card was tapped, saw Instagram visits filed as Referral, and traced one desktop lead and all cleaning page views to an internal device.",
   "added": "2026-W37",
   "status": "shipped"
+ },
+ {
+  "id": "2026-W38-home-fumigation-title",
+  "type": "meta",
+  "page": "/",
+  "query": "fumigation services",
+  "play": "Title, meta, og and twitter lead with 'Fumigation Services' and the price anchor, the title em-dash removed, one FAQ pair on what fumigation services include with schema parity.",
+  "reason": "The homepage carries the fumigation query cluster on page one with no clicks while the dedicated page slipped; the exact phrase was absent from the homepage title.",
+  "added": "2026-W38",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W38-dha-fumigation-faq",
+  "type": "area",
+  "page": "/pest-control-dha-karachi",
+  "query": "fumigation services in dha karachi",
+  "play": "FAQ pair in the query's words with the price anchor, the same-day condition and a WhatsApp prefill naming the service and the area.",
+  "reason": "The DHA page is climbing on the query from page three while the homepage slips on it; the area page should own it.",
+  "added": "2026-W38",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W38-fumigation-house-near-me",
+  "type": "page",
+  "page": "/fumigation-services-karachi",
+  "query": "house fumigation near me",
+  "play": "The near-me FAQ reworded to carry 'house fumigation near me' and to answer timing, distinct from the area-list FAQ; schema parity.",
+  "reason": "A new query the page gained on its own on page one; the page's two near-me FAQs were near-duplicates.",
+  "added": "2026-W38",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W38-newcon-season-note",
+  "type": "page",
+  "page": "/termite-treatment-new-construction-karachi",
+  "query": null,
+  "play": "Season paragraph under the timing H2: October opens the termite season, book soil treatment before the slab, inspection first, quote after.",
+  "reason": "Termite pre-construction season opens in three weeks (config season table).",
+  "added": "2026-W38",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W38-geo-identity-block",
+  "type": "llms",
+  "page": "/llms.txt",
+  "query": null,
+  "play": "Identity lines in the llms.txt narrative and one sentence in the homepage footer: Karachi, Pakistan company at safaikaro.pk, Pakistan WhatsApp number only, not connected to any similarly named business outside Pakistan.",
+  "reason": "GEO monthly sample: every branded answer-engine reply described a different company with a similar name in another country and gave out its website and phone number.",
+  "added": "2026-W38",
+  "status": "shipped"
+ },
+ {
+  "id": "2026-W38-deemak-insect-faq",
+  "type": "page",
+  "page": "/blog/deemak-ka-ilaj-karachi",
+  "query": "deemak insect",
+  "play": "One FAQ pair where 'deemak insect' stands as a labelled term (what the insect is called in English, why surface spray fails) with schema parity and a link to the termite service page; also replace the H1 and headline em-dash with a colon. Do not put the phrase in the answer-block prose.",
+  "reason": "Striking distance on the deemak cluster; the prose version was rejected twice by the red team, a labelled FAQ is the form the reviewer accepted.",
+  "added": "2026-W38",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-home-faq-schema-parity",
+  "type": "page",
+  "page": "/",
+  "query": null,
+  "play": "Bring six older homepage FAQ answers and their FAQPage schema text into character-for-character parity (extra sentences on the page, entity versus literal dash differences) and replace the em-dashes in those answers.",
+  "reason": "The red team found pre-existing page-versus-schema mismatches on the homepage FAQ while reviewing this week's pair; parity is the AEO baseline.",
+  "added": "2026-W38",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-khatmal-urdu-faq",
+  "type": "page",
+  "page": "/blog/khatmal-ka-ilaj-karachi",
+  "query": "khatmal in urdu",
+  "play": "After the W37 meta has settled for a second week, add one FAQ pair in Urdu script answering 'khatmal in urdu' and 'bed bugs in urdu' (the name, the one-line identification), schema parity, no title change.",
+  "reason": "The Urdu-name variants slipped from page one to page two while the English variants climbed; the post has the Roman and English forms but no Urdu-script answer.",
+  "added": "2026-W38",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-water-tank-cleaning-decision",
+  "type": "page",
+  "page": "/commercial-cleaning-karachi",
+  "query": "water tank cleaning service",
+  "play": "Founder decides whether water tank cleaning is a SafaiKaro service and at what quote basis; if yes, the routine writes the service page through blog-writer.md.",
+  "reason": "Two competitors rank for the query with dedicated pages; SafaiKaro has no page and no price row, so it is an ops decision first.",
+  "added": "2026-W38",
+  "status": "needs_human"
+ },
+ {
+  "id": "2026-W38-khatmal-photos",
+  "type": "page",
+  "page": "/blog/khatmal-ka-ilaj-karachi",
+  "query": "khatmal pic",
+  "play": "Founder supplies three real photos from a khatmal job (bug, eggs on a mattress seam, bites); the routine adds a labelled photo section with alt text and an image sitemap entry.",
+  "reason": "An image-intent query with large volume sits just off page one for the post and the site has no job photos.",
+  "added": "2026-W38",
+  "status": "needs_human"
+ },
+ {
+  "id": "2026-W38-khatmal-checker-cta",
+  "type": "cro",
+  "page": "/blog/khatmal-ka-ilaj-karachi",
+  "query": null,
+  "play": "Turn the symptom checker's submit into a visible WhatsApp anchor whose prefill is built from the ticked signs (so the delegated listener tags it and no synthetic click is needed), and move the 'market spray ke baad bhi sign' line that converts next to it; ledger entry reads checker submits and lead persons on the post at 28 days.",
+  "reason": "Readers tick the checker's boxes but the submit has never fired a handoff; the only thing on the post that converts is the DIY-failed message.",
+  "added": "2026-W38",
+  "status": "queued"
+ },
+ {
+  "id": "2026-W38-fumigation-page-fold",
+  "type": "cro",
+  "page": "/fumigation-services-karachi",
+  "query": null,
+  "play": "Above-the-fold rewrite for visitors who arrive from the homepage hero and footer: the price anchor, the one-visit process line and a WhatsApp CTA in the first screen; ledger entry reads leave scroll and lead persons at 28 days.",
+  "reason": "Almost every visit to the page arrives from an internal link and leaves within seconds without scrolling; the page has no ledger entry in flight.",
+  "added": "2026-W38",
+  "status": "queued"
  }
 ]

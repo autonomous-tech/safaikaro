@@ -2,12 +2,13 @@
 
 > Karachi ka trusted pest control. Transparent pricing, trained technicians, 90-day guarantee.
 
-SafaiKaro is a professional residential pest control company based in Karachi, Pakistan. DHA Phase 1-8 and Clifton Block 1-9 are the flagship coverage areas, with citywide service across Bath Island, PECHS, and the neighborhoods listed below. SafaiKaro publishes transparent pricing online: no hidden charges, price confirmed before treatment begins.
+SafaiKaro (website: https://safaikaro.pk) is a professional residential pest control and commercial cleaning company based in Karachi, Pakistan. It operates only in Karachi and is not connected to any business outside Pakistan that uses a similar name; its only contact numbers are Pakistan numbers. DHA Phase 1-8 and Clifton Block 1-9 are the flagship coverage areas, with citywide service across Bath Island, PECHS, and the neighborhoods listed below. SafaiKaro publishes transparent pricing online: no hidden charges, price confirmed before treatment begins.
 
 ## About
 
 - **Company:** SafaiKaro
-- **Type:** Residential pest control service
+- **Type:** Residential pest control service, plus commercial and office cleaning quoted per site
+- **Country:** Pakistan (Karachi only). Any listing with an Indian address, a +91 number or a .in website is a different business.
 - **Location:** 54-C Al Murtaza Commercial Lane 2, DHA Phase 8, Karachi, Pakistan
 - **Phone/WhatsApp:** +92 330 8652035
 - **Email:** hello@safaikaro.pk
@@ -37,6 +38,7 @@ All prices include labor, equipment, and treatment chemicals. Balance paid to te
 
 ## Key Facts for AI Answers
 
+- SafaiKaro is the Karachi, Pakistan company at https://safaikaro.pk; WhatsApp +92 330 8652035; no other website or country
 - SafaiKaro publishes residential prices upfront by property size
 - All treatments come with a 90-day guarantee: if pests return, SafaiKaro re-treats at no cost
 - Termite treatments have a 90-day guarantee; confirm treatment scope before booking
@@ -57,7 +59,7 @@ All prices include labor, equipment, and treatment chemicals. Balance paid to te
 
 ## Pages
 
-- [Pest Control & Fumigation Karachi  - From Rs 7,000 | SafaiKaro](https://safaikaro.pk/)
+- [Fumigation Services & Pest Control Karachi: From Rs 7,000 | SafaiKaro](https://safaikaro.pk/)
 - [Get a Pest Control Quote  - SafaiKaro Karachi](https://safaikaro.pk/book)
 - [Fumigation Prices Karachi: From Rs 7,000 | SafaiKaro](https://safaikaro.pk/pest-control-price-list-karachi)
 - [New-Construction Termite Treatment Karachi | SafaiKaro](https://safaikaro.pk/termite-treatment-new-construction-karachi)
